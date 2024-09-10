@@ -2,14 +2,12 @@
     The code was written by programmer Truong Tuan Anh
     Thanks for watching and sharing
 */
-import { Header } from "./layouts/header/header";
+import MyLayOut from "./layouts/MyLayouts/layout";
 
 function App() {
   return (
     <div className="App">
-      <div className="container">
-        <Header></Header>
-      </div>
+      <MyLayOut></MyLayOut>
     </div>
   );
 }
