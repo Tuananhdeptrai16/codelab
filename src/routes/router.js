@@ -1,9 +1,9 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { PageNotFound } from "../pages/404Page/pagenotfound";
-import HomePage from "../pages/home/home";
+import { HomePage } from "../pages/home/home";
 
-const Router = () => {
+const MyRoute = () => {
   return (
     <Routes>
       <Route path="/codelab" element={<HomePage />}></Route>
@@ -12,4 +12,4 @@ const Router = () => {
   );
 };
 
-export default Router;
+export default MyRoute;

@@ -1,0 +1,33 @@
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 64px;
+  &__img {
+    width: 30px;
+    height: 30px;
+  }
+
+  &__wrap {
+    background: #dbdbe2;
+    border-radius: 6px;
+    padding: 8px 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__name {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #171c28; /* Default color if animation is not applied */
+  }
+
+  &__highlight {
+    color: #171c28;
+    background: none; /* Remove any background */
+    animation: gradientAnimation 5s ease infinite;
+  }
+}

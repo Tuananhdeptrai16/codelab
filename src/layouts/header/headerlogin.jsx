@@ -1,4 +1,0 @@
-/*
-    The code was written by programmer Truong Tuan Anh
-    Thanks for watching and sharing
-*/

@@ -2,7 +2,7 @@
     The code was written by programmer Truong Tuan Anh
     Thanks for watching and sharing
 */
-// Hoặc import vào tệp chính của bạn
+
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";

@@ -1,0 +1,25 @@
+@keyframes gradientAnimation {
+  0% {
+    color: #000000; /* Black color */
+  }
+  50% {
+    color: #c0ac77; /* Yellow color */
+  }
+  100% {
+    color: #ffb900; /* Yellow color */
+  }
+}
+@keyframes shake {
+  0%,
+  100% {
+    scale: 1.2;
+  }
+
+  25%,
+  75% {
+    scale: 0.9;
+  }
+  50% {
+    scale: 1.1;
+  }
+}

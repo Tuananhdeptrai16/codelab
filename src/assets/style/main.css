@@ -235,7 +235,7 @@ table {
 }
 
 .container {
-  width: 1512px;
+  width: 1250px;
 }
 
 .row {
@@ -1256,6 +1256,92 @@ table {
     --grid-gutter-y: 90px;
   }
 }
+.d-block {
+  display: block !important;
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+.d-grid {
+  display: grid !important;
+}
+
+.d-none {
+  display: none !important;
+}
+
+@media (max-width: 1399.98px) {
+  .d-xxl-block {
+    display: block !important;
+  }
+  .d-xxl-flex {
+    display: flex !important;
+  }
+  .d-xxl-grid {
+    display: grid !important;
+  }
+  .d-xxl-none {
+    display: none !important;
+  }
+}
+@media (max-width: 1199.98px) {
+  .d-xl-block {
+    display: block !important;
+  }
+  .d-xl-flex {
+    display: flex !important;
+  }
+  .d-xl-grid {
+    display: grid !important;
+  }
+  .d-xl-none {
+    display: none !important;
+  }
+}
+@media (max-width: 991.98px) {
+  .d-lg-block {
+    display: block !important;
+  }
+  .d-lg-flex {
+    display: flex !important;
+  }
+  .d-lg-grid {
+    display: grid !important;
+  }
+  .d-lg-none {
+    display: none !important;
+  }
+}
+@media (max-width: 767.98px) {
+  .d-md-block {
+    display: block !important;
+  }
+  .d-md-flex {
+    display: flex !important;
+  }
+  .d-md-grid {
+    display: grid !important;
+  }
+  .d-md-none {
+    display: none !important;
+  }
+}
+@media (max-width: 575.98px) {
+  .d-sm-block {
+    display: block !important;
+  }
+  .d-sm-flex {
+    display: flex !important;
+  }
+  .d-sm-grid {
+    display: grid !important;
+  }
+  .d-sm-none {
+    display: none !important;
+  }
+}
 /*
     The code was written by programmer Truong Tuan Anh
     Thanks for watching and sharing !!!
@@ -1264,5 +1350,53 @@ table {
     The code was written by programmer Truong Tuan Anh
     Thanks for watching and sharing
 */
+.ant-menu-item {
+  margin-top: 20px !important;
+  padding-left: 24px !important;
+  padding-top: 5px !important;
+  padding-bottom: 3px !important;
+}
+
+.ant-menu-item-selected {
+  background: #b8b8bb;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    color: #000000; /* Black color */
+  }
+  50% {
+    color: #c0ac77; /* Yellow color */
+  }
+  100% {
+    color: #ffb900; /* Yellow color */
+  }
+}
+@keyframes shake {
+  0%, 100% {
+    scale: 1.2;
+  }
+  25%, 75% {
+    scale: 0.9;
+  }
+  50% {
+    scale: 1.1;
+  }
+}
+/*
+    The code was written by programmer Truong Tuan Anh
+    Thanks for watching and sharing !!!
+*/
+html.dark {
+  --text-main-color: #9e9da8;
+}
+
+/*
+    The code was written by programmer Truong Tuan Anh
+    Thanks for watching and sharing !!!
+*/
+html {
+  --text-main-color: #1a162e;
+}
 
 /*# sourceMappingURL=main.css.map */
