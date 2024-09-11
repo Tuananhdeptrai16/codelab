@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/codelab/static/css/main.018af158.css",
-    "main.js": "/codelab/static/js/main.72b7fb2f.js",
+    "main.css": "/codelab/static/css/main.c0a45785.css",
+    "main.js": "/codelab/static/js/main.c405fd92.js",
     "static/media/RobotoCondensed-BoldItalic.woff": "/codelab/static/media/RobotoCondensed-BoldItalic.6478927b25cc1f443cfc.woff",
     "static/media/Roboto-BlackItalic.woff": "/codelab/static/media/Roboto-BlackItalic.868292eeff4e17da0606.woff",
     "static/media/Roboto-MediumItalic.woff": "/codelab/static/media/Roboto-MediumItalic.14c25bb833b00bba8ecc.woff",
@@ -38,12 +38,16 @@
     "static/media/Roboto-Light.woff2": "/codelab/static/media/Roboto-Light.769aff81e37add099e64.woff2",
     "static/media/Roboto-Regular.woff2": "/codelab/static/media/Roboto-Regular.b9c2aea3a52506dc89b9.woff2",
     "static/media/Roboto-Thin.woff2": "/codelab/static/media/Roboto-Thin.76fda134e24795544e85.woff2",
+    "static/media/slick.svg": "/codelab/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/codelab/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/codelab/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/codelab/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/codelab/index.html",
-    "main.018af158.css.map": "/codelab/static/css/main.018af158.css.map",
-    "main.72b7fb2f.js.map": "/codelab/static/js/main.72b7fb2f.js.map"
+    "main.c0a45785.css.map": "/codelab/static/css/main.c0a45785.css.map",
+    "main.c405fd92.js.map": "/codelab/static/js/main.c405fd92.js.map"
   },
   "entrypoints": [
-    "static/css/main.018af158.css",
-    "static/js/main.72b7fb2f.js"
+    "static/css/main.c0a45785.css",
+    "static/js/main.c405fd92.js"
   ]
 }
