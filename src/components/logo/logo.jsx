@@ -7,7 +7,7 @@ const Logo = () => {
       <div className="logo__wrap">
         <NavLink to="/codelab">
           <img
-            src={`${process.env.PUBLIC_URL}/images/logo/logo.png`}
+            src={`${process.env.PUBLIC_URL}/images/logo.png`}
             alt="logo"
             className="logo__img"
           />
