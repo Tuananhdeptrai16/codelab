@@ -3,7 +3,6 @@
     Thanks for watching and sharing
 */
 import React from "react";
-import "./search.scss";
 export const Search = () => {
   return (
     <div className="search d-md-none">

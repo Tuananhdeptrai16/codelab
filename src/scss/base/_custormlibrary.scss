@@ -1,3 +1,4 @@
+@use "../abstracts";
 .ant-menu-item {
   margin-top: 20px !important;
   padding-left: 24px !important;
@@ -8,6 +9,7 @@
   background: #b8b8bb;
   background: var(--background-hover-navbar);
 }
+
 //slider
 .slider-container {
   border-radius: 10px;
@@ -32,6 +34,9 @@
   height: 4px;
   background: var(--background-color-main) !important;
   position: relative;
+  @include abstracts.breakpoint(md) {
+    width: 20px !important;
+  }
 }
 
 .slick-dots li.slick-active button {
@@ -41,6 +46,9 @@
   height: 4px !important;
   border-radius: 8px !important;
   position: relative;
+  @include abstracts.breakpoint(md) {
+    width: 20px !important;
+  }
 }
 .slick-dots li button:before {
   display: none;

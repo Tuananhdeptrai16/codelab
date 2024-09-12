@@ -3,8 +3,6 @@
     Thanks for watching and sharing
 */
 import React, { useState } from "react";
-import "./layout.scss";
-import "./header.scss";
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 import { Button, Layout, Menu } from "antd";
 import MyRoute from "../../routes/router";
@@ -149,14 +147,13 @@ const MyLayOut = () => {
         ) : null,
     },
   ];
-
   return (
     <Layout className="layout">
       <Sider
         trigger={null}
         collapsible
         collapsed={collapsed}
-        className="layout__background"
+        className="layout__background d-md-none"
       >
         {collapsed === false ? <Logo /> : <LogoOnly />}
         <Menu theme={"#eeeee"} mode="inline" items={menuItems} />

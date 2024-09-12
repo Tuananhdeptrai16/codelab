@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import "./home.scss";
 import Slider from "react-slick";
 
 export const HomePage = () => {
