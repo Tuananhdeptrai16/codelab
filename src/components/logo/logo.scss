@@ -10,7 +10,7 @@
   }
 
   &__wrap {
-    background: #dbdbe2;
+    background: var(--background-logo);
     border-radius: 6px;
     padding: 8px 20px;
     display: flex;
@@ -22,12 +22,11 @@
   &__name {
     font-size: 1.4rem;
     font-weight: 700;
-    color: #171c28; /* Default color if animation is not applied */
+    color: var(--text-main-color);
   }
 
   &__highlight {
-    color: #171c28;
-    background: none; /* Remove any background */
+    color: var(--text-main-color);
     animation: gradientAnimation 5s ease infinite;
   }
 }

@@ -1,7 +1,7 @@
 .layout {
   height: 10000000px;
   &__background {
-    background: #eeeeee !important;
+    background: var(--background-navbar) !important;
   }
 }
 .nav {
@@ -20,11 +20,12 @@
     }
   }
   &__link {
+    color: var(--text-main-color);
     font-weight: 400;
     font-size: 1rem;
   }
 }
 .active {
   font-weight: 600;
-  color: #292e39;
+  color: var(--text-main-color-2);
 }

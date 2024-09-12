@@ -6,4 +6,42 @@
 }
 .ant-menu-item-selected {
   background: #b8b8bb;
+  background: var(--background-hover-navbar);
+}
+//slider
+.slider-container {
+  border-radius: 10px;
+  height: 335px;
+  width: 100%; // Điều chỉnh kích thước theo nhu cầu
+  overflow: hidden; // Ẩn phần tràn ra ngoài để slider gọn gàng
+}
+
+.slick-slide {
+  display: flex; // Đảm bảo các slide được hiển thị như các phần tử flex
+  justify-content: center; // Căn giữa nội dung bên trong các slide
+  align-items: center; // Căn giữa nội dung theo chiều dọc bên trong các slide
+}
+.slick-dots {
+  display: flex !important;
+  gap: 6px;
+}
+.slick-dots li,
+.slick-dots li button {
+  width: 32px;
+  border-radius: 8px;
+  height: 4px;
+  background: var(--background-color-main) !important;
+  position: relative;
+}
+
+.slick-dots li.slick-active button {
+  background: var(--background-color-2) !important;
+  z-index: 2;
+  width: 32px !important;
+  height: 4px !important;
+  border-radius: 8px !important;
+  position: relative;
+}
+.slick-dots li button:before {
+  display: none;
 }

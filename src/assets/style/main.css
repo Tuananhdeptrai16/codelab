@@ -235,7 +235,7 @@ table {
 }
 
 .container {
-  width: 1250px;
+  width: 100%;
 }
 
 .row {
@@ -453,7 +453,7 @@ table {
 
 @media (max-width: 1399.98px) {
   .container {
-    max-width: 1140px;
+    max-width: 1250px;
   }
   .row-cols-xxl-1 > * {
     flex: 0 0 auto;
@@ -1359,6 +1359,47 @@ table {
 
 .ant-menu-item-selected {
   background: #b8b8bb;
+  background: var(--background-hover-navbar);
+}
+
+.slider-container {
+  border-radius: 10px;
+  height: 335px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.slick-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slick-dots {
+  display: flex !important;
+  gap: 6px;
+}
+
+.slick-dots li,
+.slick-dots li button {
+  width: 32px;
+  border-radius: 8px;
+  height: 4px;
+  background: var(--background-color-main) !important;
+  position: relative;
+}
+
+.slick-dots li.slick-active button {
+  background: var(--background-color-2) !important;
+  z-index: 2;
+  width: 32px !important;
+  height: 4px !important;
+  border-radius: 8px !important;
+  position: relative;
+}
+
+.slick-dots li button:before {
+  display: none;
 }
 
 @keyframes gradientAnimation {
@@ -1397,6 +1438,14 @@ html.dark {
 */
 html {
   --text-main-color: #1a162e;
+  --text-main-color-2: #292e39;
+  --background-logo: #dbdbe2;
+  --background-navbar: #eeeeee;
+  --background-color-main: #eeeeee;
+  --box-shadow-light-main: #00000029;
+  --background-hover-navbar: #b8b8bb;
+  --background-color-2: #9e9da8;
+  --box-shadow-main-1: rgba(0, 0, 0, 0.08);
 }
 
 /*# sourceMappingURL=main.css.map */

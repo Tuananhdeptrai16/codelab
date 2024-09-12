@@ -1,17 +1,17 @@
 import React from "react";
 import "./logo.scss";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 export const LogoOnly = () => {
   return (
     <div className="logo">
       <div className="logo__wrap">
-        <Link>
+        <NavLink to="/codelab/home">
           <img
-            src={`${process.env.PUBLIC_URL}/images/logo/logo.png`}
+            src={`${process.env.PUBLIC_URL}/images/logo.png`}
             alt="logo"
             className="logo__img"
           />
-        </Link>
+        </NavLink>
       </div>
     </div>
   );

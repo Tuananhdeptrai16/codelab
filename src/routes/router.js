@@ -7,6 +7,8 @@ const MyRoute = () => {
   return (
     <Routes>
       <Route path="/codelab" element={<HomePage />}></Route>
+      <Route path="/codelab/home" element={<HomePage />}></Route>
+
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
