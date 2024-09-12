@@ -13,7 +13,7 @@ import { Search } from "../../components/search/search";
 const { Header, Sider, Content } = Layout;
 
 const MyLayOut = () => {
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
   const menuItems = [
     {
       key: "1",
@@ -148,65 +148,77 @@ const MyLayOut = () => {
     },
   ];
   return (
-    <Layout className="layout">
-      <Sider
-        trigger={null}
-        collapsible
-        collapsed={collapsed}
-        className="layout__background d-md-none"
-      >
-        {collapsed === false ? <Logo /> : <LogoOnly />}
-        <Menu theme={"#eeeee"} mode="inline" items={menuItems} />
-      </Sider>
-      <Layout>
-        <Header
-          style={{
-            padding: 0,
-          }}
+    <>
+      <Layout className="layout">
+        <Sider
+          trigger={null}
+          collapsible
+          collapsed={collapsed}
+          className={`layout__background  ${
+            collapsed === true ? "d-md-none" : <LogoOnly />
+          }`}
         >
-          <div className="header__wrap">
-            <Button
-              type="text"
-              icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-              onClick={() => setCollapsed(!collapsed)}
-              style={{
-                fontSize: "16px",
-                width: 64,
-                height: 64,
-              }}
-            />
-            <div className="header__action">
-              <Search></Search>
-              <div className="header__notification">
-                <img
-                  src={`${process.env.PUBLIC_URL}/images/icon/notification.svg`}
-                  alt=""
-                  className="header__notification--icon"
-                />
-                <span className="header__number--notification">1</span>
-              </div>
-              <div className="header__avatar">
-                <img
-                  src={`${process.env.PUBLIC_URL}/images/layout/avatar.png`}
-                  alt=""
-                  className="header__avatar--image"
-                />
+          {collapsed === false ? <Logo /> : <LogoOnly />}
+          <Menu theme={"#eeeee"} mode="inline" items={menuItems} />
+        </Sider>
+        <Layout>
+          <Header
+            style={{
+              padding: 0,
+            }}
+          >
+            <div className="header__wrap">
+              <Button
+                type="text"
+                icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+                onClick={() => setCollapsed(!collapsed)}
+                style={{
+                  fontSize: "20px",
+                  width: 64,
+                  height: 64,
+                }}
+              />
+              <div className="header__action">
+                <Search></Search>
+                <div className="header__notification">
+                  <img
+                    src={`${process.env.PUBLIC_URL}/images/icon/notification.svg`}
+                    alt=""
+                    className="header__notification--icon"
+                  />
+                  <span className="header__number--notification">1</span>
+                </div>
+                <div className="header__avatar">
+                  <img
+                    src={`${process.env.PUBLIC_URL}/images/layout/avatar.png`}
+                    alt=""
+                    className="header__avatar--image"
+                  />
+                </div>
               </div>
             </div>
-          </div>
-        </Header>
-        <Content
-          style={{
-            margin: "24px 16px",
-            minHeight: 280,
-            background: "#ffff",
-            borderRadius: 10,
-          }}
-        >
-          <MyRoute />
-        </Content>
+          </Header>
+          <Content
+            style={{
+              margin: "24px 16px",
+              minHeight: 280,
+              background: "#ffff",
+              borderRadius: 10,
+            }}
+          >
+            <MyRoute />
+          </Content>
+        </Layout>
+        {collapsed === false ? (
+          <div
+            onClick={() => setCollapsed(!collapsed)}
+            className="overlay"
+          ></div>
+        ) : (
+          ""
+        )}
       </Layout>
-    </Layout>
+    </>
   );
 };
 

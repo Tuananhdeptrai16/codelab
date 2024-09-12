@@ -1,12 +1,19 @@
+/*
+    The code was written by programmer Truong Tuan Anh
+    Thanks for watching and sharing
+*/
 @use "../abstracts";
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
 .slide {
   position: relative;
-  height: 300px;
   margin-top: 20px;
   border-radius: 10px;
   width: 100%;
+  height: 300px;
+  @include abstracts.breakpoint(md) {
+    height: 166px;
+  }
   &__item {
     width: 100%;
     height: 100%;
@@ -23,7 +30,7 @@
       height: 300px; // Điều chỉnh kích thước theo nhu cầu
       object-fit: cover;
       @include abstracts.breakpoint(md) {
-        height: 250px;
+        height: 166px;
       }
     }
   }
@@ -60,5 +67,184 @@
     svg:hover {
       transform: translateX(2px);
     }
+  }
+}
+.courses {
+  margin-top: 100px;
+  @include abstracts.breakpoint(lg) {
+    margin-top: 60px;
+  }
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include abstracts.breakpoint(md) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+  }
+  &__heading {
+    color: var(--text-main-color);
+
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 123.81%;
+    @include abstracts.breakpoint(lg) {
+      font-size: 1.8rem;
+    }
+    @include abstracts.breakpoint(md) {
+      font-size: 1.4rem;
+    }
+  }
+  &__desc {
+    max-width: 483px;
+    margin-top: 18px;
+    color: var(--text-main-color-3);
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 128%;
+    @include abstracts.breakpoint(md) {
+      max-width: 283px;
+      font-size: 0.8rem;
+    }
+  }
+  &__right {
+    display: flex;
+    gap: 20px;
+  }
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid var(--main-color);
+    transition: all 0.2s ease;
+    &:hover {
+      background: var(--main-color);
+    }
+    &:hover .courses__icon {
+      stroke: var(--main-color-white);
+    }
+    @include abstracts.breakpoint(md) {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  &__icon {
+    width: 16px;
+    height: 16px;
+    stroke: var(--main-color);
+  }
+  &__list {
+    margin-top: 60px;
+    @include abstracts.breakpoint(lg) {
+      margin-top: 40px;
+    }
+  }
+  &__item {
+    padding: 0 10px;
+    border-radius: 10px;
+  }
+  &__img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 10px 0 0;
+  }
+  &__content {
+    padding: 20px;
+    @include abstracts.breakpoint(md) {
+      padding: 10px;
+    }
+    &--top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &--desc {
+      color: var(--text-main-color-3);
+      margin-top: 15px;
+      font-weight: 500;
+      line-height: 148%;
+    }
+    &--bottom {
+      margin-top: 15px;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  &__title {
+    color: var(--text-main-color);
+
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 150%;
+    @include abstracts.breakpoint(lg) {
+      font-size: 1.4rem;
+    }
+  }
+  &__content--wrap {
+    border-radius: 20px;
+    background: var(--main-color-white);
+    box-shadow: 0px 10px 15px -3px var(--box-shadow-main-1);
+    transition: all 0.2s ease;
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+  &__active {
+    margin-top: 4px;
+  }
+  &__like {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 7px 14px 32px 11px var(--box-shadow-main-1);
+    &:hover {
+      scale: 1.1;
+    }
+  }
+  &__timeRead {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  &__price {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--main-color);
+    @include abstracts.breakpoint(lg) {
+      font-size: 1rem;
+    }
+  }
+  &__time {
+    color: var(--text-main-color-3);
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 128%;
+    @include abstracts.breakpoint(lg) {
+      font-size: 0.8rem;
+    }
+  }
+}
+.overlay {
+  display: none;
+
+  @include abstracts.breakpoint(md) {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    -webkit-backdrop-filter: blur(9px);
+    backdrop-filter: blur(5px);
+    background: rgba(0, 0, 0, 0.3);
+    inset: 0;
+    z-index: 20;
   }
 }

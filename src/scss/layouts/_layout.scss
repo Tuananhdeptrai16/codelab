@@ -5,7 +5,10 @@
 .layout {
   height: 10000000px;
   &__background {
+    position: relative !important;
+    z-index: 21;
     background: var(--background-navbar) !important;
+    width: 200px !important;
   }
 }
 .nav {

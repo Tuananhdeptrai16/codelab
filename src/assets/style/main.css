@@ -2,6 +2,10 @@
     The code was written by programmer Truong Tuan Anh
     Thanks for watching and sharing !!!
 */
+/*
+    The code was written by programmer Truong Tuan Anh
+    Thanks for watching and sharing
+*/
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
 *,
@@ -1439,10 +1443,15 @@ table {
 
 .slide {
   position: relative;
-  height: 300px;
   margin-top: 20px;
   border-radius: 10px;
   width: 100%;
+  height: 300px;
+}
+@media (max-width: 767.98px) {
+  .slide {
+    height: 166px;
+  }
 }
 .slide__item {
   width: 100%;
@@ -1463,7 +1472,7 @@ table {
 }
 @media (max-width: 767.98px) {
   .slide__image--img {
-    height: 250px;
+    height: 166px;
   }
 }
 .slide__action {
@@ -1501,6 +1510,207 @@ table {
   transform: translateX(2px);
 }
 
+.courses {
+  margin-top: 100px;
+}
+@media (max-width: 991.98px) {
+  .courses {
+    margin-top: 60px;
+  }
+}
+.courses__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 767.98px) {
+  .courses__top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+}
+.courses__heading {
+  color: var(--text-main-color);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 123.81%;
+}
+@media (max-width: 991.98px) {
+  .courses__heading {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 767.98px) {
+  .courses__heading {
+    font-size: 1.4rem;
+  }
+}
+.courses__desc {
+  max-width: 483px;
+  margin-top: 18px;
+  color: var(--text-main-color-3);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 128%;
+}
+@media (max-width: 767.98px) {
+  .courses__desc {
+    max-width: 283px;
+    font-size: 0.8rem;
+  }
+}
+.courses__right {
+  display: flex;
+  gap: 20px;
+}
+.courses__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid var(--main-color);
+  transition: all 0.2s ease;
+}
+.courses__btn:hover {
+  background: var(--main-color);
+}
+.courses__btn:hover .courses__icon {
+  stroke: var(--main-color-white);
+}
+@media (max-width: 767.98px) {
+  .courses__btn {
+    width: 40px;
+    height: 40px;
+  }
+}
+.courses__icon {
+  width: 16px;
+  height: 16px;
+  stroke: var(--main-color);
+}
+.courses__list {
+  margin-top: 60px;
+}
+@media (max-width: 991.98px) {
+  .courses__list {
+    margin-top: 40px;
+  }
+}
+.courses__item {
+  padding: 0 10px;
+  border-radius: 10px;
+}
+.courses__img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 10px 0 0;
+}
+.courses__content {
+  padding: 20px;
+}
+@media (max-width: 767.98px) {
+  .courses__content {
+    padding: 10px;
+  }
+}
+.courses__content--top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.courses__content--desc {
+  color: var(--text-main-color-3);
+  margin-top: 15px;
+  font-weight: 500;
+  line-height: 148%;
+}
+.courses__content--bottom {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+.courses__title {
+  color: var(--text-main-color);
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 150%;
+}
+@media (max-width: 991.98px) {
+  .courses__title {
+    font-size: 1.4rem;
+  }
+}
+.courses__content--wrap {
+  border-radius: 20px;
+  background: var(--main-color-white);
+  box-shadow: 0px 10px 15px -3px var(--box-shadow-main-1);
+  transition: all 0.2s ease;
+}
+.courses__content--wrap:hover {
+  transform: translateY(-5px);
+}
+.courses__active {
+  margin-top: 4px;
+}
+.courses__like {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 7px 14px 32px 11px var(--box-shadow-main-1);
+}
+.courses__like:hover {
+  scale: 1.1;
+}
+.courses__timeRead {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.courses__price {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--main-color);
+}
+@media (max-width: 991.98px) {
+  .courses__price {
+    font-size: 1rem;
+  }
+}
+.courses__time {
+  color: var(--text-main-color-3);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 128%;
+}
+@media (max-width: 991.98px) {
+  .courses__time {
+    font-size: 0.8rem;
+  }
+}
+
+.overlay {
+  display: none;
+}
+@media (max-width: 767.98px) {
+  .overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    -webkit-backdrop-filter: blur(9px);
+    backdrop-filter: blur(5px);
+    background: rgba(0, 0, 0, 0.3);
+    inset: 0;
+    z-index: 20;
+  }
+}
+
 /*
     The code was written by programmer Truong Tuan Anh
     Thanks for watching and sharing !!!
@@ -1514,8 +1724,11 @@ html.dark {
     Thanks for watching and sharing !!!
 */
 html {
+  --main-color: #ffb900;
+  --main-color-white: #ffff;
   --text-main-color: #1a162e;
   --text-main-color-2: #292e39;
+  --text-main-color-3: #9e9da8;
   --background-logo: #dbdbe2;
   --background-navbar: #eeeeee;
   --background-color-main: #eeeeee;
@@ -1593,7 +1806,10 @@ html {
   height: 10000000px;
 }
 .layout__background {
+  position: relative !important;
+  z-index: 21;
   background: var(--background-navbar) !important;
+  width: 200px !important;
 }
 
 .nav__item {
