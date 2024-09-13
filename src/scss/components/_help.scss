@@ -9,6 +9,9 @@
   bottom: 70px;
   display: flex;
   flex-direction: column-reverse;
+  @include abstracts.breakpoint(md) {
+    right: 30px;
+  }
   &__notification {
     z-index: 3;
     position: relative;

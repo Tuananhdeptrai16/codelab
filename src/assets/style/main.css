@@ -2045,6 +2045,11 @@ html {
 .footer__link span {
   font-weight: 800;
 }
+@media (max-width: 767.98px) {
+  .footer__link {
+    font-size: 0.7rem;
+  }
+}
 .footer__item + .footer__item {
   margin-top: 20px;
 }
@@ -2065,6 +2070,11 @@ html {
 @media (max-width: 1199.98px) {
   .footer__more {
     width: 400px;
+  }
+}
+@media (max-width: 767.98px) {
+  .footer__more {
+    width: 320px;
   }
 }
 
@@ -2163,6 +2173,11 @@ html {
   bottom: 70px;
   display: flex;
   flex-direction: column-reverse;
+}
+@media (max-width: 767.98px) {
+  .help {
+    right: 30px;
+  }
 }
 .help__notification {
   z-index: 3;

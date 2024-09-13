@@ -49,6 +49,9 @@
     & span {
       font-weight: 800;
     }
+    @include abstracts.breakpoint(md) {
+      font-size: 0.7rem;
+    }
   }
   &__item + &__item {
     margin-top: 20px;
@@ -68,6 +71,9 @@
     display: block;
     @include abstracts.breakpoint(xl) {
       width: 400px;
+    }
+    @include abstracts.breakpoint(md) {
+      width: 320px;
     }
   }
 }
