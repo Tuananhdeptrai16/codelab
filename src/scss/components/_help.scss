@@ -1,0 +1,111 @@
+/*
+    The code was written by programmer Truong Tuan Anh
+    Thanks for watching and sharing
+*/
+@use "../abstracts";
+.help {
+  position: fixed;
+  right: 60px;
+  bottom: 70px;
+  display: flex;
+  flex-direction: column-reverse;
+  &__notification {
+    z-index: 3;
+    position: relative;
+    width: 400px;
+    padding: 20px;
+    max-width: 483px;
+    margin-top: 18px;
+    color: var(--text-main-color-3);
+    font-size: 0.8rem;
+    font-weight: 500;
+    line-height: 128%;
+    border-radius: 20px;
+    background: var(--main-color-white);
+    box-shadow: 0px 10px 15px -3px var(--box-shadow-main-1);
+    transition: all 0.2s ease;
+    cursor: pointer;
+    @include abstracts.breakpoint(md) {
+      width: 300px;
+    }
+  }
+  &__picture {
+    width: 100%;
+    height: 74px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  &__icon {
+    align-self: self-end;
+    cursor: pointer;
+    animation: ShakeIcon 1s ease infinite;
+    &:hover {
+      scale: 1.1;
+    }
+    &--social {
+      width: 20px;
+      height: 20px;
+    }
+    &--active {
+      animation: ShakeIcon 0.5s ease infinite;
+    }
+  }
+  &__cancel {
+    position: absolute;
+    left: -13px;
+    top: -8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background-color: var(--main-color-grey);
+    border-radius: 50%;
+    &:hover {
+      scale: 1.1;
+    }
+  }
+  &__triangle {
+    z-index: 1;
+    position: absolute;
+    border-radius: 2px;
+    right: 54px;
+    bottom: -6px;
+    width: 15px;
+    height: 15px;
+    background: var(--main-color-white);
+    box-shadow: 0px 10px 15px -3px var(--box-shadow-main-1);
+    transition: all 0.2s ease;
+    cursor: pointer;
+    rotate: 45deg;
+  }
+  &__action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    padding: 20px;
+    background: var(--main-color-grey);
+    &--wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: all 0.2 ease;
+    }
+  }
+  &__unActive {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-3px);
+    transition: all 0.2s ease; /* Thay đổi từ 0.2 thành 0.2s */
+  }
+
+  &__active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); /* Đảm bảo có thuộc tính này nếu cần */
+  }
+}

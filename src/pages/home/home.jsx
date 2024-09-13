@@ -1,19 +1,22 @@
 import React, { useState, useEffect, useRef } from "react";
 import Slider from "react-slick";
-
+import { Link } from "react-router-dom";
+import { Help } from "../../components/help/help";
 export const HomePage = () => {
   const [slides, setSlides] = useState([]);
   const [courses, setCourses] = useState([]);
-
+  const [shares, setShares] = useState([]);
   useEffect(() => {
     fetch(`${process.env.PUBLIC_URL}/json/db.json`)
       .then((response) => response.json())
       .then((data) => {
         setSlides(data.slideShow || []);
         setCourses(data.courses || []);
+        setShares(data.shares || []);
       })
       .catch((error) => console.log(error));
   }, []);
+  console.log(shares);
   const settings = {
     autoplay: true,
     autoplaySpeed: 2000,
@@ -25,6 +28,33 @@ export const HomePage = () => {
     initialSlide: 0,
   };
   const settingsCourses = {
+    autoplay: true,
+    autoplaySpeed: 2000,
+    infinite: true,
+    dots: false,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    initialSlide: 0,
+    arrows: false, // Ẩn mũi tên
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+  const settingsShare = {
     autoplay: true,
     autoplaySpeed: 2000,
     infinite: true,
@@ -260,6 +290,60 @@ export const HomePage = () => {
           </div>
         </div>
       </div>
+      <div className="shares">
+        <div className="shares__top">
+          <div className="shares__top--left">
+            <h2 className="shares__heading">Góc chia sẻ </h2>
+            <p className="shares__desc">
+              Học thầy không tày học bạn, không học bạn thì mình cùng học tiền
+              bối, những chia sẻ cách học lộ trình học từ những bậc tiền bối đi
+              trước cho chúng ta rút ra được những kinh nghiệm vô cùng quý báu,
+              ...
+            </p>
+          </div>
+          <div className="shares__top--right">
+            <Link to="#!" className="shares__link--top">
+              Xem tất cả
+            </Link>
+          </div>
+        </div>
+        <div className="shares__list">
+          <div className="slider-container">
+            <Slider {...settingsShare}>
+              {shares.map((share) => {
+                return (
+                  <div key={share.id} className="shares__item">
+                    <div className="shares__item--wrap">
+                      <picture className="shares__pictures">
+                        <img
+                          src={`${process.env.PUBLIC_URL}${share.img}`}
+                          alt=""
+                          className="shares__img"
+                        />
+                      </picture>
+                      <div className="shares__content">
+                        <div className="shares__date">
+                          <span>{share.date}</span>
+                        </div>
+                        <div className="separate"></div>
+                        <h1 className="shares__title line-clamp">
+                          {share.title}
+                        </h1>
+                        <div className="shares__link">
+                          <Link to="#!" className="btn">
+                            Xem thêm
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </Slider>
+          </div>
+        </div>
+      </div>
+      <Help></Help>
     </div>
   );
 };

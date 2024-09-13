@@ -75,6 +75,44 @@
       "time": "15 phút đọc"
     }
   ],
+  "shares": [
+    {
+      "id": 1,
+      "img": "/images/shares/item1.png",
+      "title": "ESLint là gì? Hướng dẫn cấu hình ESLint cho dự án Typescript",
+      "date": "05 September 2024"
+    },
+    {
+      "id": 2,
+      "img": "/images/shares/item2.png",
+      "title": "Python là gì? Những đặc điểm nổi bật và Ứng dụng của Python",
+      "date": "05 September 2024"
+    },
+    {
+      "id": 3,
+      "img": "/images/shares/item3.png",
+      "title": "Functional Programming là gì? Giải pháp cho Hệ thống đa luồng và Xử lý song song",
+      "date": "05 September 2024"
+    },
+    {
+      "id": 4,
+      "img": "/images/shares/item1.png",
+      "title": "How to become a pro web designer in 2022 and get remot job?",
+      "date": "05 September 2024"
+    },
+    {
+      "id": 5,
+      "img": "/images/shares/item2.png",
+      "title": "Functional Programming là gì? Giải pháp cho Hệ thống đa luồng và Xử lý song song",
+      "date": "05 September 2024"
+    },
+    {
+      "id": 6,
+      "img": "/images/shares/item3.png",
+      "title": "Functional Programming là gì? Giải pháp cho Hệ thống đa luồng và Xử lý song song",
+      "date": "05 September 2024"
+    }
+  ],
   "blog": {
     "newFeeds": [
       {

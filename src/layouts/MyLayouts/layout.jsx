@@ -10,6 +10,7 @@ import Logo from "../../components/logo/logo";
 import { LogoOnly } from "../../components/logo/logo_only";
 import { NavLink } from "react-router-dom";
 import { Search } from "../../components/search/search";
+import { Footer } from "../footer";
 const { Header, Sider, Content } = Layout;
 
 const MyLayOut = () => {
@@ -208,6 +209,7 @@ const MyLayOut = () => {
           >
             <MyRoute />
           </Content>
+          <Footer></Footer>
         </Layout>
         {collapsed === false ? (
           <div

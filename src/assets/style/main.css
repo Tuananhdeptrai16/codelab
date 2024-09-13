@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
     The code was written by programmer Truong Tuan Anh
     Thanks for watching and sharing !!!
@@ -1356,6 +1357,10 @@ table {
     The code was written by programmer Truong Tuan Anh
     Thanks for watching and sharing
 */
+/*
+    The code was written by programmer Truong Tuan Anh
+    Thanks for watching and sharing
+*/
 @keyframes gradientAnimation {
   0% {
     color: #000000; /* Black color */
@@ -1373,6 +1378,17 @@ table {
   }
   25%, 75% {
     scale: 0.9;
+  }
+  50% {
+    scale: 1.1;
+  }
+}
+@keyframes ShakeIcon {
+  0%, 100% {
+    translate: 0;
+  }
+  25%, 75% {
+    scale: 1;
   }
   50% {
     scale: 1.1;
@@ -1648,6 +1664,7 @@ table {
   background: var(--main-color-white);
   box-shadow: 0px 10px 15px -3px var(--box-shadow-main-1);
   transition: all 0.2s ease;
+  cursor: pointer;
 }
 .courses__content--wrap:hover {
   transform: translateY(-5px);
@@ -1694,6 +1711,122 @@ table {
   }
 }
 
+.shares {
+  margin-top: 100px;
+}
+@media (max-width: 991.98px) {
+  .shares {
+    margin-top: 60px;
+  }
+}
+.shares__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 767.98px) {
+  .shares__top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+}
+.shares__heading {
+  color: var(--text-main-color);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 123.81%;
+}
+@media (max-width: 991.98px) {
+  .shares__heading {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 767.98px) {
+  .shares__heading {
+    font-size: 1.4rem;
+  }
+}
+.shares__desc {
+  max-width: 483px;
+  margin-top: 18px;
+  color: var(--text-main-color-3);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 128%;
+}
+@media (max-width: 767.98px) {
+  .shares__desc {
+    max-width: 283px;
+    font-size: 0.8rem;
+  }
+}
+.shares__link--top {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--main-color);
+}
+.shares__link--top:hover {
+  text-decoration: underline;
+}
+.shares__list {
+  margin-top: 60px;
+}
+.shares__list .slider-container {
+  height: 600px;
+}
+@media (max-width: 991.98px) {
+  .shares__list {
+    margin-top: 40px;
+  }
+}
+.shares__item {
+  padding: 10px;
+}
+.shares__item--wrap {
+  border-radius: 20px;
+  background: var(--main-color-white);
+  box-shadow: 0px 10px 15px -3px var(--box-shadow-main-1);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.shares__item--wrap:hover {
+  transform: translateY(-3px);
+}
+.shares__img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 10px 0 0;
+}
+.shares__content {
+  padding: 20px;
+}
+@media (max-width: 767.98px) {
+  .shares__content {
+    padding: 10px;
+  }
+}
+.shares__date {
+  color: #5f5b53;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 185.714%;
+}
+.shares__title {
+  color: var(--text-main-color);
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 150%;
+}
+@media (max-width: 991.98px) {
+  .shares__title {
+    font-size: 1rem;
+  }
+}
+.shares__link {
+  margin-top: 20px;
+}
+
 .overlay {
   display: none;
 }
@@ -1711,6 +1844,23 @@ table {
   }
 }
 
+.separate {
+  margin: 12px 0;
+  width: 60%;
+  height: 1px;
+  background: #ccc;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 118px;
+  height: 50px;
+  border-radius: 25px;
+  background: #ffb900;
+}
+
 /*
     The code was written by programmer Truong Tuan Anh
     Thanks for watching and sharing !!!
@@ -1726,6 +1876,7 @@ html.dark {
 html {
   --main-color: #ffb900;
   --main-color-white: #ffff;
+  --main-color-grey: #e2dfda;
   --text-main-color: #1a162e;
   --text-main-color-2: #292e39;
   --text-main-color-3: #9e9da8;
@@ -1803,7 +1954,7 @@ html {
     Thanks for watching and sharing
 */
 .layout {
-  height: 10000000px;
+  height: auto;
 }
 .layout__background {
   position: relative !important;
@@ -1835,6 +1986,86 @@ html {
 .active {
   font-weight: 600;
   color: var(--text-main-color-2);
+}
+
+/*
+    The code was written by programmer Truong Tuan Anh
+    Thanks for watching and sharing
+*/
+.footer {
+  padding: 20px;
+  border-top: 1px solid #d9d9d9;
+  width: 100%;
+  background: #eeeeee;
+}
+.footer__logo {
+  display: flex;
+  justify-content: flex-start;
+}
+.footer__logo .logo {
+  justify-content: flex-start;
+}
+.footer__desc {
+  max-width: 260px;
+  margin-top: 18px;
+  color: var(--text-main-color-3);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 128%;
+}
+@media (max-width: 1199.98px) {
+  .footer__desc {
+    max-width: 350px;
+  }
+}
+@media (max-width: 991.98px) {
+  .footer__desc {
+    max-width: 300px;
+  }
+}
+@media (max-width: 767.98px) {
+  .footer__desc {
+    max-width: 500px;
+  }
+}
+.footer__social {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+}
+.footer__link {
+  color: var(--text-main-color-2);
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 185.714%;
+}
+.footer__link--active {
+  font-weight: 700;
+}
+.footer__link span {
+  font-weight: 800;
+}
+.footer__item + .footer__item {
+  margin-top: 20px;
+}
+.footer__separate {
+  width: 100%;
+}
+.footer__copyright {
+  margin-top: 10px;
+  text-align: center;
+  font-style: 1rem;
+  color: var(--text-main-color-3);
+  font-weight: 500;
+  line-height: 148%;
+}
+.footer__more {
+  display: block;
+}
+@media (max-width: 1199.98px) {
+  .footer__more {
+    width: 400px;
+  }
 }
 
 .logo {
@@ -1920,6 +2151,118 @@ html {
 .search__icon:hover {
   scale: 1.1;
   color: var(--text-main-color-2);
+}
+
+/*
+    The code was written by programmer Truong Tuan Anh
+    Thanks for watching and sharing
+*/
+.help {
+  position: fixed;
+  right: 60px;
+  bottom: 70px;
+  display: flex;
+  flex-direction: column-reverse;
+}
+.help__notification {
+  z-index: 3;
+  position: relative;
+  width: 400px;
+  padding: 20px;
+  max-width: 483px;
+  margin-top: 18px;
+  color: var(--text-main-color-3);
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 128%;
+  border-radius: 20px;
+  background: var(--main-color-white);
+  box-shadow: 0px 10px 15px -3px var(--box-shadow-main-1);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+@media (max-width: 767.98px) {
+  .help__notification {
+    width: 300px;
+  }
+}
+.help__picture {
+  width: 100%;
+  height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.help__icon {
+  align-self: self-end;
+  cursor: pointer;
+  animation: ShakeIcon 1s ease infinite;
+}
+.help__icon:hover {
+  scale: 1.1;
+}
+.help__icon--social {
+  width: 20px;
+  height: 20px;
+}
+.help__icon--active {
+  animation: ShakeIcon 0.5s ease infinite;
+}
+.help__cancel {
+  position: absolute;
+  left: -13px;
+  top: -8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background-color: var(--main-color-grey);
+  border-radius: 50%;
+}
+.help__cancel:hover {
+  scale: 1.1;
+}
+.help__triangle {
+  z-index: 1;
+  position: absolute;
+  border-radius: 2px;
+  right: 54px;
+  bottom: -6px;
+  width: 15px;
+  height: 15px;
+  background: var(--main-color-white);
+  box-shadow: 0px 10px 15px -3px var(--box-shadow-main-1);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  rotate: 45deg;
+}
+.help__action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  padding: 20px;
+  background: var(--main-color-grey);
+}
+.help__action--wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: all 0.2 ease;
+}
+.help__unActive {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-3px);
+  transition: all 0.2s ease; /* Thay đổi từ 0.2 thành 0.2s */
+}
+.help__active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0); /* Đảm bảo có thuộc tính này nếu cần */
 }
 
 /*# sourceMappingURL=main.css.map */
