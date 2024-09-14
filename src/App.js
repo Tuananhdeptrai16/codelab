@@ -6,23 +6,27 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, useLocation } from "react-router-dom";
 import MyLayOut from "./layouts/MyLayouts/layout";
 import StoreContext from "./db/context";
-import { PageNotFound } from "./pages/404Page/pagenotfound";
+import { ComingSoon } from "./pages/commingsoon/commingsoon";
+import LayOutLogin from "./layouts/MyLayouts/layoutlogin";
 
 const AppContent = () => {
-  const [page, setPage] = useState(true);
+  const [page, setPage] = useState(false);
+  const [pageLogin, setPageLogin] = useState(true);
   const location = useLocation();
   useEffect(() => {
-    const validPaths = ["/codelab/", "/codelab/home"];
-    if (validPaths.includes(location.pathname)) {
-      setPage(true);
-    } else {
-      setPage(false);
-    }
+    const validPaths = ["/codelab/home"];
+    const validPathsPageLogin = ["/codelab/", "/codelab/homelogin"];
+    validPathsPageLogin.includes(location.pathname)
+      ? setPageLogin(true)
+      : setPageLogin(false);
+    validPaths.includes(location.pathname) ? setPage(true) : setPage(false);
   }, [location]);
-
+  console.log(pageLogin);
   return (
     <StoreContext.Provider value={{ location }}>
-      {page === true ? <MyLayOut /> : <PageNotFound></PageNotFound>}
+      <StoreContext.Provider value={{ location }}>
+        {pageLogin ? <LayOutLogin /> : page ? <MyLayOut /> : <ComingSoon />}
+      </StoreContext.Provider>
     </StoreContext.Provider>
   );
 };

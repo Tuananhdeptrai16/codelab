@@ -361,5 +361,9 @@
   width: 118px;
   height: 50px;
   border-radius: 25px;
-  background: #ffb900;
+  background: var(--main-color-grey);
+  font-weight: 500;
+  &:hover {
+    background: var(--main-color);
+  }
 }
