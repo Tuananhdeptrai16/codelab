@@ -1975,6 +1975,7 @@ html.dark {
 html {
   --main-color: #ffb900;
   --main-color-white: #ffff;
+  --main-color-red: red;
   --main-color-grey: #e2dfda;
   --text-main-color: #1a162e;
   --text-main-color-2: #292e39;
@@ -1986,6 +1987,7 @@ html {
   --background-hover-navbar: #b8b8bb;
   --background-color-2: #9e9da8;
   --box-shadow-main-1: rgba(0, 0, 0, 0.08);
+  --box-shadow-main-2: rgba(0, 0, 0, 0.2);
 }
 
 /*
@@ -1994,12 +1996,12 @@ html {
 */
 .header__wrap {
   position: relative;
-  background: white;
+  background: var(--main-color-white);
   height: 64px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 0.5px solid #d9d9d9;
+  border-bottom: 0.5px solid var(--main-color-grey-1);
 }
 .header__action {
   margin-right: 16px;
@@ -2035,8 +2037,8 @@ html {
   height: 15px;
   width: 15px;
   border-radius: 50%;
-  background-color: red;
-  color: white;
+  background-color: var(--main-color-red);
+  color: var(--main-color-white);
   font-size: 0.8rem;
   font-weight: bold;
 }
@@ -2061,10 +2063,10 @@ html {
   position: absolute;
   top: 71px;
   right: -10px;
-  background: white;
+  background: var(--main-color-white);
   z-index: 3;
   border-radius: 20px;
-  box-shadow: 0 -4px 32px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 -4px 32px var(--box-shadow-main-2);
 }
 @media (max-width: 767.98px) {
   .header__bell {
@@ -2144,9 +2146,9 @@ html {
   top: 70px;
   right: 0;
   width: 300px;
-  background: #fff;
+  background: var(--main-color-white);
   border-radius: 20px;
-  box-shadow: 0 -4px 32px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 -4px 32px var(--box-shadow-main-2);
 }
 .header__user--wrap {
   padding: 20px;
@@ -2166,7 +2168,7 @@ html {
 .header__user--name {
   font-size: 1.2rem;
   font-weight: 600;
-  color: #292929;
+  color: var(--text-main-color-2);
   line-height: 128%;
 }
 .header__user--id {
@@ -2380,14 +2382,14 @@ html {
   line-height: 100%;
 }
 .search__input:hover {
-  border: 2px solid lightgrey;
+  border: 2px solid var(--main-color-grey-1);
   box-shadow: 0px 0px 20px -17px;
 }
 .search__input:active {
   transform: scale(0.95);
 }
 .search__input:focus {
-  border: 2px solid #9e9da8;
+  border: 2px solid var(--main-color-grey);
 }
 .search__input::placeholder {
   color: var(--text-main-color-2);
