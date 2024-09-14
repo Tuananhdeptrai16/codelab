@@ -60,7 +60,7 @@ const MyLayOut = () => {
     {
       key: "2",
       icon: (
-        <NavLink to="/codelab/study">
+        <NavLink to="/codelab/studyplant">
           {" "}
           <img
             src={`${process.env.PUBLIC_URL}/images/icon/study.svg`}

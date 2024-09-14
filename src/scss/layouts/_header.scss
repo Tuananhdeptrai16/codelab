@@ -4,6 +4,40 @@
 */
 @use "../abstracts";
 .header {
+  &__button {
+    display: flex;
+    gap: 10px;
+  }
+  &__btn--singup,
+  &__btn--login {
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: background 0.2s ease;
+    & a {
+      padding: 10px;
+      &:hover {
+        color: var(--main-color-dark);
+      }
+    }
+  }
+  &__btn--singup {
+    background: var(--main-color);
+    &:hover {
+      background: var(--main-color-grey);
+    }
+  }
+  &__btn--login {
+    border: 1px solid var(--main-color-dark);
+    background: var(--main-color-white);
+    &:hover {
+      background: var(--main-color-grey);
+    }
+    & a {
+      &:hover {
+        color: var(--main-color-dark);
+      }
+    }
+  }
   &__wrap {
     position: relative;
     background: var(--main-color-white);
@@ -37,7 +71,7 @@
   }
   &__number--notification {
     position: absolute;
-    top: 15px;
+    top: -6px;
     right: -6px;
     display: flex;
     justify-content: center;

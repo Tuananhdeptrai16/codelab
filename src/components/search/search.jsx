@@ -5,7 +5,7 @@
 import React from "react";
 export const Search = () => {
   return (
-    <div className="search">
+    <div className="search d-md-none">
       <input
         className="search__input"
         type="text"

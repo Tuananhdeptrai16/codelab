@@ -1863,7 +1863,11 @@ table {
   width: 118px;
   height: 50px;
   border-radius: 25px;
-  background: #ffb900;
+  background: var(--main-color-grey);
+  font-weight: 500;
+}
+.btn:hover {
+  background: var(--main-color);
 }
 
 .notfound {
@@ -1960,6 +1964,211 @@ table {
   }
 }
 
+.coming {
+  padding: 80px;
+  display: flex;
+}
+@media (max-width: 991.98px) {
+  .coming {
+    padding: 20px;
+  }
+}
+@media (max-width: 767.98px) {
+  .coming {
+    padding: 20px;
+    flex-direction: column-reverse;
+  }
+}
+.coming__content {
+  margin-top: 139px;
+}
+@media (max-width: 1199.98px) {
+  .coming__content {
+    margin-top: 100px;
+  }
+}
+@media (max-width: 991.98px) {
+  .coming__content {
+    margin-top: 50px;
+  }
+}
+.coming__heading {
+  color: #2d3134;
+  font-size: 4.2rem;
+  font-weight: 600;
+  line-height: 111.29%;
+}
+@media (max-width: 1199.98px) {
+  .coming__heading {
+    font-size: 3.2rem;
+  }
+}
+@media (max-width: 991.98px) {
+  .coming__heading {
+    font-size: 2.2rem;
+  }
+}
+@media (max-width: 767.98px) {
+  .coming__heading {
+    font-size: 3rem;
+  }
+}
+.coming__countdown {
+  margin-top: 30px;
+  display: flex;
+  gap: 50px;
+}
+@media (max-width: 767.98px) {
+  .coming__countdown {
+    gap: 20px;
+  }
+}
+.coming__cover {
+  position: relative;
+  padding-top: 100%;
+}
+@media (max-width: 767.98px) {
+  .coming__cover {
+    width: 100%;
+  }
+}
+.coming__image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+}
+.coming__number {
+  color: #ff7b29;
+  text-align: center;
+  font-size: 3.2rem;
+  font-weight: 600;
+  line-height: 111.29%;
+}
+@media (max-width: 991.98px) {
+  .coming__number {
+    font-size: 2.2rem;
+  }
+}
+@media (max-width: 767.98px) {
+  .coming__number {
+    font-size: 2rem;
+  }
+}
+.coming__title {
+  color: #676a6c;
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 175%;
+}
+@media (max-width: 991.98px) {
+  .coming__title {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 767.98px) {
+  .coming__title {
+    font-size: 1.2rem;
+  }
+}
+.coming__notification {
+  margin-top: 40px;
+}
+@media (max-width: 1199.98px) {
+  .coming__notification {
+    margin-top: 40px;
+  }
+}
+.coming__notification--desc {
+  color: #2d3134;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 133.333%;
+}
+@media (max-width: 1199.98px) {
+  .coming__notification--desc {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 991.98px) {
+  .coming__notification--desc {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 767.98px) {
+  .coming__notification--desc {
+    font-size: 1.2rem;
+  }
+}
+.coming__notification--input {
+  width: 327px;
+  height: 66px;
+  border-radius: 12px;
+  border: 1px solid #ececec;
+  background: #fff;
+  padding: 10px;
+  color: #676a6c;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 133.333%;
+}
+.coming__notification--input::placeholder {
+  color: #676a6c;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 133.333%;
+}
+.coming__notification--input:hover {
+  border: 2px solid lightgrey;
+  box-shadow: 0px 0px 20px -17px;
+}
+.coming__notification--input:active {
+  transform: scale(0.95);
+}
+.coming__notification--input:focus {
+  border: 2px solid grey;
+}
+.coming__notification--input::placeholder {
+  color: #b3b4b5;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 100%;
+}
+@media (max-width: 991.98px) {
+  .coming__notification--input {
+    width: 250px;
+    height: 50px;
+  }
+}
+.coming__input {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+}
+@media (max-width: 767.98px) {
+  .coming__input {
+    flex-direction: column;
+    gap: 14px;
+  }
+}
+.coming__btn {
+  min-width: 191px;
+  min-height: 66px;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 100%;
+  transition: all 0.2s ease;
+}
+@media (max-width: 991.98px) {
+  .coming__btn {
+    font-size: 1.1rem;
+    min-width: 100px;
+    min-height: 50px;
+  }
+}
+
 /*
     The code was written by programmer Truong Tuan Anh
     Thanks for watching and sharing !!!
@@ -1976,7 +2185,9 @@ html {
   --main-color: #ffb900;
   --main-color-white: #ffff;
   --main-color-red: red;
+  --main-color-dark: #000;
   --main-color-grey: #e2dfda;
+  --main-color-grey-1: #e2dfda;
   --text-main-color: #1a162e;
   --text-main-color-2: #292e39;
   --text-main-color-3: #9e9da8;
@@ -1994,6 +2205,37 @@ html {
     The code was written by programmer Truong Tuan Anh
     Thanks for watching and sharing
 */
+.header__button {
+  display: flex;
+  gap: 10px;
+}
+.header__btn--singup, .header__btn--login {
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: background 0.2s ease;
+}
+.header__btn--singup a, .header__btn--login a {
+  padding: 10px;
+}
+.header__btn--singup a:hover, .header__btn--login a:hover {
+  color: var(--main-color-dark);
+}
+.header__btn--singup {
+  background: var(--main-color);
+}
+.header__btn--singup:hover {
+  background: var(--main-color-grey);
+}
+.header__btn--login {
+  border: 1px solid var(--main-color-dark);
+  background: var(--main-color-white);
+}
+.header__btn--login:hover {
+  background: var(--main-color-grey);
+}
+.header__btn--login a:hover {
+  color: var(--main-color-dark);
+}
 .header__wrap {
   position: relative;
   background: var(--main-color-white);
@@ -2029,7 +2271,7 @@ html {
 }
 .header__number--notification {
   position: absolute;
-  top: 15px;
+  top: -6px;
   right: -6px;
   display: flex;
   justify-content: center;
