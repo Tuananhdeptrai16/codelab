@@ -12,7 +12,7 @@ const AppContent = () => {
   const [page, setPage] = useState(true);
   const location = useLocation();
   useEffect(() => {
-    const validPaths = ["/codelab/", "/codelab/home"];
+    const validPaths = ["/codelab", "/codelab/home"];
     if (validPaths.includes(location.pathname)) {
       setPage(true);
     } else {

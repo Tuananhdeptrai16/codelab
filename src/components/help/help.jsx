@@ -11,8 +11,7 @@ export const Help = () => {
 
     return () => clearInterval(intervalId);
   }, []);
-  console.log(notification);
-  console.log(className);
+
   return (
     <div className="help">
       <button className="help__picture">

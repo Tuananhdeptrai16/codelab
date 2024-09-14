@@ -16,7 +16,6 @@ export const HomePage = () => {
       })
       .catch((error) => console.log(error));
   }, []);
-  console.log(shares);
   const settings = {
     autoplay: true,
     autoplaySpeed: 2000,

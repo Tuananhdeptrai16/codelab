@@ -4,6 +4,9 @@
 */
 .search {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 244px;
   height: 100%;
   &__input {

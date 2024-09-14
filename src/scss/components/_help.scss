@@ -12,6 +12,9 @@
   @include abstracts.breakpoint(md) {
     right: 30px;
   }
+  &__desc {
+    line-height: 128%;
+  }
   &__notification {
     z-index: 3;
     position: relative;
