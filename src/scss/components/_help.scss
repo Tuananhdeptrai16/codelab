@@ -4,19 +4,44 @@
 @use "../abstracts";
 .help {
   position: fixed;
+  width: 400px;
   right: 60px;
-  bottom: 70px;
+  bottom: 200px;
   display: flex;
   flex-direction: column-reverse;
   @include abstracts.breakpoint(md) {
     right: 30px;
   }
+  &__icon {
+    margin-bottom: 25px;
+    &-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 80px;
+      height: 80px;
+      background: transparent;
+    }
+  }
+  &__setbg {
+    background: var(--main-color-grey);
+    border-radius: 50%;
+    padding: 20px;
+  }
+
   &__desc {
     line-height: 128%;
   }
+  &__icon--social {
+    width: 50px;
+    height: 50px;
+  }
+
   &__notification {
     z-index: 3;
-    position: relative;
+    position: absolute;
+    left: 0;
+    top: -70px;
     width: 400px;
     padding: 20px;
     max-width: 483px;
@@ -90,15 +115,17 @@
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     padding: 20px;
     background: var(--main-color-grey);
     &--wrap {
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      transition: all 0.2 ease;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      transition: all 0.2s ease;
     }
   }
   &__unActive {

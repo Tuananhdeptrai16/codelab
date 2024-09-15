@@ -17,7 +17,6 @@ export const Login = () => {
     e.preventDefault();
     setError(Validation(values));
   };
-  console.log(show);
   return (
     <div className="login">
       <div
@@ -69,6 +68,7 @@ export const Login = () => {
                   onChange={handleChange}
                   type="email"
                   name="email"
+                  autoComplete="username"
                   required
                   autoFocus
                   placeholder="Email"
@@ -101,6 +101,7 @@ export const Login = () => {
                   onChange={handleChange}
                   name="password"
                   type="password"
+                  autoComplete="current-password"
                   required
                   autoFocus
                   placeholder="Mật khẩu "
@@ -140,7 +141,7 @@ export const Login = () => {
                       id=""
                       className="input__default"
                     />
-                    <span class="input__checkmark"></span>
+                    <span className="input__checkmark"></span>
                   </div>
                   <p className="input__default--title">Đặt làm mặc định</p>
                 </div>
