@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
 import { Help } from "../../components/help/help";
+
 export const HomePage = () => {
   const [slides, setSlides] = useState([]);
   const [courses, setCourses] = useState([]);
@@ -142,6 +143,7 @@ export const HomePage = () => {
             className="slide__button slide__prev"
           >
             <svg
+              className="icon"
               width="12"
               height="20"
               viewBox="0 0 12 20"
@@ -162,6 +164,7 @@ export const HomePage = () => {
             className="slide__button slide__next"
           >
             <svg
+              className="icon"
               width="12"
               height="20"
               viewBox="0 0 12 20"
@@ -256,13 +259,13 @@ export const HomePage = () => {
                             {likedCourses.includes(course.id) ? (
                               <img
                                 src={`${process.env.PUBLIC_URL}/images/icon/heartRed.svg`}
-                                className="courses__heart courses__active"
+                                className="courses__heart courses__active "
                                 alt=""
                               />
                             ) : (
                               <img
                                 src={`${process.env.PUBLIC_URL}/images/icon/heart.svg`}
-                                className="courses__heart "
+                                className="courses__heart icon"
                                 alt=""
                               />
                             )}

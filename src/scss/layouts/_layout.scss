@@ -3,11 +3,13 @@
 
 .layout {
   height: auto;
+  background: var(--color-background-layout) !important;
   &__background {
     position: relative !important;
     z-index: 21;
-    background: var(--background-navbar) !important;
+    background: var(--color-background-layout) !important;
     width: 200px !important;
+    box-shadow: 0px 40px 90px 20px var(--boxshadow-main);
   }
 }
 .nav {
@@ -21,6 +23,7 @@
   &__icon {
     width: 24px !important;
     height: 24px;
+    filter: var(--filter--icon);
     &--active {
       animation: shake 1s ease infinite;
     }

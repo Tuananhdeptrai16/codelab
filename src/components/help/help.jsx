@@ -33,7 +33,7 @@ export const Help = () => {
                 className="help__icon--social"
               />
             </NavLink>
-            <NavLink
+            <a
               href="tel:+84373696603"
               className={`help__action help__unActive ${
                 className && "help__active"
@@ -44,7 +44,7 @@ export const Help = () => {
                 alt=""
                 className="help__icon--social help__icon--active"
               />
-            </NavLink>
+            </a>
             <div className="help__icon-wrap">
               <img
                 src={`${process.env.PUBLIC_URL}/images/icon/${
@@ -73,11 +73,6 @@ export const Help = () => {
             Xin chào, CodeLab rất vui được hỗ trợ bạn. Hãy chọn cách thức kết
             nối và gửi vấn đề cụ thể mà bạn cần CodeLab hỗ trợ nhé!
           </p>
-          <img
-            src={`${process.env.PUBLIC_URL}/images/icon/tamgiac.png`}
-            alt=""
-            className="help__triangle"
-          />
         </div>
       )}
     </div>

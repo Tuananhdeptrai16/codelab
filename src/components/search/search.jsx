@@ -13,7 +13,7 @@ export const Search = () => {
       <button className="search__button">
         <img
           src={`${process.env.PUBLIC_URL}/images/icon/search.svg`}
-          className="search__icon"
+          className="search__icon icon"
           alt=""
         />
       </button>

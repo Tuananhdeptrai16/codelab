@@ -9,22 +9,32 @@ import { ComingSoon } from "./pages/commingsoon/commingsoon";
 import LayOutLogin from "./layouts/MyLayouts/layoutlogin";
 import { Login } from "./pages/login/login";
 import { SignUp } from "./pages/signUp/singup";
+import { ResetPassword } from "./pages/reset/resetpassword";
 
 const AppContent = () => {
   const [page, setPage] = useState(false);
   const [homePageLogin, setHomePageLogin] = useState(true);
   const [login, setLogin] = useState(true);
   const [signUp, setSignUp] = useState(true);
-
+  const [ResetPassWordPage, setResetPassWordPage] = useState(true);
+  const [theme, setTheme] = useState("light");
+  const handleChangeTheme = (prevTheme) => {
+    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+  };
   const location = useLocation();
   useEffect(() => {
     const validPaths = ["/codelab/home"];
     const validPathsPageLogin = ["/codelab/", "/codelab/homelogin"];
     const validPathsLogin = ["/codelab/login"];
     const validPathsSignUp = ["/codelab/signup"];
+    const validPathsResetPassword = ["/codelab/resetpassword"];
+
     validPathsSignUp.includes(location.pathname)
       ? setSignUp(true)
       : setSignUp(false);
+    validPathsResetPassword.includes(location.pathname)
+      ? setResetPassWordPage(true)
+      : setResetPassWordPage(false);
     validPathsPageLogin.includes(location.pathname)
       ? setHomePageLogin(true)
       : setHomePageLogin(false);
@@ -34,21 +44,21 @@ const AppContent = () => {
       : setLogin(false);
   }, [location]);
   return (
-    <StoreContext.Provider value={{ location }}>
-      <StoreContext.Provider value={{ location }}>
-        {signUp ? (
-          <SignUp></SignUp>
-        ) : login ? (
-          <Login></Login>
-        ) : homePageLogin ? (
-          <LayOutLogin />
-        ) : page ? (
-          <MyLayOut />
-        ) : (
-          <ComingSoon />
-          // <PageNotFound />
-        )}
-      </StoreContext.Provider>
+    <StoreContext.Provider value={{ location, theme, handleChangeTheme }}>
+      {ResetPassWordPage ? (
+        <ResetPassword></ResetPassword>
+      ) : signUp ? (
+        <SignUp></SignUp>
+      ) : login ? (
+        <Login></Login>
+      ) : homePageLogin ? (
+        <LayOutLogin />
+      ) : page ? (
+        <MyLayOut />
+      ) : (
+        <ComingSoon />
+        // <PageNotFound />
+      )}
     </StoreContext.Provider>
   );
 };

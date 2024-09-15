@@ -40,7 +40,7 @@
 }
 
 .slick-dots li.slick-active button {
-  background: var(--background-color-2) !important;
+  background: var(--background-color-main-2) !important;
   z-index: 2;
   width: 32px !important;
   height: 4px !important;
@@ -52,4 +52,7 @@
 }
 .slick-dots li button:before {
   display: none;
+}
+:where(.css-dev-only-do-not-override-qnu6hi).ant-layout {
+  background: transparent;
 }

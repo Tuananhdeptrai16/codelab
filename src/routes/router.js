@@ -6,6 +6,7 @@ import { ComingSoon } from "../pages/commingsoon/commingsoon";
 import { HomePageLogin } from "../pages/home/homelogin";
 import { Login } from "../pages/login/login";
 import { SignUp } from "../pages/signUp/singup";
+import { ResetPassword } from "../pages/reset/resetpassword";
 
 const MyRoute = () => {
   return (
@@ -22,7 +23,7 @@ const MyRoute = () => {
       <Route path="/codelab/mycourses" element={<ComingSoon />}></Route>
       <Route path="/codelab/login" element={<Login />}></Route>
       <Route path="/codelab/signup" element={<SignUp />}></Route>
-      <Route path="/codelab/resetpassword" element={<ComingSoon />}></Route>
+      <Route path="/codelab/resetpassword" element={<ResetPassword />}></Route>
 
       <Route path="*" element={<PageNotFound />} />
     </Routes>

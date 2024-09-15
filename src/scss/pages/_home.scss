@@ -45,14 +45,14 @@
     justify-content: center;
     width: 30px;
     height: 30px;
-    background: #ffff;
+    background: var(--background-button);
     border-radius: 50%;
-    box-shadow: 0 3px 6px var(--box-shadow-light-main);
+    box-shadow: 0 3px 6px var(--boxshadow-main);
     cursor: pointer;
     svg {
       width: 10px;
       height: 10px;
-      transition: all 0.5 ease;
+      transition: all 0.5s ease;
     }
   }
   &__prev {
@@ -73,6 +73,7 @@
   @include abstracts.breakpoint(lg) {
     margin-top: 60px;
   }
+
   &__top {
     display: flex;
     justify-content: space-between;
@@ -99,7 +100,7 @@
   &__desc {
     max-width: 483px;
     margin-top: 18px;
-    color: var(--text-main-color-3);
+    color: var(--color-text-2);
     font-size: 1rem;
     font-weight: 500;
     line-height: 128%;
@@ -154,6 +155,8 @@
   }
   &__content {
     padding: 20px;
+    background: var(--background--color-main-3);
+    border-radius: 0 0 20px 20px;
     @include abstracts.breakpoint(md) {
       padding: 10px;
     }
@@ -205,7 +208,7 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    box-shadow: 7px 14px 32px 11px var(--box-shadow-main-1);
+    box-shadow: 7px 14px 32px 11px var(--box-shadow-main);
     &:hover {
       scale: 1.1;
     }
@@ -218,7 +221,7 @@
   &__price {
     font-size: 1.2rem;
     font-weight: 600;
-    color: var(--main-color);
+    color: var(--color-text-2);
     @include abstracts.breakpoint(lg) {
       font-size: 1rem;
     }
@@ -263,7 +266,7 @@
   &__desc {
     max-width: 483px;
     margin-top: 18px;
-    color: var(--text-main-color-3);
+    color: var(--color-text-2);
     font-size: 1rem;
     font-weight: 500;
     line-height: 128%;
@@ -309,6 +312,8 @@
   }
   &__content {
     padding: 20px;
+    border-radius: 0 0 20px 20px;
+    background: var(--background--color-main-3);
     @include abstracts.breakpoint(md) {
       padding: 10px;
     }
@@ -362,6 +367,7 @@
   border-radius: 25px;
   background: var(--main-color-grey);
   font-weight: 500;
+  color: var(--color-text);
   &:hover {
     background: var(--main-color);
   }

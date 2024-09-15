@@ -23,28 +23,28 @@ export const Footer = () => {
                 <img
                   src={`${process.env.PUBLIC_URL}/images/icon/twitter.svg`}
                   alt=""
-                  className="footer__icon--social"
+                  className="footer__icon--social icon"
                 />
               </div>
               <div className="footer__icon">
                 <img
                   src={`${process.env.PUBLIC_URL}/images/icon/Facebook.svg`}
                   alt=""
-                  className="footer__icon--social"
+                  className="footer__icon--social icon"
                 />
               </div>
               <div className="footer__icon">
                 <img
                   src={`${process.env.PUBLIC_URL}/images/icon/Linkedin.svg`}
                   alt=""
-                  className="footer__icon--social"
+                  className="footer__icon--social icon"
                 />
               </div>
               <div className="footer__icon">
                 <img
                   src={`${process.env.PUBLIC_URL}/images/icon/instagram.svg`}
                   alt=""
-                  className="footer__icon--social"
+                  className="footer__icon--social icon"
                 />
               </div>
             </div>

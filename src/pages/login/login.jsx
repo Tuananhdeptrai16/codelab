@@ -147,7 +147,7 @@ export const Login = () => {
                   </div>
                   <p className="input__default--title">Đặt làm mặc định</p>
                 </div>
-                <NavLink to="./codelab/forget" className="input__forgot">
+                <NavLink to="./codelab/resetpassword" className="input__forgot">
                   Quên mật khẩu ?
                 </NavLink>
               </div>

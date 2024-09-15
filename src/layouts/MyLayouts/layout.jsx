@@ -2,7 +2,7 @@
 // Thanks for watching and sharing
 
 import { Link } from "react-router-dom";
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, useContext } from "react";
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 import { Button, Layout, Menu } from "antd";
 import MyRoute from "../../routes/router";
@@ -11,14 +11,17 @@ import { LogoOnly } from "../../components/logo/logo_only";
 import { NavLink } from "react-router-dom";
 import { Search } from "../../components/search/search";
 import { Footer } from "../footer";
+import StoreContext from "../../db/context";
 const { Header, Sider, Content } = Layout;
 const MyLayOut = () => {
+  const { theme, handleChangeTheme } = useContext(StoreContext);
   const [collapsed, setCollapsed] = useState(true);
   const [notification, setNotification] = useState(false);
   const [showUser, setShowUser] = useState(false);
   const bellRef = useRef(null);
   const userRef = useRef(null);
   useEffect(() => {
+    document.documentElement.className = theme; // Thay đổi class của thẻ `html`
     const handleClickOutSide = (e) => {
       if (bellRef.current && !bellRef.current.contains(e.target)) {
         setNotification(false);
@@ -31,8 +34,8 @@ const MyLayOut = () => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutSide);
     };
-  }, []);
-
+  }, [theme]);
+  console.log(theme);
   const menuItems = [
     {
       key: "1",
@@ -173,12 +176,23 @@ const MyLayOut = () => {
           trigger={null}
           collapsible
           collapsed={collapsed}
-          className={`layout__background  ${
-            collapsed === true ? "d-md-none" : <LogoOnly />
+          className={`layout__background ${
+            collapsed ? "d-md-none" : "logo-only"
           }`}
         >
           {collapsed === false ? <Logo /> : <LogoOnly />}
-          <Menu theme={"#eeeee"} mode="inline" items={menuItems} />
+          <Menu
+            style={{
+              backgroundColor:
+                theme === "light"
+                  ? "#f5f5f5f5"
+                  : theme === "dark"
+                  ? "#171c28"
+                  : "#f5f5f5f5",
+            }}
+            mode="inline"
+            items={menuItems}
+          />
         </Sider>
         <Layout>
           <Header
@@ -187,10 +201,25 @@ const MyLayOut = () => {
               position: "relative",
             }}
           >
-            <div className="header__wrap">
+            <div
+              className="header__wrap"
+              style={{
+                backgroundColor: theme === "light" ? "#fff" : "#292E39",
+              }}
+            >
               <Button
-                type="text"
-                icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+                type="button"
+                icon={
+                  collapsed ? (
+                    <MenuUnfoldOutlined
+                      style={{ color: theme === "light" ? "#292E39" : "#ffff" }}
+                    />
+                  ) : (
+                    <MenuFoldOutlined
+                      style={{ color: theme === "light" ? "#292E39" : "#ffff" }}
+                    />
+                  )
+                }
                 onClick={() => setCollapsed(!collapsed)}
                 style={{
                   fontSize: "20px",
@@ -205,7 +234,7 @@ const MyLayOut = () => {
                     <img
                       src={`${process.env.PUBLIC_URL}/images/icon/notification.svg`}
                       alt=""
-                      className="header__notification--icon"
+                      className="header__notification--icon icon"
                     />
                   </button>
                   <span className="header__number--notification">1</span>
@@ -330,8 +359,12 @@ const MyLayOut = () => {
                             </Link>
                           </li>
                           <li>
-                            <button className="header__user--theme">
-                              Chủ đề : <span>Sáng</span>
+                            <button
+                              onClick={() => handleChangeTheme(theme)}
+                              className="header__user--theme"
+                            >
+                              Chủ đề :{" "}
+                              <span>{theme === "light" ? "Tối" : "Sáng"}</span>
                             </button>
                           </li>
                           <div className="header__user--separate"></div>
@@ -358,7 +391,12 @@ const MyLayOut = () => {
             style={{
               margin: "24px 16px",
               minHeight: 280,
-              background: "#ffff",
+              background:
+                theme === "light"
+                  ? "#fff"
+                  : theme === "dark"
+                  ? "#292E39"
+                  : "#ffff",
               borderRadius: 10,
             }}
           >
