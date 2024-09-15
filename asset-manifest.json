@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/codelab/static/css/main.db4985a1.css",
-    "main.js": "/codelab/static/js/main.dedd1cad.js",
+    "main.js": "/codelab/static/js/main.ddca53ec.js",
     "static/media/RobotoCondensed-BoldItalic.woff": "/codelab/static/media/RobotoCondensed-BoldItalic.6478927b25cc1f443cfc.woff",
     "static/media/Roboto-BlackItalic.woff": "/codelab/static/media/Roboto-BlackItalic.868292eeff4e17da0606.woff",
     "static/media/Roboto-MediumItalic.woff": "/codelab/static/media/Roboto-MediumItalic.14c25bb833b00bba8ecc.woff",
@@ -44,10 +44,10 @@
     "static/media/slick.woff": "/codelab/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/codelab/index.html",
     "main.db4985a1.css.map": "/codelab/static/css/main.db4985a1.css.map",
-    "main.dedd1cad.js.map": "/codelab/static/js/main.dedd1cad.js.map"
+    "main.ddca53ec.js.map": "/codelab/static/js/main.ddca53ec.js.map"
   },
   "entrypoints": [
     "static/css/main.db4985a1.css",
-    "static/js/main.dedd1cad.js"
+    "static/js/main.ddca53ec.js"
   ]
 }
