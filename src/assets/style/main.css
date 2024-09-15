@@ -2648,7 +2648,7 @@ html {
 .footer__link {
   color: var(--text-main-color-2);
   font-size: 0.9rem;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 185.714%;
 }
 .footer__link--active {
@@ -2661,6 +2661,9 @@ html {
   .footer__link {
     font-size: 0.7rem;
   }
+}
+.footer__link:hover {
+  text-decoration: underline;
 }
 .footer__item + .footer__item {
   margin-top: 20px;

@@ -40,7 +40,7 @@
   &__link {
     color: var(--text-main-color-2);
     font-size: 0.9rem;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 185.714%;
     &--active {
       font-weight: 700;
@@ -50,6 +50,9 @@
     }
     @include abstracts.breakpoint(md) {
       font-size: 0.7rem;
+    }
+    &:hover {
+      text-decoration: underline;
     }
   }
   &__item + &__item {
