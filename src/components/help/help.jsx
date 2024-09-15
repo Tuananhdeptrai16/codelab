@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 export const Help = () => {
   const [notification, setNotification] = useState(true);
   const [className, setClassName] = useState(false);
@@ -20,7 +21,8 @@ export const Help = () => {
             onMouseLeave={() => setClassName(false)}
             className="help__action--wrap"
           >
-            <div
+            <NavLink
+              to="https://zalo.me/0373696603"
               className={`help__action help__unActive ${
                 className && "help__active"
               }`}
@@ -30,8 +32,9 @@ export const Help = () => {
                 alt=""
                 className="help__icon--social"
               />
-            </div>
-            <div
+            </NavLink>
+            <NavLink
+              href="tel:+84373696603"
               className={`help__action help__unActive ${
                 className && "help__active"
               }`}
@@ -41,7 +44,7 @@ export const Help = () => {
                 alt=""
                 className="help__icon--social help__icon--active"
               />
-            </div>
+            </NavLink>
             <div className="help__icon-wrap">
               <img
                 src={`${process.env.PUBLIC_URL}/images/icon/${
