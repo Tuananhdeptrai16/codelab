@@ -1,7 +1,6 @@
-/*
-    The code was written by programmer Truong Tuan Anh
-    Thanks for watching and sharing
-*/
+// The code was written by programmer Truong Tuan Anh
+// Thanks for watching and sharing
+
 @keyframes gradientAnimation {
   0% {
     color: #000000; /* Black color */
@@ -39,5 +38,19 @@
   }
   50% {
     scale: 1.1;
+  }
+}
+@keyframes shakeError {
+  0%,
+  100% {
+    translate: 0;
+  }
+
+  25%,
+  75% {
+    translate: -3px;
+  }
+  50% {
+    translate: 3px;
   }
 }

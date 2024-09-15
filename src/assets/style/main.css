@@ -3,10 +3,6 @@
     The code was written by programmer Truong Tuan Anh
     Thanks for watching and sharing !!!
 */
-/*
-    The code was written by programmer Truong Tuan Anh
-    Thanks for watching and sharing
-*/
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
 *,
@@ -25,7 +21,7 @@ html {
 
 body {
   font-size: 1.6rem;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto";
   color: var(--text-color);
   background: var(--body-bg);
 }
@@ -1358,14 +1354,6 @@ table {
     The code was written by programmer Truong Tuan Anh
     Thanks for watching and sharing !!!
 */
-/*
-    The code was written by programmer Truong Tuan Anh
-    Thanks for watching and sharing
-*/
-/*
-    The code was written by programmer Truong Tuan Anh
-    Thanks for watching and sharing
-*/
 @keyframes gradientAnimation {
   0% {
     color: #000000; /* Black color */
@@ -1397,6 +1385,17 @@ table {
   }
   50% {
     scale: 1.1;
+  }
+}
+@keyframes shakeError {
+  0%, 100% {
+    translate: 0;
+  }
+  25%, 75% {
+    translate: -3px;
+  }
+  50% {
+    translate: 3px;
   }
 }
 .ant-menu-item {
@@ -2169,6 +2168,136 @@ table {
   }
 }
 
+.login {
+  font-family: "Roboto";
+  overflow-x: hidden;
+}
+.login__wrap {
+  transition: all 0.5s ease-in;
+}
+@media (max-width: 767.98px) {
+  .login__wrap {
+    flex-wrap: nowrap;
+  }
+}
+.login__background {
+  overflow-y: auto;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  background: var(--main-color-grey-2);
+  height: 100vh;
+  min-height: 100%;
+}
+@media (max-width: 767.98px) {
+  .login__background {
+    flex-wrap: nowrap;
+    position: relative;
+  }
+}
+.login__img {
+  margin-top: 50px;
+  width: 600px;
+}
+@media (max-width: 991.98px) {
+  .login__img {
+    width: 450px;
+  }
+}
+@media (max-width: 767.98px) {
+  .login__img {
+    width: 400px;
+  }
+}
+.login__desc {
+  font-family: "Roboto";
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+@media (max-width: 991.98px) {
+  .login__desc {
+    font-size: 1.3rem;
+  }
+}
+.login__highlight {
+  color: var(--main-color);
+}
+.login__copyright {
+  font-size: 0.8rem;
+  max-width: 483px;
+  margin-top: 18px;
+  color: var(--text-main-color-3);
+  font-weight: 600;
+  line-height: 128%;
+}
+@media (max-width: 991.98px) {
+  .login__copyright {
+    font-size: 0.7rem;
+  }
+}
+.login__content {
+  padding: 30px;
+}
+.login__title {
+  margin-top: 30px;
+  color: var(--text-main-color);
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 146.667%;
+}
+@media (max-width: 991.98px) {
+  .login__title {
+    font-size: 1.4rem;
+  }
+}
+.login__title--desc {
+  margin: 30px auto 0;
+  width: 460px;
+  color: var(--main-color-grey-3);
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 146.667%;
+}
+@media (max-width: 1199.98px) {
+  .login__title--desc {
+    width: 400px;
+  }
+}
+@media (max-width: 991.98px) {
+  .login__title--desc {
+    width: 300px;
+  }
+}
+.login__dot {
+  width: 12px;
+  height: 12px;
+  background: var(--main-color-white);
+  border-radius: 50%;
+}
+.login__dot + .login__dot {
+  background: #ccc;
+  margin-right: 10px;
+}
+.login__next {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  fill: #ccc;
+}
+@media (max-width: 767.98px) {
+  .login__next {
+    position: absolute;
+    top: 85%;
+  }
+}
+.login__md-active {
+  transform: translateX(-100%);
+}
+
 /*
     The code was written by programmer Truong Tuan Anh
     Thanks for watching and sharing !!!
@@ -2188,6 +2317,9 @@ html {
   --main-color-dark: #000;
   --main-color-grey: #e2dfda;
   --main-color-grey-1: #e2dfda;
+  --main-color-grey-2: #eeee;
+  --main-color-grey-3: #b9babe;
+  --main-color-green: #84ac8d;
   --text-main-color: #1a162e;
   --text-main-color-2: #292e39;
   --text-main-color-3: #9e9da8;
@@ -2201,10 +2333,6 @@ html {
   --box-shadow-main-2: rgba(0, 0, 0, 0.2);
 }
 
-/*
-    The code was written by programmer Truong Tuan Anh
-    Thanks for watching and sharing
-*/
 .header__button {
   display: flex;
   gap: 10px;
@@ -2441,10 +2569,6 @@ html {
   margin-top: 10px;
 }
 
-/*
-    The code was written by programmer Truong Tuan Anh
-    Thanks for watching and sharing
-*/
 .layout {
   height: auto;
 }
@@ -2480,10 +2604,6 @@ html {
   color: var(--text-main-color-2);
 }
 
-/*
-    The code was written by programmer Truong Tuan Anh
-    Thanks for watching and sharing
-*/
 .footer {
   padding: 20px;
   border-top: 1px solid #d9d9d9;
@@ -2600,10 +2720,6 @@ html {
   animation: gradientAnimation 5s ease infinite;
 }
 
-/*
-    The code was written by programmer Truong Tuan Anh
-    Thanks for watching and sharing
-*/
 .search {
   position: relative;
   display: flex;
@@ -2658,10 +2774,6 @@ html {
   color: var(--text-main-color-2);
 }
 
-/*
-    The code was written by programmer Truong Tuan Anh
-    Thanks for watching and sharing
-*/
 .help {
   position: fixed;
   right: 60px;
@@ -2776,6 +2888,247 @@ html {
   opacity: 1;
   visibility: visible;
   transform: translateY(0); /* Đảm bảo có thuộc tính này nếu cần */
+}
+
+.input {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.input__error--icon {
+  animation: shakeError 2s;
+  width: 16px;
+  height: 16px;
+}
+.input__error--text {
+  margin-left: 5px;
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: var(--main-color-red);
+}
+.input__border--error {
+  border: 2px solid var(--main-color-red) !important;
+}
+.input__border--success {
+  border: 2px solid var(--main-color-green) !important;
+}
+.input__form {
+  margin-top: 30px;
+  display: flex;
+  width: 400px;
+  padding: 12px 12px 12px 12px;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--Secondary-Color-Secondary-3, #d2d1d6);
+  color: var(--text-main-color);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 144.444%;
+}
+@media (max-width: 991.98px) {
+  .input__form {
+    width: 300px;
+  }
+}
+.input__form::placeholder {
+  color: var(--Secondary-Color-Secondary-3, #d2d1d6);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 144.444%;
+}
+.input__form--wrap {
+  position: relative;
+}
+.input__error--icon {
+  position: absolute;
+  right: 15px;
+  top: 45%;
+  width: 20px;
+  height: 20px;
+}
+.input__icon {
+  position: absolute;
+  right: 15px;
+  top: 55%;
+  width: 20px;
+  height: 20px;
+}
+.input__action {
+  margin-top: 30px;
+  display: flex;
+  width: 400px;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: 991.98px) {
+  .input__action {
+    width: 300px;
+  }
+}
+.input__checkbox {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.input__button--wrap {
+  margin-top: 40px;
+  flex-direction: column;
+  display: flex;
+  gap: 20px;
+}
+.input__button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 400px;
+  padding: 10px;
+  border-radius: 10px;
+  color: var(--Secondary-Color-Secondary-1, #1a162e);
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 144.444%;
+  transition: all 0.2s ease;
+}
+@media (max-width: 991.98px) {
+  .input__button {
+    width: 300px;
+  }
+}
+.input__button:hover {
+  scale: 1.07;
+}
+.input__default--title {
+  color: var(--Secondary-Color-Secondary-2, #9e9da8);
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 146.667%;
+}
+.input__forgot {
+  color: var(--Blue-Blue, #0071dc);
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 146.667%;
+}
+.input__checkbox--container {
+  display: block;
+  position: relative;
+  padding-left: 20px; /* Khoảng cách giữa văn bản và checkbox */
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 18px;
+  user-select: none;
+}
+.input__default {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 3;
+}
+.input__checkmark {
+  position: absolute;
+  top: -3px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+  border-radius: 5px;
+  border: 2px solid var(--main-color-green); /* Màu viền xanh thành công */
+}
+@media (max-width: 767.98px) {
+  .input__checkmark {
+    top: -7px;
+  }
+}
+.input__checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.input__default:checked ~ .input__checkmark {
+  background-color: var(--main-color-green);
+}
+.input__default:checked ~ .input__checkmark::after {
+  display: block;
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  height: 36px;
+  padding: 0 14px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 142.857%;
+  color: #6c6c72;
+  background-color: #fff;
+  border: 6px;
+}
+
+.like-btn {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0px 1px rgba(124, 124, 124, 0.2);
+}
+.like-btn__icon-liked {
+  margin-top: 6px;
+}
+
+.form__btn {
+  display: flex;
+  align-items: center;
+  background: #f8f8fb;
+  height: 46px;
+  font-size: 1.8rem;
+  font-weight: 500;
+  border-radius: 6px;
+  padding: 0 20px;
+  user-select: none;
+  white-space: nowrap;
+}
+.form__btn + .btn:not(.btn--no-margin) {
+  margin-left: 20px;
+}
+.form__btn--text {
+  background: transparent;
+  font-weight: 400;
+}
+.form__btn--primary {
+  justify-content: center;
+  background: #ffb700;
+}
+.form__btn--outline {
+  color: #1a162e !important;
+  justify-content: center;
+  background: #fff;
+  border: 1px solid #d2d1d6;
+}
+.form__btn--rounded {
+  border-radius: 99px;
+}
+.form__btn:hover {
+  opacity: 0.9;
+}
+.form__btn[disabled], .form__btn--disabled {
+  opacity: 0.5;
+  pointer-events: none;
 }
 
 /*# sourceMappingURL=main.css.map */

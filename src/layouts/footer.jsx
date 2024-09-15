@@ -1,7 +1,6 @@
-/*
-    The code was written by programmer Truong Tuan Anh
-    Thanks for watching and sharing
-*/
+// The code was written by programmer Truong Tuan Anh
+// Thanks for watching and sharing
+
 import React from "react";
 import Logo from "../components/logo/logo";
 import { Link } from "react-router-dom";

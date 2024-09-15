@@ -1,7 +1,5 @@
-/*
-    The code was written by programmer Truong Tuan Anh
-    Thanks for watching and sharing
-*/
+// The code was written by programmer Truong Tuan Anh
+// Thanks for watching and sharing
 
 import React from "react";
 import ReactDOM from "react-dom/client";

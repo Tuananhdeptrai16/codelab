@@ -1,7 +1,6 @@
-/*
-    The code was written by programmer Truong Tuan Anh
-    Thanks for watching and sharing
-*/
+// The code was written by programmer Truong Tuan Anh
+// Thanks for watching and sharing
+
 import { Link } from "react-router-dom";
 import React, { useRef, useState, useEffect } from "react";
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
