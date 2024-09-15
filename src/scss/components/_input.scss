@@ -41,6 +41,7 @@
     @include abstracts.breakpoint(lg) {
       width: 300px;
     }
+
     &::placeholder {
       color: var(--Secondary-Color-Secondary-3, #d2d1d6);
 

@@ -1,5 +1,6 @@
 @use "../abstracts";
 .coming {
+  font-family: "Roboto";
   padding: 80px;
   display: flex;
   @include abstracts.breakpoint(lg) {

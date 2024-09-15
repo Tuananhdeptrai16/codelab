@@ -2,8 +2,8 @@ import React from "react";
 import { useState } from "react";
 import Logo from "../../components/logo/logo";
 import { NavLink } from "react-router-dom";
-import { Validation } from "./Validation";
-export const Login = () => {
+import { Validation } from "../login/Validation";
+export const SignUp = () => {
   const [error, setError] = useState({});
   const [values, setValues] = useState({});
   const [show, setShow] = useState(false);
@@ -18,49 +18,49 @@ export const Login = () => {
     setError(Validation(values));
   };
   return (
-    <div className="login">
+    <div className="signUp">
       <div
-        className={`row row-cols-2 row-cols-md-1 login__wrap ${
-          show === true ? "login__md-active" : ""
+        className={`row row-cols-2 row-cols-md-1 signUp__wrap ${
+          show === true ? "signUp__md-active" : ""
         }`}
       >
         <div className="col">
-          <div className="login__background">
-            <div className="login__image">
+          <div className="signUp__background">
+            <div className="signUp__image">
               <img
-                src={`${process.env.PUBLIC_URL}/images/login/img1.png`}
+                src={`${process.env.PUBLIC_URL}/images/signUp/img1.png`}
                 alt=""
-                className="login__img"
+                className="signUp__img"
               />
             </div>
-            <h2 className="login__desc">
-              Chào mừng bạn trở lại với Code
-              <span className="login__highlight">Lab</span>!
+            <h2 className="signUp__desc">
+              Chào mừng bạn đến với Code
+              <span className="signUp__highlight">Lab</span>!
             </h2>
-            <p className="login__copyright">
+            <p className="signUp__copyright">
               Khoa Điện Tử - Đại Học Công Nghiệp Hà Nội ❤️
             </p>
             <div
               onClick={() => setShow(true)}
-              className="login__next d-none d-md-flex "
+              className="signUp__next d-none d-md-flex "
             >
-              <div className="login__dot"></div>
-              <div className="login__dot"></div>
+              <div className="signUp__dot"></div>
+              <div className="signUp__dot"></div>
               <img
                 src={`${process.env.PUBLIC_URL}/images/icon/arrow_right.svg`}
                 alt=""
-                className="login__arrow--icon"
+                className="signUp__arrow--icon"
               />
             </div>
           </div>
         </div>
         <div className="col">
-          <div className="login__content">
+          <div className="signUp__content">
             <Logo></Logo>
-            <h1 className="login__title">Chào mừng quay trở lại!</h1>
-            <p className="login__title--desc">
-              Chào mừng bạn đã quay trở lại , hãy đăng nhập và lưu lại để đăng
-              nhập lần sau được dễ dàng hơn
+            <h1 className="signUp__title">Đăng ký</h1>
+            <p className="signUp__title--desc">
+              Học tập là quá trình bền bỉ và lâu dài . Hãy để chúng tôi giúp bạn
+              đạt tới thành công đó
             </p>
             <form className="input" onSubmit={handleSubmit}>
               <div className="input__form--wrap">
@@ -131,7 +131,41 @@ export const Login = () => {
                   />
                 )}
               </div>
+              <div className="input__form--wrap">
+                <input
+                  onChange={handleChange}
+                  name="password"
+                  type="password"
+                  autoComplete="current-password"
+                  required
+                  autoFocus
+                  placeholder="Nhập lại mật khẩu"
+                  className={`input__password input__form ${
+                    error.password
+                      ? "input__border--error"
+                      : "input__border--success"
+                  }`}
+                />
 
+                {error.password ? (
+                  <>
+                    <img
+                      src={`${process.env.PUBLIC_URL}/images/icon/error.svg`}
+                      alt=""
+                      className="input__error--icon"
+                    />
+                    {error.password && (
+                      <p className="input__error--text">{error.password}</p>
+                    )}
+                  </>
+                ) : (
+                  <img
+                    src={`${process.env.PUBLIC_URL}/images/icon/lock.svg`}
+                    alt=""
+                    className="input__icon"
+                  />
+                )}
+              </div>
               <div className="input__action">
                 <div className="input__checkbox">
                   <div className="input__checkbox--container">
@@ -145,8 +179,8 @@ export const Login = () => {
                   </div>
                   <p className="input__default--title">Đặt làm mặc định</p>
                 </div>
-                <NavLink to="./codelab/forget" className="input__forgot">
-                  Quên mật khẩu ?
+                <NavLink to="./codelab/login" className="input__forgot">
+                  Đăng nhập ngay?
                 </NavLink>
               </div>
               <div className="input__button--wrap">
@@ -164,15 +198,6 @@ export const Login = () => {
                   Đăng nhập với Google
                 </NavLink>
               </div>
-              <p className="login__signUp">
-                Bạn chưa có tài khoản?{" "}
-                <NavLink
-                  to="/codelab/signup"
-                  className="login__signUp--highlight"
-                >
-                  Đăng ký ngay
-                </NavLink>
-              </p>
             </form>
           </div>
         </div>

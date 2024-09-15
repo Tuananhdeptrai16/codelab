@@ -8,19 +8,26 @@ import StoreContext from "./db/context";
 import { ComingSoon } from "./pages/commingsoon/commingsoon";
 import LayOutLogin from "./layouts/MyLayouts/layoutlogin";
 import { Login } from "./pages/login/login";
+import { SignUp } from "./pages/signUp/singup";
 
 const AppContent = () => {
   const [page, setPage] = useState(false);
-  const [pageLogin, setPageLogin] = useState(true);
+  const [homePageLogin, setHomePageLogin] = useState(true);
   const [login, setLogin] = useState(true);
+  const [signUp, setSignUp] = useState(true);
+
   const location = useLocation();
   useEffect(() => {
     const validPaths = ["/codelab/home"];
     const validPathsPageLogin = ["/codelab/", "/codelab/homelogin"];
     const validPathsLogin = ["/codelab/login"];
+    const validPathsSignUp = ["/codelab/signup"];
+    validPathsSignUp.includes(location.pathname)
+      ? setSignUp(true)
+      : setSignUp(false);
     validPathsPageLogin.includes(location.pathname)
-      ? setPageLogin(true)
-      : setPageLogin(false);
+      ? setHomePageLogin(true)
+      : setHomePageLogin(false);
     validPaths.includes(location.pathname) ? setPage(true) : setPage(false);
     validPathsLogin.includes(location.pathname)
       ? setLogin(true)
@@ -29,14 +36,17 @@ const AppContent = () => {
   return (
     <StoreContext.Provider value={{ location }}>
       <StoreContext.Provider value={{ location }}>
-        {login ? (
+        {signUp ? (
+          <SignUp></SignUp>
+        ) : login ? (
           <Login></Login>
-        ) : pageLogin ? (
+        ) : homePageLogin ? (
           <LayOutLogin />
         ) : page ? (
           <MyLayOut />
         ) : (
           <ComingSoon />
+          // <PageNotFound />
         )}
       </StoreContext.Provider>
     </StoreContext.Provider>

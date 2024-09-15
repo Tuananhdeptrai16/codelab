@@ -1964,6 +1964,7 @@ table {
 }
 
 .coming {
+  font-family: "Roboto";
   padding: 80px;
   display: flex;
 }
@@ -2297,6 +2298,150 @@ table {
 .login__md-active {
   transform: translateX(-100%);
 }
+.login__signUp {
+  margin-top: 100px;
+  font-weight: 500;
+}
+.login__signUp--highlight {
+  color: var(--main-color-highlight);
+}
+
+.signUp {
+  font-family: "Roboto";
+  overflow-x: hidden;
+}
+.signUp__wrap {
+  transition: all 0.5s ease-in;
+}
+@media (max-width: 767.98px) {
+  .signUp__wrap {
+    flex-wrap: nowrap;
+  }
+}
+.signUp__background {
+  overflow-y: auto;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  background: var(--main-color-grey-2);
+  height: 100vh;
+  min-height: 100%;
+}
+@media (max-width: 767.98px) {
+  .signUp__background {
+    flex-wrap: nowrap;
+    position: relative;
+  }
+}
+.signUp__img {
+  margin-top: 50px;
+  width: 600px;
+}
+@media (max-width: 991.98px) {
+  .signUp__img {
+    width: 450px;
+  }
+}
+@media (max-width: 767.98px) {
+  .signUp__img {
+    width: 400px;
+  }
+}
+.signUp__desc {
+  font-family: "Roboto";
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+@media (max-width: 991.98px) {
+  .signUp__desc {
+    font-size: 1.3rem;
+  }
+}
+.signUp__highlight {
+  color: var(--main-color);
+}
+.signUp__copyright {
+  font-size: 0.8rem;
+  max-width: 483px;
+  margin-top: 18px;
+  color: var(--text-main-color-3);
+  font-weight: 600;
+  line-height: 128%;
+}
+@media (max-width: 991.98px) {
+  .signUp__copyright {
+    font-size: 0.7rem;
+  }
+}
+.signUp__content {
+  padding: 30px;
+}
+.signUp__title {
+  margin-top: 30px;
+  color: var(--text-main-color);
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 146.667%;
+}
+@media (max-width: 991.98px) {
+  .signUp__title {
+    font-size: 1.4rem;
+  }
+}
+.signUp__title--desc {
+  margin: 30px auto 0;
+  width: 460px;
+  color: var(--main-color-grey-3);
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 146.667%;
+}
+@media (max-width: 1199.98px) {
+  .signUp__title--desc {
+    width: 400px;
+  }
+}
+@media (max-width: 991.98px) {
+  .signUp__title--desc {
+    width: 300px;
+  }
+}
+.signUp__dot {
+  width: 12px;
+  height: 12px;
+  background: var(--main-color-white);
+  border-radius: 50%;
+}
+.signUp__dot + .signUp__dot {
+  background: #ccc;
+  margin-right: 10px;
+}
+.signUp__next {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  fill: #ccc;
+}
+@media (max-width: 767.98px) {
+  .signUp__next {
+    position: absolute;
+    top: 85%;
+  }
+}
+.signUp__md-active {
+  transform: translateX(-100%);
+}
+.signUp__signUp {
+  margin-top: 100px;
+  font-weight: 500;
+}
+.signUp__signUp--highlight {
+  color: var(--main-color-highlight);
+}
 
 /*
     The code was written by programmer Truong Tuan Anh
@@ -2320,6 +2465,7 @@ html {
   --main-color-grey-2: #eeee;
   --main-color-grey-3: #b9babe;
   --main-color-green: #84ac8d;
+  --main-color-highlight: #0071dc;
   --text-main-color: #1a162e;
   --text-main-color-2: #292e39;
   --text-main-color-3: #9e9da8;
