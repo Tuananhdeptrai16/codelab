@@ -20,7 +20,7 @@
 ## NHIỆM VỤ
 
 1. **Front-End + Designer**: Trương Tuấn Anh (leader)
-2. **Back-End**: Phạm Minh Đức
+2. **Back-End**: Phạm Minh Đức (leader)
 3. **Tester**: Vũ Thị Như Quỳnh
 4. **Cover**: Phạm Văn Dũng
 
