@@ -1,8 +1,7 @@
 // The code was written by programmer Truong Tuan Anh
 // Thanks for watching and sharing
 
-import { Link } from "react-router-dom";
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState } from "react";
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 import { Button, Layout, Menu } from "antd";
 import MyRoute from "../../routes/router";
@@ -14,24 +13,6 @@ import { Footer } from "../footer";
 const { Header, Sider, Content } = Layout;
 const LayOutLogin = () => {
   const [collapsed, setCollapsed] = useState(true);
-  const [notification, setNotification] = useState(false);
-  const [showUser, setShowUser] = useState(false);
-  const bellRef = useRef(null);
-  const userRef = useRef(null);
-  useEffect(() => {
-    const handleClickOutSide = (e) => {
-      if (bellRef.current && !bellRef.current.contains(e.target)) {
-        setNotification(false);
-      }
-      if (userRef.current && !userRef.current.contains(e.target)) {
-        setShowUser(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutSide);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutSide);
-    };
-  }, []);
 
   const menuItems = [
     {

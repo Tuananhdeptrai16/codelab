@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 export const Help = () => {
-  const [show, setShow] = useState(true);
   const [notification, setNotification] = useState(true);
   const [className, setClassName] = useState(false);
   useEffect(() => {
@@ -15,48 +14,45 @@ export const Help = () => {
   return (
     <div className="help">
       <button className="help__picture">
-        {show === true && (
-          <>
+        <>
+          <div
+            onMouseEnter={() => setClassName(true)}
+            onMouseLeave={() => setClassName(false)}
+            className="help__action--wrap"
+          >
             <div
-              onMouseEnter={() => setClassName(true)}
-              onMouseLeave={() => setClassName(false)}
-              className="help__action--wrap"
+              className={`help__action help__unActive ${
+                className && "help__active"
+              }`}
             >
-              <div
-                className={`help__action help__unActive ${
-                  className && "help__active"
-                }`}
-              >
-                <img
-                  src={`${process.env.PUBLIC_URL}/images/icon/zalo.svg`}
-                  alt=""
-                  className="help__icon--social"
-                />
-              </div>
-              <div
-                className={`help__action help__unActive ${
-                  className && "help__active"
-                }`}
-              >
-                <img
-                  src={`${process.env.PUBLIC_URL}/images/icon/phone.svg`}
-                  alt=""
-                  className="help__icon--social help__icon--active"
-                />
-              </div>
-              <div className="help__icon-wrap">
-                <img
-                  onClick={() => setShow(!show)}
-                  src={`${process.env.PUBLIC_URL}/images/icon/${
-                    className ? "cancelBlack.svg" : "capy.svg"
-                  }`}
-                  alt=""
-                  className={`help__icon ${className && "help__setbg "}`}
-                />
-              </div>
+              <img
+                src={`${process.env.PUBLIC_URL}/images/icon/zalo.svg`}
+                alt=""
+                className="help__icon--social"
+              />
             </div>
-          </>
-        )}
+            <div
+              className={`help__action help__unActive ${
+                className && "help__active"
+              }`}
+            >
+              <img
+                src={`${process.env.PUBLIC_URL}/images/icon/phone.svg`}
+                alt=""
+                className="help__icon--social help__icon--active"
+              />
+            </div>
+            <div className="help__icon-wrap">
+              <img
+                src={`${process.env.PUBLIC_URL}/images/icon/${
+                  className ? "cancelBlack.svg" : "capy.svg"
+                }`}
+                alt=""
+                className={`help__icon ${className && "help__setbg "}`}
+              />
+            </div>
+          </div>
+        </>
       </button>
       {notification && className === false && (
         <div className="help__notification">

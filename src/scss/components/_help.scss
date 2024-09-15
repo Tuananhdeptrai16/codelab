@@ -11,6 +11,7 @@
   flex-direction: column-reverse;
   @include abstracts.breakpoint(md) {
     right: 30px;
+    bottom: 100px;
   }
   &__icon {
     margin-bottom: 25px;
@@ -40,7 +41,7 @@
   &__notification {
     z-index: 3;
     position: absolute;
-    left: 0;
+    right: 0;
     top: -70px;
     width: 400px;
     padding: 20px;
@@ -57,6 +58,7 @@
     cursor: pointer;
     @include abstracts.breakpoint(md) {
       width: 300px;
+      top: -70px;
     }
   }
   &__picture {
