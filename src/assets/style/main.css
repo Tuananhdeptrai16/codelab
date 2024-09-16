@@ -1465,8 +1465,8 @@ table {
   display: none;
 }
 
-:where(.css-dev-only-do-not-override-qnu6hi).ant-layout {
-  background: transparent;
+.ant-layout {
+  background: var(--color-background-layout) !important;
 }
 
 .slide {
@@ -2631,7 +2631,7 @@ html.dark {
   --box-shadow-main-2: rgba(0, 0, 0, 0.5); /* Shadow tối hơn cho nền tối */
   --color-background-layout: #171c28;
   --filter--icon: brightness(0) invert(1);
-  --background-button: var(--background-color-2);
+  --background-button: #292e39;
   --boxshadow-main: rgba(23, 28, 40, 0.4);
   --background-color-main: #1c1c1c; /* Màu nền chính cho các phần chính */
   --background-color-main-2: #2c3e50;
@@ -2676,6 +2676,7 @@ html {
   --text-main-color-2: #292e39;
   --background--footer: #eeeeee;
   --color-text-2: #9e9da8;
+  --background-button: #fff;
 }
 
 .header__button {

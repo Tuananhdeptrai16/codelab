@@ -53,6 +53,6 @@
 .slick-dots li button:before {
   display: none;
 }
-:where(.css-dev-only-do-not-override-qnu6hi).ant-layout {
-  background: transparent;
+.ant-layout {
+  background: var(--color-background-layout) !important;
 }
