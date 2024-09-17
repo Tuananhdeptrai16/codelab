@@ -140,5 +140,26 @@
       }
     ]
   },
-  "studyPlant": {}
+  "studyroute": [
+    {
+      "id": 1,
+      "img": "/images/routeplant/route1.png",
+      "title": "Lộ trình Font-End",
+      "description": "Học cách sử dụng HTML, CSS, và JavaScript để thiết kế các trang web tương tác, thân thiện với người dùng. Khóa học cũng bao gồm các framework như React, Bootstrap, và Tailwind, cùng với kỹ năng phát triển responsive web và tối ưu hóa hiệu suất.."
+    },
+    {
+      "id": 2,
+      "img": "/images/routeplant/route2.png",
+      "title": "Lộ trình Back-End",
+      "description": "Học cách xây dựng các ứng dụng web mạnh mẽ với các ngôn ngữ phổ biến như Node.js, Python, hoặc Java, làm việc với cơ sở dữ liệu (SQL và NoSQL), thiết kế API, quản lý xác thực và bảo mật hệ thống.."
+    }
+  ],
+  "Facebookcomunity": [
+    {
+      "id": 1,
+      "img": "/images/routeplant/comunity.png",
+      "title": "Cộng đồng CodeLab",
+      "description": "Một cộng đồng sẽ giúp chúng ta có động lực và học hỏi nhiều hơn. Hãy tham gia cộng đồng của chúng tôi để cùng nhau phát triển hơn nữa. CodeLab rất vui được đồng hành cùng các bạn."
+    }
+  ]
 }
