@@ -56,3 +56,9 @@
 .ant-layout {
   background: var(--color-background-layout) !important;
 }
+.ant-layout-content {
+  min-height: auto !important;
+}
+.ant-menu-item-selected {
+  background: var(--background-active-color) !important;
+}

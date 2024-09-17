@@ -7,6 +7,7 @@ import { HomePageLogin } from "../pages/home/homelogin";
 import { Login } from "../pages/login/login";
 import { SignUp } from "../pages/signUp/singup";
 import { ResetPassword } from "../pages/reset/resetpassword";
+import { StudyPlant } from "../pages/studyplant/studyplant";
 
 const MyRoute = () => {
   return (
@@ -14,7 +15,7 @@ const MyRoute = () => {
       <Route path="/codelab/" element={<HomePage />}></Route>
       <Route path="/codelab/home" element={<HomePage />}></Route>
       <Route path="/codelab/homelogin" element={<HomePageLogin />}></Route>
-      <Route path="/codelab/studyplant" element={<ComingSoon />}></Route>
+      <Route path="/codelab/studyplant" element={<StudyPlant />}></Route>
       <Route path="/codelab/courses" element={<ComingSoon />}></Route>
       <Route path="/codelab/flashcard" element={<ComingSoon />}></Route>
       <Route path="/codelab/blog" element={<ComingSoon />}></Route>

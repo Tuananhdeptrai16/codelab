@@ -4,7 +4,7 @@ export const LogoOnly = () => {
   return (
     <div className="logo">
       <div className="logo__wrap">
-        <NavLink to="/codelab/home">
+        <NavLink to="/codelab/homelogin">
           <img
             src={`${process.env.PUBLIC_URL}/images/logo.png`}
             alt="logo"

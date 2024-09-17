@@ -56,7 +56,7 @@ export const SignUp = () => {
             </div>
           </div>
         </div>
-        <div className="col">
+        <div className="col signUp__wrap">
           <div className="signUp__content">
             <Logo></Logo>
             <h1 className="signUp__title">Đăng ký</h1>

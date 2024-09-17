@@ -13,8 +13,7 @@ html.dark {
   --main-color-grey-3: #9e9da8; /* Màu xám nhẹ cho các thành phần phụ */
   --main-color-green: #84ac8d; /* Màu xanh lá cây giữ nguyên */
   --main-color-highlight: #0071dc; /* Màu nhấn nổi bật giữ nguyên */
-  --text-main-color: #e0e0e0; /* Màu chữ chính sáng hơn cho dễ đọc trên nền tối */
-  --text-main-color-3: #9e9da8; /* Màu chữ nhẹ để làm nổi bật một số phần */
+  --text-color-main-light-3: #9e9da8; /* Màu chữ nhẹ để làm nổi bật một số phần */
   --background-logo: #1c1c1c; /* Màu nền cho logo */
   --background-navbar: #292e39; /* Màu nền cho navbar */
   --box-shadow-light-main: rgba(
@@ -33,11 +32,24 @@ html.dark {
   --filter--icon: brightness(0) invert(1);
   --background-button: #292e39;
   --boxshadow-main: rgba(23, 28, 40, 0.4);
-  --background-color-main: #1c1c1c; /* Màu nền chính cho các phần chính */
+  --background-color-main: #1a162e; /* Màu nền chính cho các phần chính */
   --background-color-main-2: #2c3e50;
   --background--color-main-3: #1c1c1c;
   --color-text: #ffff;
-  --text-main-color-2: #fff;
+  --text-color-main-light-2: #fff;
   --background--footer: #292e39;
   --color-text-2: #9e9da8;
+  --background-login: #292e39;
+  --text-color-main-light: #9e9da8;
+  --background__breadcrumb: #171c28;
+  --boxShadow__breadcrumb: rgba(23, 28, 40, 0.2);
+  --text-color-breadcrumb: #9e9da8;
+  --background__studyplant-item: var(--background__breadcrumb);
+  --boxShadow--studyPlant-item: var(--boxShadow__breadcrumb);
+  --background-active-color: #292e39;
+  --shadow--bg-gift: rgba(23, 28, 40, 0.2);
+  --background-bg-gift: #171c28;
+  --border-color-gift: #7644e1;
+  --background-gift: #171c28;
+  --shadow-gift: var(--shadow--bg-gift);
 }

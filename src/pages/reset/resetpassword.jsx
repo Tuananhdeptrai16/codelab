@@ -57,7 +57,7 @@ export const ResetPassword = () => {
             </div>
           </div>
         </div>
-        <div className="col">
+        <div className="col reset__wrap">
           <div className="reset__content">
             <Logo></Logo>
             <h1 className="reset__title">Cài đặt lại mật khẩu!</h1>

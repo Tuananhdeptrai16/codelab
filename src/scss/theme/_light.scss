@@ -13,7 +13,7 @@ html {
   --main-color-grey-3: #b9babe;
   --main-color-green: #84ac8d;
   --main-color-highlight: #0071dc;
-  --text-main-color: #1a162e;
+  --text-color-main-light: #1a162e;
   --background-logo: #dbdbe2;
   --background-navbar: #eeeeee;
   --box-shadow-light-main: #00000029;
@@ -29,8 +29,24 @@ html {
   --background-color-main-2: #9e9da8;
   --background--color-main-3: #ffff;
   --color-text: #000000;
-  --text-main-color-2: #292e39;
+  --text-color-main-light-2: #292e39;
   --background--footer: #eeeeee;
   --color-text-2: #9e9da8;
   --background-button: #fff;
+  --background-login: #fff;
+  --text-color-main-light: #171c28;
+  --background__breadcrumb: #f6f6f6;
+  --boxShadow__breadcrumb: rgba(237, 237, 246, 0.2);
+  --text-color-breadcrumb: #9e9da8;
+  --background__studyplant-item: var(--background__breadcrumb);
+  --boxShadow--studyPlant-item: var(--boxShadow__breadcrumb);
+  --background-active-color: #e6f4ff;
+  --shadow--bg-gift: rgba(237, 237, 246, 0.2);
+  --background-bg-gift: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.9) 100%
+  );
+  --border-color-gift: #7644e1;
+  --background-gift: #fff;
 }

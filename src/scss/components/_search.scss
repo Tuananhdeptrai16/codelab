@@ -30,7 +30,7 @@
     border: 2px solid var(--main-color-grey);
   }
   &__input::placeholder {
-    color: var(--text-main-color-2);
+    color: var(--text-color-main-light-2);
     font-size: 0.8rem;
     font-weight: 600;
     line-height: 100%;
@@ -50,7 +50,7 @@
     height: 24px;
     &:hover {
       scale: 1.1;
-      color: var(--text-main-color-2);
+      color: var(--text-color-main-light-2);
     }
   }
 }

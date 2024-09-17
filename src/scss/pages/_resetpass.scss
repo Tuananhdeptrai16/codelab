@@ -11,7 +11,9 @@
       flex-wrap: nowrap;
     }
   }
-
+  &__wrap {
+    background: var(--background-login);
+  }
   &__background {
     overflow-y: auto;
     padding: 20px;
@@ -19,7 +21,7 @@
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
-    background: var(--main-color-grey-2);
+    background: var(--main-color-grey-1);
     height: 100vh;
     min-height: 100%;
     @include abstracts.breakpoint(md) {
@@ -42,6 +44,8 @@
     font-family: "Roboto";
     font-size: 1.6rem;
     font-weight: 600;
+    color: var(--text-color-main-light);
+
     @include abstracts.breakpoint(lg) {
       font-size: 1.3rem;
     }
@@ -56,7 +60,7 @@
     font-size: 0.8rem;
     max-width: 483px;
     margin-top: 18px;
-    color: var(--text-main-color-3);
+    color: var(--text-color-main-light-3);
     font-weight: 600;
     line-height: 128%;
     @include abstracts.breakpoint(lg) {
@@ -69,7 +73,7 @@
   }
   &__title {
     margin-top: 30px;
-    color: var(--text-main-color);
+    color: var(--text-color-main-light);
     text-align: center;
     font-size: 1.6rem;
     font-weight: 500;
@@ -119,6 +123,8 @@
   &__signUp {
     margin-top: 100px;
     font-weight: 500;
+    color: var(--text-color-main-light);
+
     &--highlight {
       color: var(--main-color-highlight);
     }

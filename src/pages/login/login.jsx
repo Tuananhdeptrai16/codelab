@@ -56,7 +56,7 @@ export const Login = () => {
             </div>
           </div>
         </div>
-        <div className="col">
+        <div className="col login__wrap">
           <div className="login__content">
             <Logo></Logo>
             <h1 className="login__title">Chào mừng quay trở lại!</h1>

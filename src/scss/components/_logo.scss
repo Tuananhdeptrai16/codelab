@@ -22,11 +22,11 @@
   &__name {
     font-size: 1.4rem;
     font-weight: 700;
-    color: var(--text-main-color);
+    color: var(--text-color-main-light);
   }
 
   &__highlight {
-    color: var(--text-main-color);
+    color: var(--text-color-main-light);
     animation: gradientAnimation 5s ease infinite;
   }
 }
