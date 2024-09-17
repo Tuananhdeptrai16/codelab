@@ -26,8 +26,8 @@ export const ResetPassword = () => {
           show === true ? "reset__md-active" : ""
         }`}
       >
-        <div className="col">
-          <div className="reset__background">
+        <div className="col d-md-none">
+          <div className="reset__background ">
             <div className="reset__image">
               <img
                 src={`${process.env.PUBLIC_URL}/images/reset/reset.svg`}

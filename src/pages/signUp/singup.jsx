@@ -26,7 +26,7 @@ export const SignUp = () => {
           show === true ? "signUp__md-active" : ""
         }`}
       >
-        <div className="col">
+        <div className="col  d-md-none">
           <div className="signUp__background">
             <div className="signUp__image">
               <img

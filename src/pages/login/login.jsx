@@ -26,8 +26,8 @@ export const Login = () => {
           show === true ? "login__md-active" : ""
         }`}
       >
-        <div className="col">
-          <div className="login__background">
+        <div className="col d-md-none">
+          <div className="login__background ">
             <div className="login__image">
               <img
                 src={`${process.env.PUBLIC_URL}/images/login/img1.png`}
