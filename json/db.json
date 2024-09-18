@@ -223,5 +223,123 @@
       "title": "Comming Soon",
       "description": "Các khóa học khác sẽ được chúng tôi liên tục cập nhật và phát triển, chúng tôi sẽ mang lại nhiều ứng dụng và khóa học hay hơn cho các bạn.."
     }
+  ],
+  "newposts": [
+    {
+      "id": 1,
+      "img": "/images/blog/new1.png",
+      "title": "Functional Programming là gì? Giải pháp cho Hệ thống đa luồng và Xử lý song song",
+      "posttime": "Sep 06, 2024",
+      "readtime": "15 phút đọc"
+    },
+    {
+      "id": 2,
+      "img": "/images/blog/new2.png",
+      "title": "Tại Sao Bạn Nên Học JavaScript Ngay Hôm Nay?",
+      "posttime": "Sep 07, 2024",
+      "readtime": "20 phút đọc"
+    },
+    {
+      "id": 3,
+      "img": "/images/blog/new3.png",
+      "title": "Kết Nối React Với API: Hướng Dẫn Sử Dụng Axios Và Fetch",
+      "posttime": "Sep 08, 2024",
+      "readtime": "17 phút đọc"
+    },
+    {
+      "id": 4,
+      "img": "/images/blog/new4.png",
+      "title": "Học Ngôn Ngữ Lập Trình Nào Để Có Triển Vọng Nghề Nghiệp Tốt Nhất?",
+      "posttime": "Sep 10, 2024",
+      "readtime": "20 phút đọc"
+    },
+    {
+      "id": 5,
+      "img": "/images/blog/new5.png",
+      "title": "Hướng Dẫn Tạo API Cho Website Của Bạn Bằng Node.js",
+      "posttime": "Sep 09, 2024",
+      "readtime": "15 phút đọc"
+    },
+    {
+      "id": 6,
+      "img": "/images/blog/new6.png",
+      "title": "Sự Tiến Hóa Của Ngôn Ngữ Lập Trình: Từ COBOL Đến Python",
+      "posttime": "Sep 08, 2024",
+      "readtime": "16 phút đọc"
+    }
+  ],
+  "featuredposts": [
+    {
+      "id": 1,
+      "img": "/images/blog/featured1.png",
+      "title": "ESLint là gì? Hướng dẫn cấu hình ESLint cho dự án Typescript",
+      "time": "17 July 2024"
+    },
+    {
+      "id": 2,
+      "img": "/images/blog/featured2.png",
+      "title": "Python là gì? Những đặc điểm nổi bật và Ứng dụng của Python",
+      "time": "17 July 2024"
+    },
+    {
+      "id": 3,
+      "img": "/images/blog/featured3.png",
+      "title": "Tại Sao Bạn Nên Sử Dụng Design Pattern Observer Trong Dự Án Của Mình?",
+      "time": "02 August 2024"
+    },
+    {
+      "id": 4,
+      "img": "/images/blog/featured4.png",
+      "title": "Amazon S3: Giải pháp lưu trữ Đám mây An toàn và Linh hoạt",
+      "time": "01 September 2024"
+    },
+    {
+      "id": 5,
+      "img": "/images/blog/featured5.png",
+      "title": "Front-End vs Back-End: Sự Khác Biệt Và Tại Sao Cả Hai Đều Quan Trọng",
+      "time": "28 August 2024"
+    },
+    {
+      "id": 6,
+      "img": "/images/blog/featured6.png",
+      "title": "Google AI vs Các Đối Thủ: So Sánh Các Công Nghệ Trí Tuệ Nhân Tạo Hàng Đầu",
+      "time": "26 August 2024"
+    },
+    {
+      "id": 7,
+      "img": "/images/blog/featured1.png",
+      "title": "ESLint là gì? Hướng dẫn cấu hình ESLint cho dự án Typescript",
+      "time": "26 August 2024"
+    },
+    {
+      "id": 8,
+      "img": "/images/blog/featured2.png",
+      "title": "Python là gì? Những đặc điểm nổi bật và Ứng dụng của Python",
+      "time": "17 July 2024"
+    },
+    {
+      "id": 9,
+      "img": "/images/blog/featured3.png",
+      "title": "Tại Sao Bạn Nên Sử Dụng Design Pattern Observer Trong Dự Án Của Mình?",
+      "time": "02 August 2024"
+    },
+    {
+      "id": 10,
+      "img": "/images/blog/featured4.png",
+      "title": "Amazon S3: Giải pháp lưu trữ Đám mây An toàn và Linh hoạt",
+      "time": "01 September 2024"
+    },
+    {
+      "id": 11,
+      "img": "/images/blog/featured5.png",
+      "title": "Front-End vs Back-End: Sự Khác Biệt Và Tại Sao Cả Hai Đều Quan Trọng",
+      "time": "28 August 2024"
+    },
+    {
+      "id": 12,
+      "img": "/images/blog/featured4.png",
+      "title": "Amazon S3: Giải pháp lưu trữ Đám mây An toàn và Linh hoạt",
+      "time": "01 September 2024"
+    }
   ]
 }
