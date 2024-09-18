@@ -8,6 +8,8 @@ import { Login } from "../pages/login/login";
 import { SignUp } from "../pages/signUp/singup";
 import { ResetPassword } from "../pages/reset/resetpassword";
 import { StudyPlant } from "../pages/studyplant/studyplant";
+import { FrontEnd } from "../pages/studyplant/studyfrontend";
+import { BackEnd } from "../pages/studyplant/studyBackEnd";
 
 const MyRoute = () => {
   return (
@@ -16,6 +18,9 @@ const MyRoute = () => {
       <Route path="/codelab/home" element={<HomePage />}></Route>
       <Route path="/codelab/homelogin" element={<HomePageLogin />}></Route>
       <Route path="/codelab/studyplant" element={<StudyPlant />}></Route>
+      <Route path="/codelab/studyplant/frontEnd" element={<FrontEnd />}></Route>
+      <Route path="/codelab/studyplant/backEnd" element={<BackEnd />}></Route>
+
       <Route path="/codelab/courses" element={<ComingSoon />}></Route>
       <Route path="/codelab/flashcard" element={<ComingSoon />}></Route>
       <Route path="/codelab/blog" element={<ComingSoon />}></Route>

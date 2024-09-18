@@ -1,5 +1,6 @@
 @use "../abstracts";
 .coming {
+  user-select: none;
   font-family: "Roboto";
   padding: 80px;
   display: flex;

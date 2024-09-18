@@ -2110,6 +2110,7 @@ table {
 }
 
 .coming {
+  user-select: none;
   font-family: "Roboto";
   padding: 80px;
   display: flex;
@@ -2870,6 +2871,7 @@ table {
 }
 @media (max-width: 767.98px) {
   .studyPlant__button {
+    width: 100%;
     margin-top: 20px;
   }
 }
@@ -3075,6 +3077,7 @@ html {
   justify-content: center;
   height: 64px;
   cursor: pointer;
+  user-select: none;
 }
 .header__avatar--image {
   border-radius: 50%;
@@ -3831,6 +3834,7 @@ html {
 }
 .breadcrumb__wrap {
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
   padding: 20px 20px 20px 20px;
   align-items: center;

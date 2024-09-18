@@ -23,7 +23,12 @@ const AppContent = () => {
   };
   const location = useLocation();
   useEffect(() => {
-    const validPaths = ["/codelab/home", "/codelab/studyplant"];
+    const validPaths = [
+      "/codelab/home",
+      "/codelab/studyplant",
+      "/codelab/studyplant/frontEnd",
+      "/codelab/studyplant/backEnd",
+    ];
     const validPathsPageLogin = ["/codelab/", "/codelab/homelogin"];
     const validPathsLogin = ["/codelab/login"];
     const validPathsSignUp = ["/codelab/signup"];

@@ -76,7 +76,7 @@ const MyLayOut = () => {
           <NavLink
             className={`nav__link ${({ isActive, isPending }) =>
               isPending ? "pending" : isActive ? "active" : ""}`}
-            to="/codelab/study"
+            to="/codelab/studyplant"
           >
             Kế hoạch
           </NavLink>

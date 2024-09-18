@@ -112,6 +112,7 @@
       color: inherit;
     }
     @include abstracts.breakpoint(md) {
+      width: 100%;
       margin-top: 20px;
     }
   }
