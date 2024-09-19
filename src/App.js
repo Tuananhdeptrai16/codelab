@@ -29,6 +29,7 @@ const AppContent = () => {
       "/codelab/studyplant/frontEnd",
       "/codelab/studyplant/backEnd",
       "/codelab/blog",
+      "/codelab/courses",
     ];
     const validPathsPageLogin = ["/codelab/", "/codelab/homelogin"];
     const validPathsLogin = ["/codelab/login"];

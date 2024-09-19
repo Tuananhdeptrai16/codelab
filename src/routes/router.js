@@ -11,6 +11,7 @@ import { StudyPlant } from "../pages/studyplant/studyplant";
 import { FrontEnd } from "../pages/studyplant/studyfrontend";
 import { BackEnd } from "../pages/studyplant/studyBackEnd";
 import { Blog } from "../pages/blog/blog";
+import { Courses } from "../pages/courses/courses";
 
 const MyRoute = () => {
   return (
@@ -22,7 +23,7 @@ const MyRoute = () => {
       <Route path="/codelab/studyplant/frontEnd" element={<FrontEnd />}></Route>
       <Route path="/codelab/studyplant/backEnd" element={<BackEnd />}></Route>
       <Route path="/codelab/blog" element={<Blog />}></Route>
-      <Route path="/codelab/courses" element={<ComingSoon />}></Route>
+      <Route path="/codelab/courses" element={<Courses />}></Route>
       <Route path="/codelab/flashcard" element={<ComingSoon />}></Route>
       <Route path="/codelab/labcode" element={<ComingSoon />}></Route>
       <Route path="/codelab/user" element={<ComingSoon />}></Route>

@@ -330,7 +330,9 @@ export const HomePageLogin = () => {
                             )}
                           </button>
                         </div>
-                        <p className="courses__content--desc">{course.desc}</p>
+                        <p className="courses__content--desc line-clamp">
+                          {course.desc}
+                        </p>
                         <div className="courses__content--bottom">
                           <span className="courses__price">{course.price}</span>
                           <div className="courses__timeRead">
