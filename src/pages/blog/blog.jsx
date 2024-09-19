@@ -246,17 +246,29 @@ export const Blog = () => {
                         />
                       </picture>
                       <div className="shares__content">
-                        <div className="shares__date">
-                          <span>{share.time}</span>
-                        </div>
                         <div className="separate"></div>
                         <h1 className="shares__title line-clamp">
                           {share.title}
                         </h1>
-                        <div className="shares__link">
-                          <Link to="#!" className="btn">
-                            Xem thêm
-                          </Link>
+                        <div className="newPost__content--bottom">
+                          <div className="newPost__timeRead">
+                            <img
+                              src={`${process.env.PUBLIC_URL}/images/icon/clock.svg`}
+                              alt=""
+                              className="newPost__time--icon"
+                            />
+                            <p className="newPost__time">{share.time}</p>
+                          </div>
+                          <div className="newPost__views">
+                            <img
+                              src={`${process.env.PUBLIC_URL}/images/icon/eye.svg`}
+                              alt=""
+                              className="newPost__views--icon icon"
+                            />
+                            <span className="newPost__views--number">
+                              {share.viewers}
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </div>

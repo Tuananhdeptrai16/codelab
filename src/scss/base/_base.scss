@@ -84,5 +84,5 @@ strong {
   overflow: hidden;
 }
 .icon {
-  filter: var(--filter--icon);
+  filter: var(--filter--icon) !important;
 }

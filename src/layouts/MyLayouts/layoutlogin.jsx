@@ -22,7 +22,7 @@ const LayOutLogin = () => {
           <img
             src={`${process.env.PUBLIC_URL}/images/icon/home.svg`}
             alt="svg"
-            className="nav__icon"
+            className="nav__icon icon"
           />
         </NavLink>
       ),
@@ -45,7 +45,7 @@ const LayOutLogin = () => {
           <img
             src={`${process.env.PUBLIC_URL}/images/icon/study.svg`}
             alt="svg"
-            className="nav__icon"
+            className="nav__icon icon"
           />
         </NavLink>
       ),
@@ -67,7 +67,7 @@ const LayOutLogin = () => {
           <img
             src={`${process.env.PUBLIC_URL}/images/icon/course.svg`}
             alt="svg"
-            className="nav__icon"
+            className="nav__icon icon"
           />
         </NavLink>
       ),
@@ -111,7 +111,7 @@ const LayOutLogin = () => {
           <img
             src={`${process.env.PUBLIC_URL}/images/icon/blog.svg`}
             alt="svg"
-            className="nav__icon"
+            className="nav__icon icon"
           />
         </NavLink>
       ),
@@ -132,7 +132,7 @@ const LayOutLogin = () => {
         <img
           src={`${process.env.PUBLIC_URL}/images/icon/codelab.svg`}
           alt="svg"
-          className="nav__icon"
+          className="nav__icon icon"
         />
       ),
       label:

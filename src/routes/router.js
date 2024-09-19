@@ -24,7 +24,6 @@ const MyRoute = () => {
       <Route path="/codelab/blog" element={<Blog />}></Route>
       <Route path="/codelab/courses" element={<ComingSoon />}></Route>
       <Route path="/codelab/flashcard" element={<ComingSoon />}></Route>
-      <Route path="/codelab/blog" element={<ComingSoon />}></Route>
       <Route path="/codelab/labcode" element={<ComingSoon />}></Route>
       <Route path="/codelab/user" element={<ComingSoon />}></Route>
       <Route path="/codelab/mycourses" element={<ComingSoon />}></Route>

@@ -273,73 +273,85 @@
       "id": 1,
       "img": "/images/blog/featured1.png",
       "title": "ESLint là gì? Hướng dẫn cấu hình ESLint cho dự án Typescript",
-      "time": "17 July 2024"
+      "time": "17 July 2024",
+      "viewers": 2678
     },
     {
       "id": 2,
       "img": "/images/blog/featured2.png",
       "title": "Python là gì? Những đặc điểm nổi bật và Ứng dụng của Python",
-      "time": "17 July 2024"
+      "time": "17 July 2024",
+      "viewers": 2678
     },
     {
       "id": 3,
       "img": "/images/blog/featured3.png",
       "title": "Tại Sao Bạn Nên Sử Dụng Design Pattern Observer Trong Dự Án Của Mình?",
-      "time": "02 August 2024"
+      "time": "17 July 2024",
+      "viewers": 2678
     },
     {
       "id": 4,
       "img": "/images/blog/featured4.png",
       "title": "Amazon S3: Giải pháp lưu trữ Đám mây An toàn và Linh hoạt",
-      "time": "01 September 2024"
+      "time": "17 July 2024",
+      "viewers": 2678
     },
     {
       "id": 5,
       "img": "/images/blog/featured5.png",
       "title": "Front-End vs Back-End: Sự Khác Biệt Và Tại Sao Cả Hai Đều Quan Trọng",
-      "time": "28 August 2024"
+      "time": "17 July 2024",
+      "viewers": 23344
     },
     {
       "id": 6,
       "img": "/images/blog/featured6.png",
       "title": "Google AI vs Các Đối Thủ: So Sánh Các Công Nghệ Trí Tuệ Nhân Tạo Hàng Đầu",
-      "time": "26 August 2024"
+      "time": "17 July 2024",
+      "viewers": 2121
     },
     {
       "id": 7,
       "img": "/images/blog/featured1.png",
       "title": "ESLint là gì? Hướng dẫn cấu hình ESLint cho dự án Typescript",
-      "time": "26 August 2024"
+      "time": "26 August 2024",
+      "viewers": 4533
     },
     {
       "id": 8,
       "img": "/images/blog/featured2.png",
       "title": "Python là gì? Những đặc điểm nổi bật và Ứng dụng của Python",
-      "time": "17 July 2024"
+      "time": "17 July 2024",
+      "viewers": 4533
     },
     {
       "id": 9,
       "img": "/images/blog/featured3.png",
       "title": "Tại Sao Bạn Nên Sử Dụng Design Pattern Observer Trong Dự Án Của Mình?",
-      "time": "02 August 2024"
+      "time": "17 July 2024",
+      "viewers": 2777
     },
     {
       "id": 10,
       "img": "/images/blog/featured4.png",
       "title": "Amazon S3: Giải pháp lưu trữ Đám mây An toàn và Linh hoạt",
-      "time": "01 September 2024"
+      "time": "17 July 2024",
+      "viewers": 4555
     },
     {
       "id": 11,
       "img": "/images/blog/featured5.png",
       "title": "Front-End vs Back-End: Sự Khác Biệt Và Tại Sao Cả Hai Đều Quan Trọng",
-      "time": "28 August 2024"
+      "time": "17 July 2024",
+      "viewers": 299
     },
     {
       "id": 12,
       "img": "/images/blog/featured4.png",
       "title": "Amazon S3: Giải pháp lưu trữ Đám mây An toàn và Linh hoạt",
-      "time": "01 September 2024"
+      "time": "17 July 2024",
+      "viewers": 10000
     }
   ]
 }

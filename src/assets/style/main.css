@@ -101,7 +101,7 @@ strong {
 }
 
 .icon {
-  filter: var(--filter--icon);
+  filter: var(--filter--icon) !important;
 }
 
 html,
@@ -1855,6 +1855,10 @@ table {
   font-weight: 700;
   line-height: 150%;
 }
+.shares__title:hover {
+  text-decoration: underline;
+  color: var(--main-color);
+}
 @media (max-width: 991.98px) {
   .shares__title {
     font-size: 1rem;
@@ -2893,6 +2897,22 @@ table {
     margin-top: 30px;
   }
 }
+.newPost__views {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.newPost__views--icon {
+  width: 16px;
+  height: 16px;
+}
+.newPost__views--number {
+  color: var(--text-color-main-light-3);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 128%;
+}
 .newPost__picture {
   display: inline-block;
   width: 100%;
@@ -2964,6 +2984,10 @@ table {
   height: 16px;
   stroke: var(--main-color);
 }
+.newPost__time--icon {
+  width: 16px;
+  height: 16px;
+}
 .newPost__list {
   margin-top: 60px;
 }
@@ -3015,6 +3039,10 @@ table {
   font-size: 1.2rem;
   font-weight: 700;
   line-height: 150%;
+}
+.newPost__title:hover {
+  text-decoration: underline;
+  color: var(--main-color);
 }
 @media (max-width: 991.98px) {
   .newPost__title {
@@ -3454,7 +3482,6 @@ html {
 .nav__icon {
   width: 24px !important;
   height: 24px;
-  filter: var(--filter--icon);
 }
 .nav__icon--active {
   animation: shake 1s ease infinite;
