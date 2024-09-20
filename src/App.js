@@ -30,6 +30,10 @@ const AppContent = () => {
       "/codelab/studyplant/backEnd",
       "/codelab/blog",
       "/codelab/courses",
+      "/codelab/flashcard",
+      "/codelab/studyplant/frontEnd/flashcard_htmlcss",
+      "/codelab/studyplant/frontEnd/flashcard_javascript",
+      "/codelab/studyplant/frontEnd/flashcard_reactjs",
     ];
     const validPathsPageLogin = ["/codelab/", "/codelab/homelogin"];
     const validPathsLogin = ["/codelab/login"];

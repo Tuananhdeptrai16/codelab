@@ -33,13 +33,20 @@ export const HomePage = () => {
     infinite: true,
     dots: false,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 5,
     slidesToScroll: 1,
     initialSlide: 0,
     arrows: false, // Ẩn mũi tên
     responsive: [
       {
-        breakpoint: 1600,
+        breakpoint: 2000,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 1500,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
@@ -392,13 +399,28 @@ export const HomePage = () => {
                           <span>{share.date}</span>
                         </div>
                         <div className="separate"></div>
-                        <h1 className="shares__title line-clamp">
+                        <Link to="#!" className="shares__title line-clamp">
                           {share.title}
-                        </h1>
-                        <div className="shares__link">
-                          <Link to="#!" className="btn">
-                            Xem thêm
-                          </Link>
+                        </Link>
+                        <div className="shares__bottom">
+                          <div className="shares__timeRead">
+                            <img
+                              src={`${process.env.PUBLIC_URL}/images/icon/clock.svg`}
+                              alt=""
+                              className="shares__time--icon"
+                            />
+                            <p className="shares__time">{share.time}</p>
+                          </div>
+                          <div className="shares__views">
+                            <img
+                              src={`${process.env.PUBLIC_URL}/images/icon/eye.svg`}
+                              alt=""
+                              className="shares__views--icon icon"
+                            />
+                            <span className="shares__views--number">
+                              {share.viewers}
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </div>

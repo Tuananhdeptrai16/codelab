@@ -111,8 +111,44 @@
       font-size: 1rem;
     }
   }
-  &__link {
-    margin-top: 20px;
+  &__time--icon {
+    width: 16px;
+    height: 16px;
+  }
+  &__views {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    &--icon {
+      width: 16px;
+      height: 16px;
+    }
+    &--number {
+      color: var(--text-color-main-light-3);
+      font-size: 1rem;
+      font-weight: 500;
+      line-height: 128%;
+    }
+  }
+  &__time {
+    color: var(--text-color-main-light-3);
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 128%;
+    @include abstracts.breakpoint(lg) {
+      font-size: 0.8rem;
+    }
+  }
+  &__timeRead {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  &__bottom {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
   }
 }
 .popular {
@@ -165,7 +201,7 @@
   &__list {
     margin-top: 60px;
     & .slider-container {
-      height: 600px;
+      height: auto;
     }
     @include abstracts.breakpoint(lg) {
       margin-top: 40px;
@@ -208,6 +244,10 @@
     font-size: 1.2rem;
     font-weight: 700;
     line-height: 150%;
+    &:hover {
+      text-decoration: underline;
+      color: var(--main-color);
+    }
     @include abstracts.breakpoint(lg) {
       font-size: 1rem;
     }

@@ -49,4 +49,12 @@ html {
   );
   --border-color-gift: #7644e1;
   --background-gift: #fff;
+  --background-linear: linear-gradient(
+    347deg,
+    rgba(161, 116, 255, 1) 40%,
+    rgba(94, 187, 255, 1) 60%
+  );
+  --background-quote: #eeeeee;
+  --failure-answer-background: #ffeaea;
+  --success-answer-background: #f0ffed;
 }

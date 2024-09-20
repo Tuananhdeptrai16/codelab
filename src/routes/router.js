@@ -12,6 +12,8 @@ import { FrontEnd } from "../pages/studyplant/studyfrontend";
 import { BackEnd } from "../pages/studyplant/studyBackEnd";
 import { Blog } from "../pages/blog/blog";
 import { Courses } from "../pages/courses/courses";
+import { FlashCard } from "../pages/flashcard/flashcard";
+import { QuestionFlashCard } from "../pages/flashcard/formflashcard";
 
 const MyRoute = () => {
   return (
@@ -24,14 +26,26 @@ const MyRoute = () => {
       <Route path="/codelab/studyplant/backEnd" element={<BackEnd />}></Route>
       <Route path="/codelab/blog" element={<Blog />}></Route>
       <Route path="/codelab/courses" element={<Courses />}></Route>
-      <Route path="/codelab/flashcard" element={<ComingSoon />}></Route>
+      <Route path="/codelab/flashcard" element={<FlashCard />}></Route>
       <Route path="/codelab/labcode" element={<ComingSoon />}></Route>
       <Route path="/codelab/user" element={<ComingSoon />}></Route>
       <Route path="/codelab/mycourses" element={<ComingSoon />}></Route>
       <Route path="/codelab/login" element={<Login />}></Route>
       <Route path="/codelab/signup" element={<SignUp />}></Route>
       <Route path="/codelab/resetpassword" element={<ResetPassword />}></Route>
-
+      {/* Phan flash card  */}
+      <Route
+        path="/codelab/studyplant/frontEnd/flashcard_htmlcss"
+        element={<QuestionFlashCard />}
+      ></Route>
+      <Route
+        path="/codelab/studyplant/frontEnd/flashcard_reactjs"
+        element={<QuestionFlashCard />}
+      ></Route>
+      <Route
+        path="/codelab/studyplant/frontEnd/flashcard_javascript"
+        element={<QuestionFlashCard />}
+      ></Route>
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );

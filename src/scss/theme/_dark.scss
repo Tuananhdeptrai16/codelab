@@ -52,4 +52,10 @@ html.dark {
   --border-color-gift: #7644e1;
   --background-gift: #171c28;
   --shadow-gift: var(--shadow--bg-gift);
+  --background-linear: linear-gradient(
+    347deg,
+    rgba(161, 116, 255, 1) 37%,
+    rgba(94, 187, 255, 1) 69%
+  );
+  --background-quote: #171c28;
 }
