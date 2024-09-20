@@ -58,4 +58,6 @@ html.dark {
     rgba(94, 187, 255, 1) 69%
   );
   --background-quote: #171c28;
+  --background-flashcard: var(--background-quote);
+  --background-default-button: #171c28;
 }

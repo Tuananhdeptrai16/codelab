@@ -181,7 +181,10 @@ export const QuestionFlashCard = () => {
                     ) : (
                       <button
                         onClick={() => checkAnswerQuestion(selectedAnswer)}
-                        className="flashcard__submit"
+                        className={`flashcard__submit ${
+                          selectedAnswer ? "" : "flashcard__submit--default"
+                        }`}
+                        disabled={!selectedAnswer} // Vô hiệu hóa nút khi chưa có đáp án được chọn
                       >
                         TRẢ LỜI
                       </button>

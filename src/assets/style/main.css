@@ -3035,7 +3035,7 @@ table {
   margin-top: 20px;
   width: 100%;
   height: 15px;
-  background-color: rgba(238, 238, 238, 0.9333333333);
+  background-color: var(--background-flashcard);
   border-radius: 20px;
   overflow: hidden; /* Đảm bảo các góc bo tròn */
 }
@@ -3047,7 +3047,7 @@ table {
   border: none; /* Bỏ đường viền mặc định */
 }
 .flashcard__progress::-webkit-progress-bar {
-  background-color: rgba(238, 238, 238, 0.9333333333);
+  background-color: var(--background-flashcard);
   border-radius: 20px; /* Áp dụng bo góc */
 }
 .flashcard__progress::-webkit-progress-value {
@@ -3067,6 +3067,11 @@ table {
   font-weight: 600;
   color: var(--text-color-main-light);
 }
+@media (max-width: 767.98px) {
+  .flashcard__number {
+    margin-top: 40px;
+  }
+}
 .flashcard__question {
   margin-top: 30px;
 }
@@ -3075,6 +3080,11 @@ table {
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 128%;
+}
+@media (max-width: 767.98px) {
+  .flashcard__question--heading {
+    font-size: 1.4rem;
+  }
 }
 .flashcard__question--desc {
   color: var(--color-text-2);
@@ -3090,7 +3100,7 @@ table {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(238, 238, 238, 0.9333333333);
+  background: var(--background-flashcard);
   padding: 20px;
   border-radius: 10px;
   animation: all 0.2s ease;
@@ -3099,12 +3109,23 @@ table {
   user-select: none;
   font-size: 1.2rem;
   font-weight: 400;
+  color: var(--text-color-main-light);
+}
+@media (max-width: 767.98px) {
+  .flashcard__answer {
+    font-size: 1rem;
+  }
 }
 .flashcard__submit--answer {
   margin-top: 150px;
-  background: rgba(238, 238, 238, 0.9333333333);
+  background: var(--background-flashcard);
   margin-bottom: 100px;
   border-radius: 10px;
+}
+@media (max-width: 767.98px) {
+  .flashcard__submit--answer {
+    margin-top: 60px;
+  }
 }
 .flashcard__submit {
   width: 100%;
@@ -3115,6 +3136,16 @@ table {
   font-weight: 600;
   color: white;
   user-select: none;
+}
+@media (max-width: 767.98px) {
+  .flashcard__submit {
+    font-size: 1rem;
+  }
+}
+.flashcard__submit--default {
+  background: var(--background-default-button);
+  color: white;
+  cursor: default;
 }
 .flashcard__result {
   display: flex;
@@ -3127,8 +3158,12 @@ table {
   line-height: 128%;
   font-size: 1rem;
   font-weight: 500;
-  text-align: center;
   color: var(--text-color-main-light);
+}
+@media (max-width: 767.98px) {
+  .flashcard__result--answer {
+    font-size: 0.8rem;
+  }
 }
 .flashcard__icon--result {
   width: 30px;
@@ -3204,6 +3239,8 @@ html.dark {
     rgba(94, 187, 255, 1) 69%
   );
   --background-quote: #171c28;
+  --background-flashcard: var(--background-quote);
+  --background-default-button: #171c28;
 }
 
 /*
@@ -3265,6 +3302,8 @@ html {
   --background-quote: #eeeeee;
   --failure-answer-background: #ffeaea;
   --success-answer-background: #f0ffed;
+  --background-flashcard: #eee;
+  --background-default-button: #eee;
 }
 
 .header__button {
