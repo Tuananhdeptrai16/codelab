@@ -3221,7 +3221,7 @@ html.dark {
   --background--footer: #292e39;
   --color-text-2: #9e9da8;
   --background-login: #292e39;
-  --text-color-main-light: #9e9da8;
+  --text-color-main-light: #fff;
   --background__breadcrumb: #171c28;
   --boxShadow__breadcrumb: rgba(23, 28, 40, 0.2);
   --text-color-breadcrumb: #9e9da8;

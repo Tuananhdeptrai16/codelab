@@ -46,7 +46,7 @@ export const HomePage = () => {
         },
       },
       {
-        breakpoint: 1500,
+        breakpoint: 1200,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
@@ -87,7 +87,7 @@ export const HomePage = () => {
         },
       },
       {
-        breakpoint: 1500,
+        breakpoint: 1200,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
@@ -128,7 +128,7 @@ export const HomePage = () => {
         },
       },
       {
-        breakpoint: 1500,
+        breakpoint: 1200,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
