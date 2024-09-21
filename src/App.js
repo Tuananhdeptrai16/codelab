@@ -18,7 +18,7 @@ const AppContent = () => {
   const [signUp, setSignUp] = useState(true);
   const [ResetPassWordPage, setResetPassWordPage] = useState(true);
   const [theme, setTheme] = useState("light");
-  const handleChangeTheme = (prevTheme) => {
+  const handleChangeTheme = () => {
     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
   };
   const location = useLocation();

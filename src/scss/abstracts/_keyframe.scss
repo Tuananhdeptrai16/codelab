@@ -26,6 +26,20 @@
     scale: 1.1;
   }
 }
+@keyframes shake_1 {
+  0%,
+  100% {
+    scale: 1.02;
+  }
+
+  25%,
+  75% {
+    scale: 0.97;
+  }
+  50% {
+    scale: 1.05;
+  }
+}
 @keyframes ShakeIcon {
   0%,
   100% {

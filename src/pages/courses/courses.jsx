@@ -81,6 +81,13 @@ export const Courses = () => {
       {
         breakpoint: 2000,
         settings: {
+          slidesToShow: 5,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 1600,
+        settings: {
           slidesToShow: 4,
           slidesToScroll: 1,
         },

@@ -213,6 +213,9 @@
       font-size: 1rem;
     }
   }
+  &__colorText {
+    color: inherit !important;
+  }
   &__submit--answer {
     margin-top: 150px;
     background: var(--background-flashcard);
