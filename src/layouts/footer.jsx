@@ -78,16 +78,36 @@ export const Footer = () => {
                 </Link>
               </li>
               <li className="footer__item">
-                <Link className="footer__link">HTML, CSS</Link>
+                <Link
+                  to="https://tuananhdeptrai16.github.io/todolist/"
+                  className="footer__link"
+                >
+                  Todo List App
+                </Link>
               </li>
               <li className="footer__item">
-                <Link className="footer__link">JavaScript </Link>
+                <Link
+                  to="https://tuananhdeptrai16.github.io/weatherapp/"
+                  className="footer__link"
+                >
+                  Weather App{" "}
+                </Link>
               </li>
               <li className="footer__item">
-                <Link className="footer__link">Node JS</Link>
+                <Link
+                  to="https://tuananhdeptrai16.github.io/Grocery-Mart/"
+                  className="footer__link"
+                >
+                  Grocery Mart
+                </Link>
               </li>
               <li className="footer__item">
-                <Link className="footer__link">React JS</Link>
+                <Link
+                  to="https://tuananhdeptrai16.github.io/safetourbobo/"
+                  className="footer__link"
+                >
+                  Safe Tour
+                </Link>
               </li>
             </ul>
           </div>
@@ -99,13 +119,19 @@ export const Footer = () => {
                 </Link>
               </li>
               <li className="footer__item">
-                <Link className="footer__link">Trang chủ</Link>
+                <Link to="/codelab/home" className="footer__link">
+                  Trang chủ
+                </Link>
               </li>
               <li className="footer__item">
-                <Link className="footer__link">Blog </Link>
+                <Link to="/codelab/blog" className="footer__link">
+                  Blog{" "}
+                </Link>
               </li>
               <li className="footer__item">
-                <Link className="footer__link">Liên hệ</Link>
+                <Link to="https://zalo.me/0373696603" className="footer__link">
+                  Liên hệ
+                </Link>
               </li>
               <li className="footer__item">
                 <Link className="footer__link">Game</Link>

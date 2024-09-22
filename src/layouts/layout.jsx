@@ -150,18 +150,20 @@ const MyLayOut = () => {
     {
       key: "6",
       icon: (
-        <img
-          src={`${process.env.PUBLIC_URL}/images/icon/codelab.svg`}
-          alt="svg"
-          className="nav__icon icon"
-        />
+        <NavLink to="https://tuananhdeptrai16.github.io/editor/">
+          <img
+            src={`${process.env.PUBLIC_URL}/images/icon/codelab.svg`}
+            alt="svg"
+            className="nav__icon icon"
+          />
+        </NavLink>
       ),
       label:
         collapsed === false ? (
           <NavLink
             className={`nav__link ${({ isActive, isPending }) =>
               isPending ? "pending" : isActive ? "active" : ""}`}
-            to="/codelab/practice"
+            to="https://tuananhdeptrai16.github.io/editor/"
           >
             LabCode
           </NavLink>
