@@ -129,7 +129,10 @@ const LayOutLogin = () => {
     {
       key: "6",
       icon: (
-        <NavLink to="https://tuananhdeptrai16.github.io/editor/">
+        <NavLink
+          to="https://tuananhdeptrai16.github.io/editor/"
+          target="_blank"
+        >
           <img
             src={`${process.env.PUBLIC_URL}/images/icon/codelab.svg`}
             alt="svg"
