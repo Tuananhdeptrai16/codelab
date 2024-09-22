@@ -129,7 +129,7 @@ const LayOutLogin = () => {
     {
       key: "6",
       icon: (
-        <NavLink to="/codelab/practice">
+        <NavLink to="https://tuananhdeptrai16.github.io/editor/">
           <img
             src={`${process.env.PUBLIC_URL}/images/icon/codelab.svg`}
             alt="svg"
@@ -140,11 +140,11 @@ const LayOutLogin = () => {
       label:
         collapsed === false ? (
           <NavLink
-            to="/codelab/practice"
             className={`nav__link ${({ isActive, isPending }) =>
               isPending ? "pending" : isActive ? "active" : ""}`}
+            to="https://tuananhdeptrai16.github.io/editor/"
           >
-            CodeLab
+            LabCode
           </NavLink>
         ) : null,
     },
