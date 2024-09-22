@@ -398,7 +398,7 @@
       "description": "Các khóa học khác sẽ được chúng tôi liên tục cập nhật và phát triển, chúng tôi sẽ mang lại nhiều ứng dụng và khóa học hay hơn cho các bạn.."
     }
   ],
-  "questions": [
+  "questions_html": [
     {
       "id": 1,
       "question": "HTML là viết tắt của từ gì?",
@@ -488,6 +488,210 @@
       ],
       "correct_answer": "all of the above",
       "explanation": "Chính xác! Tất cả các thuộc tính này đều có thể được sử dụng để ẩn một phần tử, nhưng mỗi thuộc tính có cách hoạt động khác nhau."
+    }
+  ],
+  "questions_javaScript": [
+    {
+      "id": 1,
+      "question": "JavaScript được sử dụng cho mục đích gì?",
+      "options": [
+        "Tạo các trang web tĩnh",
+        "Tạo các trang web động",
+        "Thiết kế giao diện người dùng",
+        "Quản lý cơ sở dữ liệu"
+      ],
+      "correct_answer": "Tạo các trang web động",
+      "explanation": "Chính xác! JavaScript là ngôn ngữ lập trình được sử dụng để tạo các trang web động, giúp trang web trở nên tương tác hơn."
+    },
+    {
+      "id": 2,
+      "question": "Câu lệnh nào sau đây được dùng để khai báo một biến trong JavaScript?",
+      "options": ["var", "let", "const", "Tất cả các đáp án trên"],
+      "correct_answer": "Tất cả các đáp án trên",
+      "explanation": "Chính xác! JavaScript cho phép khai báo biến bằng các từ khóa var, let và const, nhưng cách sử dụng và phạm vi của chúng có sự khác nhau."
+    },
+    {
+      "id": 3,
+      "question": "Phương thức nào dùng để thêm phần tử vào cuối mảng trong JavaScript?",
+      "options": ["push()", "pop()", "shift()", "unshift()"],
+      "correct_answer": "push()",
+      "explanation": "Chính xác! Phương thức push() được sử dụng để thêm một hoặc nhiều phần tử vào cuối mảng."
+    },
+    {
+      "id": 4,
+      "question": "Trong JavaScript, phương thức nào được sử dụng để chuyển đổi một chuỗi thành số nguyên?",
+      "options": ["parseInt()", "parseFloat()", "toString()", "Number()"],
+      "correct_answer": "parseInt()",
+      "explanation": "Chính xác! Phương thức parseInt() chuyển một chuỗi thành số nguyên, trong khi parseFloat() chuyển chuỗi thành số thập phân."
+    },
+    {
+      "id": 5,
+      "question": "Vòng lặp nào trong JavaScript được sử dụng để lặp qua các thuộc tính của một đối tượng?",
+      "options": ["for", "while", "do-while", "for...in"],
+      "correct_answer": "for...in",
+      "explanation": "Chính xác! Vòng lặp for...in được sử dụng để lặp qua tất cả các thuộc tính của một đối tượng trong JavaScript."
+    },
+    {
+      "id": 6,
+      "question": "Sự khác biệt giữa '==' và '===' trong JavaScript là gì?",
+      "options": [
+        "'==' so sánh giá trị, '===' so sánh cả giá trị và kiểu dữ liệu",
+        "'==' so sánh kiểu dữ liệu, '===' chỉ so sánh giá trị",
+        "'==' và '===' không có sự khác biệt",
+        "'==' so sánh giá trị và kiểu dữ liệu, '===' so sánh giá trị"
+      ],
+      "correct_answer": "'==' so sánh giá trị, '===' so sánh cả giá trị và kiểu dữ liệu",
+      "explanation": "Chính xác! Toán tử '==' chỉ so sánh giá trị mà không quan tâm đến kiểu dữ liệu, còn '===' so sánh cả giá trị và kiểu dữ liệu."
+    },
+    {
+      "id": 7,
+      "question": "Phương thức nào sau đây dùng để xóa phần tử cuối cùng khỏi mảng trong JavaScript?",
+      "options": ["pop()", "push()", "shift()", "unshift()"],
+      "correct_answer": "pop()",
+      "explanation": "Chính xác! Phương thức pop() được sử dụng để xóa phần tử cuối cùng khỏi mảng."
+    },
+    {
+      "id": 8,
+      "question": "Sự kiện nào kích hoạt khi người dùng nhấp vào một phần tử trong JavaScript?",
+      "options": ["onchange", "onmouseover", "onclick", "onfocus"],
+      "correct_answer": "onclick",
+      "explanation": "Chính xác! Sự kiện onclick được kích hoạt khi người dùng nhấp chuột vào một phần tử."
+    },
+    {
+      "id": 9,
+      "question": "Hàm nào được sử dụng để gọi một hàm sau một khoảng thời gian xác định trong JavaScript?",
+      "options": [
+        "setTimeout()",
+        "setInterval()",
+        "clearTimeout()",
+        "clearInterval()"
+      ],
+      "correct_answer": "setTimeout()",
+      "explanation": "Chính xác! Hàm setTimeout() cho phép gọi một hàm sau một khoảng thời gian được chỉ định."
+    },
+    {
+      "id": 10,
+      "question": "Trong JavaScript, từ khóa nào được sử dụng để kiểm tra một điều kiện?",
+      "options": ["if", "for", "while", "switch"],
+      "correct_answer": "if",
+      "explanation": "Chính xác! Từ khóa if được sử dụng để kiểm tra điều kiện trong JavaScript và thực hiện hành động dựa trên kết quả của điều kiện đó."
+    }
+  ],
+  "questions_reactJS": [
+    {
+      "id": 1,
+      "question": "React JS là gì?",
+      "options": [
+        "Thư viện JavaScript để xây dựng giao diện người dùng",
+        "Ngôn ngữ lập trình mới",
+        "Công cụ xây dựng backend",
+        "Framework CSS"
+      ],
+      "correct_answer": "Thư viện JavaScript để xây dựng giao diện người dùng",
+      "explanation": "Chính xác! React JS là một thư viện JavaScript được sử dụng để xây dựng giao diện người dùng, đặc biệt là các ứng dụng web có tính tương tác cao."
+    },
+    {
+      "id": 2,
+      "question": "Thành phần (component) trong React là gì?",
+      "options": [
+        "Một phần của giao diện người dùng",
+        "Một trang web hoàn chỉnh",
+        "Một thư viện ngoài",
+        "Một đối tượng CSS"
+      ],
+      "correct_answer": "Một phần của giao diện người dùng",
+      "explanation": "Chính xác! Thành phần (component) trong React là các khối xây dựng độc lập dùng để tạo nên giao diện người dùng."
+    },
+    {
+      "id": 3,
+      "question": "State trong React là gì?",
+      "options": [
+        "Một hàm CSS",
+        "Dữ liệu động của component",
+        "Một props không thay đổi",
+        "Một file cấu hình"
+      ],
+      "correct_answer": "Dữ liệu động của component",
+      "explanation": "Chính xác! State là một đối tượng chứa dữ liệu động, cho phép component trong React lưu trữ và quản lý trạng thái nội tại của nó."
+    },
+    {
+      "id": 4,
+      "question": "Props trong React được sử dụng để làm gì?",
+      "options": [
+        "Để truyền dữ liệu giữa các component",
+        "Để lưu trữ dữ liệu trong component",
+        "Để quản lý trạng thái",
+        "Để tạo CSS"
+      ],
+      "correct_answer": "Để truyền dữ liệu giữa các component",
+      "explanation": "Chính xác! Props (viết tắt của properties) là cách để truyền dữ liệu từ component cha xuống component con trong React."
+    },
+    {
+      "id": 5,
+      "question": "Hook nào được sử dụng để quản lý state trong function component?",
+      "options": ["useState", "useEffect", "useReducer", "useContext"],
+      "correct_answer": "useState",
+      "explanation": "Chính xác! useState là một hook trong React cho phép các function component quản lý state."
+    },
+    {
+      "id": 6,
+      "question": "useEffect hook trong React được sử dụng cho mục đích gì?",
+      "options": [
+        "Quản lý side effects trong component",
+        "Để thay đổi CSS",
+        "Để gửi props",
+        "Để tạo component"
+      ],
+      "correct_answer": "Quản lý side effects trong component",
+      "explanation": "Chính xác! useEffect cho phép bạn thực hiện các hành động như gọi API, cập nhật DOM, hoặc tương tác với các thành phần ngoài component."
+    },
+    {
+      "id": 7,
+      "question": "Phương thức nào được dùng để tạo component trong React?",
+      "options": [
+        "render()",
+        "return()",
+        "createComponent()",
+        "componentDidMount()"
+      ],
+      "correct_answer": "return()",
+      "explanation": "Chính xác! Trong React, một component được định nghĩa bởi một hàm trả về JSX thông qua phương thức return()."
+    },
+    {
+      "id": 8,
+      "question": "JSX trong React là gì?",
+      "options": [
+        "Cú pháp mở rộng của JavaScript để mô tả giao diện",
+        "Một ngôn ngữ lập trình",
+        "Một công cụ CSS",
+        "Một props đặc biệt"
+      ],
+      "correct_answer": "Cú pháp mở rộng của JavaScript để mô tả giao diện",
+      "explanation": "Chính xác! JSX là một cú pháp mở rộng của JavaScript cho phép bạn viết mã tương tự như HTML trong React, được dùng để mô tả cấu trúc giao diện người dùng."
+    },
+    {
+      "id": 9,
+      "question": "Khi nào useEffect trong React sẽ được gọi?",
+      "options": [
+        "Mỗi lần component re-render",
+        "Chỉ một lần sau khi component mount",
+        "Khi component unmount",
+        "Chỉ khi state thay đổi"
+      ],
+      "correct_answer": "Mỗi lần component re-render",
+      "explanation": "Chính xác! useEffect được gọi mỗi khi component re-render, nhưng có thể kiểm soát bằng cách truyền vào một dependency array."
+    },
+    {
+      "id": 10,
+      "question": "Context API trong React được sử dụng để làm gì?",
+      "options": [
+        "Quản lý state toàn cục giữa các component",
+        "Thêm CSS vào component",
+        "Gửi dữ liệu từ server",
+        "Tạo các hàm callback"
+      ],
+      "correct_answer": "Quản lý state toàn cục giữa các component",
+      "explanation": "Chính xác! Context API cho phép bạn chia sẻ state toàn cục giữa các component mà không cần truyền props qua nhiều cấp."
     }
   ]
 }

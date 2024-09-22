@@ -2,9 +2,9 @@
 // Thanks for watching and sharing
 import React from "react";
 import { useState } from "react";
-import Logo from "../../components/logo/logo";
 import { NavLink } from "react-router-dom";
 import { Validation } from "./Validation";
+import Logo from "../components/logo";
 export const Login = () => {
   const [error, setError] = useState({});
   const [values, setValues] = useState({});

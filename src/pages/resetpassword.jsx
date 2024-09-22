@@ -2,9 +2,9 @@
 // Thanks for watching and sharing
 import React from "react";
 import { useState } from "react";
-import Logo from "../../components/logo/logo";
 import { NavLink } from "react-router-dom";
-import { Validation } from "../login/Validation";
+import Logo from "../components/logo";
+import { Validation } from "./Validation";
 export const ResetPassword = () => {
   const [error, setError] = useState({});
   const [values, setValues] = useState({});

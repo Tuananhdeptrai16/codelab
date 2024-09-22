@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Slider from "react-slick";
 import { Link, NavLink } from "react-router-dom";
-import { Help } from "../../components/help/help";
+import { Help } from "../components/help";
 
 export const Courses = () => {
   const [slides, setSlides] = useState([]);

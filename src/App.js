@@ -3,13 +3,13 @@
 
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, useLocation } from "react-router-dom";
-import MyLayOut from "./layouts/MyLayouts/layout";
+import MyLayOut from "./layouts/layout";
 import StoreContext from "./db/context";
-import { ComingSoon } from "./pages/commingsoon/commingsoon";
-import LayOutLogin from "./layouts/MyLayouts/layoutlogin";
-import { Login } from "./pages/login/login";
-import { SignUp } from "./pages/signUp/singup";
-import { ResetPassword } from "./pages/reset/resetpassword";
+import { ComingSoon } from "./pages/commingsoon";
+import LayOutLogin from "./layouts/layoutlogin";
+import { Login } from "./pages/login";
+import { SignUp } from "./pages/singup";
+import { ResetPassword } from "./pages/resetpassword";
 
 const AppContent = () => {
   const [page, setPage] = useState(false);

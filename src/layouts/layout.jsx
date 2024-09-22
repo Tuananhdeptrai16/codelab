@@ -5,13 +5,13 @@ import { Link } from "react-router-dom";
 import React, { useRef, useState, useEffect, useContext } from "react";
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 import { Button, Layout, Menu } from "antd";
-import MyRoute from "../../routes/router";
-import Logo from "../../components/logo/logo";
-import { LogoOnly } from "../../components/logo/logo_only";
+import MyRoute from "../routes/router";
+import Logo from "../components/logo";
+import { LogoOnly } from "../components/logo_only";
 import { NavLink } from "react-router-dom";
-import { Search } from "../../components/search/search";
-import { Footer } from "../footer";
-import StoreContext from "../../db/context";
+import { Search } from "../components/search";
+import { Footer } from "./footer";
+import StoreContext from "../db/context";
 const { Header, Sider, Content } = Layout;
 const MyLayOut = () => {
   const { theme, handleChangeTheme } = useContext(StoreContext);
@@ -35,7 +35,6 @@ const MyLayOut = () => {
       document.removeEventListener("mousedown", handleClickOutSide);
     };
   }, [theme]);
-  console.log(theme);
   const menuItems = [
     {
       key: "1",

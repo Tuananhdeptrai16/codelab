@@ -1,16 +1,16 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Help } from "../../components/help/help";
-import { Gift } from "../../components/gift/gift";
-export const StudyPlant = () => {
+import { Help } from "../components/help";
+import { Gift } from "../components/gift";
+export const FrontEnd = () => {
   const [routePlants, setroutePlants] = useState([]);
   const [comunity, setComunity] = useState([]);
   useEffect(() => {
     fetch(`${process.env.PUBLIC_URL}/json/db.json`)
       .then((response) => response.json())
       .then((data) => {
-        setroutePlants(data.studyroute || []);
+        setroutePlants(data.FrontEnd || []);
         setComunity(data.Facebookcomunity || []);
       })
       .catch((error) => console.log(error));
@@ -30,19 +30,31 @@ export const StudyPlant = () => {
               />
             </NavLink>
             <NavLink to="/codelab/studyplant" className="breadcrumb__item">
-              <p className="breadcrumb__name breadcrumb__active">StudyPlant</p>
+              <p className="breadcrumb__name ">StudyPlant</p>
+              <img
+                src={`${process.env.PUBLIC_URL}/images/icon/iconbread.svg`}
+                alt=""
+                className="breadcrumb__icon-arrow"
+              />
+            </NavLink>
+            <NavLink
+              to="/codelab/studyplant/frontEnd"
+              className="breadcrumb__item"
+            >
+              <p className="breadcrumb__name breadcrumb__active">FrontEnd</p>
             </NavLink>
           </div>
         </div>
         <div className="row studyPlant__wrap">
           <div className="col-9 col-xxl-8 col-xl-12">
             <div className="studyPlant__title">
-              <h1 className="studyPlant__heading">Lộ trình học </h1>
+              <h1 className="studyPlant__heading">Lộ trình học FrontEnd</h1>
               <p className="studyPlant__desc">
-                Để thành thạo lập trình web, bạn cần một lộ trình học rõ ràng,
-                từ việc học cơ bản về giao diện, cách tương tác với người dùng,
-                ở đây chúng tôi cung cấp một lộ trình rõ ràng giúp nắm bắt kiến
-                thức chọn lọc và hướng đi đúng đắn nhất ...
+                Frontend là phần giao diện của một ứng dụng hoặc trang web mà
+                người dùng có thể trực tiếp nhìn thấy và tương tác. Nó bao gồm
+                việc thiết kế và xây dựng các thành phần như bố cục, hình ảnh,
+                văn bản, nút, biểu mẫu, và mọi thứ khác mà người dùng tương tác
+                trên màn hình.
               </p>
             </div>
             <div className="studyPlant__list">

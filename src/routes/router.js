@@ -1,19 +1,19 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { PageNotFound } from "../pages/404Page/pagenotfound";
-import { HomePage } from "../pages/home/home";
-import { ComingSoon } from "../pages/commingsoon/commingsoon";
-import { HomePageLogin } from "../pages/home/homelogin";
-import { Login } from "../pages/login/login";
-import { SignUp } from "../pages/signUp/singup";
-import { ResetPassword } from "../pages/reset/resetpassword";
-import { StudyPlant } from "../pages/studyplant/studyplant";
-import { FrontEnd } from "../pages/studyplant/studyfrontend";
-import { BackEnd } from "../pages/studyplant/studyBackEnd";
-import { Blog } from "../pages/blog/blog";
-import { Courses } from "../pages/courses/courses";
-import { FlashCard } from "../pages/flashcard/flashcard";
-import { QuestionFlashCard } from "../pages/flashcard/formflashcard";
+import { PageNotFound } from "../pages/pagenotfound";
+import { HomePage } from "../pages/home";
+import { ComingSoon } from "../pages/commingsoon";
+import { HomePageLogin } from "../pages/homelogin";
+import { Login } from "../pages/login";
+import { SignUp } from "../pages/singup";
+import { ResetPassword } from "../pages/resetpassword";
+import { StudyPlant } from "../pages/studyplant";
+import { FrontEnd } from "../pages/studyfrontend";
+import { BackEnd } from "../pages/studyBackEnd";
+import { Blog } from "../pages/blog";
+import { Courses } from "../pages/courses";
+import { FlashCard } from "../pages/flashcard";
+import { QuestionFlashCard } from "../pages/formflashcard";
 
 const MyRoute = () => {
   return (

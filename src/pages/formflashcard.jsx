@@ -1,20 +1,44 @@
 import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-import AudioPlayer from "../../components/audio";
+import AudioPlayer from "../components/audio";
 export const QuestionFlashCard = () => {
   const location = useLocation();
-  console.log(location.pathname);
+
   const [arrayQuestion, setArrayQuestion] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showWelcome, setshowWelcome] = useState(true);
-
+  const [BreadCrumb, setBreadCrumb] = useState({
+    name: "FlashCard HTML CSS",
+    link: "/codelab/studyplant/frontEnd/flashcard_htmlcss",
+  });
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
         const response = await fetch(`${process.env.PUBLIC_URL}/json/db.json`); // Thay URL của bạn
         const data = await response.json();
-        setArrayQuestion(data.questions);
+        if (
+          location.pathname === "/codelab/studyplant/frontEnd/flashcard_htmlcss"
+        ) {
+          setArrayQuestion(data.questions_html);
+        } else if (
+          location.pathname ===
+          "/codelab/studyplant/frontEnd/flashcard_javascript"
+        ) {
+          setBreadCrumb({
+            name: "FlashCard JavScript",
+            link: "/codelab/studyplant/frontEnd/flashcard_javascript",
+          });
+          setArrayQuestion(data.questions_javaScript);
+        } else if (
+          location.pathname === "/codelab/studyplant/frontEnd/flashcard_reactjs"
+        ) {
+          setBreadCrumb({
+            name: "FlashCard React JS",
+            link: "/codelab/studyplant/frontEnd/flashcard_reactjs",
+          });
+          setArrayQuestion(data.questions_reactJS);
+        }
         setLoading(false); // Khi fetch xong, set loading về false
       } catch (error) {
         console.error("Error fetching questions:", error);
@@ -56,13 +80,15 @@ export const QuestionFlashCard = () => {
       }
     }
   };
+  const setCoreAgain = () => {
+    setScore(null);
+    setWrongSentence(0);
+    setCurrentQuestion(0);
+  };
   const setAgain = () => {
     setError(null);
     setSelectedAnswer(null);
     setSuccess(null);
-    setWrongSentence(0);
-    setScore(0);
-    setCurrentQuestion(0);
   };
   return (
     <>
@@ -91,12 +117,9 @@ export const QuestionFlashCard = () => {
                     className="breadcrumb__icon-arrow"
                   />
                 </NavLink>
-                <NavLink
-                  to="/codelab/studyplant/frontEnd/flashcard_htmlcss"
-                  className="breadcrumb__item"
-                >
+                <NavLink to={BreadCrumb.link} className="breadcrumb__item">
                   <p className="breadcrumb__name  breadcrumb__active ">
-                    FlashCard HTML CSS
+                    {BreadCrumb.name}
                   </p>
                 </NavLink>
               </div>
@@ -328,6 +351,7 @@ export const QuestionFlashCard = () => {
                 <div className="congratulation__action">
                   <button
                     onClick={() => {
+                      setCoreAgain();
                       setAgain();
                       setShowCongratulations(!showCongratulations);
                     }}

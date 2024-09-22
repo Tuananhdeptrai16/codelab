@@ -4,12 +4,12 @@
 import React, { useState } from "react";
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 import { Button, Layout, Menu } from "antd";
-import MyRoute from "../../routes/router";
-import Logo from "../../components/logo/logo";
-import { LogoOnly } from "../../components/logo/logo_only";
+import MyRoute from "../routes/router";
 import { NavLink } from "react-router-dom";
-import { Search } from "../../components/search/search";
-import { Footer } from "../footer";
+import { LogoOnly } from "../components/logo_only";
+import { Footer } from "./footer";
+import { Search } from "../components/search";
+import Logo from "../components/logo";
 const { Header, Sider, Content } = Layout;
 const LayOutLogin = () => {
   const [collapsed, setCollapsed] = useState(true);
@@ -129,20 +129,22 @@ const LayOutLogin = () => {
     {
       key: "6",
       icon: (
-        <img
-          src={`${process.env.PUBLIC_URL}/images/icon/codelab.svg`}
-          alt="svg"
-          className="nav__icon icon"
-        />
+        <NavLink to="/codelab/practice">
+          <img
+            src={`${process.env.PUBLIC_URL}/images/icon/codelab.svg`}
+            alt="svg"
+            className="nav__icon icon"
+          />
+        </NavLink>
       ),
       label:
         collapsed === false ? (
           <NavLink
+            to="/codelab/practice"
             className={`nav__link ${({ isActive, isPending }) =>
               isPending ? "pending" : isActive ? "active" : ""}`}
-            to="/codelab/practice"
           >
-            LabCode
+            CodeLab
           </NavLink>
         ) : null,
     },

@@ -1,21 +1,20 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Help } from "../../components/help/help";
-import { Gift } from "../../components/gift/gift";
-export const BackEnd = () => {
+import { Help } from "../components/help";
+import { Gift } from "../components/gift";
+export const StudyPlant = () => {
   const [routePlants, setroutePlants] = useState([]);
   const [comunity, setComunity] = useState([]);
   useEffect(() => {
     fetch(`${process.env.PUBLIC_URL}/json/db.json`)
       .then((response) => response.json())
       .then((data) => {
-        setroutePlants(data.BackEnd || []);
+        setroutePlants(data.studyroute || []);
         setComunity(data.Facebookcomunity || []);
       })
       .catch((error) => console.log(error));
   }, []);
-  console.log(comunity);
   return (
     <div className="container">
       <div className="studyPlant">
@@ -30,31 +29,19 @@ export const BackEnd = () => {
               />
             </NavLink>
             <NavLink to="/codelab/studyplant" className="breadcrumb__item">
-              <p className="breadcrumb__name ">StudyPlant</p>
-              <img
-                src={`${process.env.PUBLIC_URL}/images/icon/iconbread.svg`}
-                alt=""
-                className="breadcrumb__icon-arrow"
-              />
-            </NavLink>
-            <NavLink
-              to="/codelab/studyplant/frontEnd"
-              className="breadcrumb__item"
-            >
-              <p className="breadcrumb__name breadcrumb__active">BackEnd</p>
+              <p className="breadcrumb__name breadcrumb__active">StudyPlant</p>
             </NavLink>
           </div>
         </div>
         <div className="row studyPlant__wrap">
           <div className="col-9 col-xxl-8 col-xl-12">
             <div className="studyPlant__title">
-              <h1 className="studyPlant__heading">Lộ trình học BackEnd</h1>
+              <h1 className="studyPlant__heading">Lộ trình học </h1>
               <p className="studyPlant__desc">
-                Backend là phần xử lý logic và quản lý dữ liệu của một ứng dụng
-                hoặc trang web mà người dùng không thể trực tiếp nhìn thấy. Nó
-                bao gồm việc xây dựng và quản lý các chức năng như xử lý yêu cầu
-                từ phía người dùng, tương tác với cơ sở dữ liệu, xác thực người
-                dùng, và các hoạt động logic khác trên máy chủ
+                Để thành thạo lập trình web, bạn cần một lộ trình học rõ ràng,
+                từ việc học cơ bản về giao diện, cách tương tác với người dùng,
+                ở đây chúng tôi cung cấp một lộ trình rõ ràng giúp nắm bắt kiến
+                thức chọn lọc và hướng đi đúng đắn nhất ...
               </p>
             </div>
             <div className="studyPlant__list">
