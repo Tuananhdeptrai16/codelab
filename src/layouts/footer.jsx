@@ -79,6 +79,7 @@ export const Footer = () => {
               </li>
               <li className="footer__item">
                 <Link
+                  target="_blank"
                   to="https://tuananhdeptrai16.github.io/todolist/"
                   className="footer__link"
                 >
@@ -87,14 +88,16 @@ export const Footer = () => {
               </li>
               <li className="footer__item">
                 <Link
+                  target="_blank"
                   to="https://tuananhdeptrai16.github.io/weatherapp/"
                   className="footer__link"
                 >
-                  Weather App{" "}
+                  Weather App
                 </Link>
               </li>
               <li className="footer__item">
                 <Link
+                  target="_blank"
                   to="https://tuananhdeptrai16.github.io/Grocery-Mart/"
                   className="footer__link"
                 >
@@ -103,6 +106,7 @@ export const Footer = () => {
               </li>
               <li className="footer__item">
                 <Link
+                  target="_blank"
                   to="https://tuananhdeptrai16.github.io/safetourbobo/"
                   className="footer__link"
                 >
