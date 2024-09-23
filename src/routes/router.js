@@ -3,10 +3,6 @@ import { Route, Routes } from "react-router-dom";
 import { PageNotFound } from "../pages/pagenotfound";
 import { HomePage } from "../pages/home";
 import { ComingSoon } from "../pages/commingsoon";
-import { HomePageLogin } from "../pages/homelogin";
-import { Login } from "../pages/login";
-import { SignUp } from "../pages/singup";
-import { ResetPassword } from "../pages/resetpassword";
 import { StudyPlant } from "../pages/studyplant";
 import { FrontEnd } from "../pages/studyfrontend";
 import { BackEnd } from "../pages/studyBackEnd";
@@ -14,13 +10,15 @@ import { Blog } from "../pages/blog";
 import { Courses } from "../pages/courses";
 import { FlashCard } from "../pages/flashcard";
 import { QuestionFlashCard } from "../pages/formflashcard";
+import { Login } from "../pages/auth/login";
+import { SignUp } from "../pages/auth/singup";
+import { ResetPassword } from "../pages/auth/resetpassword";
 
 const MyRoute = () => {
   return (
     <Routes>
       <Route path="/codelab/" element={<HomePage />}></Route>
       <Route path="/codelab/home" element={<HomePage />}></Route>
-      <Route path="/codelab/homelogin" element={<HomePageLogin />}></Route>
       <Route path="/codelab/studyplant" element={<StudyPlant />}></Route>
       <Route path="/codelab/studyplant/frontEnd" element={<FrontEnd />}></Route>
       <Route path="/codelab/studyplant/backEnd" element={<BackEnd />}></Route>

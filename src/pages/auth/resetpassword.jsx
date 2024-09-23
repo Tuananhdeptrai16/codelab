@@ -3,8 +3,8 @@
 import React from "react";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import Logo from "../components/logo";
-import { Validation } from "./Validation";
+import { Validation } from "../Validation";
+import Logo from "../../components/logo";
 export const ResetPassword = () => {
   const [error, setError] = useState({});
   const [values, setValues] = useState({});

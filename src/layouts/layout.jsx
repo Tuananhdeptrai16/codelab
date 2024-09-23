@@ -11,15 +11,21 @@ import { LogoOnly } from "../components/logo_only";
 import { NavLink } from "react-router-dom";
 import { Search } from "../components/search";
 import { Footer } from "./footer";
+import { useNavigate } from "react-router-dom";
 import StoreContext from "../db/context";
+import { useAuth } from "../context/authContext";
+import { doSignOut } from "../firebase/auth";
 const { Header, Sider, Content } = Layout;
 const MyLayOut = () => {
+  const { userLoggedIn } = useAuth();
+  const navigate = useNavigate();
   const { theme, handleChangeTheme } = useContext(StoreContext);
   const [collapsed, setCollapsed] = useState(true);
   const [notification, setNotification] = useState(false);
   const [showUser, setShowUser] = useState(false);
   const bellRef = useRef(null);
   const userRef = useRef(null);
+  const { currentUser } = useAuth();
   useEffect(() => {
     document.documentElement.className = theme; // Thay đổi class của thẻ `html`
     const handleClickOutSide = (e) => {
@@ -317,77 +323,111 @@ const MyLayOut = () => {
                     </div>
                   )}
                 </div>
-                <div
-                  onClick={() => setShowUser(!showUser)}
-                  className="header__avatar"
-                >
-                  <img
-                    src={`${process.env.PUBLIC_URL}/images/layout/avatar.png`}
-                    alt=""
-                    className="header__avatar--image"
-                  />
-                  {showUser && notification === false ? (
-                    <div className="header__user" ref={userRef}>
-                      <div className="header__user--wrap">
-                        <div className="header__user--info">
-                          <img
-                            src={`${process.env.PUBLIC_URL}/images/layout/avatar.png`}
-                            alt=""
-                            className="header__user--avatar"
-                          />
-                          <div className="header__user--info-wrap">
-                            <p className="header__user--name">
-                              Truong Tuan Anh
-                            </p>
-                            <p className="header__user--id">@bobouser</p>
+                {userLoggedIn ? (
+                  <div
+                    onClick={() => setShowUser(!showUser)}
+                    className="header__avatar"
+                  >
+                    <img
+                      src={
+                        currentUser.photoURL
+                          ? currentUser.photoURL
+                          : `${process.env.PUBLIC_URL}/images/user.png`
+                      }
+                      alt=""
+                      className="header__avatar--image"
+                    />
+                    {showUser && notification === false ? (
+                      <div className="header__user" ref={userRef}>
+                        <div className="header__user--wrap">
+                          <div className="header__user--info">
+                            <img
+                              src={
+                                currentUser.photoURL
+                                  ? currentUser.photoURL
+                                  : `${process.env.PUBLIC_URL}/images/user.png`
+                              }
+                              alt=""
+                              className="header__user--avatar"
+                            />
+                            <div className="header__user--info-wrap">
+                              <p className="header__user--name">
+                                {currentUser.displayName
+                                  ? currentUser.displayName
+                                  : currentUser.email}
+                              </p>
+                              <p className="header__user--id">
+                                {currentUser.displayName
+                                  ? currentUser.email
+                                  : "@user"}
+                              </p>
+                            </div>
                           </div>
-                        </div>
-                        <div className="header__user--separate"></div>
-                        <ul className="header__user--list">
-                          <li>
-                            <Link
-                              to="/codelab/user"
-                              className="header__user--link"
-                            >
-                              {" "}
-                              Trang cá nhân
-                            </Link>
-                          </li>
                           <div className="header__user--separate"></div>
-                          <li>
-                            <Link
-                              to={"/codelab/mycourses"}
-                              className="header__user--link"
-                            >
-                              Khóa học của tôi
-                            </Link>
-                          </li>
-                          <li>
-                            <button
-                              onClick={() => handleChangeTheme(theme)}
-                              className="header__user--theme"
-                            >
-                              Chủ đề :{" "}
-                              <span>{theme === "light" ? "Tối" : "Sáng"}</span>
-                            </button>
-                          </li>
-                          <div className="header__user--separate"></div>
+                          <ul className="header__user--list">
+                            <li>
+                              <Link
+                                to="/codelab/user"
+                                className="header__user--link"
+                              >
+                                {" "}
+                                Trang cá nhân
+                              </Link>
+                            </li>
+                            <div className="header__user--separate"></div>
+                            <li>
+                              <Link
+                                to={"/codelab/mycourses"}
+                                className="header__user--link"
+                              >
+                                Khóa học của tôi
+                              </Link>
+                            </li>
+                            <li>
+                              <button
+                                onClick={() => handleChangeTheme(theme)}
+                                className="header__user--theme"
+                              >
+                                Chủ đề :{" "}
+                                <span>
+                                  {theme === "light" ? "Tối" : "Sáng"}
+                                </span>
+                              </button>
+                            </li>
+                            <div className="header__user--separate"></div>
 
-                          <li>
-                            <Link
-                              to={"/codelab/login"}
-                              className="header__user--link"
-                            >
-                              Đăng xuất
-                            </Link>
-                          </li>
-                        </ul>
+                            <li>
+                              <button
+                                onClick={() => {
+                                  doSignOut().then(() => {
+                                    navigate("/codelab/login");
+                                  });
+                                }}
+                                className="header__user--link"
+                              >
+                                Đăng xuất
+                              </button>
+                            </li>
+                          </ul>
+                        </div>
                       </div>
+                    ) : (
+                      ""
+                    )}
+                  </div>
+                ) : (
+                  <div className="header__action">
+                    <Search></Search>
+                    <div className="header__button">
+                      <button className="header__btn--login btn ">
+                        <NavLink to="/codelab/login">Đăng nhập</NavLink>
+                      </button>
+                      <button className="header__btn--singup btn">
+                        <NavLink to="/codelab/signup">Đăng ký</NavLink>
+                      </button>
                     </div>
-                  ) : (
-                    ""
-                  )}
-                </div>
+                  </div>
+                )}
               </div>
             </div>
           </Header>

@@ -56,9 +56,12 @@
   &__error--icon {
     position: absolute;
     right: 15px;
-    top: 45%;
+    top: 55%;
     width: 20px;
     height: 20px;
+  }
+  &__error--icon-login {
+    top: 45% !important;
   }
   &__icon {
     position: absolute;

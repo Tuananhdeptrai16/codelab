@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 const Logo = () => {
   return (
     <div className="logo">
-      <NavLink to="/codelab/homelogin" className="logo__wrap">
+      <NavLink to="/codelab/home" className="logo__wrap">
         <div>
           <img
             src={`${process.env.PUBLIC_URL}/images/logo.png`}

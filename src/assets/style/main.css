@@ -1420,6 +1420,21 @@ table {
     translate: 3px;
   }
 }
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(calc(100% + 32px));
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
 .ant-menu-item {
   margin-top: 20px !important;
   padding-left: 24px !important;
@@ -3533,9 +3548,10 @@ html {
   width: 60px;
   height: 60px;
   border-radius: 50%;
+  object-fit: contain;
 }
 .header__user--name {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--text-color-main-light-2);
   line-height: 128%;
@@ -3980,9 +3996,12 @@ html {
 .input__error--icon {
   position: absolute;
   right: 15px;
-  top: 45%;
+  top: 55%;
   width: 20px;
   height: 20px;
+}
+.input__error--icon-login {
+  top: 45% !important;
 }
 .input__icon {
   position: absolute;
@@ -4908,6 +4927,104 @@ html {
   justify-content: center;
   animation: shake 1s infinite;
   border: 1px solid rgba(204, 204, 204, 0.8);
+}
+
+#toast {
+  position: fixed;
+  top: 100px;
+  right: 32px;
+  z-index: 999999;
+}
+
+.toast {
+  font-family: "Roboto";
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 2px;
+  padding: 20px 0;
+  min-width: 400px;
+  max-width: 450px;
+  border-left: 4px solid;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.08);
+  transition: all linear 0.3s;
+  animation: slideInLeft 1s;
+}
+
+.toast--success {
+  border-color: #47d864;
+}
+
+.toast--success .toast__icon {
+  color: #47d864;
+}
+.toast--success .toast__icon-svg {
+  width: 30px;
+  height: 30px;
+}
+
+.toast--info {
+  border-color: #2f86eb;
+}
+
+.toast--info .toast__icon {
+  color: #2f86eb;
+}
+
+.toast--warning {
+  border-color: #ffc021;
+}
+
+.toast--warning .toast__icon {
+  color: #ffc021;
+}
+
+.toast--error {
+  border-color: #ff623d;
+}
+
+.toast--error .toast__icon {
+  color: #ff623d;
+}
+.toast--error .toast__icon-svg {
+  width: 30px;
+  height: 30px;
+}
+
+.toast + .toast {
+  margin-top: 24px;
+}
+
+.toast__icon {
+  font-size: 24px;
+}
+
+.toast__icon,
+.toast__close {
+  padding: 0 16px;
+}
+
+.toast__body {
+  flex-grow: 1;
+}
+
+.toast__title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.toast__msg {
+  font-size: 14px;
+  color: #888;
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+.toast__close {
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=main.css.map */

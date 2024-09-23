@@ -6,14 +6,12 @@ import { BrowserRouter as Router, useLocation } from "react-router-dom";
 import MyLayOut from "./layouts/layout";
 import StoreContext from "./db/context";
 import { ComingSoon } from "./pages/commingsoon";
-import LayOutLogin from "./layouts/layoutlogin";
-import { Login } from "./pages/login";
-import { SignUp } from "./pages/singup";
-import { ResetPassword } from "./pages/resetpassword";
-
+import { ResetPassword } from "./pages/auth/resetpassword";
+import { SignUp } from "./pages/auth/singup";
+import { Login } from "./pages/auth/login";
+import { AuthProvider } from "./context/authContext";
 const AppContent = () => {
   const [page, setPage] = useState(false);
-  const [homePageLogin, setHomePageLogin] = useState(true);
   const [login, setLogin] = useState(true);
   const [signUp, setSignUp] = useState(true);
   const [ResetPassWordPage, setResetPassWordPage] = useState(true);
@@ -46,31 +44,28 @@ const AppContent = () => {
     validPathsResetPassword.includes(location.pathname)
       ? setResetPassWordPage(true)
       : setResetPassWordPage(false);
-    validPathsPageLogin.includes(location.pathname)
-      ? setHomePageLogin(true)
-      : setHomePageLogin(false);
     validPaths.includes(location.pathname) ? setPage(true) : setPage(false);
     validPathsLogin.includes(location.pathname)
       ? setLogin(true)
       : setLogin(false);
   }, [location]);
   return (
-    <StoreContext.Provider value={{ location, theme, handleChangeTheme }}>
-      {ResetPassWordPage ? (
-        <ResetPassword></ResetPassword>
-      ) : signUp ? (
-        <SignUp></SignUp>
-      ) : login ? (
-        <Login></Login>
-      ) : homePageLogin ? (
-        <LayOutLogin />
-      ) : page ? (
-        <MyLayOut />
-      ) : (
-        <ComingSoon />
-        // <PageNotFound />
-      )}
-    </StoreContext.Provider>
+    <AuthProvider>
+      <StoreContext.Provider value={{ location, theme, handleChangeTheme }}>
+        {ResetPassWordPage ? (
+          <ResetPassword></ResetPassword>
+        ) : signUp ? (
+          <SignUp></SignUp>
+        ) : login ? (
+          <Login></Login>
+        ) : page ? (
+          <MyLayOut />
+        ) : (
+          <ComingSoon />
+          // <PageNotFound />
+        )}
+      </StoreContext.Provider>
+    </AuthProvider>
   );
 };
 
