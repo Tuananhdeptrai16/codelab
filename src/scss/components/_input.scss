@@ -8,6 +8,10 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  &__notification--success {
+    padding: 20px;
+    border-left: 10px solid var(--main-color-green); /* Màu viền xanh thành công */
+  }
   &__error--icon {
     animation: shakeError 2s;
     width: 16px;
@@ -18,6 +22,11 @@
     margin-top: 10px;
     font-size: 0.8rem;
     color: var(--main-color-red);
+  }
+  &__success-backLogin {
+    display: inline-block;
+    font-weight: 600;
+    color: #0071dc;
   }
   &__border--error {
     border: 2px solid var(--main-color-red) !important;
@@ -90,6 +99,8 @@
     flex-direction: column;
     display: flex;
     gap: 20px;
+    justify-content: center;
+    align-items: center;
   }
   &__button {
     display: flex;

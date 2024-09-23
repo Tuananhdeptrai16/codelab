@@ -72,7 +72,7 @@ export const HomePageLogin = () => {
     arrows: false, // Ẩn mũi tên
     responsive: [
       {
-        breakpoint: 2000,
+        breakpoint: 1600,
         settings: {
           slidesToShow: 4,
           slidesToScroll: 1,
@@ -113,7 +113,7 @@ export const HomePageLogin = () => {
     arrows: false, // Ẩn mũi tên
     responsive: [
       {
-        breakpoint: 2000,
+        breakpoint: 1600,
         settings: {
           slidesToShow: 4,
           slidesToScroll: 1,

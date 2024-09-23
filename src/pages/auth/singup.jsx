@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Logo from "../../components/logo";
 import { Navigate, Link, NavLink } from "react-router-dom";
-import { Validation } from "../Validation";
+import { Validation } from "../../services/Validation";
 import { useAuth } from "../../context/authContext";
 import { doCreateUserWithEmailAndPassword } from "../../firebase/auth";
 import { doSignInWithGoogle } from "../../firebase/auth";

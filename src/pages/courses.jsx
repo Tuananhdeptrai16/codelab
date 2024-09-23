@@ -26,7 +26,6 @@ export const Courses = () => {
     initialSlide: 0,
   };
   const settingsMyCourses = {
-    autoplay: true,
     autoplaySpeed: 2000,
     infinite: true,
     dots: false,
@@ -37,7 +36,7 @@ export const Courses = () => {
     arrows: false, // Ẩn mũi tên
     responsive: [
       {
-        breakpoint: 2000,
+        breakpoint: 1600,
         settings: {
           slidesToShow: 4,
           slidesToScroll: 1,
@@ -78,13 +77,6 @@ export const Courses = () => {
     rows: 2,
     arrows: false, // Ẩn mũi tên
     responsive: [
-      {
-        breakpoint: 2000,
-        settings: {
-          slidesToShow: 5,
-          slidesToScroll: 1,
-        },
-      },
       {
         breakpoint: 1600,
         settings: {

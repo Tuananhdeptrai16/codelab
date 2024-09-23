@@ -12,7 +12,7 @@ export const Validation = (values) => {
     errors.email = "Email bạn nhập không hợp lệ !";
   }
   if (!values.password) {
-    errors.email = "Mật khẩu không chính xác ";
+    errors.password = "Mật khẩu không chính xác ";
   } else if (!password__require.test(values.password)) {
     errors.password = "Mật khẩu không hợp lệ !";
   }
@@ -25,7 +25,5 @@ export const Validation = (values) => {
   if (values.subject === "") {
     errors.subject = "Subject is not empty !!";
   }
-  // Các kiểm tra khác...
-  console.log(errors);
   return errors;
 };

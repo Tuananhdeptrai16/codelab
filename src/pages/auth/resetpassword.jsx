@@ -3,12 +3,14 @@
 import React from "react";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { Validation } from "../Validation";
 import Logo from "../../components/logo";
+import { doPasswordReset } from "../../firebase/auth";
+import { validateEmail } from "../../services/ValidationEmail";
 export const ResetPassword = () => {
   const [error, setError] = useState({});
   const [values, setValues] = useState({});
   const [show, setShow] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
   const handleChange = (e) => {
     setValues({
       ...values, // sao chép lại đối tượng cũ
@@ -17,7 +19,20 @@ export const ResetPassword = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    setError(Validation(values));
+    const validationErrors = validateEmail(values.email);
+    setError(validationErrors);
+
+    if (Object.keys(validationErrors).length === 0) {
+      // Proceed with password reset if no validation errors
+      doPasswordReset(values.email)
+        .then(() => {
+          setValues("");
+          setSuccessMessage("Đã gửi Email khôi phục mật khẩu!");
+        })
+        .catch((error) => {
+          setError(error);
+        });
+    }
   };
   return (
     <div className="reset">
@@ -65,6 +80,7 @@ export const ResetPassword = () => {
               Bạn vui lòng điền đầy đủ thông tin vào đây !! Sau đó kiểm tra lại
               hòm thư để cài đặt lại mật khẩu.
             </p>
+
             <form className="input" onSubmit={handleSubmit}>
               <div className="input__form--wrap">
                 <input
@@ -86,7 +102,7 @@ export const ResetPassword = () => {
                   <img
                     src={`${process.env.PUBLIC_URL}/images/icon/error.svg`}
                     alt=""
-                    className="input__error--icon"
+                    className="input__error--icon  input__error--icon-login"
                   />
                 ) : (
                   <img
@@ -105,11 +121,24 @@ export const ResetPassword = () => {
                   type="submit"
                   className="form__btn--primary input__button"
                 >
-                  Cài đặt lại mật khẩu !
+                  Gửi yêu cầu Reset !
                 </button>
+                {successMessage && (
+                  <div className="input__notification--success">
+                    <p className="input__success--text">
+                      {successMessage}
+                      <NavLink
+                        to="/codelab/login"
+                        className="input__success-backLogin"
+                      >
+                        Đăng nhập ngay
+                      </NavLink>
+                    </p>
+                  </div>
+                )}
               </div>
               <p className="reset__signUp">
-                Bạn chưa có tài khoản?{" "}
+                Bạn chưa có tài khoản?
                 <NavLink
                   to="/codelab/signup"
                   className="reset__signUp--highlight"

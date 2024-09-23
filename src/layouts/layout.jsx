@@ -238,183 +238,191 @@ const MyLayOut = () => {
                 }}
               />
               <div className="header__action">
-                <Search></Search>
-                <div className="header__notification">
-                  <button onClick={() => setNotification(!notification)}>
-                    <img
-                      src={`${process.env.PUBLIC_URL}/images/icon/notification.svg`}
-                      alt=""
-                      className="header__notification--icon icon"
-                    />
-                  </button>
-                  <span className="header__number--notification">1</span>
-                  {notification && (
-                    <div className="header__bell" ref={bellRef}>
-                      <div className="header__bell--wrap">
-                        <div className="header__bell--top">
-                          <h3 className="header__bell--title">Thông báo</h3>
-                          <span className="header__flag">
-                            Đánh dấu đọc tất cả
-                          </span>
-                        </div>
-                        <div className="header__bell--list">
-                          <div className="header__bell--item">
-                            <div className="header__bell--avatar">
-                              <img
-                                src={`${process.env.PUBLIC_URL}/images/layout/avatar.png`}
-                                alt=""
-                                className="header__bell--img"
-                              />
-                            </div>
-                            <div className="header__bell--content">
-                              <p className="header__bell--notification">
-                                Bài học
-                                <strong>
-                                  {" "}
-                                  Mở event đua TOP trả lời câu hỏi{" "}
-                                </strong>
-                                mới được thêm vào.
-                              </p>
-                              <p className="header__bell--date">9 ngày trước</p>
-                            </div>
-                          </div>
-                          <div className="header__bell--item">
-                            <div className="header__bell--avatar">
-                              <img
-                                src={`${process.env.PUBLIC_URL}/images/layout/avatar.png`}
-                                alt=""
-                                className="header__bell--img"
-                              />
-                            </div>
-                            <div className="header__bell--content">
-                              <p className="header__bell--notification">
-                                Bài học
-                                <strong>
-                                  {" "}
-                                  Mở event đua TOP trả lời câu hỏi{" "}
-                                </strong>
-                                mới được thêm vào.
-                              </p>
-                              <p className="header__bell--date">9 ngày trước</p>
-                            </div>
-                          </div>
-                          <div className="header__bell--item">
-                            <div className="header__bell--avatar">
-                              <img
-                                src={`${process.env.PUBLIC_URL}/images/layout/avatar.png`}
-                                alt=""
-                                className="header__bell--img"
-                              />
-                            </div>
-                            <div className="header__bell--content">
-                              <p className="header__bell--notification line-clamp">
-                                Bài học
-                                <strong>
-                                  {" "}
-                                  Mở event đua TOP trả lời câu hỏi{" "}
-                                </strong>
-                                mới được thêm vào.
-                              </p>
-                              <p className="header__bell--date">9 ngày trước</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  )}
-                </div>
                 {userLoggedIn ? (
-                  <div
-                    onClick={() => setShowUser(!showUser)}
-                    className="header__avatar"
-                  >
-                    <img
-                      src={
-                        currentUser.photoURL
-                          ? currentUser.photoURL
-                          : `${process.env.PUBLIC_URL}/images/user.png`
-                      }
-                      alt=""
-                      className="header__avatar--image"
-                    />
-                    {showUser && notification === false ? (
-                      <div className="header__user" ref={userRef}>
-                        <div className="header__user--wrap">
-                          <div className="header__user--info">
-                            <img
-                              src={
-                                currentUser.photoURL
-                                  ? currentUser.photoURL
-                                  : `${process.env.PUBLIC_URL}/images/user.png`
-                              }
-                              alt=""
-                              className="header__user--avatar"
-                            />
-                            <div className="header__user--info-wrap">
-                              <p className="header__user--name">
-                                {currentUser.displayName
-                                  ? currentUser.displayName
-                                  : currentUser.email}
-                              </p>
-                              <p className="header__user--id">
-                                {currentUser.displayName
-                                  ? currentUser.email
-                                  : "@user"}
-                              </p>
+                  <>
+                    <Search></Search>
+                    <div className="header__notification">
+                      <button onClick={() => setNotification(!notification)}>
+                        <img
+                          src={`${process.env.PUBLIC_URL}/images/icon/notification.svg`}
+                          alt=""
+                          className="header__notification--icon icon"
+                        />
+                      </button>
+                      <span className="header__number--notification">1</span>
+                      {notification && (
+                        <div className="header__bell" ref={bellRef}>
+                          <div className="header__bell--wrap">
+                            <div className="header__bell--top">
+                              <h3 className="header__bell--title">Thông báo</h3>
+                              <span className="header__flag">
+                                Đánh dấu đọc tất cả
+                              </span>
+                            </div>
+                            <div className="header__bell--list">
+                              <div className="header__bell--item">
+                                <div className="header__bell--avatar">
+                                  <img
+                                    src={`${process.env.PUBLIC_URL}/images/layout/avatar.png`}
+                                    alt=""
+                                    className="header__bell--img"
+                                  />
+                                </div>
+                                <div className="header__bell--content">
+                                  <p className="header__bell--notification">
+                                    Bài học
+                                    <strong>
+                                      {" "}
+                                      Mở event đua TOP trả lời câu hỏi{" "}
+                                    </strong>
+                                    mới được thêm vào.
+                                  </p>
+                                  <p className="header__bell--date">
+                                    9 ngày trước
+                                  </p>
+                                </div>
+                              </div>
+                              <div className="header__bell--item">
+                                <div className="header__bell--avatar">
+                                  <img
+                                    src={`${process.env.PUBLIC_URL}/images/layout/avatar.png`}
+                                    alt=""
+                                    className="header__bell--img"
+                                  />
+                                </div>
+                                <div className="header__bell--content">
+                                  <p className="header__bell--notification">
+                                    Bài học
+                                    <strong>
+                                      {" "}
+                                      Mở event đua TOP trả lời câu hỏi{" "}
+                                    </strong>
+                                    mới được thêm vào.
+                                  </p>
+                                  <p className="header__bell--date">
+                                    9 ngày trước
+                                  </p>
+                                </div>
+                              </div>
+                              <div className="header__bell--item">
+                                <div className="header__bell--avatar">
+                                  <img
+                                    src={`${process.env.PUBLIC_URL}/images/layout/avatar.png`}
+                                    alt=""
+                                    className="header__bell--img"
+                                  />
+                                </div>
+                                <div className="header__bell--content">
+                                  <p className="header__bell--notification line-clamp">
+                                    Bài học
+                                    <strong>
+                                      {" "}
+                                      Mở event đua TOP trả lời câu hỏi{" "}
+                                    </strong>
+                                    mới được thêm vào.
+                                  </p>
+                                  <p className="header__bell--date">
+                                    9 ngày trước
+                                  </p>
+                                </div>
+                              </div>
                             </div>
                           </div>
-                          <div className="header__user--separate"></div>
-                          <ul className="header__user--list">
-                            <li>
-                              <Link
-                                to="/codelab/user"
-                                className="header__user--link"
-                              >
-                                {" "}
-                                Trang cá nhân
-                              </Link>
-                            </li>
-                            <div className="header__user--separate"></div>
-                            <li>
-                              <Link
-                                to={"/codelab/mycourses"}
-                                className="header__user--link"
-                              >
-                                Khóa học của tôi
-                              </Link>
-                            </li>
-                            <li>
-                              <button
-                                onClick={() => handleChangeTheme(theme)}
-                                className="header__user--theme"
-                              >
-                                Chủ đề :{" "}
-                                <span>
-                                  {theme === "light" ? "Tối" : "Sáng"}
-                                </span>
-                              </button>
-                            </li>
-                            <div className="header__user--separate"></div>
-
-                            <li>
-                              <button
-                                onClick={() => {
-                                  doSignOut().then(() => {
-                                    navigate("/codelab/login");
-                                  });
-                                }}
-                                className="header__user--link"
-                              >
-                                Đăng xuất
-                              </button>
-                            </li>
-                          </ul>
                         </div>
-                      </div>
-                    ) : (
-                      ""
-                    )}
-                  </div>
+                      )}
+                    </div>
+                    <div
+                      onClick={() => setShowUser(!showUser)}
+                      className="header__avatar"
+                    >
+                      <img
+                        src={
+                          currentUser.photoURL
+                            ? currentUser.photoURL
+                            : `${process.env.PUBLIC_URL}/images/user.png`
+                        }
+                        alt=""
+                        className="header__avatar--image"
+                      />
+                      {showUser && notification === false ? (
+                        <div className="header__user" ref={userRef}>
+                          <div className="header__user--wrap">
+                            <div className="header__user--info">
+                              <img
+                                src={
+                                  currentUser.photoURL
+                                    ? currentUser.photoURL
+                                    : `${process.env.PUBLIC_URL}/images/user.png`
+                                }
+                                alt=""
+                                className="header__user--avatar"
+                              />
+                              <div className="header__user--info-wrap">
+                                <p className="header__user--name">
+                                  {currentUser.displayName
+                                    ? currentUser.displayName
+                                    : currentUser.email}
+                                </p>
+                                <p className="header__user--id">
+                                  {currentUser.displayName
+                                    ? currentUser.email
+                                    : "@user"}
+                                </p>
+                              </div>
+                            </div>
+                            <div className="header__user--separate"></div>
+                            <ul className="header__user--list">
+                              <li>
+                                <Link
+                                  to="/codelab/user"
+                                  className="header__user--link"
+                                >
+                                  {" "}
+                                  Trang cá nhân
+                                </Link>
+                              </li>
+                              <div className="header__user--separate"></div>
+                              <li>
+                                <Link
+                                  to={"/codelab/mycourses"}
+                                  className="header__user--link"
+                                >
+                                  Khóa học của tôi
+                                </Link>
+                              </li>
+                              <li>
+                                <button
+                                  onClick={() => handleChangeTheme(theme)}
+                                  className="header__user--theme"
+                                >
+                                  Chủ đề :{" "}
+                                  <span>
+                                    {theme === "light" ? "Tối" : "Sáng"}
+                                  </span>
+                                </button>
+                              </li>
+                              <div className="header__user--separate"></div>
+
+                              <li>
+                                <button
+                                  onClick={() => {
+                                    doSignOut().then(() => {
+                                      navigate("/codelab/login");
+                                    });
+                                  }}
+                                  className="header__user--link"
+                                >
+                                  Đăng xuất
+                                </button>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      ) : (
+                        ""
+                      )}
+                    </div>
+                  </>
                 ) : (
                   <div className="header__action">
                     <Search></Search>

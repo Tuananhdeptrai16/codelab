@@ -1,9 +1,9 @@
 // The code was written by programmer Truong Tuan Anh
 // Thanks for watching and sharing
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Navigate, NavLink, useNavigate } from "react-router-dom";
-import { Validation } from "../Validation";
+import { Validation } from "../../services/Validation";
 import Logo from "../../components/logo";
 import {
   doSignInWithEmailAndPassword,
