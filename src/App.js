@@ -22,6 +22,7 @@ const AppContent = () => {
   const location = useLocation();
   useEffect(() => {
     const validPaths = [
+      "/codelab/",
       "/codelab/home",
       "/codelab/studyplant",
       "/codelab/studyplant/frontEnd",
@@ -33,7 +34,6 @@ const AppContent = () => {
       "/codelab/studyplant/frontEnd/flashcard_javascript",
       "/codelab/studyplant/frontEnd/flashcard_reactjs",
     ];
-    const validPathsPageLogin = ["/codelab/", "/codelab/homelogin"];
     const validPathsLogin = ["/codelab/login"];
     const validPathsSignUp = ["/codelab/signup"];
     const validPathsResetPassword = ["/codelab/resetpassword"];
