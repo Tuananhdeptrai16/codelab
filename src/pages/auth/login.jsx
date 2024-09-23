@@ -45,7 +45,6 @@ export const Login = () => {
         showToast();
         await delay(4000); // Chờ 2000ms (2 giây)
         navigate("/codelab/login");
-        window.location.reload(); // Tải lại trang
       }
     }
   };
