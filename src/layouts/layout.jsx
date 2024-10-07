@@ -94,7 +94,7 @@ const MyLayOut = () => {
           <img
             src={`${process.env.PUBLIC_URL}/images/icon/course.svg`}
             alt="svg"
-            className="nav__icon icon"
+            className="nav__icon icon "
           />
         </NavLink>
       ),
