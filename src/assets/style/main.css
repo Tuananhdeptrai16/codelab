@@ -3222,6 +3222,152 @@ table {
   border: 1px solid #0093fc;
 }
 
+.detail__main {
+  margin-top: 40px;
+}
+.detail__heading {
+  color: var(--text-color-main-light);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 123.81%;
+}
+.detail__desc {
+  color: var(--color-text-2);
+  margin-top: 20px;
+  font-weight: 500;
+  line-height: 148%;
+}
+.detail__reward {
+  margin-top: 30px;
+}
+.detail__reward--list {
+  margin-top: 30px;
+}
+.detail__reward--list li {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-top: 20px;
+  color: var(--color-text-2);
+  margin-top: 8px;
+  font-weight: 500;
+  line-height: 100%;
+  height: 40px;
+  font-size: 1rem;
+}
+.detail__icon, .detail__check--icon {
+  width: 20px;
+  height: 20px;
+}
+.detail__background {
+  width: 90%;
+}
+.detail__wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: var(--boxshadow-main) 0px 7px 29px 0px;
+  padding: 40px 10px;
+  border-radius: 20px;
+}
+.detail__img {
+  width: 100%;
+  border-radius: 20px;
+  height: 250px;
+}
+.detail__price {
+  color: var(--main-color);
+  margin-top: 25px;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.detail__register {
+  margin-top: 20px;
+  width: 80%;
+  background: var(--main-color);
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+.detail__register:hover {
+  scale: 1.01;
+}
+.detail__includes {
+  margin-top: 20px;
+  margin-left: 30px;
+  align-self: flex-start;
+}
+.detail__includes--heading {
+  color: var(--color-text-2);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.detail__item {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
+.detail__text {
+  color: var(--color-text-2);
+  line-height: 128%;
+  font-weight: 500;
+}
+.detail__content {
+  margin-top: 30px;
+}
+.detail__info {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.detail__info--left {
+  align-items: center;
+  display: flex;
+  gap: 20px;
+}
+.detail__extend--button {
+  font-size: 1.05rem;
+  color: var(--main-color);
+}
+.detail__extend--button:hover {
+  text-decoration: underline;
+}
+.detail__list {
+  margin-top: 30px;
+}
+.detail__item--info {
+  margin-top: 10px;
+  background: var(--background__breadcrumb);
+  padding: 20px 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+}
+.detail__item--wrap {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.detail__item-text {
+  color: var(--text-color-main-light);
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 128%;
+}
+.detail__item--desc {
+  color: var(--color-text-2);
+  line-height: 128%;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
 /*
     The code was written by programmer Truong Tuan Anh
     Thanks for watching and sharing !!!

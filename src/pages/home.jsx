@@ -310,13 +310,15 @@ export const HomePage = () => {
                 return (
                   <div key={course.id} className="courses__item">
                     <div className="courses__content--wrap">
-                      <picture className="courses__picture">
-                        <img
-                          src={`${process.env.PUBLIC_URL}${course.img}`}
-                          alt="imge"
-                          className="courses__img"
-                        />
-                      </picture>
+                      <Link to="/codelab/courses/details-course">
+                        <picture className="courses__picture">
+                          <img
+                            src={`${process.env.PUBLIC_URL}${course.img}`}
+                            alt="imge"
+                            className="courses__img"
+                          />
+                        </picture>
+                      </Link>
                       <div className="courses__content">
                         <div className="courses__content--top">
                           <h4 className="courses__title">{course.title}</h4>
@@ -355,6 +357,7 @@ export const HomePage = () => {
                         </div>
                       </div>
                     </div>
+                    <Link />
                   </div>
                 );
               })}

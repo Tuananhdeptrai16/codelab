@@ -13,6 +13,7 @@ import { QuestionFlashCard } from "../pages/formflashcard";
 import { Login } from "../pages/auth/login";
 import { SignUp } from "../pages/auth/singup";
 import { ResetPassword } from "../pages/auth/resetpassword";
+import { DetailsCourse } from "../pages/detailscourse";
 
 const MyRoute = () => {
   return (
@@ -24,6 +25,10 @@ const MyRoute = () => {
       <Route path="/codelab/studyplant/backEnd" element={<BackEnd />}></Route>
       <Route path="/codelab/blog" element={<Blog />}></Route>
       <Route path="/codelab/courses" element={<Courses />}></Route>
+      <Route
+        path="/codelab/courses/details-course"
+        element={<DetailsCourse />}
+      ></Route>
       <Route path="/codelab/flashcard" element={<FlashCard />}></Route>
       <Route path="/codelab/labcode" element={<ComingSoon />}></Route>
       <Route path="/codelab/user" element={<ComingSoon />}></Route>
