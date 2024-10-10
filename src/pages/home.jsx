@@ -45,7 +45,7 @@ export const HomePage = () => {
         },
       },
       {
-        breakpoint: 1200,
+        breakpoint: 1300,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
@@ -79,21 +79,21 @@ export const HomePage = () => {
     arrows: false, // Ẩn mũi tên
     responsive: [
       {
-        breakpoint: 2000,
+        breakpoint: 1600,
         settings: {
           slidesToShow: 4,
           slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 1200,
+        breakpoint: 1300,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 1300,
+        breakpoint: 1200,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
@@ -127,14 +127,14 @@ export const HomePage = () => {
         },
       },
       {
-        breakpoint: 1400,
+        breakpoint: 1300,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 1000,
+        breakpoint: 1200,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,

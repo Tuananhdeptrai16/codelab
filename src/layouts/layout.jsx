@@ -15,6 +15,7 @@ import { useNavigate } from "react-router-dom";
 import StoreContext from "../db/context";
 import { useAuth } from "../context/authContext";
 import { doSignOut } from "../firebase/auth";
+import LogoMedium from "../components/logo-md";
 const { Header, Sider, Content } = Layout;
 const MyLayOut = () => {
   const { userLoggedIn } = useAuth();
@@ -237,6 +238,9 @@ const MyLayOut = () => {
                   height: 64,
                 }}
               />
+              <div className="logo__header d-none d-md-block">
+                <LogoMedium></LogoMedium>
+              </div>
               <div className="header__action">
                 {userLoggedIn ? (
                   <>

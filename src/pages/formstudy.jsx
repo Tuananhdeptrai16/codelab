@@ -29,7 +29,7 @@ export const FormStudy = () => {
       </div>
       <div className="study">
         <div className="row">
-          <div className="col-9">
+          <div className="col-8 col-xl-12">
             <div className="container">
               <h1 className="study__heading">Giới thiệu Javascript</h1>
               <p className="study__time">9 phút đọc</p>
@@ -149,6 +149,9 @@ export const FormStudy = () => {
                       alt=""
                       className="study__user--avatar"
                     />
+                    <p className="study__user--name d-none d-md-block">
+                      Truong Tuan Anh
+                    </p>
                   </div>
                   <input
                     type="text"
@@ -160,7 +163,7 @@ export const FormStudy = () => {
               </form>
             </div>
           </div>
-          <div className="col-3">
+          <div className="col-4 col-xl-12">
             <div className="study__lesson">
               <div className="study__lesson--item">
                 <p className="study__lesson--name">1. Giới thiệu JavaScript</p>
@@ -191,7 +194,9 @@ export const FormStudy = () => {
                   className="study__lesson-icon icon"
                 />
               </div>
-              <Gift></Gift>
+              <div className="study__gift">
+                <Gift></Gift>
+              </div>
             </div>
           </div>
         </div>
