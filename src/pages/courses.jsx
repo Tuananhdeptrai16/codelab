@@ -239,7 +239,7 @@ export const Courses = () => {
                           <span className="courses__price">{course.price}</span>
                           <div className="courses__total-file">
                             <img
-                              src={`${process.env.PUBLIC_URL}/images/icon/file.svg`}
+                              src={`${process.env.PUBLIC_URL}/images/icon/book.svg`}
                               alt=""
                               className="courses__file--icon icon"
                             />

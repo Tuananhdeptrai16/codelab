@@ -80,7 +80,7 @@ export const FrontEnd = () => {
                             {routePlant.description}
                           </p>
                           <NavLink
-                            to={routePlant.link}
+                            to="/codelab/courses/details-course"
                             className="btn studyPlant__button"
                           >
                             Vào học ngay

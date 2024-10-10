@@ -3661,7 +3661,7 @@ table {
 .study__icon--animation {
   animation: ShakeIcon 1s ease infinite;
 }
-.study__gift {
+.study__quote, .study__gift {
   margin-bottom: 30px;
 }
 
@@ -5100,6 +5100,7 @@ html {
   margin-top: 30px;
 }
 .quote__wrap {
+  border-radius: 3px;
   padding: 20px;
   background: var(--background-quote);
   border-left: 10px solid #fbe8e8;

@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { Gift } from "../components/gift";
+import { Quote } from "../components/quote";
 export const FormStudy = () => {
   return (
     <div className="container">
@@ -194,8 +195,12 @@ export const FormStudy = () => {
                   className="study__lesson-icon icon"
                 />
               </div>
+
               <div className="study__gift">
                 <Gift></Gift>
+              </div>
+              <div className="study__quote">
+                <Quote></Quote>
               </div>
             </div>
           </div>
