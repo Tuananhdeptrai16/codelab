@@ -84,7 +84,7 @@
     border-radius: 10px 10px 0 0;
   }
   &__content {
-    padding: 20px;
+    padding: 20px 10px;
     border-radius: 0 0 20px 20px;
     background: var(--background--color-main-3);
     @include abstracts.breakpoint(md) {
@@ -99,7 +99,7 @@
   }
   &__title {
     color: var(--text-color-main-light);
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 700;
     line-height: 150%;
     &:hover {
@@ -225,7 +225,7 @@
     border-radius: 10px 10px 0 0;
   }
   &__content {
-    padding: 20px;
+    padding: 20px 10px;
     border-radius: 0 0 20px 20px;
     background: var(--background--color-main-3);
     @include abstracts.breakpoint(md) {
@@ -240,7 +240,7 @@
   }
   &__title {
     color: var(--text-color-main-light);
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 700;
     line-height: 150%;
     &:hover {
@@ -271,7 +271,7 @@
   }
 }
 .separate {
-  margin: 12px 0;
+  margin: 6px 0;
   width: 60%;
   height: 1px;
   background: #ccc;
@@ -282,7 +282,7 @@
   justify-content: center;
   width: 118px;
   height: 50px;
-  border-radius: 25px;
+  border-radius: 10px;
   background: var(--main-color-grey);
   font-weight: 500;
   color: var(--color-text);

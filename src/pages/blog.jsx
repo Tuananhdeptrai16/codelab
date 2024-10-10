@@ -197,9 +197,8 @@ export const Blog = () => {
                             )}
                           </button>
                         </div>
-                        <p className="newPost__content--desc">{newpost.desc}</p>
                         <div className="newPost__content--bottom">
-                          <span className="newPost__price">
+                          <span className="newPost__time">
                             {newpost.posttime}
                           </span>
                           <div className="newPost__timeRead">

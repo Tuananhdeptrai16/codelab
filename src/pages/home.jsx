@@ -346,13 +346,21 @@ export const HomePage = () => {
                         </p>
                         <div className="courses__content--bottom">
                           <span className="courses__price">{course.price}</span>
-                          <div className="courses__timeRead">
+                          <div className="courses__total-file">
                             <img
-                              src={`${process.env.PUBLIC_URL}/images/icon/clock.svg`}
+                              src={`${process.env.PUBLIC_URL}/images/icon/book.svg`}
                               alt=""
-                              className="courses__time--icon"
+                              className="courses__file--icon icon"
                             />
-                            <p className="courses__time">{course.time}</p>
+                            <p className="courses__file">128</p>
+                          </div>
+                          <div className="courses__total-lesson">
+                            <img
+                              src={`${process.env.PUBLIC_URL}/images/icon/pen.svg`}
+                              alt=""
+                              className="courses__lesson--icon icon"
+                            />
+                            <p className="courses__lesson">128</p>
                           </div>
                         </div>
                       </div>
@@ -470,11 +478,6 @@ export const HomePage = () => {
                         <h1 className="popular__title line-clamp">
                           {share.title}
                         </h1>
-                        <div className="popular__link">
-                          <Link to="#!" className="btn">
-                            Xem thêm
-                          </Link>
-                        </div>
                       </div>
                     </div>
                   </div>

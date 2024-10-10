@@ -217,24 +217,42 @@ export const Courses = () => {
                 return (
                   <div key={course.id} className="courses__item">
                     <div className="courses__content--wrap">
-                      <picture className="courses__picture">
-                        <img
-                          src={`${process.env.PUBLIC_URL}${course.img}`}
-                          alt="imge"
-                          className="courses__img"
-                        />
-                      </picture>
+                      <Link to="/codelab/courses/details-course">
+                        <picture className="courses__picture">
+                          <img
+                            src={`${process.env.PUBLIC_URL}${course.img}`}
+                            alt="imge"
+                            className="courses__img"
+                          />
+                        </picture>
+                      </Link>
+
                       <div className="courses__content">
                         <div className="courses__content--top">
                           <h4 className="courses__title">{course.title}</h4>
                         </div>
-                        <p className="courses__content--desc line-clamp-3">
+                        <p className="courses__content--desc line-clamp">
                           {course.desc}
                         </p>
+
                         <div className="courses__content--bottom">
-                          <Link className="btn courses__button">
-                            Tiếp tục học
-                          </Link>
+                          <span className="courses__price">{course.price}</span>
+                          <div className="courses__total-file">
+                            <img
+                              src={`${process.env.PUBLIC_URL}/images/icon/file.svg`}
+                              alt=""
+                              className="courses__file--icon icon"
+                            />
+                            <p className="courses__file">128</p>
+                          </div>
+                          <div className="courses__total-lesson">
+                            <img
+                              src={`${process.env.PUBLIC_URL}/images/icon/pen.svg`}
+                              alt=""
+                              className="courses__lesson--icon icon"
+                            />
+                            <p className="courses__lesson">128</p>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -284,13 +302,21 @@ export const Courses = () => {
                         </p>
                         <div className="courses__content--bottom">
                           <span className="courses__price">{course.price}</span>
-                          <div className="courses__timeRead">
+                          <div className="courses__total-file">
                             <img
-                              src={`${process.env.PUBLIC_URL}/images/icon/clock.svg`}
+                              src={`${process.env.PUBLIC_URL}/images/icon/file.svg`}
                               alt=""
-                              className="courses__time--icon"
+                              className="courses__file--icon icon"
                             />
-                            <p className="courses__time">{course.time}</p>
+                            <p className="courses__file">128</p>
+                          </div>
+                          <div className="courses__total-lesson">
+                            <img
+                              src={`${process.env.PUBLIC_URL}/images/icon/pen.svg`}
+                              alt=""
+                              className="courses__lesson--icon icon"
+                            />
+                            <p className="courses__lesson">128</p>
                           </div>
                         </div>
                       </div>

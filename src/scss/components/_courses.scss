@@ -7,6 +7,7 @@
   @include abstracts.breakpoint(lg) {
     margin-top: 60px;
   }
+
   &__picture {
     display: inline-block;
     width: 100%;
@@ -109,7 +110,7 @@
     border-radius: 10px 10px 0 0;
   }
   &__content {
-    padding: 20px;
+    padding: 20px 10px;
     background: var(--background--color-main-3);
     border-radius: 0 0 20px 20px;
     @include abstracts.breakpoint(md) {
@@ -135,9 +136,9 @@
   }
   &__title {
     color: var(--text-color-main-light);
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 700;
-    line-height: 150%;
+    line-height: 120%;
     @include abstracts.breakpoint(lg) {
       font-size: 1.2rem;
     }
@@ -166,24 +167,30 @@
       scale: 1.1;
     }
   }
-  &__timeRead {
+  &__total-lesson,
+  &__total-file {
     display: flex;
     gap: 10px;
     align-items: center;
   }
   &__price {
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 600;
     color: var(--main-color);
     @include abstracts.breakpoint(lg) {
       font-size: 0.8rem;
     }
   }
-  &__time {
+  &__lesson,
+  &__file {
     color: var(--text-color-main-light-3);
     font-size: 1rem;
     font-weight: 500;
     line-height: 128%;
+    &--icon {
+      width: 15px;
+      height: 15px;
+    }
     @include abstracts.breakpoint(lg) {
       font-size: 0.8rem;
     }

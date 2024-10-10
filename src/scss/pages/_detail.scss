@@ -65,9 +65,11 @@
     margin-top: 20px;
     width: 80%;
     background: var(--main-color);
-    color: #fff;
-    font-size: 1.2rem;
-    font-weight: 700;
+    a {
+      color: #fff;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
     transition: all 0.2s ease;
     &:hover {
       scale: 1.01;
@@ -121,6 +123,7 @@
   }
   &__item--info {
     margin-top: 10px;
+    margin-bottom: 20px;
     background: var(--background__breadcrumb);
     padding: 20px 10px;
     width: 100%;
@@ -144,5 +147,13 @@
     line-height: 128%;
     font-weight: 500;
     font-size: 1.1rem;
+  }
+  &__lecture {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
   }
 }
