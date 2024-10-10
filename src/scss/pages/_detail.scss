@@ -83,14 +83,14 @@
     margin-top: 20px;
     width: 80%;
     background: var(--main-color);
+    transition: all 0.2s ease;
     a {
       color: #fff;
       font-size: 1.2rem;
       font-weight: 700;
     }
-    transition: all 0.2s ease;
     &:hover {
-      scale: 1.01;
+      transform: scale(1.01);
     }
   }
   &__register-lg {

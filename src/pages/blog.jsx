@@ -166,13 +166,15 @@ export const Blog = () => {
                 return (
                   <div key={newpost.id} className="newPost__item">
                     <div className="newPost__content--wrap">
-                      <picture className="newPost__picture">
-                        <img
-                          src={`${process.env.PUBLIC_URL}${newpost.img}`}
-                          alt="imge"
-                          className="newPost__img"
-                        />
-                      </picture>
+                      <NavLink to="/codelab/courses/form-blog">
+                        <picture className="newPost__picture">
+                          <img
+                            src={`${process.env.PUBLIC_URL}${newpost.img}`}
+                            alt="imge"
+                            className="newPost__img"
+                          />
+                        </picture>
+                      </NavLink>
                       <div className="newPost__content">
                         <div className="newPost__content--top">
                           <h4 className="newPost__title line-clamp">
@@ -237,13 +239,15 @@ export const Blog = () => {
                 return (
                   <div key={share.id} className="shares__item">
                     <div className="shares__item--wrap">
-                      <picture className="shares__pictures">
-                        <img
-                          src={`${process.env.PUBLIC_URL}${share.img}`}
-                          alt=""
-                          className="shares__img"
-                        />
-                      </picture>
+                      <NavLink to="/codelab/courses/form-blog">
+                        <picture className="shares__pictures">
+                          <img
+                            src={`${process.env.PUBLIC_URL}${share.img}`}
+                            alt=""
+                            className="shares__img"
+                          />
+                        </picture>
+                      </NavLink>
                       <div className="shares__content">
                         <div className="separate"></div>
                         <h1 className="shares__title line-clamp">
