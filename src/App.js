@@ -33,6 +33,7 @@ const AppContent = () => {
       "/codelab/courses/details-course",
       "/codelab/courses/form-study",
       "/codelab/flashcard",
+      "/codelab/courses/form-practice",
       "/codelab/studyplant/frontEnd/flashcard_htmlcss",
       "/codelab/studyplant/frontEnd/flashcard_javascript",
       "/codelab/studyplant/frontEnd/flashcard_reactjs",

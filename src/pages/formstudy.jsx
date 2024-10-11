@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { Gift } from "../components/gift";
 import { Quote } from "../components/quote";
 export const FormStudy = () => {
@@ -108,14 +108,17 @@ export const FormStudy = () => {
                 FireFox, hoặc Nitro cho Safari.
               </p>
               <div className="study__action">
-                <button className="btn study__action-btn">
+                <Link
+                  to="/codelab/courses/form-practice"
+                  className="btn study__action-btn"
+                >
                   <img
                     src={`${process.env.PUBLIC_URL}/images/icon/practice.svg`}
                     alt=""
                     className="study__icon study__icon--animation"
                   />
-                  Luyện tập ngay{" "}
-                </button>
+                  Luyện tập ngay
+                </Link>
               </div>
               <h2 className="study__title">Bình luận</h2>
 

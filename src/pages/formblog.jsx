@@ -29,7 +29,7 @@ export const FormBlog = () => {
       </div>
       <div className="study">
         <div className="row">
-          <div className="col-9">
+          <div className="col-9 col-lg-12">
             <div className="container">
               <h1 className="blog__heading">Giới thiệu Javascript</h1>
               <p className="blog__time">9 phút đọc</p>
@@ -163,7 +163,7 @@ export const FormBlog = () => {
               </form>
             </div>
           </div>
-          <div className="col-3">
+          <div className="col-3 col-lg-12">
             <Quote></Quote>
           </div>
         </div>

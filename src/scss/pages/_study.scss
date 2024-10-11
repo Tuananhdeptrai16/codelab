@@ -121,7 +121,8 @@
   }
   &__img {
     width: 70%;
-    height: 200px;
+    max-height: 300px;
+    object-fit: contain;
     border-radius: 10px;
     @include abstracts.breakpoint(md) {
       width: 100%;

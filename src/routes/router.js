@@ -16,6 +16,7 @@ import { ResetPassword } from "../pages/auth/resetpassword";
 import { DetailsCourse } from "../pages/detailscourse";
 import { FormStudy } from "../pages/formstudy";
 import { FormBlog } from "../pages/formblog";
+import { Practice } from "../pages/formpractice";
 
 const MyRoute = () => {
   return (
@@ -30,6 +31,10 @@ const MyRoute = () => {
       <Route
         path="/codelab/courses/details-course"
         element={<DetailsCourse />}
+      ></Route>
+      <Route
+        path="/codelab/courses/form-practice"
+        element={<Practice />}
       ></Route>
       <Route path="/codelab/courses/form-study" element={<FormStudy />}></Route>
       <Route path="/codelab/courses/form-blog" element={<FormBlog />}></Route>
