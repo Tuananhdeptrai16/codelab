@@ -2,7 +2,7 @@
 // Thanks for watching and sharing
 import React from "react";
 import { useState } from "react";
-import { Navigate, NavLink, useNavigate } from "react-router-dom";
+import { Navigate, NavLink } from "react-router-dom";
 import { Validation } from "../../services/Validation";
 import Logo from "../../components/logo";
 import {
@@ -13,7 +13,6 @@ import { useAuth } from "../../context/authContext/index";
 import { Toast } from "../../components/toasterror";
 export const Login = () => {
   const { userLoggedIn } = useAuth();
-  const navigate = useNavigate();
   const [isSigningIn, setIsSigningIn] = useState(false);
   const [error, setError] = useState({});
   const [values, setValues] = useState({});
@@ -32,7 +31,6 @@ export const Login = () => {
       setIsShowToast(false);
     }, 4000);
   };
-  const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
   const { email, password } = values;
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -43,8 +41,7 @@ export const Login = () => {
         await doSignInWithEmailAndPassword(email, password);
       } catch (error) {
         showToast();
-        await delay(4000); // Chờ 2000ms (2 giây)
-        navigate("/codelab/login");
+        setIsSigningIn(false);
       }
     }
   };
@@ -53,6 +50,7 @@ export const Login = () => {
     if (!isSigningIn) {
       setIsSigningIn(true);
       doSignInWithGoogle().catch((err) => {
+        console.log(err);
         setIsSigningIn(false);
       });
     }

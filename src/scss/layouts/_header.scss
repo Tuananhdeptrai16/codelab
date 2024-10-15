@@ -28,10 +28,6 @@
   &__btn--login {
     border: 1px solid var(--main-color-dark);
     background: var(--main-color-white);
-
-    @include abstracts.breakpoint(md) {
-      border: none;
-    }
     &:hover {
       background: var(--main-color-grey);
     }

@@ -276,8 +276,7 @@ const MyLayOut = () => {
                                   <p className="header__bell--notification">
                                     Bài học
                                     <strong>
-                                      {" "}
-                                      Mở event đua TOP trả lời câu hỏi{" "}
+                                      Mở event đua TOP trả lời câu hỏi
                                     </strong>
                                     mới được thêm vào.
                                   </p>
@@ -298,7 +297,6 @@ const MyLayOut = () => {
                                   <p className="header__bell--notification">
                                     Bài học
                                     <strong>
-                                      {" "}
                                       Mở event đua TOP trả lời câu hỏi{" "}
                                     </strong>
                                     mới được thêm vào.
@@ -320,7 +318,6 @@ const MyLayOut = () => {
                                   <p className="header__bell--notification line-clamp">
                                     Bài học
                                     <strong>
-                                      {" "}
                                       Mở event đua TOP trả lời câu hỏi{" "}
                                     </strong>
                                     mới được thêm vào.
@@ -381,7 +378,6 @@ const MyLayOut = () => {
                                   to="/codelab/user"
                                   className="header__user--link"
                                 >
-                                  {" "}
                                   Trang cá nhân
                                 </Link>
                               </li>
@@ -399,7 +395,7 @@ const MyLayOut = () => {
                                   onClick={() => handleChangeTheme(theme)}
                                   className="header__user--theme"
                                 >
-                                  Chủ đề :{" "}
+                                  Chủ đề :
                                   <span>
                                     {theme === "light" ? "Tối" : "Sáng"}
                                   </span>
@@ -434,7 +430,7 @@ const MyLayOut = () => {
                       <button className="header__btn--login btn ">
                         <NavLink to="/codelab/login">Đăng nhập</NavLink>
                       </button>
-                      <button className="header__btn--singup btn">
+                      <button className="header__btn--singup btn d-md-none">
                         <NavLink to="/codelab/signup">Đăng ký</NavLink>
                       </button>
                     </div>
