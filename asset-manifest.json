@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/codelab/static/css/main.f57e5605.css",
-    "main.js": "/codelab/static/js/main.43d39fb3.js",
+    "main.css": "/codelab/static/css/main.d2745b9e.css",
+    "main.js": "/codelab/static/js/main.6177c736.js",
     "static/media/RobotoCondensed-BoldItalic.woff": "/codelab/static/media/RobotoCondensed-BoldItalic.6478927b25cc1f443cfc.woff",
     "static/media/Roboto-BlackItalic.woff": "/codelab/static/media/Roboto-BlackItalic.868292eeff4e17da0606.woff",
     "static/media/Roboto-MediumItalic.woff": "/codelab/static/media/Roboto-MediumItalic.14c25bb833b00bba8ecc.woff",
@@ -43,11 +43,11 @@
     "static/media/slick.ttf": "/codelab/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/codelab/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/codelab/index.html",
-    "main.f57e5605.css.map": "/codelab/static/css/main.f57e5605.css.map",
-    "main.43d39fb3.js.map": "/codelab/static/js/main.43d39fb3.js.map"
+    "main.d2745b9e.css.map": "/codelab/static/css/main.d2745b9e.css.map",
+    "main.6177c736.js.map": "/codelab/static/js/main.6177c736.js.map"
   },
   "entrypoints": [
-    "static/css/main.f57e5605.css",
-    "static/js/main.43d39fb3.js"
+    "static/css/main.d2745b9e.css",
+    "static/js/main.6177c736.js"
   ]
 }
