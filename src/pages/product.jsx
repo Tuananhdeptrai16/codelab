@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { Gift } from "../components/gift";
+import { Pagination } from "antd";
 export const Product = () => {
   return (
     <div className="container">
@@ -246,6 +247,14 @@ export const Product = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="product__pagination">
+        <Pagination
+          align="center"
+          defaultCurrent={1}
+          total={50}
+          onChange={() => {}}
+        />
       </div>
     </div>
   );
