@@ -157,6 +157,28 @@ const MyLayOut = () => {
     {
       key: "6",
       icon: (
+        <NavLink to="/codelab/link">
+          <img
+            src={`${process.env.PUBLIC_URL}/images/icon/link.svg`}
+            alt="svg"
+            className="nav__icon icon"
+          />
+        </NavLink>
+      ),
+      label:
+        collapsed === false ? (
+          <NavLink
+            className={`nav__link ${({ isActive, isPending }) =>
+              isPending ? "pending" : isActive ? "active" : ""}`}
+            to="/codelab/link"
+          >
+            Bài viết
+          </NavLink>
+        ) : null,
+    },
+    {
+      key: "7",
+      icon: (
         <NavLink
           to="https://tuananhdeptrai16.github.io/editor/"
           target="_blank"

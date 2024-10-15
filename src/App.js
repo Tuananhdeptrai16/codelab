@@ -29,6 +29,7 @@ const AppContent = () => {
       "/codelab/studyplant/backEnd",
       "/codelab/blog",
       "/codelab/courses",
+      "/codelab/link",
       "/codelab/courses/form-blog",
       "/codelab/courses/details-course",
       "/codelab/courses/form-study",

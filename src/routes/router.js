@@ -17,6 +17,7 @@ import { DetailsCourse } from "../pages/detailscourse";
 import { FormStudy } from "../pages/formstudy";
 import { FormBlog } from "../pages/formblog";
 import { Practice } from "../pages/formpractice";
+import { Product } from "../pages/product";
 
 const MyRoute = () => {
   return (
@@ -40,6 +41,7 @@ const MyRoute = () => {
       <Route path="/codelab/courses/form-blog" element={<FormBlog />}></Route>
       <Route path="/codelab/flashcard" element={<FlashCard />}></Route>
       <Route path="/codelab/labcode" element={<ComingSoon />}></Route>
+      <Route path="/codelab/link" element={<Product />}></Route>
       <Route path="/codelab/user" element={<ComingSoon />}></Route>
       <Route path="/codelab/mycourses" element={<ComingSoon />}></Route>
       <Route path="/codelab/login" element={<Login />}></Route>
