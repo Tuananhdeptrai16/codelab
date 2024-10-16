@@ -2,12 +2,15 @@ import React, { useState, useEffect, useRef } from "react";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
 import { Help } from "../components/help";
-
+import NProgress from "nprogress";
+import "nprogress/nprogress.css";
 export const HomePage = () => {
   const [slides, setSlides] = useState([]);
   const [courses, setCourses] = useState([]);
+  const [showCatalog, setShowCatalog] = useState(true);
   const [shares, setShares] = useState([]);
   useEffect(() => {
+    NProgress.start();
     fetch(`${process.env.PUBLIC_URL}/json/db.json`)
       .then((response) => response.json())
       .then((data) => {
@@ -16,6 +19,7 @@ export const HomePage = () => {
         setShares(data.shares || []);
       })
       .catch((error) => console.log(error));
+    NProgress.done();
   }, []);
   const settings = {
     autoplay: true,
@@ -488,6 +492,45 @@ export const HomePage = () => {
         </div>
       </div>
       <Help></Help>
+      {showCatalog && (
+        <div className="catalog">
+          <div className="row">
+            <div className="col-7">
+              <h2 className="catalog__heading">
+                Chúc mừng bạn nhận được 10 ⭐ cho ngày hôm nay 🎊🎊
+              </h2>
+              <p className="catalog__desc">
+                Hãy thu thập phần quà đăng nhập thường xuyên để mở những khóa
+                học hữu ích nhé
+              </p>
+              <div className="catalog__btn">
+                <button className="catalog__button">
+                  Nhận 10 sao ngày hôm nay
+                </button>
+              </div>
+            </div>
+            <div className="col-5">
+              <img
+                src={`${process.env.PUBLIC_URL}/images/catalog/catalog.gif`}
+                alt="catalog__icon"
+                className="catalog__icon"
+              />
+            </div>
+          </div>
+          <button
+            onClick={() => {
+              setShowCatalog(!showCatalog);
+            }}
+            className="catalog__cancel"
+          >
+            <img
+              src={`${process.env.PUBLIC_URL}/images/icon/cancel.svg`}
+              alt=""
+              className="catalog__icon--cancel"
+            />
+          </button>
+        </div>
+      )}
     </div>
   );
 };

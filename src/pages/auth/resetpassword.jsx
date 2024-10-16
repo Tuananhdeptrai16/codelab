@@ -6,18 +6,23 @@ import { NavLink } from "react-router-dom";
 import Logo from "../../components/logo";
 import { doPasswordReset } from "../../firebase/auth";
 import { validateEmail } from "../../services/ValidationEmail";
+import NProgress from "nprogress";
+import "nprogress/nprogress.css";
 export const ResetPassword = () => {
   const [error, setError] = useState({});
   const [values, setValues] = useState({});
   const [show, setShow] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
   const handleChange = (e) => {
+    NProgress.start();
     setValues({
       ...values, // sao chép lại đối tượng cũ
       [e.target.name]: e.target.value, // cập nhật giá trị dựa trên name
     });
+    NProgress.done();
   };
   const handleSubmit = (e) => {
+    NProgress.start();
     e.preventDefault();
     const validationErrors = validateEmail(values.email);
     setError(validationErrors);
@@ -33,6 +38,7 @@ export const ResetPassword = () => {
           setError(error);
         });
     }
+    NProgress.done();
   };
   return (
     <div className="reset">

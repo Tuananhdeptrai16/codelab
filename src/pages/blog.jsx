@@ -2,11 +2,14 @@ import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import { Link, NavLink } from "react-router-dom";
 import { Help } from "../components/help";
-
+import NProgress from "nprogress";
+import "nprogress/nprogress.css";
 export const Blog = () => {
   const [newPost, setnewPost] = useState([]);
   const [shares, setShares] = useState([]);
   useEffect(() => {
+    NProgress.start();
+
     fetch(`${process.env.PUBLIC_URL}/json/db.json`)
       .then((response) => response.json())
       .then((data) => {
@@ -14,6 +17,7 @@ export const Blog = () => {
         setShares(data.featuredposts || []);
       })
       .catch((error) => console.log(error));
+    NProgress.done();
   }, []);
 
   const settingsnewPost = {

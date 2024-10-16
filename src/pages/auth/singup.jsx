@@ -1,6 +1,6 @@
 // The code was written by programmer Truong Tuan Anh
 // Thanks for watching and sharing
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Logo from "../../components/logo";
 import { Navigate, Link, NavLink } from "react-router-dom";
 import { Validation } from "../../services/Validation";
@@ -8,6 +8,8 @@ import { useAuth } from "../../context/authContext";
 import { doCreateUserWithEmailAndPassword } from "../../firebase/auth";
 import { doSignInWithGoogle } from "../../firebase/auth";
 import { Toast } from "../../components/toasterror";
+import NProgress from "nprogress";
+import "nprogress/nprogress.css";
 export const SignUp = () => {
   const [error, setError] = useState({});
   const [values, setValues] = useState({});
@@ -25,6 +27,7 @@ export const SignUp = () => {
   const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
   const handleSubmit = async (e) => {
+    NProgress.start();
     e.preventDefault();
     const validationErrors = Validation(values);
     setError(validationErrors);
@@ -39,6 +42,7 @@ export const SignUp = () => {
         await delay(4000); // Chờ 2000ms (2 giây)
       }
     }
+    NProgress.done();
   };
   const [isShowToast, setIsShowToast] = useState(false);
   const showToast = () => {
@@ -48,6 +52,7 @@ export const SignUp = () => {
     }, 4000);
   };
   const onGoogleSignIn = (e) => {
+    NProgress.start();
     e.preventDefault();
     if (!isSigningIn) {
       setIsSigningIn(true);
@@ -55,6 +60,7 @@ export const SignUp = () => {
         setIsSigningIn(false);
       });
     }
+    NProgress.done();
   };
   if (userLoggedIn) {
     return <Navigate to="/codelab/home" replace={true} />;

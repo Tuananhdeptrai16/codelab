@@ -3,10 +3,13 @@ import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Gift } from "../components/gift";
 import { Help } from "../components/help";
+import NProgress from "nprogress";
+import "nprogress/nprogress.css";
 export const BackEnd = () => {
   const [routePlants, setroutePlants] = useState([]);
   const [comunity, setComunity] = useState([]);
   useEffect(() => {
+    NProgress.start();
     fetch(`${process.env.PUBLIC_URL}/json/db.json`)
       .then((response) => response.json())
       .then((data) => {
@@ -14,6 +17,7 @@ export const BackEnd = () => {
         setComunity(data.Facebookcomunity || []);
       })
       .catch((error) => console.log(error));
+    NProgress.done();
   }, []);
   console.log(comunity);
   return (

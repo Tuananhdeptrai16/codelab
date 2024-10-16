@@ -2,6 +2,8 @@ import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import AudioPlayer from "../components/audio";
+import NProgress from "nprogress";
+import "nprogress/nprogress.css";
 export const Practice = () => {
   const location = useLocation();
 
@@ -13,6 +15,7 @@ export const Practice = () => {
     link: "/codelab/studyplant/frontEnd/flashcard_htmlcss",
   });
   useEffect(() => {
+    NProgress.start();
     const fetchQuestions = async () => {
       try {
         const response = await fetch(`${process.env.PUBLIC_URL}/json/db.json`); // Thay URL của bạn
@@ -44,6 +47,7 @@ export const Practice = () => {
       }
     };
     fetchQuestions(); // Gọi hàm fetch khi component mount
+    NProgress.done();
   }, [location.pathname]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [success, setSuccess] = useState(false);

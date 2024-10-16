@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-
+import NProgress from "nprogress";
+import "nprogress/nprogress.css";
 export const ComingSoon = () => {
   //tao sate luwu so ngay
   const [timeLeft, setTimeLeft] = useState({
@@ -9,6 +10,7 @@ export const ComingSoon = () => {
     seconds: 0,
   });
   useEffect(() => {
+    NProgress.start();
     const targetDate = new Date("2024-12-31T23:59:59");
     const calculateTimeLeft = () => {
       const fomartNumber = (number) =>
@@ -34,6 +36,7 @@ export const ComingSoon = () => {
     calculateTimeLeft();
     //cap nhat thoi gian moi giay
     const intervalId = setInterval(calculateTimeLeft, 1000);
+    NProgress.done();
     return () => clearInterval(intervalId);
   }, []);
   console.log(timeLeft);

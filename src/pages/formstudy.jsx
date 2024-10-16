@@ -2,6 +2,7 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Gift } from "../components/gift";
 import { Quote } from "../components/quote";
+
 export const FormStudy = () => {
   return (
     <div className="container">

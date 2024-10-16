@@ -11,6 +11,8 @@ import {
 } from "../../firebase/auth";
 import { useAuth } from "../../context/authContext/index";
 import { Toast } from "../../components/toasterror";
+import NProgress from "nprogress";
+import "nprogress/nprogress.css";
 export const Login = () => {
   const { userLoggedIn } = useAuth();
   const [isSigningIn, setIsSigningIn] = useState(false);
@@ -34,6 +36,7 @@ export const Login = () => {
   const { email, password } = values;
   const handleSubmit = async (e) => {
     e.preventDefault();
+    NProgress.start();
     setError(Validation(values));
     if (!isSigningIn) {
       setIsSigningIn(true);
@@ -44,9 +47,11 @@ export const Login = () => {
         setIsSigningIn(false);
       }
     }
+    NProgress.done();
   };
   const onGoogleSignIn = (e) => {
     e.preventDefault();
+    NProgress.start();
     if (!isSigningIn) {
       setIsSigningIn(true);
       doSignInWithGoogle().catch((err) => {
@@ -54,6 +59,7 @@ export const Login = () => {
         setIsSigningIn(false);
       });
     }
+    NProgress.done();
   };
   return (
     <div>

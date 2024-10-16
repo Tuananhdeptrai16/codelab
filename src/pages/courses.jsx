@@ -2,11 +2,13 @@ import React, { useState, useEffect, useRef } from "react";
 import Slider from "react-slick";
 import { Link, NavLink } from "react-router-dom";
 import { Help } from "../components/help";
-
+import NProgress from "nprogress";
+import "nprogress/nprogress.css";
 export const Courses = () => {
   const [slides, setSlides] = useState([]);
   const [courses, setCourses] = useState([]);
   useEffect(() => {
+    NProgress.start();
     fetch(`${process.env.PUBLIC_URL}/json/db.json`)
       .then((response) => response.json())
       .then((data) => {
@@ -14,6 +16,7 @@ export const Courses = () => {
         setCourses(data.courses || []);
       })
       .catch((error) => console.log(error));
+    NProgress.done();
   }, []);
   const settings = {
     autoplay: true,
