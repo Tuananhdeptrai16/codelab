@@ -3,8 +3,8 @@ import React from "react";
 export const Catalog = () => {
   return (
     <div className="catalog">
-      <div className="row">
-        <div className="col-7">
+      <div className="row catalog__wrap">
+        <div className="col-7 col-xl-12">
           <h2 className="catalog__heading">
             Chúc mừng bạn nhận được 10 ⭐ cho ngày hôm nay 🎊🎊
           </h2>
@@ -18,7 +18,7 @@ export const Catalog = () => {
             </button>
           </div>
         </div>
-        <div className="col-5">
+        <div className="col-5 col-xl-12">
           <img
             src={`${process.env.PUBLIC_URL}/images/catalog/catalog.gif`}
             alt="catalog__icon"

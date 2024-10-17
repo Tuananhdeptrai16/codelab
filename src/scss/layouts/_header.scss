@@ -201,8 +201,8 @@
       align-items: center;
     }
     &--avatar {
-      width: 60px;
-      height: 60px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       object-fit: contain;
     }
@@ -213,8 +213,11 @@
       line-height: 128%;
     }
     &--id {
+      display: flex;
+      width: 100px;
+      flex-wrap: wrap;
       margin-top: 8px;
-      font-size: 1rem;
+      font-size: 0.8rem;
       font-weight: 300;
       line-height: 100%;
       color: var(--color-text-2);
