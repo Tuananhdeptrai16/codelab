@@ -2,131 +2,76 @@
   "slideShow": [
     {
       "id": 1,
-      "img": "/images/slideshow/slide4.jpg"
+      "img": "https://firebasestorage.googleapis.com/v0/b/codelab-14068.appspot.com/o/3.jpg?alt=media&token=51362159-481a-4725-8b1b-57acfdaa1d26"
     },
     {
       "id": 2,
-      "img": "/images/slideshow/slide2.png"
+      "img": "https://firebasestorage.googleapis.com/v0/b/codelab-14068.appspot.com/o/2.png?alt=media&token=75d92c70-120c-43df-bb33-8cedca8d59ef"
     },
     {
       "id": 3,
-      "img": "/images/slideshow/slide4.jpg"
+      "img": "https://firebasestorage.googleapis.com/v0/b/codelab-14068.appspot.com/o/5.jpg?alt=media&token=4c0f0744-8e68-4562-811d-fc900d844511"
     },
     {
       "id": 4,
-      "img": "/images/slideshow/slide4.jpg"
-    }
-  ],
-  "courses": [
-    {
-      "id": 1,
-      "img": "/images/courses/item1.png",
-      "title": "HTML và CSS",
-      "desc": "HTML (HyperText Markup Language) là ngôn ngữ dùng để tạo cấu trúc và nội dung cho trang web. HTML sử dụng các thẻ (tags) để xác định các thành phần khác nhau của một trang, chẳng hạn như tiêu đề, đoạn văn, hình ảnh, liên kết, bảng biểu, và các phần tử đa phương tiện khác. lorem",
-      "price": "Miễn phí",
-      "time": "15 phút đọc"
-    },
-    {
-      "id": 2,
-      "img": "/images/courses/item2.png",
-      "title": "JavaScript",
-      "desc": "HTML (HyperText Markup Language) là ngôn ngữ dùng để tạo cấu trúc và nội dung cho trang web. HTML sử dụng các thẻ (tags) để xác định các thành phần khác nhau của một trang, chẳng hạn như tiêu đề, đoạn văn, hình ảnh, liên kết, bảng biểu, và các phần tử đa phương tiện khác. ....",
-      "price": "Miễn phí",
-      "time": "15 phút đọc"
-    },
-    {
-      "id": 3,
-      "img": "/images/courses/item3.png",
-      "title": "HTML và CSS",
-      "desc": "HTML (HyperText Markup Language) là ngôn ngữ dùng để tạo cấu trúc và nội dung cho trang web. HTML sử dụng các thẻ (tags) để xác định các thành phần khác nhau của một trang, chẳng hạn như tiêu đề, đoạn văn, hình ảnh, liên kết, bảng biểu, và các phần tử đa phương tiện khác. ....",
-      "price": "Miễn phí",
-      "time": "15 phút đọc"
-    },
-    {
-      "id": 4,
-      "img": "/images/courses/item1.png",
-      "title": "HTML và CSS",
-      "desc": "HTML (HyperText Markup Language) là ngôn ngữ dùng để tạo cấu trúc và nội dung cho trang web. HTML sử dụng các thẻ (tags) để xác định các thành phần khác nhau của một trang, chẳng hạn như tiêu đề, đoạn văn, hình ảnh, liên kết, bảng biểu, và các phần tử đa phương tiện khác. ....",
-      "price": "Miễn phí",
-      "time": "15 phút đọc"
+      "img": "https://firebasestorage.googleapis.com/v0/b/codelab-14068.appspot.com/o/3.jpg?alt=media&token=51362159-481a-4725-8b1b-57acfdaa1d26"
     },
     {
       "id": 5,
-      "img": "/images/courses/item2.png",
-      "title": "HTML và CSS",
-      "desc": "HTML (HyperText Markup Language) là ngôn ngữ dùng để tạo cấu trúc và nội dung cho trang web. HTML sử dụng các thẻ (tags) để xác định các thành phần khác nhau của một trang, chẳng hạn như tiêu đề, đoạn văn, hình ảnh, liên kết, bảng biểu, và các phần tử đa phương tiện khác. ....",
-      "price": "Miễn phí",
-      "time": "15 phút đọc"
-    },
-    {
-      "id": 6,
-      "img": "/images/courses/item3.png",
-      "title": "HTML và CSS",
-      "desc": "HTML (HyperText Markup Language) là ngôn ngữ dùng để tạo cấu trúc và nội dung cho trang web. HTML sử dụng các thẻ (tags) để xác định các thành phần khác nhau của một trang, chẳng hạn như tiêu đề, đoạn văn, hình ảnh, liên kết, bảng biểu, và các phần tử đa phương tiện khác. ....",
-      "price": "Miễn phí",
-      "time": "15 phút đọc"
-    },
-    {
-      "id": 7,
-      "img": "/images/courses/item2.png",
-      "title": "HTML và CSS",
-      "desc": "HTML (HyperText Markup Language) là ngôn ngữ dùng để tạo cấu trúc và nội dung cho trang web. HTML sử dụng các thẻ (tags) để xác định các thành phần khác nhau của một trang, chẳng hạn như tiêu đề, đoạn văn, hình ảnh, liên kết, bảng biểu, và các phần tử đa phương tiện khác. ....",
-      "price": "Miễn phí",
-      "time": "15 phút đọc"
-    },
-    {
-      "id": 8,
-      "img": "/images/courses/item2.png",
-      "title": "HTML và CSS",
-      "desc": "HTML (HyperText Markup Language) là ngôn ngữ dùng để tạo cấu trúc và nội dung cho trang web. HTML sử dụng các thẻ (tags) để xác định các thành phần khác nhau của một trang, chẳng hạn như tiêu đề, đoạn văn, hình ảnh, liên kết, bảng biểu, và các phần tử đa phương tiện khác. ....",
-      "price": "Miễn phí",
-      "time": "15 phút đọc"
+      "img": "https://firebasestorage.googleapis.com/v0/b/codelab-14068.appspot.com/o/1.png?alt=media&token=ebaf0ff2-d1ff-4346-95bf-220849b1fcf6"
     }
   ],
-  "shares": [
+  "videos": [
     {
       "id": 1,
-      "img": "/images/shares/item1.png",
+      "link": "https://www.youtube.com/watch?v=xioxrWXR1Q0&t=729s",
       "title": "ESLint là gì? Hướng dẫn cấu hình ESLint cho dự án Typescript",
-      "time": "17 July 2024",
-      "viewers": 2678
+      "time": "3 năm trước",
+      "viewers": 2678,
+      "thumbnail": "https://img.youtube.com/vi/xioxrWXR1Q0/0.jpg"
     },
     {
       "id": 2,
-      "img": "/images/shares/item2.png",
-      "title": "Python là gì? Những đặc điểm nổi bật và Ứng dụng của Python",
-      "time": "17 July 2024",
-      "viewers": 2678
+      "link": "https://www.youtube.com/watch?v=ogkbC0uxWTE&t=164s",
+      "title": "Bí kíp đưa website lên mạng cực dễ dàng với Github Pages",
+      "time": "3 năm trước",
+      "viewers": 2678,
+      "thumbnail": "https://img.youtube.com/vi/ogkbC0uxWTE/0.jpg"
     },
     {
       "id": 3,
-      "img": "/images/shares/item3.png",
-      "title": "Functional Programming là gì? Giải pháp cho Hệ thống đa luồng và Xử lý song song",
-      "time": "17 July 2024",
-      "viewers": 2678
+      "link": "https://www.youtube.com/watch?v=HdnAEn2lLxo",
+      "title": "BÍ KÍP CODE ĐƯỢC THÀNH THẠO - TẠO SAO MÌNH THẤY CODE DỄ ĐẾN VẬY ???",
+      "time": "2 năm trước",
+      "viewers": 2678,
+      "thumbnail": "https://img.youtube.com/vi/HdnAEn2lLxo/0.jpg"
     },
     {
       "id": 4,
-      "img": "/images/shares/item1.png",
-      "title": "How to become a pro web designer in 2022 and get remot job?",
-      "time": "17 July 2024",
-      "viewers": 2678
+      "link": "https://www.youtube.com/watch?v=J-LDnpmleNk",
+      "title": "NẾU MÌNH BIẾT NHỮNG ĐIỀU NÀY THÌ ĐỜI LẬP TRÌNH VIÊN CỦA MÌNH ĐÃ KHÁC - NHỮNG ĐIỀU NÊN BIẾT CỦA CODER",
+      "time": "2 năm trước",
+      "viewers": 2678,
+      "thumbnail": "https://img.youtube.com/vi/J-LDnpmleNk/0.jpg"
     },
     {
       "id": 5,
-      "img": "/images/shares/item2.png",
-      "title": "Functional Programming là gì? Giải pháp cho Hệ thống đa luồng và Xử lý song song",
-      "time": "17 July 2024",
-      "viewers": 2678
+      "link": "https://www.youtube.com/watch?v=s8XpnY7gP2E",
+      "title": "Lộ trình học lập trình giao diện web frontend",
+      "time": "2 năm trước",
+      "viewers": 2678,
+      "thumbnail": "https://img.youtube.com/vi/s8XpnY7gP2E/0.jpg"
     },
     {
       "id": 6,
-      "img": "/images/shares/item3.png",
-      "title": "Functional Programming là gì? Giải pháp cho Hệ thống đa luồng và Xử lý song song",
-      "time": "17 July 2024",
-      "viewers": 2678
+      "link": "https://img.youtube.com/vi/jR-n-cQnpNI/0.jpg",
+      "title": "#0 Demo Kết Quả Đạt Được Khi Kết Thúc Khóa Học | Backend RESTFul Server với Node.JS (SQL/MongoDB)",
+      "time": "1 năm trước",
+      "viewers": 2678,
+      "thumbnail": "https://img.youtube.com/vi/s8XpnY7gP2E/0.jpg"
     }
   ],
+
   "blog": {
     "newFeeds": [
       {
