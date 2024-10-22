@@ -133,10 +133,7 @@ export const ResetPassword = () => {
                   <div className="input__notification--success">
                     <p className="input__success--text">
                       {successMessage}
-                      <NavLink
-                        to="/codelab/login"
-                        className="input__success-backLogin"
-                      >
+                      <NavLink to="/login" className="input__success-backLogin">
                         Đăng nhập ngay
                       </NavLink>
                     </p>
@@ -145,10 +142,7 @@ export const ResetPassword = () => {
               </div>
               <p className="reset__signUp">
                 Bạn chưa có tài khoản?
-                <NavLink
-                  to="/codelab/signup"
-                  className="reset__signUp--highlight"
-                >
+                <NavLink to="/signup" className="reset__signUp--highlight">
                   Đăng ký ngay
                 </NavLink>
               </p>

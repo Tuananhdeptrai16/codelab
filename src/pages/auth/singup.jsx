@@ -63,7 +63,7 @@ export const SignUp = () => {
     NProgress.done();
   };
   if (userLoggedIn) {
-    return <Navigate to="/codelab/home" replace={true} />;
+    return <Navigate to="/home" replace={true} />;
   }
 
   return (
@@ -218,7 +218,7 @@ export const SignUp = () => {
                     </div>
                     <p className="input__default--title">Đặt làm mặc định</p>
                   </div>
-                  <Link to="./codelab/login" className="input__forgot">
+                  <Link to="./login" className="input__forgot">
                     Đăng nhập ngay?
                   </Link>
                 </div>

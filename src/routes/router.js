@@ -22,42 +22,36 @@ import { Product } from "../pages/product";
 const MyRoute = () => {
   return (
     <Routes>
-      <Route path="/codelab/" element={<HomePage />}></Route>
-      <Route path="/codelab/home" element={<HomePage />}></Route>
-      <Route path="/codelab/studyplant" element={<StudyPlant />}></Route>
-      <Route path="/codelab/studyplant/frontEnd" element={<FrontEnd />}></Route>
-      <Route path="/codelab/studyplant/backEnd" element={<BackEnd />}></Route>
-      <Route path="/codelab/blog" element={<Blog />}></Route>
-      <Route path="/codelab/courses" element={<Courses />}></Route>
-      <Route
-        path="/codelab/courses/details-course"
-        element={<DetailsCourse />}
-      ></Route>
-      <Route
-        path="/codelab/courses/form-practice"
-        element={<Practice />}
-      ></Route>
-      <Route path="/codelab/courses/form-study" element={<FormStudy />}></Route>
-      <Route path="/codelab/courses/form-blog" element={<FormBlog />}></Route>
-      <Route path="/codelab/flashcard" element={<FlashCard />}></Route>
-      <Route path="/codelab/labcode" element={<ComingSoon />}></Route>
-      <Route path="/codelab/link" element={<Product />}></Route>
-      <Route path="/codelab/user" element={<ComingSoon />}></Route>
-      <Route path="/codelab/mycourses" element={<ComingSoon />}></Route>
-      <Route path="/codelab/login" element={<Login />}></Route>
-      <Route path="/codelab/signup" element={<SignUp />}></Route>
-      <Route path="/codelab/resetpassword" element={<ResetPassword />}></Route>
+      <Route path="/" element={<HomePage />}></Route>
+      <Route path="/home" element={<HomePage />}></Route>
+      <Route path="/studyplant" element={<StudyPlant />}></Route>
+      <Route path="/studyplant/frontEnd" element={<FrontEnd />}></Route>
+      <Route path="/studyplant/backEnd" element={<BackEnd />}></Route>
+      <Route path="/blog" element={<Blog />}></Route>
+      <Route path="/courses" element={<Courses />}></Route>
+      <Route path="/courses/details-course" element={<DetailsCourse />}></Route>
+      <Route path="/courses/form-practice" element={<Practice />}></Route>
+      <Route path="/courses/form-study" element={<FormStudy />}></Route>
+      <Route path="/courses/form-blog" element={<FormBlog />}></Route>
+      <Route path="/flashcard" element={<FlashCard />}></Route>
+      <Route path="/labcode" element={<ComingSoon />}></Route>
+      <Route path="/link" element={<Product />}></Route>
+      <Route path="/user" element={<ComingSoon />}></Route>
+      <Route path="/mycourses" element={<ComingSoon />}></Route>
+      <Route path="/login" element={<Login />}></Route>
+      <Route path="/signup" element={<SignUp />}></Route>
+      <Route path="/resetpassword" element={<ResetPassword />}></Route>
       {/* Phan flash card  */}
       <Route
-        path="/codelab/studyplant/frontEnd/flashcard_htmlcss"
+        path="/studyplant/frontEnd/flashcard_htmlcss"
         element={<QuestionFlashCard />}
       ></Route>
       <Route
-        path="/codelab/studyplant/frontEnd/flashcard_reactjs"
+        path="/studyplant/frontEnd/flashcard_reactjs"
         element={<QuestionFlashCard />}
       ></Route>
       <Route
-        path="/codelab/studyplant/frontEnd/flashcard_javascript"
+        path="/studyplant/frontEnd/flashcard_javascript"
         element={<QuestionFlashCard />}
       ></Route>
       <Route path="*" element={<PageNotFound />} />

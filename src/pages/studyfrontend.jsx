@@ -25,7 +25,7 @@ export const FrontEnd = () => {
       <div className="studyPlant">
         <div className="breadcrumb">
           <div className="breadcrumb__wrap">
-            <NavLink to="/codelab/home" className="breadcrumb__item">
+            <NavLink to="/home" className="breadcrumb__item">
               <p className="breadcrumb__name">Trang chủ</p>
               <img
                 src={`${process.env.PUBLIC_URL}/images/icon/iconbread.svg`}
@@ -33,7 +33,7 @@ export const FrontEnd = () => {
                 className="breadcrumb__icon-arrow"
               />
             </NavLink>
-            <NavLink to="/codelab/studyplant" className="breadcrumb__item">
+            <NavLink to="/studyplant" className="breadcrumb__item">
               <p className="breadcrumb__name ">StudyPlant</p>
               <img
                 src={`${process.env.PUBLIC_URL}/images/icon/iconbread.svg`}
@@ -41,10 +41,7 @@ export const FrontEnd = () => {
                 className="breadcrumb__icon-arrow"
               />
             </NavLink>
-            <NavLink
-              to="/codelab/studyplant/frontEnd"
-              className="breadcrumb__item"
-            >
+            <NavLink to="/studyplant/frontEnd" className="breadcrumb__item">
               <p className="breadcrumb__name breadcrumb__active">FrontEnd</p>
             </NavLink>
           </div>
@@ -84,7 +81,7 @@ export const FrontEnd = () => {
                             {routePlant.description}
                           </p>
                           <NavLink
-                            to="/codelab/courses/details-course"
+                            to="/courses/details-course"
                             className="btn studyPlant__button"
                           >
                             Vào học ngay

@@ -314,7 +314,7 @@ export const HomePage = () => {
                 return (
                   <div key={course.id} className="courses__item">
                     <div className="courses__content--wrap">
-                      <Link to="/codelab/courses/details-course">
+                      <Link to="/courses/details-course">
                         <picture className="courses__picture">
                           <img
                             src={`${process.env.PUBLIC_URL}${course.img}`}

@@ -9,7 +9,7 @@ export const DetailsCourse = () => {
         <div className="detail">
           <div className="breadcrumb">
             <div className="breadcrumb__wrap">
-              <NavLink to="/codelab/home" className="breadcrumb__item">
+              <NavLink to="/home" className="breadcrumb__item">
                 <p className="breadcrumb__name">Trang chủ</p>
                 <img
                   src={`${process.env.PUBLIC_URL}/images/icon/iconbread.svg`}
@@ -17,10 +17,7 @@ export const DetailsCourse = () => {
                   className="breadcrumb__icon-arrow"
                 />
               </NavLink>
-              <NavLink
-                to="/codelab/studyplant/frontEnd"
-                className="breadcrumb__item"
-              >
+              <NavLink to="/studyplant/frontEnd" className="breadcrumb__item">
                 <p className="breadcrumb__name breadcrumb__active">
                   Khóa học HTML - CSS
                 </p>
@@ -285,7 +282,7 @@ export const DetailsCourse = () => {
                 </div>
                 <div className="detail__price">Miễn phí</div>
                 <button className="btn detail__register">
-                  <Link to="/codelab/courses/form-study">Tiếp tục học</Link>
+                  <Link to="/courses/form-study">Tiếp tục học</Link>
                 </button>
                 <div className="detail__includes">
                   <p className="detail__includes--heading">
@@ -345,7 +342,7 @@ export const DetailsCourse = () => {
       </div>
       <div className="d-none d-lg-block">
         <button className="btn detail__register detail__register-lg">
-          <Link to="/codelab/courses/form-study">Tiếp tục học</Link>
+          <Link to="/courses/form-study">Tiếp tục học</Link>
         </button>
       </div>
     </div>

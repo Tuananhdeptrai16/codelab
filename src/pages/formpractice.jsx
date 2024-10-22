@@ -12,7 +12,7 @@ export const Practice = () => {
   const [showWelcome, setShowWelcome] = useState(true);
   const [BreadCrumb, setBreadCrumb] = useState({
     name: "FlashCard HTML CSS",
-    link: "/codelab/studyplant/frontEnd/flashcard_htmlcss",
+    link: "/studyplant/frontEnd/flashcard_htmlcss",
   });
   useEffect(() => {
     NProgress.start();
@@ -20,23 +20,22 @@ export const Practice = () => {
       try {
         const response = await fetch(`${process.env.PUBLIC_URL}/json/db.json`); // Thay URL của bạn
         const data = await response.json();
-        if (location.pathname === "/codelab/courses/form-practice") {
+        if (location.pathname === "/courses/form-practice") {
           setArrayQuestion(data.questions_html);
         } else if (
-          location.pathname ===
-          "/codelab/studyplant/frontEnd/flashcard_javascript"
+          location.pathname === "/studyplant/frontEnd/flashcard_javascript"
         ) {
           setBreadCrumb({
             name: "FlashCard JavScript",
-            link: "/codelab/studyplant/frontEnd/flashcard_javascript",
+            link: "/studyplant/frontEnd/flashcard_javascript",
           });
           setArrayQuestion(data.questions_javaScript);
         } else if (
-          location.pathname === "/codelab/studyplant/frontEnd/flashcard_reactjs"
+          location.pathname === "/studyplant/frontEnd/flashcard_reactjs"
         ) {
           setBreadCrumb({
             name: "FlashCard React JS",
-            link: "/codelab/studyplant/frontEnd/flashcard_reactjs",
+            link: "/studyplant/frontEnd/flashcard_reactjs",
           });
           setArrayQuestion(data.questions_reactJS);
         }
@@ -103,7 +102,7 @@ export const Practice = () => {
           <>
             <div className="breadcrumb">
               <div className="breadcrumb__wrap">
-                <NavLink to="/codelab/home" className="breadcrumb__item">
+                <NavLink to="/home" className="breadcrumb__item">
                   <p className="breadcrumb__name">Trang chủ</p>
                   <img
                     src={`${process.env.PUBLIC_URL}/images/icon/iconbread.svg`}
@@ -111,7 +110,7 @@ export const Practice = () => {
                     className="breadcrumb__icon-arrow"
                   />
                 </NavLink>
-                <NavLink to="/codelab/courses" className="breadcrumb__item">
+                <NavLink to="/courses" className="breadcrumb__item">
                   <p className="breadcrumb__name">Khóa học của tôi</p>
                   <img
                     src={`${process.env.PUBLIC_URL}/images/icon/iconbread.svg`}
@@ -364,7 +363,7 @@ export const Practice = () => {
                     Làm lại
                   </button>
                   <NavLink
-                    to="/codelab/flashcard"
+                    to="/flashcard"
                     className="btn congratulation__button"
                   >
                     Tiếp tục

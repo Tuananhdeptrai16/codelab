@@ -8,7 +8,7 @@ export const Product = () => {
       <div className="product">
         <div className="breadcrumb">
           <div className="breadcrumb__wrap">
-            <NavLink to="/codelab/home" className="breadcrumb__item">
+            <NavLink to="/home" className="breadcrumb__item">
               <p className="breadcrumb__name">Trang chủ</p>
               <img
                 src={`${process.env.PUBLIC_URL}/images/icon/iconbread.svg`}
@@ -16,7 +16,7 @@ export const Product = () => {
                 className="breadcrumb__icon-arrow"
               />
             </NavLink>
-            <NavLink to="/codelab/link" className="breadcrumb__item">
+            <NavLink to="/link" className="breadcrumb__item">
               <p className="breadcrumb__name breadcrumb__active">Sản phẩm </p>
             </NavLink>
           </div>

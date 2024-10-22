@@ -63,7 +63,7 @@ export const Login = () => {
   };
   return (
     <div>
-      {userLoggedIn && <Navigate to={"/codelab/home"} replace={true} />}
+      {userLoggedIn && <Navigate to={"/home"} replace={true} />}
       <div className="login">
         <div
           className={`row row-cols-2 row-cols-md-1 login__wrap ${
@@ -191,10 +191,7 @@ export const Login = () => {
                     </div>
                     <p className="input__default--title">Đặt làm mặc định</p>
                   </div>
-                  <NavLink
-                    to="./codelab/resetpassword"
-                    className="input__forgot"
-                  >
+                  <NavLink to="./resetpassword" className="input__forgot">
                     Quên mật khẩu ?
                   </NavLink>
                 </div>
@@ -218,10 +215,7 @@ export const Login = () => {
                 </div>
                 <p className="login__signUp">
                   Bạn chưa có tài khoản?{" "}
-                  <NavLink
-                    to="/codelab/signup"
-                    className="login__signUp--highlight"
-                  >
+                  <NavLink to="/signup" className="login__signUp--highlight">
                     Đăng ký ngay
                   </NavLink>
                 </p>

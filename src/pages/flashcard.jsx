@@ -21,7 +21,7 @@ export const FlashCard = () => {
       <div className="flashcard">
         <div className="breadcrumb">
           <div className="breadcrumb__wrap">
-            <NavLink to="/codelab/home" className="breadcrumb__item">
+            <NavLink to="/home" className="breadcrumb__item">
               <p className="breadcrumb__name">Trang chủ</p>
               <img
                 src={`${process.env.PUBLIC_URL}/images/icon/iconbread.svg`}
@@ -29,7 +29,7 @@ export const FlashCard = () => {
                 className="breadcrumb__icon-arrow"
               />
             </NavLink>
-            <NavLink to="/codelab/flashcard" className="breadcrumb__item">
+            <NavLink to="/flashcard" className="breadcrumb__item">
               <p className="breadcrumb__name  breadcrumb__active ">FlashCard</p>
             </NavLink>
           </div>

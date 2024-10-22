@@ -46,7 +46,7 @@ const MyLayOut = () => {
     {
       key: "1",
       icon: (
-        <NavLink to="/codelab/home">
+        <NavLink to="/home">
           <img
             src={`${process.env.PUBLIC_URL}/images/icon/home.svg`}
             alt="svg"
@@ -59,7 +59,7 @@ const MyLayOut = () => {
           <NavLink
             className={`nav__link ${({ isActive, isPending }) =>
               isPending ? "pending" : isActive ? "active" : ""}`}
-            to="/codelab/home"
+            to="/home"
           >
             Trang chủ
           </NavLink>
@@ -68,7 +68,7 @@ const MyLayOut = () => {
     {
       key: "2",
       icon: (
-        <NavLink to="/codelab/studyplant">
+        <NavLink to="/studyplant">
           {" "}
           <img
             src={`${process.env.PUBLIC_URL}/images/icon/study.svg`}
@@ -82,7 +82,7 @@ const MyLayOut = () => {
           <NavLink
             className={`nav__link ${({ isActive, isPending }) =>
               isPending ? "pending" : isActive ? "active" : ""}`}
-            to="/codelab/studyplant"
+            to="/studyplant"
           >
             Kế hoạch
           </NavLink>
@@ -91,7 +91,7 @@ const MyLayOut = () => {
     {
       key: "3",
       icon: (
-        <NavLink to="/codelab/courses">
+        <NavLink to="/courses">
           <img
             src={`${process.env.PUBLIC_URL}/images/icon/course.svg`}
             alt="svg"
@@ -104,7 +104,7 @@ const MyLayOut = () => {
           <NavLink
             className={`nav__link ${({ isActive, isPending }) =>
               isPending ? "pending" : isActive ? "active" : ""}`}
-            to="/codelab/courses"
+            to="/courses"
           >
             Khóa học
           </NavLink>
@@ -113,7 +113,7 @@ const MyLayOut = () => {
     {
       key: "4",
       icon: (
-        <NavLink to="/codelab/flashcard">
+        <NavLink to="/flashcard">
           <img
             src={`${process.env.PUBLIC_URL}/images/icon/flashcard.svg`}
             alt="svg"
@@ -126,7 +126,7 @@ const MyLayOut = () => {
           <NavLink
             className={`nav__link ${({ isActive, isPending }) =>
               isPending ? "pending" : isActive ? "active" : ""}`}
-            to="/codelab/flashcard"
+            to="/flashcard"
           >
             FlashCard
           </NavLink>
@@ -135,7 +135,7 @@ const MyLayOut = () => {
     {
       key: "5",
       icon: (
-        <NavLink to="/codelab/blog">
+        <NavLink to="/blog">
           <img
             src={`${process.env.PUBLIC_URL}/images/icon/blog.svg`}
             alt="svg"
@@ -148,7 +148,7 @@ const MyLayOut = () => {
           <NavLink
             className={`nav__link ${({ isActive, isPending }) =>
               isPending ? "pending" : isActive ? "active" : ""}`}
-            to="/codelab/blog"
+            to="/blog"
           >
             Bài viết
           </NavLink>
@@ -157,7 +157,7 @@ const MyLayOut = () => {
     {
       key: "6",
       icon: (
-        <NavLink to="/codelab/link">
+        <NavLink to="/link">
           <img
             src={`${process.env.PUBLIC_URL}/images/icon/link.svg`}
             alt="svg"
@@ -170,7 +170,7 @@ const MyLayOut = () => {
           <NavLink
             className={`nav__link ${({ isActive, isPending }) =>
               isPending ? "pending" : isActive ? "active" : ""}`}
-            to="/codelab/link"
+            to="/link"
           >
             Bài viết
           </NavLink>
@@ -396,17 +396,14 @@ const MyLayOut = () => {
                             <div className="header__user--separate"></div>
                             <ul className="header__user--list">
                               <li>
-                                <Link
-                                  to="/codelab/user"
-                                  className="header__user--link"
-                                >
+                                <Link to="/user" className="header__user--link">
                                   Trang cá nhân
                                 </Link>
                               </li>
                               <div className="header__user--separate"></div>
                               <li>
                                 <Link
-                                  to={"/codelab/mycourses"}
+                                  to={"/mycourses"}
                                   className="header__user--link"
                                 >
                                   Khóa học của tôi
@@ -429,7 +426,7 @@ const MyLayOut = () => {
                                 <button
                                   onClick={() => {
                                     doSignOut().then(() => {
-                                      navigate("/codelab/login");
+                                      navigate("/login");
                                     });
                                   }}
                                   className="header__user--link"
@@ -450,10 +447,10 @@ const MyLayOut = () => {
                     <Search></Search>
                     <div className="header__button">
                       <button className="header__btn--login btn ">
-                        <NavLink to="/codelab/login">Đăng nhập</NavLink>
+                        <NavLink to="/login">Đăng nhập</NavLink>
                       </button>
                       <button className="header__btn--singup btn d-md-none">
-                        <NavLink to="/codelab/signup">Đăng ký</NavLink>
+                        <NavLink to="/signup">Đăng ký</NavLink>
                       </button>
                     </div>
                   </div>

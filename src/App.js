@@ -22,26 +22,26 @@ const AppContent = () => {
   const location = useLocation();
   useEffect(() => {
     const validPaths = [
-      "/codelab/",
-      "/codelab/home",
-      "/codelab/studyplant",
-      "/codelab/studyplant/frontEnd",
-      "/codelab/studyplant/backEnd",
-      "/codelab/blog",
-      "/codelab/courses",
-      "/codelab/link",
-      "/codelab/courses/form-blog",
-      "/codelab/courses/details-course",
-      "/codelab/courses/form-study",
-      "/codelab/flashcard",
-      "/codelab/courses/form-practice",
-      "/codelab/studyplant/frontEnd/flashcard_htmlcss",
-      "/codelab/studyplant/frontEnd/flashcard_javascript",
-      "/codelab/studyplant/frontEnd/flashcard_reactjs",
+      "/",
+      "/home",
+      "/studyplant",
+      "/studyplant/frontEnd",
+      "/studyplant/backEnd",
+      "/blog",
+      "/courses",
+      "/link",
+      "/courses/form-blog",
+      "/courses/details-course",
+      "/courses/form-study",
+      "/flashcard",
+      "/courses/form-practice",
+      "/studyplant/frontEnd/flashcard_htmlcss",
+      "/studyplant/frontEnd/flashcard_javascript",
+      "/studyplant/frontEnd/flashcard_reactjs",
     ];
-    const validPathsLogin = ["/codelab/login"];
-    const validPathsSignUp = ["/codelab/signup"];
-    const validPathsResetPassword = ["/codelab/resetpassword"];
+    const validPathsLogin = ["/login"];
+    const validPathsSignUp = ["/signup"];
+    const validPathsResetPassword = ["/resetpassword"];
 
     validPathsSignUp.includes(location.pathname)
       ? setSignUp(true)

@@ -123,12 +123,12 @@ export const Footer = () => {
                 </Link>
               </li>
               <li className="footer__item">
-                <Link to="/codelab/home" className="footer__link">
+                <Link to="/home" className="footer__link">
                   Trang chủ
                 </Link>
               </li>
               <li className="footer__item">
-                <Link to="/codelab/blog" className="footer__link">
+                <Link to="/blog" className="footer__link">
                   Blog{" "}
                 </Link>
               </li>

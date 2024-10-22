@@ -6,7 +6,7 @@ export const FormBlog = () => {
     <div className="container">
       <div className="breadcrumb">
         <div className="breadcrumb__wrap">
-          <NavLink to="/codelab/home" className="breadcrumb__item">
+          <NavLink to="/home" className="breadcrumb__item">
             <p className="breadcrumb__name">Trang chủ</p>
             <img
               src={`${process.env.PUBLIC_URL}/images/icon/iconbread.svg`}
@@ -14,7 +14,7 @@ export const FormBlog = () => {
               className="breadcrumb__icon-arrow"
             />
           </NavLink>
-          <NavLink to="/codelab/courses" className="breadcrumb__item">
+          <NavLink to="/courses" className="breadcrumb__item">
             <p className="breadcrumb__name">Blog</p>
             <img
               src={`${process.env.PUBLIC_URL}/images/icon/iconbread.svg`}
@@ -22,7 +22,7 @@ export const FormBlog = () => {
               className="breadcrumb__icon-arrow"
             />
           </NavLink>
-          <NavLink to="/codelab/courses" className="breadcrumb__item">
+          <NavLink to="/courses" className="breadcrumb__item">
             <p className="breadcrumb__name breadcrumb__active">Blog gì đó</p>
           </NavLink>
         </div>

@@ -126,7 +126,7 @@ export const Courses = () => {
     <div className="container">
       <div className="breadcrumb">
         <div className="breadcrumb__wrap">
-          <NavLink to="/codelab/home" className="breadcrumb__item">
+          <NavLink to="/home" className="breadcrumb__item">
             <p className="breadcrumb__name">Trang chủ</p>
             <img
               src={`${process.env.PUBLIC_URL}/images/icon/iconbread.svg`}
@@ -134,7 +134,7 @@ export const Courses = () => {
               className="breadcrumb__icon-arrow"
             />
           </NavLink>
-          <NavLink to="/codelab/courses" className="breadcrumb__item">
+          <NavLink to="/courses" className="breadcrumb__item">
             <p className="breadcrumb__name breadcrumb__active">
               Khóa học của tôi
             </p>
@@ -220,7 +220,7 @@ export const Courses = () => {
                 return (
                   <div key={course.id} className="courses__item">
                     <div className="courses__content--wrap">
-                      <Link to="/codelab/courses/details-course">
+                      <Link to="/courses/details-course">
                         <picture className="courses__picture">
                           <img
                             src={`${process.env.PUBLIC_URL}${course.img}`}

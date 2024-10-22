@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 const LogoMedium = () => {
   return (
     <div className="logo-md">
-      <NavLink to="/codelab/home" className="logo-md__wrap">
+      <NavLink to="/home" className="logo-md__wrap">
         <img
           src={`${process.env.PUBLIC_URL}/images/logo.png`}
           alt="logo-md"
