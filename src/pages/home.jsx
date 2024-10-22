@@ -2,11 +2,15 @@ import React, { useState, useEffect, useRef } from "react";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
 import { Help } from "../components/help";
+import axios from "axios";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
+import { useAuth } from "../context/authContext";
 export const HomePage = () => {
+  const { userLoggedIn } = useAuth();
   const [slides, setSlides] = useState([]);
   const [courses, setCourses] = useState([]);
+  const [videos, setVideos] = useState([]);
   const [showCatalog, setShowCatalog] = useState(true);
   const [shares, setShares] = useState([]);
   useEffect(() => {
@@ -14,12 +18,33 @@ export const HomePage = () => {
     fetch(`${process.env.PUBLIC_URL}/json/db.json`)
       .then((response) => response.json())
       .then((data) => {
+        setVideos(data.videos || []);
         setSlides(data.slideShow || []);
-        setCourses(data.courses || []);
-        setShares(data.shares || []);
       })
       .catch((error) => console.log(error));
     NProgress.done();
+  }, []);
+  useEffect(() => {
+    try {
+      const getCourses = async () => {
+        const res = await axios.get(
+          `${process.env.REACT_APP_API_BACKEND_URL}/courses?populate=lessonInfo`
+        );
+        setCourses(res.data);
+      };
+      getCourses();
+    } catch (error) {}
+  }, []);
+  useEffect(() => {
+    try {
+      const getBlog = async () => {
+        const res = await axios.get(
+          `${process.env.REACT_APP_API_BACKEND_URL}/blog`
+        );
+        setShares(res.data);
+      };
+      getBlog();
+    } catch (error) {}
   }, []);
   const settings = {
     autoplay: true,
@@ -155,7 +180,7 @@ export const HomePage = () => {
   };
   const [likedCourses, setLikedCourses] = useState([]);
   const handleChangeIcon = (id) => {
-    const course = courses.find((item) => item.id === id);
+    const course = courses.data.find((item) => item._id === id);
     if (course) {
       const isLiked = likedCourses.includes(id);
       console.log(isLiked);
@@ -259,9 +284,8 @@ export const HomePage = () => {
           <div className="courses__left">
             <h1 className="courses__heading">Kho Khóa Học</h1>
             <p className="courses__desc">
-              Mong rằng những khóa học này sẽ giúp ích cho bạn và sẽ là đòn bẩy
-              đưa bạn đi xa trên con đường trở thành lập trình viên chuyên
-              nghiệp
+              Mong rằng những khóa học này sẽ là đòn bẩy giúp bạn phát triển và
+              tiến xa trên con đường trở thành lập trình viên chuyên nghiệp
             </p>
           </div>
           <div className="courses__right">
@@ -310,69 +334,95 @@ export const HomePage = () => {
         <div className="courses__list">
           <div className="slider__container">
             <Slider ref={coursesRef} {...settingsCourses}>
-              {courses.map((course) => {
-                return (
-                  <div key={course.id} className="courses__item">
-                    <div className="courses__content--wrap">
-                      <Link to="/courses/details-course">
-                        <picture className="courses__picture">
-                          <img
-                            src={`${process.env.PUBLIC_URL}${course.img}`}
-                            alt="imge"
-                            className="courses__img"
-                          />
-                        </picture>
-                      </Link>
-                      <div className="courses__content">
-                        <div className="courses__content--top">
-                          <h4 className="courses__title">{course.title}</h4>
-                          <button
-                            onClick={() => handleChangeIcon(course.id)}
-                            className="courses__like"
-                          >
-                            {likedCourses.includes(course.id) ? (
-                              <img
-                                src={`${process.env.PUBLIC_URL}/images/icon/heartRed.svg`}
-                                className="courses__heart courses__active "
-                                alt=""
-                              />
-                            ) : (
-                              <img
-                                src={`${process.env.PUBLIC_URL}/images/icon/heart.svg`}
-                                className="courses__heart icon"
-                                alt=""
-                              />
-                            )}
-                          </button>
-                        </div>
-                        <p className="courses__content--desc line-clamp">
-                          {course.desc}
-                        </p>
-                        <div className="courses__content--bottom">
-                          <span className="courses__price">{course.price}</span>
-                          <div className="courses__total-file">
+              {courses &&
+                courses.data &&
+                courses.data.map((course) => {
+                  return (
+                    <div key={course._id} className="courses__item">
+                      <div className="courses__content--wrap">
+                        <Link
+                          to={
+                            userLoggedIn ? "/courses/details-course" : "/login"
+                          }
+                        >
+                          <picture className="courses__picture">
                             <img
-                              src={`${process.env.PUBLIC_URL}/images/icon/book.svg`}
-                              alt=""
-                              className="courses__file--icon icon"
+                              src={`${process.env.PUBLIC_URL}${course.courseImage}`}
+                              alt="imge"
+                              className="courses__img"
                             />
-                            <p className="courses__file">128</p>
+                          </picture>
+                        </Link>
+                        <div className="courses__content">
+                          <div className="courses__content--top">
+                            <h4 className="courses__title">{course.title}</h4>
+                            <button
+                              onClick={() => handleChangeIcon(course._id)}
+                              className="courses__like"
+                            >
+                              {userLoggedIn ? (
+                                <>
+                                  {likedCourses.includes(course._id) ? (
+                                    <img
+                                      src={`${process.env.PUBLIC_URL}/images/icon/heartRed.svg`}
+                                      className="courses__heart courses__active "
+                                      alt=""
+                                    />
+                                  ) : (
+                                    <img
+                                      src={`${process.env.PUBLIC_URL}/images/icon/heart.svg`}
+                                      className="courses__heart icon"
+                                      alt=""
+                                    />
+                                  )}
+                                </>
+                              ) : (
+                                <>
+                                  <Link to="/login">
+                                    <img
+                                      src={`${process.env.PUBLIC_URL}/images/icon/heart.svg`}
+                                      className="courses__heart courses__active "
+                                      alt=""
+                                    />
+                                  </Link>
+                                </>
+                              )}
+                            </button>
                           </div>
-                          <div className="courses__total-lesson">
-                            <img
-                              src={`${process.env.PUBLIC_URL}/images/icon/pen.svg`}
-                              alt=""
-                              className="courses__lesson--icon icon"
-                            />
-                            <p className="courses__lesson">128</p>
+                          <p className="courses__content--desc line-clamp">
+                            {course.description}
+                          </p>
+                          <div className="courses__content--bottom">
+                            <span className="courses__price">
+                              {course.price.amount === 0
+                                ? "Miễn phí"
+                                : `${course.price.amount}VND`}
+                            </span>
+                            <div className="courses__total-file">
+                              <img
+                                src={`${process.env.PUBLIC_URL}/images/icon/book.svg`}
+                                alt=""
+                                className="courses__file--icon icon"
+                              />
+                              <p className="courses__file">
+                                {course.lessonInfo.length}
+                              </p>
+                            </div>
+                            <div className="courses__total-lesson">
+                              <img
+                                src={`${process.env.PUBLIC_URL}/images/icon/pen.svg`}
+                                alt=""
+                                className="courses__lesson--icon icon"
+                              />
+                              <p className="courses__lesson">10</p>
+                            </div>
                           </div>
                         </div>
                       </div>
+                      <Link />
                     </div>
-                    <Link />
-                  </div>
-                );
-              })}
+                  );
+                })}
             </Slider>
           </div>
         </div>
@@ -397,50 +447,53 @@ export const HomePage = () => {
         <div className="shares__list">
           <div className="slider-container">
             <Slider {...settingsShare}>
-              {shares.map((share) => {
-                return (
-                  <div key={share.id} className="shares__item">
-                    <div className="shares__item--wrap">
-                      <picture className="shares__pictures">
-                        <img
-                          src={`${process.env.PUBLIC_URL}${share.img}`}
-                          alt=""
-                          className="shares__img"
-                        />
-                      </picture>
-                      <div className="shares__content">
-                        <div className="shares__date">
-                          <span>{share.date}</span>
-                        </div>
-                        <div className="separate"></div>
-                        <Link to="#!" className="shares__title line-clamp">
-                          {share.title}
-                        </Link>
-                        <div className="shares__bottom">
-                          <div className="shares__timeRead">
-                            <img
-                              src={`${process.env.PUBLIC_URL}/images/icon/clock.svg`}
-                              alt=""
-                              className="shares__time--icon"
-                            />
-                            <p className="shares__time">{share.time}</p>
+              {shares.data &&
+                shares.data.map((share) => {
+                  return (
+                    <div key={share._id} className="shares__item">
+                      <div className="shares__item--wrap">
+                        <picture className="shares__pictures">
+                          <img
+                            src={`${process.env.PUBLIC_URL}${share.urlImage}`}
+                            alt=""
+                            className="shares__img"
+                          />
+                        </picture>
+                        <div className="shares__content">
+                          <div className="shares__date">
+                            <span>{share.date}</span>
                           </div>
-                          <div className="shares__views">
-                            <img
-                              src={`${process.env.PUBLIC_URL}/images/icon/eye.svg`}
-                              alt=""
-                              className="shares__views--icon icon"
-                            />
-                            <span className="shares__views--number">
-                              {share.viewers}
-                            </span>
+                          <div className="separate"></div>
+                          <Link to="#!" className="shares__title line-clamp">
+                            {share.title}
+                          </Link>
+                          <div className="shares__bottom">
+                            <div className="shares__timeRead">
+                              <img
+                                src={`${process.env.PUBLIC_URL}/images/icon/clock.svg`}
+                                alt=""
+                                className="shares__time--icon"
+                              />
+                              <p className="shares__time">
+                                {share.duration} phút đọc
+                              </p>
+                            </div>
+                            <div className="shares__views">
+                              <img
+                                src={`${process.env.PUBLIC_URL}/images/icon/eye.svg`}
+                                alt=""
+                                className="shares__views--icon icon"
+                              />
+                              <span className="shares__views--number">
+                                {share.views}
+                              </span>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
             </Slider>
           </div>
         </div>
@@ -450,8 +503,9 @@ export const HomePage = () => {
           <div className="popular__top--left">
             <h2 className="popular__heading">Video thịnh hành</h2>
             <p className="popular__desc">
-              Những video mang tính giải trí về lập trình, bổ ích sẽ mang tới
-              cho các bạn những bài học bổ ích bổ trợ kiến thức bài học
+              Khám phá những video giải trí về lập trình giúp bổ sung kiến thức
+              và kỹ năng lập trình hiệu quả, mang lại bài học thú vị và bổ ích
+              cho mọi lập trình viên.
             </p>
           </div>
           <div className="popular__top--right">
@@ -463,25 +517,41 @@ export const HomePage = () => {
         <div className="popular__list">
           <div className="slider-container">
             <Slider {...settingsPopular}>
-              {shares.map((share) => {
+              {videos.map((video) => {
                 return (
-                  <div key={share.id} className="popular__item">
+                  <div key={video.id} className="popular__item">
                     <div className="popular__item--wrap">
-                      <picture className="popular__pictures">
-                        <img
-                          src={`${process.env.PUBLIC_URL}${share.img}`}
-                          alt=""
-                          className="popular__img"
-                        />
-                      </picture>
+                      <div className="popular__pictures">
+                        <a
+                          href={video.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <img
+                            src={video.thumbnail}
+                            alt={video.title}
+                            className="popular__img"
+                          />
+                        </a>
+                      </div>
                       <div className="popular__content">
                         <div className="popular__date">
-                          <span>{share.date}</span>
+                          <span>{video.date}</span>
                         </div>
                         <div className="separate"></div>
-                        <h1 className="popular__title line-clamp">
-                          {share.title}
-                        </h1>
+                        <Link to={video.link}>
+                          <p className="popular__title line-clamp">
+                            {video.title}
+                          </p>
+                        </Link>
+                        <div className="popular__link">
+                          <img
+                            src={`${process.env.PUBLIC_URL}/images/icon/link.svg`}
+                            alt=""
+                            className="popular__link--icon icon"
+                          />
+                          <p className="popular__text">youtube.com</p>
+                        </div>
                       </div>
                     </div>
                   </div>

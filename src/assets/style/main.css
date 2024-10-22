@@ -1627,6 +1627,7 @@ table {
   padding: 10px;
 }
 .shares__item--wrap {
+  min-height: 350px;
   border-radius: 20px;
   box-shadow: 0px 10px 15px -3px var(--box-shadow-main-1);
   transition: all 0.2s ease;
@@ -1720,6 +1721,19 @@ table {
   .popular {
     margin-top: 15px;
   }
+}
+.popular__link--icon {
+  width: 16px;
+  height: 16px;
+}
+.popular__link {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.popular__pictures {
+  height: 200px;
 }
 .popular__top {
   display: flex;
@@ -5095,14 +5109,9 @@ html {
   border-radius: 10px 10px 0 0;
 }
 .courses__content {
-  padding: 20px 10px;
+  padding: 10px 10px;
   background: var(--background--color-main-3);
   border-radius: 0 0 20px 20px;
-}
-@media (max-width: 767.98px) {
-  .courses__content {
-    padding: 10px;
-  }
 }
 .courses__content--top {
   display: flex;
@@ -5132,6 +5141,7 @@ html {
   }
 }
 .courses__content--wrap {
+  min-height: 350px;
   border-radius: 20px;
   box-shadow: 0px 10px 15px -3px var(--box-shadow-main-1);
   transition: all 0.2s ease;

@@ -110,12 +110,10 @@
     border-radius: 10px 10px 0 0;
   }
   &__content {
-    padding: 20px 10px;
+    padding: 10px 10px;
     background: var(--background--color-main-3);
     border-radius: 0 0 20px 20px;
-    @include abstracts.breakpoint(md) {
-      padding: 10px;
-    }
+
     &--top {
       display: flex;
       justify-content: space-between;
@@ -144,6 +142,7 @@
     }
   }
   &__content--wrap {
+    min-height: 350px;
     border-radius: 20px;
     box-shadow: 0px 10px 15px -3px var(--box-shadow-main-1);
     transition: all 0.2s ease;
