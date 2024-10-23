@@ -156,7 +156,7 @@ export const DetailsCourse = () => {
                           toggle ? "arrow-up.svg" : "arrow-down.svg"
                         }`}
                         alt=""
-                        srcset=""
+                        srCset=""
                         className="detail__icon icon"
                       />
                       <p className="detail__item-text">
@@ -171,7 +171,7 @@ export const DetailsCourse = () => {
                         <img
                           src={`${process.env.PUBLIC_URL}/images/icon/file.svg`}
                           alt=""
-                          srcset=""
+                          srCset=""
                           className="detail__icon icon"
                         />
                         <p className="detail__text">
@@ -182,7 +182,7 @@ export const DetailsCourse = () => {
                         <img
                           src={`${process.env.PUBLIC_URL}/images/icon/file.svg`}
                           alt=""
-                          srcset=""
+                          srCset=""
                           className="detail__icon icon"
                         />
                         <p className="detail__text">2. Tìm hiểu về HTML, CSS</p>
@@ -191,7 +191,7 @@ export const DetailsCourse = () => {
                         <img
                           src={`${process.env.PUBLIC_URL}/images/icon/pen.svg`}
                           alt=""
-                          srcset=""
+                          srCset=""
                           className="detail__icon icon"
                         />
                         <p className="detail__text">
@@ -208,7 +208,7 @@ export const DetailsCourse = () => {
                           toggle ? "arrow-up.svg" : "arrow-down.svg"
                         }`}
                         alt=""
-                        srcset=""
+                        srCset=""
                         className="detail__icon icon"
                       />
                       <p className="detail__item-text">
@@ -223,7 +223,7 @@ export const DetailsCourse = () => {
                         <img
                           src={`${process.env.PUBLIC_URL}/images/icon/file.svg`}
                           alt=""
-                          srcset=""
+                          srCset=""
                           className="detail__icon icon"
                         />
                         <p className="detail__text">
@@ -234,7 +234,7 @@ export const DetailsCourse = () => {
                         <img
                           src={`${process.env.PUBLIC_URL}/images/icon/file.svg`}
                           alt=""
-                          srcset=""
+                          srCset=""
                           className="detail__icon icon"
                         />
                         <p className="detail__text">2. Tìm hiểu về HTML, CSS</p>
@@ -243,7 +243,7 @@ export const DetailsCourse = () => {
                         <img
                           src={`${process.env.PUBLIC_URL}/images/icon/pen.svg`}
                           alt=""
-                          srcset=""
+                          srCset=""
                           className="detail__icon icon"
                         />
                         <p className="detail__text">
@@ -258,7 +258,7 @@ export const DetailsCourse = () => {
                       <img
                         src={`${process.env.PUBLIC_URL}/images/icon/arrow-down.svg`}
                         alt=""
-                        srcset=""
+                        srCset=""
                         className="detail__icon icon"
                       />
                       <p className="detail__item-text">
@@ -276,7 +276,7 @@ export const DetailsCourse = () => {
                   <img
                     src={`${process.env.PUBLIC_URL}/images/courses/item1.png`}
                     alt=""
-                    srcset=""
+                    srCset=""
                     className="detail__img"
                   />
                 </div>
@@ -293,7 +293,7 @@ export const DetailsCourse = () => {
                     <img
                       src={`${process.env.PUBLIC_URL}/images/icon/level.svg`}
                       alt=""
-                      srcset=""
+                      srCset=""
                       className="detail__icon icon"
                     />
                     <p className="detail__text">Trình độ cơ bản</p>
@@ -302,7 +302,7 @@ export const DetailsCourse = () => {
                     <img
                       src={`${process.env.PUBLIC_URL}/images/icon/file.svg`}
                       alt=""
-                      srcset=""
+                      srCset=""
                       className="detail__icon icon"
                     />
                     <p className="detail__text">12 tài liệu</p>
@@ -311,7 +311,7 @@ export const DetailsCourse = () => {
                     <img
                       src={`${process.env.PUBLIC_URL}/images/icon/lesson.svg`}
                       alt=""
-                      srcset=""
+                      srCset=""
                       className="detail__icon icon"
                     />
                     <p className="detail__text">Bài tập luyện tập mỗi bài</p>
@@ -320,7 +320,7 @@ export const DetailsCourse = () => {
                     <img
                       src={`${process.env.PUBLIC_URL}/images/icon/star.svg`}
                       alt=""
-                      srcset=""
+                      srCset=""
                       className="detail__icon"
                     />
                     <p className="detail__text">Tổng số 100 ⭐</p>
@@ -329,7 +329,7 @@ export const DetailsCourse = () => {
                     <img
                       src={`${process.env.PUBLIC_URL}/images/icon/certify.svg`}
                       alt=""
-                      srcset=""
+                      srCset=""
                       className="detail__icon icon"
                     />
                     <p className="detail__text">Có chứng nhận khi hoàn thành</p>

@@ -384,7 +384,7 @@ const MyLayOut = () => {
                                 <p className="header__user--name">
                                   {currentUser.displayName
                                     ? currentUser.displayName
-                                    : currentUser.email}
+                                    : "Người dùng"}
                                 </p>
                                 <p className="header__user--id">
                                   {currentUser.displayName

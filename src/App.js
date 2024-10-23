@@ -14,6 +14,7 @@ const AppContent = () => {
   const [page, setPage] = useState(false);
   const [login, setLogin] = useState(true);
   const [signUp, setSignUp] = useState(true);
+  const [targetBlog, setTargetBlog] = useState("");
   const [ResetPassWordPage, setResetPassWordPage] = useState(true);
   const [theme, setTheme] = useState("light");
   const handleChangeTheme = () => {
@@ -56,7 +57,15 @@ const AppContent = () => {
   }, [location]);
   return (
     <AuthProvider>
-      <StoreContext.Provider value={{ location, theme, handleChangeTheme }}>
+      <StoreContext.Provider
+        value={{
+          location,
+          theme,
+          handleChangeTheme,
+          setTargetBlog,
+          targetBlog,
+        }}
+      >
         {ResetPassWordPage ? (
           <ResetPassword></ResetPassword>
         ) : signUp ? (

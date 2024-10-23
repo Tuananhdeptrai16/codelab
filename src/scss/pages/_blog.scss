@@ -202,10 +202,10 @@
 .blog {
   margin-top: 30px;
   &__heading {
-    margin-top: 10px;
+    margin: 0 !important;
     font-size: 3rem;
     line-height: 1;
-    font-weight: 800;
+    font-weight: 700;
     color: var(--color-text);
     @include abstracts.breakpoint(md) {
       font-size: 1.6rem;
@@ -220,6 +220,13 @@
     @include abstracts.breakpoint(md) {
       font-size: 1.3rem;
     }
+  }
+  &__desc {
+    color: var(--text-color-breadcrumb) !important;
+    margin-top: 10px !important;
+    font-size: 0.8rem;
+    font-weight: 300;
+    line-height: 150%;
   }
   &__time {
     margin-top: 20px;
@@ -409,7 +416,7 @@
     justify-content: center;
     &-btn {
       background: var(--main-color);
-      width: 200px;
+      width: 300px;
       display: flex;
       justify-content: center;
       align-items: center;

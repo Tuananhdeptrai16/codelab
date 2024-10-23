@@ -1,62 +1,35 @@
 import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Help } from "../components/help";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
+import axios from "axios";
+import { Pagination } from "antd";
+
 export const Courses = () => {
-  const [courses, setCourses] = useState([]);
+  const [courses, setCourses] = useState(null);
+
   useEffect(() => {
     NProgress.start();
-    fetch(`${process.env.PUBLIC_URL}/json/db.json`)
-      .then((response) => response.json())
-      .then((data) => {
-        setCourses(data.courses || []);
-      })
-      .catch((error) => console.log(error));
+    console.log(
+      `${process.env.REACT_APP_API_BACKEND_URL}/courses?populate=lessonInfo`
+    );
+    try {
+      const getCourses = async () => {
+        const res = await axios.get(
+          `${process.env.REACT_APP_API_BACKEND_URL}/courses`
+        );
+        setCourses(res.data);
+      };
+      getCourses();
+    } catch (error) {
+      console.log(error);
+    }
     NProgress.done();
   }, []);
+  console.log("courses", courses);
 
-  const settingsMyCourses = {
-    autoplaySpeed: 2000,
-    infinite: true,
-    dots: false,
-    speed: 500,
-    slidesToShow: 5,
-    slidesToScroll: 1,
-    initialSlide: 0,
-    arrows: false, // Ẩn mũi tên
-    responsive: [
-      {
-        breakpoint: 1600,
-        settings: {
-          slidesToShow: 4,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 1200,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 1200,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
   const settingsCourses = {
     autoplay: true,
     autoplaySpeed: 2000,
@@ -99,6 +72,14 @@ export const Courses = () => {
       },
     ],
   };
+  if (!courses) {
+    return (
+      <div className="loader__wrap">
+        <div className="loader"></div>
+        <div className="loader-text">Loading..</div>
+      </div>
+    ); // Nếu dataBlog là null, hiển thị Loading
+  }
 
   return (
     <div className="container">
@@ -119,71 +100,6 @@ export const Courses = () => {
           </NavLink>
         </div>
       </div>
-
-      <div className="courses">
-        <div className="courses__top">
-          <div className="courses__left">
-            <h1 className="courses__heading">KHÓA HỌC ĐÃ THAM GIA</h1>
-          </div>
-          <div className="courses__right">
-            <Link className="courses__link" to="#!">
-              Xem tất cả
-            </Link>
-          </div>
-        </div>
-        <div className="courses__list">
-          <div className="slider__container">
-            <Slider {...settingsMyCourses}>
-              {courses.map((course) => {
-                return (
-                  <div key={course.id} className="courses__item">
-                    <div className="courses__content--wrap">
-                      <Link to="/courses/details-course">
-                        <picture className="courses__picture">
-                          <img
-                            src={`${process.env.PUBLIC_URL}${course.img}`}
-                            alt="imge"
-                            className="courses__img"
-                          />
-                        </picture>
-                      </Link>
-
-                      <div className="courses__content">
-                        <div className="courses__content--top">
-                          <h4 className="courses__title">{course.title}</h4>
-                        </div>
-                        <p className="courses__content--desc line-clamp">
-                          {course.desc}
-                        </p>
-
-                        <div className="courses__content--bottom">
-                          <span className="courses__price">{course.price}</span>
-                          <div className="courses__total-file">
-                            <img
-                              src={`${process.env.PUBLIC_URL}/images/icon/book.svg`}
-                              alt=""
-                              className="courses__file--icon icon"
-                            />
-                            <p className="courses__file">128</p>
-                          </div>
-                          <div className="courses__total-lesson">
-                            <img
-                              src={`${process.env.PUBLIC_URL}/images/icon/pen.svg`}
-                              alt=""
-                              className="courses__lesson--icon icon"
-                            />
-                            <p className="courses__lesson">128</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </Slider>
-          </div>
-        </div>
-      </div>
       <div className="courses">
         <div className="courses__top">
           <div className="courses__left">
@@ -194,62 +110,72 @@ export const Courses = () => {
               nghiệp
             </p>
           </div>
-          <div className="courses__right">
-            <Link className="courses__link" to="#!">
-              Xem tất cả
-            </Link>
-          </div>
         </div>
         <div className="courses__list">
           <div className="slider__container">
             <Slider {...settingsCourses}>
-              {courses.map((course) => {
-                return (
-                  <div key={course.id} className="courses__item">
-                    <div className="courses__content--wrap">
-                      <picture className="courses__picture">
-                        <img
-                          src={`${process.env.PUBLIC_URL}${course.img}`}
-                          alt="imge"
-                          className="courses__img"
-                        />
-                      </picture>
-                      <div className="courses__content">
-                        <div className="courses__content--top">
-                          <h4 className="courses__title">{course.title}</h4>
-                        </div>
-                        <p className="courses__content--desc line-clamp">
-                          {course.desc}
-                        </p>
-                        <div className="courses__content--bottom">
-                          <span className="courses__price">{course.price}</span>
-                          <div className="courses__total-file">
-                            <img
-                              src={`${process.env.PUBLIC_URL}/images/icon/file.svg`}
-                              alt=""
-                              className="courses__file--icon icon"
-                            />
-                            <p className="courses__file">128</p>
+              {courses &&
+                courses.data &&
+                courses.data.map((course) => {
+                  return (
+                    <div key={course._id} className="courses__item">
+                      <div className="courses__content--wrap">
+                        <picture className="courses__picture">
+                          <img
+                            src={course.courseImage}
+                            alt="imge"
+                            className="courses__img"
+                          />
+                        </picture>
+                        <div className="courses__content">
+                          <div className="courses__content--top">
+                            <h4 className="courses__title">{course.title}</h4>
                           </div>
-                          <div className="courses__total-lesson">
-                            <img
-                              src={`${process.env.PUBLIC_URL}/images/icon/pen.svg`}
-                              alt=""
-                              className="courses__lesson--icon icon"
-                            />
-                            <p className="courses__lesson">128</p>
+                          <p className="courses__content--desc line-clamp">
+                            {course.description}
+                          </p>
+                          <div className="courses__content--bottom">
+                            <span className="courses__price">
+                              {course.price.amount === 0
+                                ? "Miễn phí"
+                                : course.price.amount}
+                            </span>
+                            <div className="courses__total-file">
+                              <img
+                                src={`${process.env.PUBLIC_URL}/images/icon/file.svg`}
+                                alt=""
+                                className="courses__file--icon icon"
+                              />
+                              <p className="courses__file">
+                                {course.lessonInfo.length}
+                              </p>
+                            </div>
+                            <div className="courses__total-lesson">
+                              <img
+                                src={`${process.env.PUBLIC_URL}/images/icon/pen.svg`}
+                                alt=""
+                                className="courses__lesson--icon icon"
+                              />
+                              <p className="courses__lesson">10</p>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
             </Slider>
           </div>
         </div>
       </div>
-
+      <div className="product__pagination">
+        <Pagination
+          align="center"
+          defaultCurrent={1}
+          total={50}
+          onChange={() => {}}
+        />
+      </div>
       <Help></Help>
     </div>
   );

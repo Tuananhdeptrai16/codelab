@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
 import { Help } from "../components/help";
@@ -6,7 +6,9 @@ import axios from "axios";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 import { useAuth } from "../context/authContext";
+import StoreContext from "../db/context";
 export const HomePage = () => {
+  const { setTargetBlog } = useContext(StoreContext);
   const { userLoggedIn } = useAuth();
   const [slides, setSlides] = useState([]);
   const [courses, setCourses] = useState([]);
@@ -285,7 +287,7 @@ export const HomePage = () => {
             <h1 className="courses__heading">Kho Khóa Học</h1>
             <p className="courses__desc">
               Mong rằng những khóa học này sẽ là đòn bẩy giúp bạn phát triển và
-              tiến xa trên con đường trở thành lập trình viên chuyên nghiệp
+              tiến xa trong hành trình trở thành lập trình viên chuyên nghiệp.
             </p>
           </div>
           <div className="courses__right">
@@ -432,10 +434,8 @@ export const HomePage = () => {
           <div className="shares__top--left">
             <h2 className="shares__heading">Góc chia sẻ </h2>
             <p className="shares__desc">
-              Học thầy không tày học bạn, không học bạn thì mình cùng học tiền
-              bối, những chia sẻ cách học lộ trình học từ những bậc tiền bối đi
-              trước cho chúng ta rút ra được những kinh nghiệm vô cùng quý báu,
-              ...
+              Học hỏi từ tiền bối giúp bạn rút ra những kinh nghiệm quý giá và
+              xây dựng lộ trình học tập hiệu quả trong sự nghiệp.
             </p>
           </div>
           <div className="shares__top--right">
@@ -464,7 +464,11 @@ export const HomePage = () => {
                             <span>{share.date}</span>
                           </div>
                           <div className="separate"></div>
-                          <Link to="#!" className="shares__title line-clamp">
+                          <Link
+                            onClick={() => setTargetBlog(share._id)}
+                            to={`/courses/form-blog`}
+                            className="shares__title line-clamp"
+                          >
                             {share.title}
                           </Link>
                           <div className="shares__bottom">
@@ -503,9 +507,8 @@ export const HomePage = () => {
           <div className="popular__top--left">
             <h2 className="popular__heading">Video thịnh hành</h2>
             <p className="popular__desc">
-              Khám phá những video giải trí về lập trình giúp bổ sung kiến thức
-              và kỹ năng lập trình hiệu quả, mang lại bài học thú vị và bổ ích
-              cho mọi lập trình viên.
+              Khám phá video giải trí về lập trình để nâng cao kiến thức và kỹ
+              năng một cách hiệu quả."
             </p>
           </div>
           <div className="popular__top--right">

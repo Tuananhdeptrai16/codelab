@@ -3,9 +3,9 @@
 
 @use "../abstracts";
 .courses {
-  margin-top: 100px;
+  margin-top: 40px;
   @include abstracts.breakpoint(lg) {
-    margin-top: 60px;
+    margin-top: 20px;
   }
 
   &__picture {

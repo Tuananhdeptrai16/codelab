@@ -15,9 +15,9 @@ import { SignUp } from "../pages/auth/singup";
 import { ResetPassword } from "../pages/auth/resetpassword";
 import { DetailsCourse } from "../pages/detailscourse";
 import { FormStudy } from "../pages/formstudy";
-import { FormBlog } from "../pages/formblog";
 import { Practice } from "../pages/formpractice";
 import { Product } from "../pages/product";
+import { FormBlog } from "../pages/formblog/formblog";
 
 const MyRoute = () => {
   return (
@@ -33,6 +33,7 @@ const MyRoute = () => {
       <Route path="/courses/form-practice" element={<Practice />}></Route>
       <Route path="/courses/form-study" element={<FormStudy />}></Route>
       <Route path="/courses/form-blog" element={<FormBlog />}></Route>
+      <Route path="/courses/form-blog/*" element={<FormBlog />}></Route>
       <Route path="/flashcard" element={<FlashCard />}></Route>
       <Route path="/labcode" element={<ComingSoon />}></Route>
       <Route path="/link" element={<Product />}></Route>
