@@ -3,51 +3,74 @@ import Slider from "react-slick";
 import { Link } from "react-router-dom";
 import { Help } from "../components/help";
 import axios from "axios";
-import NProgress from "nprogress";
+// import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 import { useAuth } from "../context/authContext";
 import StoreContext from "../db/context";
 export const HomePage = () => {
   const { setTargetBlog } = useContext(StoreContext);
-  const { userLoggedIn } = useAuth();
+  const { userLoggedIn, currentUser } = useAuth();
   const [slides, setSlides] = useState([]);
   const [courses, setCourses] = useState([]);
   const [videos, setVideos] = useState([]);
   const [showCatalog, setShowCatalog] = useState(true);
   const [shares, setShares] = useState([]);
-  useEffect(() => {
-    NProgress.start();
-    fetch(`${process.env.PUBLIC_URL}/json/db.json`)
-      .then((response) => response.json())
-      .then((data) => {
-        setVideos(data.videos || []);
-        setSlides(data.slideShow || []);
-      })
-      .catch((error) => console.log(error));
-    NProgress.done();
-  }, []);
+  const [users, setUsers] = useState(null);
+  const [likedCourses, setLikedCourses] = useState([]);
   useEffect(() => {
     try {
-      const getCourses = async () => {
-        const res = await axios.get(
-          `${process.env.REACT_APP_API_BACKEND_URL}/courses?populate=lessonInfo`
-        );
-        setCourses(res.data);
-      };
-      getCourses();
-    } catch (error) {}
-  }, []);
-  useEffect(() => {
-    try {
+      fetch(`${process.env.PUBLIC_URL}/json/db.json`)
+        .then((response) => response.json())
+        .then((data) => {
+          setVideos(data.videos || []);
+          setSlides(data.slideShow || []);
+        })
+        .catch((error) => console.log(error));
+
       const getBlog = async () => {
         const res = await axios.get(
           `${process.env.REACT_APP_API_BACKEND_URL}/blog`
         );
         setShares(res.data);
       };
+
+      const getCourses = async () => {
+        const res = await axios.get(
+          `${process.env.REACT_APP_API_BACKEND_URL}/courses?populate=lessonInfo`
+        );
+        setCourses(res.data);
+      };
       getBlog();
-    } catch (error) {}
-  }, []);
+      getCourses();
+    } catch (error) {
+      console.error(error);
+    }
+  }, [likedCourses, userLoggedIn]);
+
+  useEffect(() => {
+    if (userLoggedIn && currentUser?.uid) {
+      try {
+        const getUsers = async () => {
+          const res = await axios.get(
+            `${process.env.REACT_APP_API_BACKEND_URL}/users`
+          );
+
+          const foundUser = res.data.data.find(
+            (item) => item.userId === currentUser.uid
+          );
+          if (foundUser) {
+            setLikedCourses(foundUser.favoriteListInfo);
+            setUsers(foundUser);
+          }
+        };
+        getUsers();
+      } catch (error) {
+        console.error("Error fetching users:", error);
+      }
+    }
+  }, [currentUser?.uid, likedCourses, userLoggedIn]);
+
+  // ,
   const settings = {
     autoplay: true,
     autoplaySpeed: 2000,
@@ -180,21 +203,27 @@ export const HomePage = () => {
       },
     ],
   };
-  const [likedCourses, setLikedCourses] = useState([]);
-  const handleChangeIcon = (id) => {
-    const course = courses.data.find((item) => item._id === id);
+
+  const handleLikedCourses = async (courseId) => {
+    const course = courses.data.find((item) => item._id === courseId);
     if (course) {
-      const isLiked = likedCourses.includes(id);
-      console.log(isLiked);
+      const isLiked = likedCourses.includes(courseId);
       if (isLiked) {
-        // Nếu đã thích, bỏ thích
-        setLikedCourses(likedCourses.filter((courseId) => courseId !== id));
+        await axios.post(`${process.env.REACT_APP_API_BACKEND_URL}/users`, {
+          type: "REMOVE_MY_FV_COURSE",
+          userId: users._id,
+          courseArr: [courseId],
+        });
+        // setLikedCourses(likedCourses.filter((courseId) => courseId !== id));
       } else {
-        // Nếu chưa thích, thêm vào danh sách
-        setLikedCourses([...likedCourses, id]);
+        await axios.post(`${process.env.REACT_APP_API_BACKEND_URL}/users`, {
+          type: "ADD_MY_FV_COURSE",
+          userId: users._id,
+          courseArr: [courseId],
+        });
+        // setLikedCourses([...likedCourses, id]);
       }
     }
-    console.log(likedCourses);
   };
   const coursesRef = useRef(null);
   const handleNextCourses = () => {
@@ -359,7 +388,9 @@ export const HomePage = () => {
                           <div className="courses__content--top">
                             <h4 className="courses__title">{course.title}</h4>
                             <button
-                              onClick={() => handleChangeIcon(course._id)}
+                              onClick={() =>
+                                userLoggedIn && handleLikedCourses(course._id)
+                              }
                               className="courses__like"
                             >
                               {userLoggedIn ? (

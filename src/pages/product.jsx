@@ -36,7 +36,7 @@ export const Product = () => {
                       <img
                         src={`${process.env.PUBLIC_URL}/images/avatar.jpg`}
                         alt=""
-                        srCset=""
+                        srcSet=""
                         className="product__avatar--img"
                       />
                     </div>
@@ -47,7 +47,7 @@ export const Product = () => {
                       <img
                         src={`${process.env.PUBLIC_URL}/images/icon/save.svg`}
                         alt=""
-                        srCset=""
+                        srcSet=""
                         className="product__icon icon"
                       />
                     </button>
@@ -55,7 +55,7 @@ export const Product = () => {
                       <img
                         src={`${process.env.PUBLIC_URL}/images/icon/dots.svg`}
                         alt=""
-                        srCset=""
+                        srcSet=""
                         className="product__icon icon"
                       />
                     </button>
@@ -106,7 +106,7 @@ export const Product = () => {
                       <img
                         src={`${process.env.PUBLIC_URL}/images/avatar.jpg`}
                         alt=""
-                        srCset=""
+                        srcSet=""
                         className="product__avatar--img"
                       />
                     </div>
@@ -117,7 +117,7 @@ export const Product = () => {
                       <img
                         src={`${process.env.PUBLIC_URL}/images/icon/save.svg`}
                         alt=""
-                        srCset=""
+                        srcSet=""
                         className="product__icon icon"
                       />
                     </button>
@@ -125,7 +125,7 @@ export const Product = () => {
                       <img
                         src={`${process.env.PUBLIC_URL}/images/icon/dots.svg`}
                         alt=""
-                        srCset=""
+                        srcSet=""
                         className="product__icon icon"
                       />
                     </button>
@@ -176,7 +176,7 @@ export const Product = () => {
                       <img
                         src={`${process.env.PUBLIC_URL}/images/avatar.jpg`}
                         alt=""
-                        srCset=""
+                        srcSet=""
                         className="product__avatar--img"
                       />
                     </div>
@@ -187,7 +187,7 @@ export const Product = () => {
                       <img
                         src={`${process.env.PUBLIC_URL}/images/icon/save.svg`}
                         alt=""
-                        srCset=""
+                        srcSet=""
                         className="product__icon icon"
                       />
                     </button>
@@ -195,7 +195,7 @@ export const Product = () => {
                       <img
                         src={`${process.env.PUBLIC_URL}/images/icon/dots.svg`}
                         alt=""
-                        srCset=""
+                        srcSet=""
                         className="product__icon icon"
                       />
                     </button>
