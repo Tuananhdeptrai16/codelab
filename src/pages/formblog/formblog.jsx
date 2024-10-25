@@ -26,7 +26,6 @@ export const FormBlog = () => {
           `${process.env.REACT_APP_API_BACKEND_URL}/blog`
         );
         const foundBlog = res.data.data.find((item) => item._id === targetBlog);
-        console.log("foundBlog", foundBlog);
         setDataBlog(foundBlog);
       } catch (error) {
         console.log(error);
@@ -44,7 +43,7 @@ export const FormBlog = () => {
         <div className="loader"></div>
         <div className="loader-text">Loading..</div>
       </div>
-    ); // Nếu dataBlog là null, hiển thị Loading
+    );
   }
 
   return (

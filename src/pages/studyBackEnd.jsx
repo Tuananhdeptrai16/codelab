@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Gift } from "../components/gift";
@@ -6,20 +7,30 @@ import { Help } from "../components/help";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 export const BackEnd = () => {
-  const [routePlants, setroutePlants] = useState([]);
-  const [comunity, setComunity] = useState([]);
+  const [courses, setCourses] = useState([]);
+  const [community, setCommunity] = useState([]);
   useEffect(() => {
     NProgress.start();
     fetch(`${process.env.PUBLIC_URL}/json/db.json`)
       .then((response) => response.json())
       .then((data) => {
-        setroutePlants(data.BackEnd || []);
-        setComunity(data.Facebookcomunity || []);
+        setCommunity(data.FacebookCommunity || []);
       })
       .catch((error) => console.log(error));
     NProgress.done();
   }, []);
-  console.log(comunity);
+  useEffect(() => {
+    const getCourses = async () => {
+      const res = await axios.get(
+        `${process.env.REACT_APP_API_BACKEND_URL}/courses?populate=lessonInfo`
+      );
+      const foundCourses = res.data.data.filter(
+        (item) => item.category === "BackEnd"
+      );
+      setCourses(foundCourses);
+    };
+    getCourses();
+  }, []);
   return (
     <div className="container">
       <div className="studyPlant">
@@ -51,22 +62,21 @@ export const BackEnd = () => {
             <div className="studyPlant__title">
               <h1 className="studyPlant__heading">Lộ trình học BackEnd</h1>
               <p className="studyPlant__desc">
-                Backend là phần xử lý logic và quản lý dữ liệu của một ứng dụng
-                hoặc trang web mà người dùng không thể trực tiếp nhìn thấy. Nó
-                bao gồm việc xây dựng và quản lý các chức năng như xử lý yêu cầu
-                từ phía người dùng, tương tác với cơ sở dữ liệu, xác thực người
-                dùng, và các hoạt động logic khác trên máy chủ
+                Backend là phần xử lý logic và quản lý dữ liệu của ứng dụng hoặc
+                trang web, bao gồm xử lý yêu cầu từ người dùng, tương tác với cơ
+                sở dữ liệu, xác thực người dùng và các hoạt động logic khác trên
+                máy chủ.
               </p>
             </div>
             <div className="studyPlant__list">
-              {routePlants.map((routePlant) => {
+              {courses.map((routePlant) => {
                 return (
                   <div key={routePlant.id} className="studyPlant__item">
                     <div className="row">
                       <div className="col-4 col-xxl-5 col-md-12">
                         <picture className="studyPlant__image">
                           <img
-                            src={`${process.env.PUBLIC_URL}${routePlant.img}`}
+                            src={`${process.env.PUBLIC_URL}${routePlant.courseImage}`}
                             alt=""
                             className="studyPlant__img"
                           />
@@ -98,7 +108,7 @@ export const BackEnd = () => {
                 Tham gia công đồng trên Facebook
               </h1>
               <div className="studyPlant__connect--list">
-                {comunity.map((item) => {
+                {community.map((item) => {
                   return (
                     <div
                       key={item.id}

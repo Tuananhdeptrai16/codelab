@@ -8,7 +8,7 @@ import "nprogress/nprogress.css";
 import { useAuth } from "../context/authContext";
 import StoreContext from "../db/context";
 export const HomePage = () => {
-  const { setTargetBlog } = useContext(StoreContext);
+  const { setTargetBlog, setTargetCourses } = useContext(StoreContext);
   const { userLoggedIn, currentUser } = useAuth();
   const [slides, setSlides] = useState([]);
   const [courses, setCourses] = useState([]);
@@ -370,11 +370,12 @@ export const HomePage = () => {
                 courses.data.map((course) => {
                   return (
                     <div key={course._id} className="courses__item">
-                      <div className="courses__content--wrap">
+                      <div
+                        onClick={() => setTargetCourses(course._id)}
+                        className="courses__content--wrap"
+                      >
                         <Link
-                          to={
-                            userLoggedIn ? "/courses/details-course" : "/login"
-                          }
+                          to={userLoggedIn ? "/courses/form-study" : "/login"}
                         >
                           <picture className="courses__picture">
                             <img

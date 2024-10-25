@@ -1,29 +1,80 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Slider from "react-slick";
 import { Link, NavLink } from "react-router-dom";
 import { Help } from "../components/help";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
+import axios from "axios";
+import StoreContext from "../db/context";
+import { useAuth } from "../context/authContext";
 export const Blog = () => {
-  const [newPost, setnewPost] = useState([]);
+  const { setTargetBlog } = useContext(StoreContext);
+  const [newPost, setNewPost] = useState([]);
+  const [blog, setBlog] = useState([]);
+  const { userLoggedIn, currentUser } = useAuth();
   const [shares, setShares] = useState([]);
+  const [users, setUsers] = useState(null);
+  const [likedBlog, setLikedBlog] = useState([]);
+  const formatDateToDayMonth = (dateString) => {
+    const date = new Date(dateString);
+    const day = date.getUTCDate();
+    const monthNames = [
+      "Tháng 1",
+      "Tháng 2",
+      "Tháng 3",
+      "Tháng 4",
+      "Tháng 5",
+      "Tháng 6",
+      "Tháng 7",
+      "Tháng 8",
+      "Tháng 9",
+      "Tháng 10",
+      "Tháng 11",
+      "Tháng 12",
+    ];
+
+    const month = monthNames[date.getUTCMonth()];
+    const year = date.getUTCFullYear();
+    return `${day} ${month}, ${year}`;
+  };
   useEffect(() => {
     NProgress.start();
-
-    fetch(`${process.env.PUBLIC_URL}/json/db.json`)
-      .then((response) => response.json())
-      .then((data) => {
-        setnewPost(data.newposts || []);
-        setShares(data.featuredposts || []);
-      })
-      .catch((error) => console.log(error));
+    const getBlog = async () => {
+      const res = await axios.get(
+        `${process.env.REACT_APP_API_BACKEND_URL}/blog`
+      );
+      setShares(res.data);
+      setNewPost(res.data);
+      setBlog(res.data);
+    };
+    getBlog();
     NProgress.done();
   }, []);
+  useEffect(() => {
+    if (userLoggedIn && currentUser?.uid) {
+      try {
+        const getUsers = async () => {
+          const res = await axios.get(
+            `${process.env.REACT_APP_API_BACKEND_URL}/users`
+          );
 
-  const settingsnewPost = {
-    autoplay: true,
+          const foundUser = res.data.data.find(
+            (item) => item.userId === currentUser.uid
+          );
+          if (foundUser) {
+            setLikedBlog(foundUser.favoriteBlogInfo);
+            setUsers(foundUser);
+          }
+        };
+        getUsers();
+      } catch (error) {
+        console.error("Error fetching users:", error);
+      }
+    }
+  }, [currentUser?.uid, likedBlog, userLoggedIn]);
+
+  const settingsNewPost = {
     autoplaySpeed: 2000,
-    infinite: true,
     dots: false,
     speed: 500,
     slidesToShow: 6,
@@ -118,21 +169,33 @@ export const Blog = () => {
       },
     ],
   };
-  const [likednewPost, setLikednewPost] = useState([]);
-  const handleChangeIcon = (id) => {
-    const course = newPost.find((item) => item.id === id);
-    if (course) {
-      const isLiked = likednewPost.includes(id);
-      console.log(isLiked);
+
+  if (!shares && !newPost && !blog) {
+    return (
+      <div className="loader__wrap">
+        <div className="loader"></div>
+        <div className="loader-text">Loading..</div>
+      </div>
+    );
+  }
+  const handleLikedBlog = async (blogId) => {
+    const blogs = blog.data.find((item) => item._id === blogId);
+    if (blogs) {
+      const isLiked = likedBlog.includes(blogId);
       if (isLiked) {
-        // Nếu đã thích, bỏ thích
-        setLikednewPost(likednewPost.filter((courseId) => courseId !== id));
+        await axios.post(`${process.env.REACT_APP_API_BACKEND_URL}/users`, {
+          type: "REMOVE_MY_FV_BLOG",
+          userId: users._id,
+          blogArr: [blogId],
+        });
       } else {
-        // Nếu chưa thích, thêm vào danh sách
-        setLikednewPost([...likednewPost, id]);
+        await axios.post(`${process.env.REACT_APP_API_BACKEND_URL}/users`, {
+          type: "ADD_MY_FV_BLOG",
+          userId: users._id,
+          blogArr: [blogId],
+        });
       }
     }
-    console.log(likednewPost);
   };
 
   return (
@@ -165,62 +228,86 @@ export const Blog = () => {
         </div>
         <div className="newPost__list">
           <div className="slider__container">
-            <Slider {...settingsnewPost}>
-              {newPost.map((newpost) => {
-                return (
-                  <div key={newpost.id} className="newPost__item">
-                    <div className="newPost__content--wrap">
-                      <NavLink to="/courses/form-blog">
+            <Slider {...settingsNewPost}>
+              {newPost &&
+                newPost.data &&
+                newPost.data.map((newPost) => {
+                  return (
+                    <div key={newPost._id} className="newPost__item">
+                      <div className="newPost__content--wrap">
                         <picture className="newPost__picture">
                           <img
-                            src={`${process.env.PUBLIC_URL}${newpost.img}`}
-                            alt="imge"
+                            src={`${process.env.PUBLIC_URL}${newPost.urlImage}`}
+                            alt={newPost.title}
                             className="newPost__img"
                           />
                         </picture>
-                      </NavLink>
-                      <div className="newPost__content">
-                        <div className="newPost__content--top">
-                          <h4 className="newPost__title line-clamp">
-                            {newpost.title}
-                          </h4>
-                          <button
-                            onClick={() => handleChangeIcon(newpost.id)}
-                            className="newPost__like"
-                          >
-                            {likednewPost.includes(newpost.id) ? (
+
+                        <div className="newPost__content">
+                          <div className="newPost__content--top">
+                            <NavLink
+                              onClick={() => setTargetBlog(newPost._id)}
+                              to="/courses/form-blog"
+                            >
+                              <h4 className="newPost__title line-clamp">
+                                {newPost.title}
+                              </h4>
+                            </NavLink>
+                            <button
+                              onClick={() =>
+                                userLoggedIn && handleLikedBlog(newPost._id)
+                              }
+                              className="newPost__like"
+                            >
+                              {userLoggedIn ? (
+                                <>
+                                  {likedBlog.includes(newPost._id) ? (
+                                    <img
+                                      src={`${process.env.PUBLIC_URL}/images/icon/saveactive.svg`}
+                                      className="newPost__heart "
+                                      alt=""
+                                    />
+                                  ) : (
+                                    <img
+                                      src={`${process.env.PUBLIC_URL}/images/icon/save.svg`}
+                                      className="newPost__heart newPost__active icon"
+                                      alt=""
+                                    />
+                                  )}
+                                </>
+                              ) : (
+                                <>
+                                  <Link to="/login">
+                                    <img
+                                      src={`${process.env.PUBLIC_URL}/images/icon/save.svg`}
+                                      className="newPost__heart newPost__active icon "
+                                      alt=""
+                                    />
+                                  </Link>
+                                </>
+                              )}
+                            </button>
+                          </div>
+                          <div className="newPost__content--bottom">
+                            <span className="newPost__time">
+                              {formatDateToDayMonth(newPost.updatedAt)}
+                            </span>
+                            <div className="newPost__timeRead">
                               <img
-                                src={`${process.env.PUBLIC_URL}/images/icon/save.svg`}
-                                className="newPost__heart newPost__active icon"
+                                src={`${process.env.PUBLIC_URL}/images/icon/clock.svg`}
                                 alt=""
+                                className="newPost__time--icon"
                               />
-                            ) : (
-                              <img
-                                src={`${process.env.PUBLIC_URL}/images/icon/saveactive.svg`}
-                                className="newPost__heart "
-                                alt=""
-                              />
-                            )}
-                          </button>
-                        </div>
-                        <div className="newPost__content--bottom">
-                          <span className="newPost__time">
-                            {newpost.posttime}
-                          </span>
-                          <div className="newPost__timeRead">
-                            <img
-                              src={`${process.env.PUBLIC_URL}/images/icon/clock.svg`}
-                              alt=""
-                              className="newPost__time--icon"
-                            />
-                            <p className="newPost__time">{newpost.readtime}</p>
+                              <p className="newPost__time">
+                                {newPost.duration} phút đọc
+                              </p>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
             </Slider>
           </div>
         </div>
@@ -239,49 +326,57 @@ export const Blog = () => {
         <div className="shares__list">
           <div className="slider-container">
             <Slider {...settingsShare}>
-              {shares.map((share) => {
-                return (
-                  <div key={share.id} className="shares__item">
-                    <div className="shares__item--wrap">
-                      <NavLink to="/courses/form-blog">
+              {shares &&
+                shares.data &&
+                shares.data.map((share) => {
+                  return (
+                    <div key={share._id} className="shares__item">
+                      <div className="shares__item--wrap">
                         <picture className="shares__pictures">
                           <img
-                            src={`${process.env.PUBLIC_URL}${share.img}`}
-                            alt=""
+                            src={`${process.env.PUBLIC_URL}${share.urlImage}`}
+                            alt={share.title}
                             className="shares__img"
                           />
                         </picture>
-                      </NavLink>
-                      <div className="shares__content">
-                        <div className="separate"></div>
-                        <h1 className="shares__title line-clamp">
-                          {share.title}
-                        </h1>
-                        <div className="newPost__content--bottom">
-                          <div className="newPost__timeRead">
-                            <img
-                              src={`${process.env.PUBLIC_URL}/images/icon/clock.svg`}
-                              alt=""
-                              className="newPost__time--icon"
-                            />
-                            <p className="newPost__time">{share.time}</p>
-                          </div>
-                          <div className="newPost__views">
-                            <img
-                              src={`${process.env.PUBLIC_URL}/images/icon/eye.svg`}
-                              alt=""
-                              className="newPost__views--icon icon"
-                            />
-                            <span className="newPost__views--number">
-                              {share.viewers}
-                            </span>
+                        <div className="shares__content">
+                          <div className="separate"></div>
+                          <NavLink
+                            onClick={() => setTargetBlog(share._id)}
+                            to="/courses/form-blog"
+                          >
+                            <h1 className="shares__title line-clamp">
+                              {share.title}
+                            </h1>
+                          </NavLink>
+
+                          <div className="newPost__content--bottom">
+                            <div className="newPost__timeRead">
+                              <img
+                                src={`${process.env.PUBLIC_URL}/images/icon/clock.svg`}
+                                alt=""
+                                className="newPost__time--icon"
+                              />
+                              <p className="newPost__time">
+                                {formatDateToDayMonth(share.updatedAt)}
+                              </p>
+                            </div>
+                            <div className="newPost__views">
+                              <img
+                                src={`${process.env.PUBLIC_URL}/images/icon/eye.svg`}
+                                alt=""
+                                className="newPost__views--icon icon"
+                              />
+                              <span className="newPost__views--number">
+                                {share.views}
+                              </span>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
             </Slider>
           </div>
         </div>

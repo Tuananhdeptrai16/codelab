@@ -15,6 +15,7 @@ const AppContent = () => {
   const [login, setLogin] = useState(true);
   const [signUp, setSignUp] = useState(true);
   const [targetBlog, setTargetBlog] = useState("");
+  const [targetCourses, setTargetCourses] = useState("");
   const [ResetPassWordPage, setResetPassWordPage] = useState(true);
   const [theme, setTheme] = useState("light");
   const handleChangeTheme = () => {
@@ -59,6 +60,8 @@ const AppContent = () => {
     <AuthProvider>
       <StoreContext.Provider
         value={{
+          targetCourses,
+          setTargetCourses,
           location,
           theme,
           handleChangeTheme,

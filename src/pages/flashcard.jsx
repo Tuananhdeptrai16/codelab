@@ -12,7 +12,7 @@ export const FlashCard = () => {
       .then((response) => response.json())
       .then((data) => {
         setroutePlants(data.flashcard || []);
-        setComunity(data.Facebookcomunity || []);
+        setComunity(data.FacebookCommunity || []);
       })
       .catch((error) => console.log(error));
   }, []);

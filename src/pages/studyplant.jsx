@@ -6,15 +6,15 @@ import { Gift } from "../components/gift";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 export const StudyPlant = () => {
-  const [routePlants, setroutePlants] = useState([]);
-  const [comunity, setComunity] = useState([]);
+  const [routePlants, setRoutePlants] = useState([]);
+  const [community, setCommunity] = useState([]);
   useEffect(() => {
     NProgress.start();
     fetch(`${process.env.PUBLIC_URL}/json/db.json`)
       .then((response) => response.json())
       .then((data) => {
-        setroutePlants(data.studyroute || []);
-        setComunity(data.Facebookcomunity || []);
+        setRoutePlants(data.studyRoute || []);
+        setCommunity(data.FacebookCommunity || []);
       })
       .catch((error) => console.log(error));
     NProgress.done();
@@ -42,10 +42,8 @@ export const StudyPlant = () => {
             <div className="studyPlant__title">
               <h1 className="studyPlant__heading">Lộ trình học </h1>
               <p className="studyPlant__desc">
-                Để thành thạo lập trình web, bạn cần một lộ trình học rõ ràng,
-                từ việc học cơ bản về giao diện, cách tương tác với người dùng,
-                ở đây chúng tôi cung cấp một lộ trình rõ ràng giúp nắm bắt kiến
-                thức chọn lọc và hướng đi đúng đắn nhất ...
+                Lộ trình học lập trình web từ cơ bản đến nâng cao giúp bạn thành
+                thạo giao diện và tương tác người dùng hiệu quả
               </p>
             </div>
             <div className="studyPlant__list">
@@ -74,7 +72,7 @@ export const StudyPlant = () => {
                             to={routePlant.link}
                             className="btn studyPlant__button"
                           >
-                            Vào học ngay
+                            Xem chi tiết
                           </NavLink>
                         </div>
                       </div>
@@ -88,7 +86,7 @@ export const StudyPlant = () => {
                 Tham gia công đồng trên Facebook
               </h1>
               <div className="studyPlant__connect--list">
-                {comunity.map((item) => {
+                {community.map((item) => {
                   return (
                     <div
                       key={item.id}

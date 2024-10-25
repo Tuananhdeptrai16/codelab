@@ -14,7 +14,7 @@ import { Login } from "../pages/auth/login";
 import { SignUp } from "../pages/auth/singup";
 import { ResetPassword } from "../pages/auth/resetpassword";
 import { DetailsCourse } from "../pages/detailscourse";
-import { FormStudy } from "../pages/formstudy";
+import { FormStudy } from "../pages/formstudy/formstudy";
 import { Practice } from "../pages/formpractice";
 import { Product } from "../pages/product";
 import { FormBlog } from "../pages/formblog/formblog";

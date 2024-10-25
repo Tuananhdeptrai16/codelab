@@ -5,11 +5,8 @@ import { Help } from "../components/help";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 import axios from "axios";
-import { Pagination } from "antd";
-
 export const Courses = () => {
   const [courses, setCourses] = useState(null);
-
   useEffect(() => {
     NProgress.start();
     console.log(
@@ -28,8 +25,6 @@ export const Courses = () => {
     }
     NProgress.done();
   }, []);
-  console.log("courses", courses);
-
   const settingsCourses = {
     autoplay: true,
     autoplaySpeed: 2000,
@@ -167,14 +162,6 @@ export const Courses = () => {
             </Slider>
           </div>
         </div>
-      </div>
-      <div className="product__pagination">
-        <Pagination
-          align="center"
-          defaultCurrent={1}
-          total={50}
-          onChange={() => {}}
-        />
       </div>
       <Help></Help>
     </div>

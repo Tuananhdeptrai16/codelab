@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Help } from "../components/help";
@@ -6,20 +7,30 @@ import { Gift } from "../components/gift";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 export const FrontEnd = () => {
-  const [routePlants, setroutePlants] = useState([]);
-  const [comunity, setComunity] = useState([]);
+  const [courses, setCourses] = useState([]);
+  const [community, setCommunity] = useState([]);
   useEffect(() => {
     NProgress.start();
     fetch(`${process.env.PUBLIC_URL}/json/db.json`)
       .then((response) => response.json())
       .then((data) => {
-        setroutePlants(data.FrontEnd || []);
-        setComunity(data.Facebookcomunity || []);
+        setCommunity(data.FacebookCommunity || []);
       })
       .catch((error) => console.log(error));
     NProgress.done();
   }, []);
-  console.log(comunity);
+  useEffect(() => {
+    const getCourses = async () => {
+      const res = await axios.get(
+        `${process.env.REACT_APP_API_BACKEND_URL}/courses?populate=lessonInfo`
+      );
+      const foundCourses = res.data.data.filter(
+        (item) => item.category === "FrontEnd"
+      );
+      setCourses(foundCourses);
+    };
+    getCourses();
+  }, []);
   return (
     <div className="container">
       <div className="studyPlant">
@@ -51,22 +62,20 @@ export const FrontEnd = () => {
             <div className="studyPlant__title">
               <h1 className="studyPlant__heading">Lộ trình học FrontEnd</h1>
               <p className="studyPlant__desc">
-                Frontend là phần giao diện của một ứng dụng hoặc trang web mà
-                người dùng có thể trực tiếp nhìn thấy và tương tác. Nó bao gồm
-                việc thiết kế và xây dựng các thành phần như bố cục, hình ảnh,
-                văn bản, nút, biểu mẫu, và mọi thứ khác mà người dùng tương tác
-                trên màn hình.
+                Frontend là phần giao diện của ứng dụng hoặc trang web, nơi
+                người dùng có thể trực tiếp tương tác với các thành phần như bố
+                cục, hình ảnh, và biểu mẫu.
               </p>
             </div>
             <div className="studyPlant__list">
-              {routePlants.map((routePlant) => {
+              {courses.map((routePlant) => {
                 return (
                   <div key={routePlant.id} className="studyPlant__item">
                     <div className="row">
                       <div className="col-4 col-xxl-5 col-md-12">
                         <picture className="studyPlant__image">
                           <img
-                            src={`${process.env.PUBLIC_URL}${routePlant.img}`}
+                            src={`${process.env.PUBLIC_URL}${routePlant.courseImage}`}
                             alt=""
                             className="studyPlant__img"
                           />
@@ -98,13 +107,12 @@ export const FrontEnd = () => {
                 Tham gia công đồng trên Facebook
               </h1>
               <div className="studyPlant__connect--list">
-                {comunity.map((item) => {
+                {community.map((item) => {
                   return (
                     <div
                       key={item.id}
                       className="studyPlant__routePlants--item"
                     >
-                      {" "}
                       <div className="row">
                         <div className="col-4 col-xxl-5 col-md-12">
                           <picture className="studyPlant__image">
