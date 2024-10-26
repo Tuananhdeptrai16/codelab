@@ -1,5 +1,5 @@
 html {
-  --color-text: #333; /* Đặt màu văn bản mặc định */
+  --color-text-blog: #333; /* Đặt màu văn bản mặc định */
   --color-link: #ffb900; /* Màu cho liên kết */
   --line-height: 1.6; /* Chiều cao dòng mặc định */
   --font-size-base: 1.1rem; /* Kích thước phông chữ cơ bản */
@@ -7,7 +7,7 @@ html {
 }
 
 html.dark {
-  --color-text: #333; /* Đặt màu văn bản mặc định */
+  --color-text-blog: #9e9da8; /* Đặt màu văn bản mặc định */
   --color-link: #ffb900; /* Màu cho liên kết */
   --line-height: 1.6; /* Chiều cao dòng mặc định */
   --font-size-base: 1.1rem; /* Kích thước phông chữ cơ bản */
@@ -21,24 +21,55 @@ html.dark {
 
 /* Các đoạn văn bản trong blog */
 .blog p {
-  color: var(--color-text);
+  color: var(--color-text-blog);
   font-size: var(--font-size-base);
   line-height: 1.5;
   margin-top: 10px;
 }
 
 /* Các tiêu đề trong blog */
-.blog h1,
-.blog h2,
-.blog h3,
-.blog h4,
+.blog h1 {
+  font-family: "Poppins", serif;
+  margin: 20px 0 10px; /* Đặt margin trên và dưới */
+  font-size: 2rem; /* Kích thước font cho h1 */
+  line-height: 1.2; /* Chiều cao dòng cho tiêu đề */
+  font-weight: 600; /* Độ đậm chữ */
+  color: var(--color-text); /* Màu chữ */
+}
+
+.blog h2 {
+  font-family: "Poppins", serif;
+  margin: 20px 0 10px; /* Đặt margin trên và dưới */
+  font-size: 1.75rem; /* Kích thước font cho h2 */
+  line-height: 1.2; /* Chiều cao dòng cho tiêu đề */
+  font-weight: 600; /* Độ đậm chữ */
+  color: var(--color-text); /* Màu chữ */
+}
+
+.blog h3 {
+  font-family: "Poppins", serif;
+  margin: 20px 0 10px; /* Đặt margin trên và dưới */
+  font-size: 1.5rem; /* Kích thước font cho h3 */
+  line-height: 1.2; /* Chiều cao dòng cho tiêu đề */
+  font-weight: 600; /* Độ đậm chữ */
+  color: var(--color-text); /* Màu chữ */
+}
+
+.blog h4 {
+  margin: 20px 0 10px; /* Đặt margin trên và dưới */
+  font-size: 1.25rem; /* Kích thước font cho h4 */
+  line-height: 1.2; /* Chiều cao dòng cho tiêu đề */
+  font-weight: 600; /* Độ đậm chữ */
+  color: var(--color-text); /* Màu chữ */
+}
+
 .blog h5,
 .blog h6 {
-  margin: 20px 0 30px; /* Đặt margin trên và dưới, dưới cùng là khoảng cách lớn hơn */
-  font-size: var(--font-size-heading);
-  line-height: 1; /* Đặt chiều cao dòng cho tiêu đề */
-  font-weight: 600;
-  color: var(--color-text);
+  margin: 20px 0 10px; /* Đặt margin trên và dưới */
+  font-size: var(--font-size-heading); /* Kích thước font cho h5, h6 */
+  line-height: 1.2; /* Chiều cao dòng cho tiêu đề */
+  font-weight: 600; /* Độ đậm chữ */
+  color: var(--color-text); /* Màu chữ */
 }
 
 /* Các liên kết trong blog */
@@ -63,6 +94,8 @@ html.dark {
   margin-top: 20px;
   margin-bottom: 10px; /* Đặt margin dưới cho mỗi mục danh sách */
   font-size: var(--font-size-base);
+  color: var(--color-text-blog);
+  line-height: 1.5;
 }
 
 .blog p br {

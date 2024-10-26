@@ -178,6 +178,7 @@ export const Blog = () => {
       </div>
     );
   }
+  console.log("blog", blog);
   const handleLikedBlog = async (blogId) => {
     const blogs = blog.data.find((item) => item._id === blogId);
     if (blogs) {

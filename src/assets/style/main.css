@@ -2307,6 +2307,7 @@ table {
 .login__img {
   margin-top: 50px;
   width: 600px;
+  max-height: 532px;
 }
 @media (max-width: 991.98px) {
   .login__img {
@@ -2366,7 +2367,7 @@ table {
   width: 460px;
   color: var(--main-color-grey-3);
   text-align: center;
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 500;
   line-height: 146.667%;
 }
@@ -2449,6 +2450,7 @@ table {
 .signUp__img {
   margin-top: 50px;
   width: 600px;
+  max-height: 532px;
 }
 @media (max-width: 991.98px) {
   .signUp__img {
@@ -2508,7 +2510,7 @@ table {
   width: 460px;
   color: var(--main-color-grey-3);
   text-align: center;
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 500;
   line-height: 146.667%;
 }
@@ -2656,7 +2658,7 @@ table {
   width: 460px;
   color: var(--main-color-grey-3);
   text-align: center;
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 500;
   line-height: 146.667%;
 }
@@ -3902,6 +3904,122 @@ table {
   margin-bottom: 30px;
 }
 
+.profile-container {
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+.profile-info {
+  margin-top: 0;
+}
+.profile__bg {
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  background: var(--profile-sidebar-bg);
+  border-radius: 10px;
+}
+.profile__desc {
+  color: var(--color-text-2);
+  margin-bottom: 16px;
+}
+.profile__user {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 0%, rgba(0, 0, 0, 0.15) 100%), radial-gradient(at top center, rgba(255, 255, 255, 0.4) 0%, rgba(0, 0, 0, 0.4) 120%) #989898;
+  background-blend-mode: multiply, multiply;
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px 20px 0px 0px;
+}
+.profile__user--avatar {
+  width: 116px;
+  height: 116px;
+  border-radius: 116px;
+  border: 5px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 4px 14px 2px rgba(0, 0, 0, 0.08);
+}
+.profile__user--name {
+  margin-top: 10px;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 144.444%;
+}
+.profile__user--desc {
+  margin-top: 2px;
+  color: #fafafd;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 146.667%;
+}
+.profile__sidebar {
+  padding-bottom: 20px;
+  border-radius: 20px;
+  background: var(--profile-sidebar-bg);
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+.profile-menu {
+  padding: 20px 30px 0 30px;
+}
+.profile-menu__title {
+  color: var(--text-color-main-light);
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 144.444%; /*  */
+}
+.profile-menu__list {
+  margin-top: 17px;
+}
+.profile-menu__link {
+  color: var(--color-text-2);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 10px 5px 10px;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 146.667%; /* */
+  transition: background-color 0.2s;
+}
+.profile-menu__link:hover {
+  background: var(--profile-hover-link-bg);
+  border-radius: 5px;
+}
+.profile-menu__icon {
+  height: 100%;
+  width: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.profile__heading {
+  white-space: nowrap;
+  color: var(--text-color-main-light);
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 150%;
+}
+.profile__desc {
+  max-width: 483px;
+  margin-top: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 128%;
+}
+.profile__separate {
+  width: 100%;
+  margin: 30px 0;
+}
+.profile__active {
+  width: 100%;
+  border-radius: 10px;
+  background: #ccc;
+}
+.profile-menu__link {
+  width: 100%;
+}
+
 /*
     The code was written by programmer Truong Tuan Anh
     Thanks for watching and sharing !!!
@@ -3966,6 +4084,12 @@ html.dark {
   --background__lesson: #171c28;
   --boxShadow__lesson: rgba(23, 28, 40, 0.2);
   --background--color-tag: #171c28;
+  --color-text-study: #9e9da8;
+  --profile-sidebar-bg: #171c28;
+  --profile-sidebar-shadow: rgba(23, 28, 40, 0.2);
+  --profile-hover-link-bg: #292e39;
+  --account-info-bg: #292e39;
+  --account-info-icon-bg: #171c28;
 }
 
 /*
@@ -4033,6 +4157,12 @@ html {
   --background__lesson: #f6f6f6;
   --boxShadow__lesson: rgba(237, 237, 246, 0.2);
   --background--color-tag: #f2f2f2;
+  --color-text-study: #333;
+  --profile-sidebar-bg: #fff;
+  --profile-sidebar-shadow: rgba(237, 237, 246, 0.2);
+  --profile-hover-link-bg: #ebebeb;
+  --account-info-bg: #f6f6f6;
+  --account-info-icon-bg: #fff;
 }
 
 .header__button {
@@ -6166,6 +6296,79 @@ html {
 .catalog__img {
   display: flex;
   justify-content: center;
+}
+
+.account-info {
+  border-radius: 10px;
+  background: var(--account-info-bg);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.account-info__icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 8px;
+  background: var(--profile-sidebar-bg);
+}
+.account-info__title {
+  color: var(--text-color-main-light);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 146.667%; /* x */
+}
+.account-info__desc {
+  color: var(--color-text-2);
+  margin-top: 6px;
+  font-size: 1.2rem;
+  line-height: 142.857%; /*  */
+}
+
+.favorite-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.favorite-item__thumb {
+  width: 110px;
+  height: 70px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+@media (max-width: 991.98px) {
+  .favorite-item__thumb {
+    width: 80px;
+  }
+}
+.favorite-item__title {
+  color: var(--text-color-main-light);
+  max-width: 733px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 146.667%; /**/
+}
+.favorite-item__content {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+@media (max-width: 575.98px) {
+  .favorite-item__content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.favorite-item__price {
+  color: var(--color-text-2);
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 145.455%; /*  */
 }
 
 /*# sourceMappingURL=main.css.map */

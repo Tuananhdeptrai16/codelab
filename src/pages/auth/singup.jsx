@@ -78,7 +78,7 @@ export const SignUp = () => {
             <div className="signUp__background">
               <div className="signUp__image">
                 <img
-                  src={`${process.env.PUBLIC_URL}/images/signUp/img1.png`}
+                  src={`${process.env.PUBLIC_URL}/images/login/img1.svg`}
                   alt=""
                   className="signUp__img"
                 />

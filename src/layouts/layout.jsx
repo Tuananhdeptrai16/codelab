@@ -396,7 +396,10 @@ const MyLayOut = () => {
                             <div className="header__user--separate"></div>
                             <ul className="header__user--list">
                               <li>
-                                <Link to="/user" className="header__user--link">
+                                <Link
+                                  to="/personal"
+                                  className="header__user--link"
+                                >
                                   Trang cá nhân
                                 </Link>
                               </li>

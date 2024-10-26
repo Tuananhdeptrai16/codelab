@@ -8,12 +8,13 @@ import "nprogress/nprogress.css";
 import { useAuth } from "../context/authContext";
 import StoreContext from "../db/context";
 export const HomePage = () => {
-  const { setTargetBlog, setTargetCourses } = useContext(StoreContext);
+  const { setTargetBlog, setTargetCourses, setShowCatalog, showCatalog } =
+    useContext(StoreContext);
   const { userLoggedIn, currentUser } = useAuth();
   const [slides, setSlides] = useState([]);
   const [courses, setCourses] = useState([]);
   const [videos, setVideos] = useState([]);
-  const [showCatalog, setShowCatalog] = useState(true);
+
   const [shares, setShares] = useState([]);
   const [users, setUsers] = useState(null);
   const [likedCourses, setLikedCourses] = useState([]);

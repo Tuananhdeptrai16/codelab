@@ -18,6 +18,7 @@ import { FormStudy } from "../pages/formstudy/formstudy";
 import { Practice } from "../pages/formpractice";
 import { Product } from "../pages/product";
 import { FormBlog } from "../pages/formblog/formblog";
+import { Personal } from "../pages/personal";
 
 const MyRoute = () => {
   return (
@@ -55,6 +56,7 @@ const MyRoute = () => {
         path="/studyplant/frontEnd/flashcard_javascript"
         element={<QuestionFlashCard />}
       ></Route>
+      <Route path="/personal" element={<Personal />}></Route>
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );

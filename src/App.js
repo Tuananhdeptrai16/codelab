@@ -18,6 +18,7 @@ const AppContent = () => {
   const [targetCourses, setTargetCourses] = useState("");
   const [ResetPassWordPage, setResetPassWordPage] = useState(true);
   const [theme, setTheme] = useState("light");
+  const [showCatalog, setShowCatalog] = useState(true);
   const handleChangeTheme = () => {
     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
   };
@@ -36,6 +37,7 @@ const AppContent = () => {
       "/courses/details-course",
       "/courses/form-study",
       "/flashcard",
+      "/personal",
       "/courses/form-practice",
       "/studyplant/frontEnd/flashcard_htmlcss",
       "/studyplant/frontEnd/flashcard_javascript",
@@ -67,6 +69,8 @@ const AppContent = () => {
           handleChangeTheme,
           setTargetBlog,
           targetBlog,
+          showCatalog,
+          setShowCatalog,
         }}
       >
         {ResetPassWordPage ? (

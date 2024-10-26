@@ -56,7 +56,6 @@ export const FormStudy = () => {
     };
     getLessonData();
   }, [targetCourses, targetLessonId]);
-  console.log("targetLessonId", dataLesson);
   if (!dataCourses) {
     return (
       <div className="loader__wrap">

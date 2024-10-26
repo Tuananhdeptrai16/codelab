@@ -74,7 +74,7 @@ export const Login = () => {
             <div className="login__background ">
               <div className="login__image">
                 <img
-                  src={`${process.env.PUBLIC_URL}/images/login/img1.png`}
+                  src={`${process.env.PUBLIC_URL}/images/login/img1.svg`}
                   alt=""
                   className="login__img"
                 />
