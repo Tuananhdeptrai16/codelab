@@ -120,7 +120,9 @@
   &__active {
     width: 100%;
     border-radius: 10px;
-    background: #ccc;
+    background: var(--account-background-color-light);
+    color: var(--text-color-main-light);
+    font-weight: 600;
   }
   &-menu__link {
     width: 100%;

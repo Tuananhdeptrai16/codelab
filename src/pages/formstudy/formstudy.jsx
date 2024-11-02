@@ -7,11 +7,13 @@ import axios from "axios";
 import { useAuth } from "../../context/authContext/index";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
+import { DetailsCourse } from "../detailscourse";
 export const FormStudy = () => {
   const { targetCourses } = useContext(StoreContext);
-  const { userLoggedIn } = useAuth();
+  const { userLoggedIn, currentUser } = useAuth();
   const [dataCourses, setDataCourses] = useState(null);
   const [dataLesson, setDataLesson] = useState(null);
+  const [isRegister, setIsRegister] = useState(null);
   const [targetLessonId, setTargetLessonId] = useState(
     "671ba2e0d159f9b05f712f66"
   );
@@ -36,7 +38,6 @@ export const FormStudy = () => {
         NProgress.done(); // Đảm bảo rằng NProgress luôn dừng lại
       }
     };
-
     getCourseData();
     const getLessonData = async () => {
       NProgress.start();
@@ -56,7 +57,31 @@ export const FormStudy = () => {
     };
     getLessonData();
   }, [targetCourses, targetLessonId]);
-  if (!dataCourses) {
+  useEffect(() => {
+    if (userLoggedIn && currentUser?.uid) {
+      try {
+        const getUsers = async () => {
+          const res = await axios.get(
+            `${process.env.REACT_APP_API_BACKEND_URL}/users?populate=favoriteListInfo,notificationInfo,favoriteBlogInfo,CoursesInfo`
+          );
+
+          const foundUser = res.data.data.find(
+            (item) => item.userId === currentUser.uid
+          );
+          if (foundUser) {
+            const isRegisterCourse = foundUser.CoursesInfo.some(
+              (course) => course._id === targetCourses
+            );
+            setIsRegister(isRegisterCourse);
+          }
+        };
+        getUsers();
+      } catch (error) {
+        console.error("Error fetching users:", error);
+      }
+    }
+  }, [currentUser?.uid, userLoggedIn, targetCourses]);
+  if (!dataCourses && !isRegister) {
     return (
       <div className="loader__wrap">
         <div className="loader"></div>
@@ -64,7 +89,7 @@ export const FormStudy = () => {
       </div>
     );
   }
-  return (
+  return isRegister ? (
     <div className="container">
       <div className="breadcrumb">
         <div className="breadcrumb__wrap">
@@ -182,14 +207,14 @@ export const FormStudy = () => {
                     </button>
                   );
                 })}
-              <div className="study__lesson--item">
+              {/* <div className="study__lesson--item">
                 <p className="study__lesson--name">2. JavaScript cơ bản</p>
                 <img
                   src={`${process.env.PUBLIC_URL}/images/icon/lock-lesson.svg`}
                   alt=""
                   className="study__lesson-icon icon"
                 />
-              </div>
+              </div> */}
 
               <div className="study__quote">
                 <Quote></Quote>
@@ -199,5 +224,7 @@ export const FormStudy = () => {
         </div>
       </div>
     </div>
+  ) : (
+    <DetailsCourse></DetailsCourse>
   );
 };

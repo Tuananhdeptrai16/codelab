@@ -603,16 +603,17 @@ export const HomePage = () => {
           <div className="row catalog__wrap">
             <div className="col-7 col-xl-12">
               <h2 className="catalog__heading">
-                Chúc mừng bạn nhận được 10 ⭐ cho ngày hôm nay 🎊🎊
+                Chào mừng các bạn đến với Website học trực tuyến CodeLab
               </h2>
               <p className="catalog__desc">
-                Hãy thu thập phần quà đăng nhập thường xuyên để mở những khóa
-                học hữu ích nhé
+                CodeLab hi vọng với những khóa học hữu ích tại hệ thống CodeLab
+                sẽ giúp các bạn nắm vững kiến thức trên con đường trở thành lập
+                trình viên chuyên nghiệp
               </p>
               <div className="catalog__btn">
-                <button className="catalog__button">
+                {/* <button className="catalog__button">
                   Nhận 10 sao ngày hôm nay
-                </button>
+                </button> */}
               </div>
             </div>
             <div className="col-5 col-xl-12 catalog__img">

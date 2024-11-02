@@ -6,16 +6,16 @@ export const Catalog = () => {
       <div className="row catalog__wrap">
         <div className="col-7 col-xl-12">
           <h2 className="catalog__heading">
-            Chúc mừng bạn nhận được 10 ⭐ cho ngày hôm nay 🎊🎊
+            Chào mừng các bạn đến với Website CodeLab 🎊
           </h2>
           <p className="catalog__desc">
-            Hãy thu thập phần quà đăng nhập thường xuyên để mở những khóa học
-            hữu ích nhé
+            CodeLab hi vọng sẽ là con thuyền đưa các bạn trở thành một lập trình
+            viên chuyên nghiệp
           </p>
           <div className="catalog__btn">
-            <button className="catalog__button">
+            {/* <button className="catalog__button">
               Nhận 10 sao ngày hôm nay
-            </button>
+            </button> */}
           </div>
         </div>
         <div className="col-5 col-xl-12">

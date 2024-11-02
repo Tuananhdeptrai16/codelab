@@ -24,7 +24,6 @@ html.dark {
   color: var(--color-text-study);
   font-size: var(--font-size-base);
   line-height: 1.5;
-  margin-top: 10px;
 }
 
 /* Các tiêu đề trong blog */

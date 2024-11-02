@@ -1,10 +1,88 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useContext, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
+import StoreContext from "../db/context";
+import axios from "axios";
+import { useAuth } from "../context/authContext";
+import { ToastSuccess } from "../components/toastsuccess";
 export const DetailsCourse = () => {
+  const { targetCourses } = useContext(StoreContext);
+  const { userLoggedIn, currentUser } = useAuth();
+  const [courses, setCourses] = useState(null);
+  const [isRegister, setIsRegister] = useState(null);
+  const [user, setUser] = useState(null);
+  const [success, setSuccess] = useState(null);
+  useEffect(() => {
+    if (userLoggedIn && currentUser?.uid) {
+      try {
+        const getUsers = async () => {
+          const res = await axios.get(
+            `${process.env.REACT_APP_API_BACKEND_URL}/users?populate=favoriteListInfo,notificationInfo,favoriteBlogInfo,CoursesInfo`
+          );
+
+          const foundUser = res.data.data.find(
+            (item) => item.userId === currentUser.uid
+          );
+          setUser(foundUser);
+        };
+        getUsers();
+      } catch (error) {
+        console.error("Error fetching users:", error);
+      }
+    }
+  }, [currentUser?.uid, userLoggedIn, targetCourses]);
+  useEffect(() => {
+    const getCourses = async () => {
+      try {
+        const res = await axios.get(
+          `${process.env.REACT_APP_API_BACKEND_URL}/courses?populate=lessonInfo`
+        );
+        const foundCourses = await res.data.data.find(
+          (item) => item._id === targetCourses
+        );
+        setCourses(foundCourses);
+      } catch (error) {
+        console.error("Error fetching courses:", error);
+      }
+    };
+
+    getCourses();
+  }, [targetCourses]);
+  const handleRegisterCourses = async () => {
+    try {
+      const response = await axios.post(
+        `${process.env.REACT_APP_API_BACKEND_URL}/users`,
+        {
+          type: "ADD_MY_COURSE",
+          userId: user._id,
+          courseArr: [targetCourses],
+        }
+      );
+
+      if (response.status === 200) {
+        setIsRegister(true);
+        setSuccess(true);
+        setTimeout(() => {
+          setSuccess(false);
+        }, 3000);
+      }
+    } catch (error) {
+      console.error("Đăng ký khóa học thất bại:", error);
+    }
+  };
+
   const [toggle, setToggle] = useState(false);
+  if (!courses) {
+    return (
+      <div className="loader__wrap">
+        <div className="loader"></div>
+        <div className="loader-text">Loading..</div>
+      </div>
+    );
+  }
   return (
     <div>
+      {success === true ? <ToastSuccess></ToastSuccess> : ""}
       <div className="container">
         <div className="detail">
           <div className="breadcrumb">
@@ -19,19 +97,19 @@ export const DetailsCourse = () => {
               </NavLink>
               <NavLink to="/studyplant/frontEnd" className="breadcrumb__item">
                 <p className="breadcrumb__name breadcrumb__active">
-                  Khóa học HTML - CSS
+                  {courses.title}
                 </p>
               </NavLink>
             </div>
           </div>
           <div className="row detail__main">
             <div className="col-8 col-lg-12">
-              <h1 className="detail__heading">Khoá học HMTL , CSS</h1>
+              <h1 className="detail__heading"> {courses.title}</h1>
               <p className="detail__desc">
-                Trong khóa này chúng ta sẽ cùng nhau tìm hiểu về những ngôn ngữ
+                Trong khóa này chúng ta sẽ cùng nhau tìm hiểu về {courses.title}
                 mà chúng ta cần biết khi học về Website
               </p>
-              <div className="detail__reward">
+              {/* <div className="detail__reward">
                 <h2 className="detail__heading">Bạn sẽ học được những gì</h2>
                 <div className="row row-cols-2 row-cols-md-1 detail__reward--list">
                   <div className="col">
@@ -123,13 +201,15 @@ export const DetailsCourse = () => {
                     </ul>
                   </div>
                 </div>
-              </div>
+              </div> */}
               <div className="detail__content">
                 <h2 className="detail__heading">Nội dung khóa học</h2>
                 <div className="detail__info">
                   <div className="detail__info--left">
-                    <p className="detail__text"> • 6 phần</p>
-                    <p className="detail__text"> • 50 bài học</p>
+                    <p className="detail__text">
+                      {" "}
+                      • {courses.lessonInfo.length} bài học
+                    </p>
                     <p className="detail__text">
                       • 6 giờ 19 phút tổng thời lượng
                     </p>
@@ -144,28 +224,32 @@ export const DetailsCourse = () => {
                   </div>
                 </div>
                 <div className="detail__list">
-                  <button
-                    onClick={() => {
-                      console.log("click1");
-                    }}
-                    className="detail__item--info"
-                  >
-                    <div className="detail__item--wrap">
-                      <img
+                  {courses &&
+                    courses.lessonInfo &&
+                    courses.lessonInfo.map((course) => {
+                      return (
+                        <div key={course._id}>
+                          <button className="detail__item--info">
+                            <div className="detail__item--wrap">
+                              {/* <img
                         src={`${process.env.PUBLIC_URL}/images/icon/${
                           toggle ? "arrow-up.svg" : "arrow-down.svg"
                         }`}
                         alt=""
                         srcSet=""
                         className="detail__icon icon"
-                      />
-                      <p className="detail__item-text">
-                        HTML, CSS là gì ? Tổng quan về Website
-                      </p>
-                    </div>
-                    <p className="detail__item--desc">8 bài học</p>
-                  </button>
-                  {toggle && (
+                      /> */}
+                              <p className="detail__item-text">
+                                {course.title}
+                              </p>
+                            </div>
+                            {/* <p className="detail__item--desc">8 bài học</p> */}
+                          </button>
+                        </div>
+                      );
+                    })}
+
+                  {/* {toggle && (
                     <div className="detail__lecture--wrap">
                       <div className="detail__lecture">
                         <img
@@ -199,74 +283,7 @@ export const DetailsCourse = () => {
                         </p>
                       </div>
                     </div>
-                  )}
-
-                  <button className="detail__item--info">
-                    <div className="detail__item--wrap">
-                      <img
-                        src={`${process.env.PUBLIC_URL}/images/icon/${
-                          toggle ? "arrow-up.svg" : "arrow-down.svg"
-                        }`}
-                        alt=""
-                        srcSet=""
-                        className="detail__icon icon"
-                      />
-                      <p className="detail__item-text">
-                        HTML, CSS là gì ? Tổng quan về Website
-                      </p>
-                    </div>
-                    <p className="detail__item--desc">8 bài học</p>
-                  </button>
-                  {toggle && (
-                    <div className="detail__lecture--wrap">
-                      <div className="detail__lecture">
-                        <img
-                          src={`${process.env.PUBLIC_URL}/images/icon/file.svg`}
-                          alt=""
-                          srcSet=""
-                          className="detail__icon icon"
-                        />
-                        <p className="detail__text">
-                          1. Bạn sẽ làm được gì sau khóa học?
-                        </p>
-                      </div>
-                      <div className="detail__lecture">
-                        <img
-                          src={`${process.env.PUBLIC_URL}/images/icon/file.svg`}
-                          alt=""
-                          srcSet=""
-                          className="detail__icon icon"
-                        />
-                        <p className="detail__text">2. Tìm hiểu về HTML, CSS</p>
-                      </div>
-                      <div className="detail__lecture">
-                        <img
-                          src={`${process.env.PUBLIC_URL}/images/icon/pen.svg`}
-                          alt=""
-                          srcSet=""
-                          className="detail__icon icon"
-                        />
-                        <p className="detail__text">
-                          3. Cài đặt VS Code, Page Ruler extension
-                        </p>
-                      </div>
-                    </div>
-                  )}
-
-                  <button className="detail__item--info">
-                    <div className="detail__item--wrap">
-                      <img
-                        src={`${process.env.PUBLIC_URL}/images/icon/arrow-down.svg`}
-                        alt=""
-                        srcSet=""
-                        className="detail__icon icon"
-                      />
-                      <p className="detail__item-text">
-                        HTML, CSS là gì ? Tổng quan về Website
-                      </p>
-                    </div>
-                    <p className="detail__item--desc">8 bài học</p>
-                  </button>
+                  )} */}
                 </div>
               </div>
             </div>
@@ -274,16 +291,28 @@ export const DetailsCourse = () => {
               <div className="detail__wrap">
                 <div className="detail__background d-xl-none">
                   <img
-                    src={`${process.env.PUBLIC_URL}/images/courses/item1.png`}
+                    src={courses.courseImage}
                     alt=""
                     srcSet=""
                     className="detail__img"
                   />
                 </div>
                 <div className="detail__price">Miễn phí</div>
-                <button className="btn detail__register">
-                  <Link to="/courses/form-study">Tiếp tục học</Link>
-                </button>
+
+                {isRegister === true ? (
+                  <Link to="/courses" className="btn detail__register">
+                    Quay lại
+                  </Link>
+                ) : (
+                  <button
+                    onClick={() => {
+                      handleRegisterCourses();
+                    }}
+                    className="btn detail__register"
+                  >
+                    Đăng ký ngay
+                  </button>
+                )}
                 <div className="detail__includes">
                   <p className="detail__includes--heading">
                     Khóa học này cung cấp
@@ -305,7 +334,9 @@ export const DetailsCourse = () => {
                       srcSet=""
                       className="detail__icon icon"
                     />
-                    <p className="detail__text">12 tài liệu</p>
+                    <p className="detail__text">
+                      {courses.lessonInfo.length} bài học
+                    </p>
                   </div>
                   <div className="detail__item">
                     <img

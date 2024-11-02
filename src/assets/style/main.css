@@ -1584,6 +1584,7 @@ table {
   width: fit-content;
   font-weight: bold;
   font-family: sans-serif;
+  color: var(--text-color-main-light);
   font-size: 2rem;
   padding-bottom: 8px;
   background: linear-gradient(currentColor 0 0) 0 100%/0% 3px no-repeat;
@@ -3394,8 +3395,6 @@ table {
   width: 80%;
   background: var(--main-color);
   transition: all 0.2s ease;
-}
-.detail__register a {
   color: #fff;
   font-size: 1.2rem;
   font-weight: 700;
@@ -4014,7 +4013,9 @@ table {
 .profile__active {
   width: 100%;
   border-radius: 10px;
-  background: #ccc;
+  background: var(--account-background-color-light);
+  color: var(--text-color-main-light);
+  font-weight: 600;
 }
 .profile-menu__link {
   width: 100%;
@@ -4090,6 +4091,7 @@ html.dark {
   --profile-hover-link-bg: #292e39;
   --account-info-bg: #292e39;
   --account-info-icon-bg: #171c28;
+  --account-background-color-light: #292e39;
 }
 
 /*
@@ -4163,6 +4165,7 @@ html {
   --profile-hover-link-bg: #ebebeb;
   --account-info-bg: #f6f6f6;
   --account-info-icon-bg: #fff;
+  --account-background-color-light: #ccc;
 }
 
 .header__button {
@@ -4612,7 +4615,6 @@ html {
   height: 100%;
   padding: 10px 15px;
   color: #292e39;
-  font-size: 1rem;
   font-weight: 600;
   line-height: 100%;
 }
@@ -5225,7 +5227,7 @@ html {
 }
 @media (max-width: 991.98px) {
   .courses {
-    margin-top: 20px;
+    margin-top: 50px;
   }
 }
 .courses__picture {
@@ -5375,7 +5377,7 @@ html {
   }
 }
 .courses__content--wrap {
-  min-height: 350px;
+  min-height: 313;
   border-radius: 20px;
   box-shadow: 0px 10px 15px -3px var(--box-shadow-main-1);
   transition: all 0.2s ease;

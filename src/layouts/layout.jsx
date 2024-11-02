@@ -409,7 +409,7 @@ const MyLayOut = () => {
                                   to={"/mycourses"}
                                   className="header__user--link"
                                 >
-                                  Khóa học của tôi
+                                  Khóa học của tôi (coming soon)
                                 </Link>
                               </li>
                               <li>
