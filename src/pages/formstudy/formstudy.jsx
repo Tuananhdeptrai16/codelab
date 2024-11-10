@@ -125,7 +125,7 @@ export const FormStudy = () => {
                 Viết bởi {dataLesson.author} - {dataLesson.duration} phút đọc
               </p>
               <div dangerouslySetInnerHTML={{ __html: dataLesson.content }} />
-              <div className="study__action">
+              {/* <div className="study__action">
                 {userLoggedIn ? (
                   <button className="btn study__action-btn">
                     <img
@@ -147,7 +147,7 @@ export const FormStudy = () => {
                     </NavLink>
                   </button>
                 )}
-              </div>
+              </div> */}
               <h2 className="study__title">Bình luận</h2>
 
               <div className="study__comment">

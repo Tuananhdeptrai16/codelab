@@ -203,6 +203,8 @@
   margin-top: 30px;
   &__heading {
     margin: 0 !important;
+    font-family: "Roboto" !important;
+    color: var(--color-text) !important;
     font-size: 3rem;
     line-height: 1;
     font-weight: 700;
@@ -436,5 +438,69 @@
   &__quote,
   &__gift {
     margin-bottom: 30px;
+  }
+}
+.blog-creation {
+  &__submit {
+    gap: 10px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    &--btn {
+      background: #f0ad4e !important;
+      color: #ffff !important;
+      transition: all 0.2s ease;
+      &:hover {
+        scale: 1.1;
+      }
+    }
+  }
+  &__title {
+    margin-top: 30px;
+    color: var(--text-color-main-light);
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 123.81%;
+  }
+  &__select {
+    font-size: 16px;
+    padding: 15px;
+    border: 1px solid #333;
+    border-radius: 10px;
+    appearance: none; // Ẩn mũi tên mặc định
+    position: relative;
+    cursor: pointer;
+    &::placeholder {
+      font-size: 1.6rem;
+      font-weight: 600;
+      line-height: 128%;
+    }
+  }
+  &__subtitle {
+    margin-top: 30px;
+    color: var(--text-color-main-light);
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 123.81%;
+    margin-bottom: 30px;
+  }
+  &__lesson-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  &__button {
+    width: 150px;
+    padding: 15px;
+    font-weight: 700;
+    background: #d1e7dd;
+    color: #333;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    &:hover {
+      opacity: 0.9;
+    }
   }
 }

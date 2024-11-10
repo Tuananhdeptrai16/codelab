@@ -19,6 +19,7 @@ import { Practice } from "../pages/formpractice";
 import { Product } from "../pages/product";
 import { FormBlog } from "../pages/formblog/formblog";
 import { Personal } from "../pages/personal";
+import CreateBlog from "../pages/createblog";
 
 const MyRoute = () => {
   return (
@@ -29,6 +30,7 @@ const MyRoute = () => {
       <Route path="/studyplant/frontEnd" element={<FrontEnd />}></Route>
       <Route path="/studyplant/backEnd" element={<BackEnd />}></Route>
       <Route path="/blog" element={<Blog />}></Route>
+      <Route path="/create-blog" element={<CreateBlog />}></Route>
       <Route path="/courses" element={<Courses />}></Route>
       <Route path="/courses/details-course" element={<DetailsCourse />}></Route>
       <Route path="/courses/form-practice" element={<Practice />}></Route>
@@ -43,7 +45,6 @@ const MyRoute = () => {
       <Route path="/login" element={<Login />}></Route>
       <Route path="/signup" element={<SignUp />}></Route>
       <Route path="/resetpassword" element={<ResetPassword />}></Route>
-      {/* Phan flash card  */}
       <Route
         path="/studyplant/frontEnd/flashcard_htmlcss"
         element={<QuestionFlashCard />}

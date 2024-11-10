@@ -4,7 +4,6 @@ import { Link, NavLink } from "react-router-dom";
 import StoreContext from "../db/context";
 import axios from "axios";
 import { useAuth } from "../context/authContext";
-import { ToastSuccess } from "../components/toastsuccess";
 export const DetailsCourse = () => {
   const { targetCourses } = useContext(StoreContext);
   const { userLoggedIn, currentUser } = useAuth();
@@ -82,7 +81,28 @@ export const DetailsCourse = () => {
   }
   return (
     <div>
-      {success === true ? <ToastSuccess></ToastSuccess> : ""}
+      {success === true ? (
+        <div id="toast" className="toast toast--success">
+          <div className="toast__icon">
+            <img
+              src={`${process.env.PUBLIC_URL}/images/icon/like.svg`}
+              alt=""
+              className="toast__icon-svg"
+            />
+          </div>
+          <div className="toast__body">
+            <h3 className="toast__title">Thành Công</h3>
+            <p className="toast__msg">
+              Đăng ký khóa học thành công vui lòng quay trở lại để tiếp tục
+            </p>
+          </div>
+          <div className="toast__close">
+            <i className="fas fa-times"></i>
+          </div>
+        </div>
+      ) : (
+        ""
+      )}
       <div className="container">
         <div className="detail">
           <div className="breadcrumb">
@@ -372,9 +392,23 @@ export const DetailsCourse = () => {
         </div>
       </div>
       <div className="d-none d-lg-block">
-        <button className="btn detail__register detail__register-lg">
-          <Link to="/courses/form-study">Tiếp tục học</Link>
-        </button>
+        {isRegister === true ? (
+          <Link
+            to="/courses"
+            className="btn detail__register detail__register-lg"
+          >
+            Quay lại
+          </Link>
+        ) : (
+          <button
+            onClick={() => {
+              handleRegisterCourses();
+            }}
+            className="btn detail__register detail__register-lg"
+          >
+            Đăng ký ngay
+          </button>
+        )}
       </div>
     </div>
   );

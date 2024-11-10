@@ -110,6 +110,10 @@ html.dark {
   object-fit: contain;
   border-radius: 10px;
 }
+.blog strong {
+  font-weight: 600;
+  color: var(--text-color-main-light);
+}
 /* Responsive styles */
 @media (max-width: 1200px) {
   html {

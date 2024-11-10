@@ -10,6 +10,7 @@ import { ResetPassword } from "./pages/auth/resetpassword";
 import { SignUp } from "./pages/auth/singup";
 import { Login } from "./pages/auth/login";
 import { AuthProvider } from "./context/authContext";
+import { PageNotFound } from "./pages/pagenotfound";
 const AppContent = () => {
   const [page, setPage] = useState(false);
   const [login, setLogin] = useState(true);
@@ -17,7 +18,7 @@ const AppContent = () => {
   const [targetBlog, setTargetBlog] = useState("");
   const [targetCourses, setTargetCourses] = useState("");
   const [ResetPassWordPage, setResetPassWordPage] = useState(true);
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("dark");
   const [showCatalog, setShowCatalog] = useState(true);
   const handleChangeTheme = () => {
     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
@@ -31,6 +32,7 @@ const AppContent = () => {
       "/studyplant/frontEnd",
       "/studyplant/backEnd",
       "/blog",
+      "/create-blog",
       "/courses",
       "/link",
       "/courses/form-blog",
@@ -82,8 +84,8 @@ const AppContent = () => {
         ) : page ? (
           <MyLayOut />
         ) : (
-          <ComingSoon />
-          // <PageNotFound />
+          // <ComingSoon />
+          <PageNotFound />
         )}
       </StoreContext.Provider>
     </AuthProvider>

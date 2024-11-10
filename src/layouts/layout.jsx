@@ -404,12 +404,13 @@ const MyLayOut = () => {
                                 </Link>
                               </li>
                               <div className="header__user--separate"></div>
+
                               <li>
                                 <Link
-                                  to={"/mycourses"}
+                                  to={"/create-blog"}
                                   className="header__user--link"
                                 >
-                                  Khóa học của tôi (coming soon)
+                                  Viết Blog
                                 </Link>
                               </li>
                               <li>

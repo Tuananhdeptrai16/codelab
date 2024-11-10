@@ -83,7 +83,7 @@ export const FormBlog = () => {
                   Viết bởi {dataBlog.author} - {dataBlog.duration} phút đọc
                 </p>
                 <div dangerouslySetInnerHTML={{ __html: dataBlog.content }} />
-                <div className="blog__action">
+                {/* <div className="blog__action">
                   {userLoggedIn ? (
                     <button className="btn blog__action-btn">
                       <img
@@ -105,7 +105,7 @@ export const FormBlog = () => {
                       </NavLink>
                     </button>
                   )}
-                </div>
+                </div> */}
                 <h2 className="blog__title">Bình luận</h2>
 
                 <div className="blog__comment">

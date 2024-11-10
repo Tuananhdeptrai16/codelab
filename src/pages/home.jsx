@@ -28,21 +28,30 @@ export const HomePage = () => {
         })
         .catch((error) => console.log(error));
 
-      const getBlog = async () => {
-        const res = await axios.get(
-          `${process.env.REACT_APP_API_BACKEND_URL}/blog`
-        );
-        setShares(res.data);
-      };
+      try {
+        const getBlog = async () => {
+          const res = await axios.get(
+            `${process.env.REACT_APP_API_BACKEND_URL}/blog`
+          );
+          setShares(res.data);
+        };
+        getBlog();
+      } catch (error) {
+        console.error("Có lỗi xảy ra: ", error);
+        window.location.href = "/no-connection";
+      }
 
-      const getCourses = async () => {
-        const res = await axios.get(
-          `${process.env.REACT_APP_API_BACKEND_URL}/courses?populate=lessonInfo`
-        );
-        setCourses(res.data);
-      };
-      getBlog();
-      getCourses();
+      try {
+        const getCourses = async () => {
+          const res = await axios.get(
+            `${process.env.REACT_APP_API_BACKEND_URL}/courses?populate=lessonInfo`
+          );
+          setCourses(res.data);
+        };
+        getCourses();
+      } catch (error) {
+        console.log(error);
+      }
     } catch (error) {
       console.error(error);
     }
@@ -416,7 +425,7 @@ export const HomePage = () => {
                                   <Link to="/login">
                                     <img
                                       src={`${process.env.PUBLIC_URL}/images/icon/heart.svg`}
-                                      className="courses__heart courses__active "
+                                      className="courses__heart icon"
                                       alt=""
                                     />
                                   </Link>

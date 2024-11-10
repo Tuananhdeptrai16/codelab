@@ -5,11 +5,12 @@
 .study {
   margin-top: 30px;
   &__heading {
+    font-family: "Roboto" !important;
+    color: var(--color-text) !important;
     margin-top: 10px;
     font-size: 3rem;
     line-height: 1;
     font-weight: 800;
-    color: var(--color-text);
     @include abstracts.breakpoint(md) {
       font-size: 2rem;
     }
@@ -98,7 +99,8 @@
     object-fit: contain;
   }
   &__user--name {
-    color: var(--color-text);
+    font-family: "Roboto" !important;
+    color: var(--color-text) !important;
     font-size: 1rem;
     font-weight: 700;
   }
@@ -146,7 +148,8 @@
   }
   &__reply {
     margin-top: 30px;
-    color: var(--color-text);
+    font-family: "Roboto" !important;
+    color: var(--color-text) !important;
     margin-top: 20px;
     font-family: "Pridi", serif;
     line-height: 160%;
@@ -213,9 +216,10 @@
     height: 15px;
   }
   &__lesson--name {
-    color: var(--color-text);
+    font-family: "Roboto" !important;
+    color: var(--color-text) !important;
     line-height: 160%;
-    font-size: 1rem;
+    font-size: 1rem !important;
     font-weight: 600;
     user-select: none;
   }

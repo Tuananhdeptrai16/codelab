@@ -75,11 +75,11 @@ textarea:-webkit-autofill:hover {
 
 i,
 em {
-  font-style: italic;
+  font-style: italic !important;
 }
 b,
 strong {
-  font-weight: 600;
+  font-weight: 600 !important;
 }
 .line-clamp {
   display: -webkit-box;

@@ -52,13 +52,12 @@ export const Courses = () => {
       }
     }
   }, [currentUser?.uid, userLoggedIn]);
-  console.log("userInfo", userInfo);
   const settingsMyCourses = {
     autoplaySpeed: 2000,
     infinite: true,
     dots: false,
     speed: 500,
-    slidesToShow: 5,
+    slidesToShow: 1,
     slidesToScroll: 1,
     initialSlide: 0,
     arrows: false, // Ẩn mũi tên
@@ -135,7 +134,7 @@ export const Courses = () => {
       },
     ],
   };
-  if (!courses) {
+  if (!courses && !userInfo && userInfo.CoursesInfo.length) {
     return (
       <div className="loader__wrap">
         <div className="loader"></div>
@@ -163,84 +162,87 @@ export const Courses = () => {
           </NavLink>
         </div>
       </div>
-      {userLoggedIn ? (
-        <div className="courses">
-          <div className="courses__top">
-            <div className="courses__left">
-              <h1 className="courses__heading">KHÓA HỌC ĐÃ THAM GIA</h1>
+      {userLoggedIn &&
+        userInfo &&
+        userInfo.CoursesInfo &&
+        userInfo.CoursesInfo.length === 3 && (
+          <div className="courses">
+            <div className="courses__top">
+              <div className="courses__left">
+                <h1 className="courses__heading">KHÓA HỌC ĐÃ THAM GIA</h1>
+              </div>
+              <div className="courses__right">
+                <Link className="courses__link" to="#!">
+                  Xem tất cả
+                </Link>
+              </div>
             </div>
-            <div className="courses__right">
-              <Link className="courses__link" to="#!">
-                Xem tất cả
-              </Link>
-            </div>
-          </div>
-          <div className="courses__list">
-            <div className="slider__container">
-              <Slider {...settingsMyCourses}>
-                {userInfo &&
-                  userInfo.CoursesInfo &&
-                  userInfo.CoursesInfo.map((course) => {
-                    return (
-                      <div
-                        key={course._id}
-                        onClick={() => setTargetCourses(course._id)}
-                        className="courses__item"
-                      >
-                        <div className="courses__content--wrap">
-                          <Link to="/courses/form-study">
-                            <picture className="courses__picture">
-                              <img
-                                src={`${process.env.PUBLIC_URL}${course.courseImage}`}
-                                alt="img"
-                                className="courses__img"
-                              />
-                            </picture>
-                          </Link>
-
-                          <div className="courses__content">
-                            <div className="courses__content--top">
-                              <h4 className="courses__title">{course.title}</h4>
-                            </div>
-                            <p className="courses__content--desc line-clamp">
-                              {course.description}
-                            </p>
-
-                            <div className="courses__content--bottom">
-                              <span className="courses__price">
-                                {course.price.amount === 0
-                                  ? "Miễn phí"
-                                  : course.price.amount}
-                              </span>
-                              <div className="courses__total-file">
+            <div className="courses__list">
+              <div className="slider__container">
+                <Slider {...settingsMyCourses}>
+                  {userInfo &&
+                    userInfo.CoursesInfo &&
+                    userInfo.CoursesInfo.map((course) => {
+                      return (
+                        <div
+                          key={course._id}
+                          onClick={() => setTargetCourses(course._id)}
+                          className="courses__item"
+                        >
+                          <div className="courses__content--wrap">
+                            <Link to="/courses/form-study">
+                              <picture className="courses__picture">
                                 <img
-                                  src={`${process.env.PUBLIC_URL}/images/icon/book.svg`}
-                                  alt=""
-                                  className="courses__file--icon icon"
+                                  src={`${process.env.PUBLIC_URL}${course.courseImage}`}
+                                  alt="img"
+                                  className="courses__img"
                                 />
-                                <p className="courses__file">128</p>
+                              </picture>
+                            </Link>
+
+                            <div className="courses__content">
+                              <div className="courses__content--top">
+                                <h4 className="courses__title">
+                                  {course.title}
+                                </h4>
                               </div>
-                              <div className="courses__total-lesson">
-                                <img
-                                  src={`${process.env.PUBLIC_URL}/images/icon/pen.svg`}
-                                  alt=""
-                                  className="courses__lesson--icon icon"
-                                />
-                                <p className="courses__lesson">128</p>
+                              <p className="courses__content--desc line-clamp">
+                                {course.description}
+                              </p>
+
+                              <div className="courses__content--bottom">
+                                <span className="courses__price">
+                                  {course.price.amount === 0
+                                    ? "Miễn phí"
+                                    : course.price.amount}
+                                </span>
+                                <div className="courses__total-file">
+                                  <img
+                                    src={`${process.env.PUBLIC_URL}/images/icon/book.svg`}
+                                    alt=""
+                                    className="courses__file--icon icon"
+                                  />
+                                  <p className="courses__file">128</p>
+                                </div>
+                                <div className="courses__total-lesson">
+                                  <img
+                                    src={`${process.env.PUBLIC_URL}/images/icon/pen.svg`}
+                                    alt=""
+                                    className="courses__lesson--icon icon"
+                                  />
+                                  <p className="courses__lesson">128</p>
+                                </div>
                               </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                    );
-                  })}
-              </Slider>
+                      );
+                    })}
+                </Slider>
+              </div>
             </div>
           </div>
-        </div>
-      ) : (
-        ""
-      )}
+        )}
       <div className="courses">
         <div className="courses__top">
           <div className="courses__left">

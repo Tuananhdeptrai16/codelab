@@ -18,7 +18,10 @@ html.dark {
   font-family: "Pridi", serif;
   line-height: var(--line-height);
 }
-
+.study strong {
+  font-weight: 700;
+  color: var(--);
+}
 /* Các đoạn văn bản trong blog */
 .study p {
   color: var(--color-text-study);

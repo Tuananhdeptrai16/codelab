@@ -2,23 +2,23 @@
   "slideShow": [
     {
       "id": 1,
-      "img": "https://firebasestorage.googleapis.com/v0/b/codelab-14068.appspot.com/o/3.jpg?alt=media&token=51362159-481a-4725-8b1b-57acfdaa1d26"
+      "img": "https://firebasestorage.googleapis.com/v0/b/codelab-14068.appspot.com/o/slideshow%2F1.png?alt=media&token=a9804531-b5b7-4f1c-b130-d19630e765b4"
     },
     {
       "id": 2,
-      "img": "https://firebasestorage.googleapis.com/v0/b/codelab-14068.appspot.com/o/slide1.png?alt=media&token=487083e4-9137-460d-b141-19f5f3c6c6a4"
+      "img": "https://firebasestorage.googleapis.com/v0/b/codelab-14068.appspot.com/o/slideshow%2F2.png?alt=media&token=fbdf3f3f-cbb2-4e55-a5f5-cd13858f65b3"
     },
     {
       "id": 3,
-      "img": "https://firebasestorage.googleapis.com/v0/b/codelab-14068.appspot.com/o/slide2.png?alt=media&token=536c179d-5987-4de5-898f-1273270608bd"
+      "img": "https://firebasestorage.googleapis.com/v0/b/codelab-14068.appspot.com/o/slideshow%2F3.png?alt=media&token=49af7cb2-6b82-4d93-8152-e13aa26b22ab"
     },
     {
       "id": 4,
-      "img": "https://firebasestorage.googleapis.com/v0/b/codelab-14068.appspot.com/o/slide3.png?alt=media&token=97a127d9-33e4-4835-9726-76be1fe8f19f"
+      "img": "https://firebasestorage.googleapis.com/v0/b/codelab-14068.appspot.com/o/slideshow%2F4.png?alt=media&token=6ea221fa-06ff-4fd2-9c67-83c00b4089cf"
     },
     {
       "id": 5,
-      "img": "https://firebasestorage.googleapis.com/v0/b/codelab-14068.appspot.com/o/slide5.png?alt=media&token=97aeea41-d118-4d29-95cb-481693319aca"
+      "img": "https://firebasestorage.googleapis.com/v0/b/codelab-14068.appspot.com/o/slideshow%2F5.png?alt=media&token=8bd6b310-faf9-4669-8dc7-87de678abef1"
     },
     {
       "id": 6,
