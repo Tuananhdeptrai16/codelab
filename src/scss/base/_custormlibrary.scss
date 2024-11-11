@@ -1,3 +1,6 @@
+// The code was written by programmer Truong Tuan Anh
+// Thanks for watching and sharing
+
 @use "../abstracts";
 .ant-menu-item {
   margin-top: 20px !important;
@@ -273,4 +276,9 @@
 .ql-snow .ql-tooltip {
   left: 40.125px !important;
   top: 37.6px !important;
+}
+.controls__wrap {
+  display: flex;
+  position: relative;
+  gap: 20px;
 }

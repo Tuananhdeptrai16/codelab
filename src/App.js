@@ -5,7 +5,7 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, useLocation } from "react-router-dom";
 import MyLayOut from "./layouts/layout";
 import StoreContext from "./db/context";
-import { ComingSoon } from "./pages/commingsoon";
+// import { ComingSoon } from "./pages/commingsoon";
 import { ResetPassword } from "./pages/auth/resetpassword";
 import { SignUp } from "./pages/auth/singup";
 import { Login } from "./pages/auth/login";
@@ -35,6 +35,7 @@ const AppContent = () => {
       "/create-blog",
       "/courses",
       "/link",
+      "/profile",
       "/courses/form-blog",
       "/courses/details-course",
       "/courses/form-study",

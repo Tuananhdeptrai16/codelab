@@ -67,6 +67,10 @@
     box-shadow: var(--boxshadow-main) 0px 7px 29px 0px;
     padding: 40px 10px;
     border-radius: 20px;
+    margin-bottom: 30px;
+    & .btn {
+      width: 90%;
+    }
   }
   &__img {
     width: 100%;
@@ -186,5 +190,10 @@
     gap: 10px;
     margin-bottom: 10px;
     border-bottom: 1px solid #ccc;
+  }
+  &__md--button {
+    & .btn {
+      width: 100%;
+    }
   }
 }

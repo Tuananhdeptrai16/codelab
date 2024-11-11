@@ -391,7 +391,7 @@ export const DetailsCourse = () => {
           </div>
         </div>
       </div>
-      <div className="d-none d-lg-block">
+      <div className="d-none d-lg-block detail__md--button">
         {isRegister === true ? (
           <Link
             to="/courses"

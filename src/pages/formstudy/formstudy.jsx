@@ -14,6 +14,9 @@ export const FormStudy = () => {
   const [dataCourses, setDataCourses] = useState(null);
   const [dataLesson, setDataLesson] = useState(null);
   const [isRegister, setIsRegister] = useState(null);
+  const [fontSize, setFontSize] = useState(16); // Default font size
+  const [fontStyle, setFontStyle] = useState("default"); // Default font style
+  const [toggleSettings, setToggleSettings] = useState(false);
   const [targetLessonId, setTargetLessonId] = useState(
     "671ba2e0d159f9b05f712f66"
   );
@@ -81,6 +84,17 @@ export const FormStudy = () => {
       }
     }
   }, [currentUser?.uid, userLoggedIn, targetCourses]);
+  const increaseFontSize = () => setFontSize((size) => size + 2);
+  const decreaseFontSize = () => setFontSize((size) => Math.max(size - 2, 12));
+  const handleFontStyleChange = (event) => {
+    setFontStyle(event.target.value);
+  };
+  const fontStyles = {
+    default: "Arial, sans-serif",
+    serif: "Georgia, serif",
+    monospace: "Courier New, monospace",
+    cursive: "Comic Sans MS, cursive",
+  };
   if (!dataCourses && !isRegister) {
     return (
       <div className="loader__wrap">
@@ -116,15 +130,88 @@ export const FormStudy = () => {
           </NavLink>
         </div>
       </div>
-      <div className="study">
+      <div
+        className="study"
+        style={{
+          fontSize: `${fontSize}px`,
+          fontFamily: fontStyles[fontStyle],
+        }}
+      >
         <div className="row">
           <div className="col-8 col-xl-12">
             <div className="container">
               <h1 className="study__heading">{dataLesson.title}</h1>
-              <p className="study__desc">
-                Viết bởi {dataLesson.author} - {dataLesson.duration} phút đọc
-              </p>
-              <div dangerouslySetInnerHTML={{ __html: dataLesson.content }} />
+              <div className="controls__wrap d-md-none">
+                <p className="study__desc">
+                  Viết bởi {dataLesson.author} - {dataLesson.duration} phút đọc
+                </p>
+                <div className="blog__action-wrap">
+                  <button
+                    onClick={() => setToggleSettings(!toggleSettings)}
+                    className="form__button"
+                  >
+                    <img
+                      src={`${process.env.PUBLIC_URL}/images/icon/settings.svg`}
+                      alt=""
+                      className="form__icon-settings icon"
+                    />
+                  </button>
+                  {toggleSettings === true && (
+                    <div className="font-controls">
+                      <label htmlFor="fontStyle" className="form__lable">
+                        Cỡ chữ:
+                      </label>
+                      <div className="font-size-controls">
+                        <button
+                          onClick={decreaseFontSize}
+                          className="font-size-btn"
+                        >
+                          <img
+                            src={`${process.env.PUBLIC_URL}/images/icon/minus.svg`}
+                            alt=""
+                            className="form__icon icon"
+                          />
+                        </button>
+                        <span className="font-size-display">{fontSize}px</span>
+                        <button
+                          onClick={increaseFontSize}
+                          className="font-size-btn"
+                        >
+                          <img
+                            src={`${process.env.PUBLIC_URL}/images/icon/plus.svg`}
+                            alt=""
+                            className="form__icon icon"
+                          />
+                        </button>
+                      </div>
+                      <div className="font-style-controls">
+                        <label htmlFor="fontStyle" className="form__lable">
+                          Kiểu chữ:
+                        </label>
+                        <select
+                          id="fontStyle"
+                          value={fontStyle}
+                          onChange={handleFontStyleChange}
+                          className="font-style-select"
+                        >
+                          <option value="default">Mặc định</option>
+                          <option value="serif">Serif</option>
+                          <option value="monospace">Monospace</option>
+                          <option value="cursive">Cursive</option>
+                        </select>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              <div
+                dangerouslySetInnerHTML={{ __html: dataLesson.content }}
+                style={{
+                  fontSize: `${fontSize}px`,
+                  fontFamily: fontStyles[fontStyle],
+                }}
+              />
               {/* <div className="study__action">
                 {userLoggedIn ? (
                   <button className="btn study__action-btn">

@@ -1732,6 +1732,12 @@ table {
   top: 37.6px !important;
 }
 
+.controls__wrap {
+  display: flex;
+  position: relative;
+  gap: 20px;
+}
+
 .shares {
   margin-top: 80px;
 }
@@ -1811,7 +1817,7 @@ table {
   padding: 10px;
 }
 .shares__item--wrap {
-  min-height: 325px;
+  min-height: 320px;
   border-radius: 20px;
   box-shadow: 0px 10px 15px -3px var(--box-shadow-main-1);
   transition: all 0.2s ease;
@@ -2905,15 +2911,16 @@ table {
   }
 }
 .studyPlant__button {
-  margin-top: 40px;
+  margin-top: 20px;
   width: 300px;
   font-size: 1.1rem;
   font-weight: 700;
   line-height: 123.81%;
   transition: all 0.2s ease;
+  text-decoration: underline;
 }
 .studyPlant__button:hover {
-  color: inherit;
+  text-decoration: underline;
 }
 @media (max-width: 767.98px) {
   .studyPlant__button {
@@ -3229,6 +3236,7 @@ table {
 .blog__form, .blog__comment {
   gap: 10px;
   margin-top: 30px;
+  margin-bottom: 20px;
   padding: 20px;
   border-radius: 10px;
   border: 1px solid #ccc;
@@ -3530,6 +3538,10 @@ table {
   box-shadow: var(--boxshadow-main) 0px 7px 29px 0px;
   padding: 40px 10px;
   border-radius: 20px;
+  margin-bottom: 30px;
+}
+.detail__wrap .btn {
+  width: 90%;
 }
 .detail__img {
   width: 100%;
@@ -3655,6 +3667,9 @@ table {
   gap: 10px;
   margin-bottom: 10px;
   border-bottom: 1px solid #ccc;
+}
+.detail__md--button .btn {
+  width: 100%;
 }
 
 .study {
@@ -4081,8 +4096,7 @@ table {
   display: flex;
   align-items: center;
   flex-direction: column;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 0%, rgba(0, 0, 0, 0.15) 100%), radial-gradient(at top center, rgba(255, 255, 255, 0.4) 0%, rgba(0, 0, 0, 0.4) 120%) #989898;
-  background-blend-mode: multiply, multiply;
+  background-image: linear-gradient(to right, #379958 0%, #032a0c 100%);
   background-size: cover;
   background-position: center;
   border-radius: 20px 20px 0px 0px;
@@ -4177,6 +4191,23 @@ table {
   width: 100%;
 }
 
+.form-card__bottom {
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 30px;
+}
+
+.new-card__top {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+}
+.new-card__icon {
+  padding: 10px;
+}
+
 /*
     The code was written by programmer Truong Tuan Anh
     Thanks for watching and sharing !!!
@@ -4249,6 +4280,8 @@ html.dark {
   --account-info-icon-bg: #171c28;
   --account-background-color-light: #292e39;
   --stroke-tool-bar: #fff;
+  --form-profile: #292e39;
+  --background-button-text: #292e39;
 }
 
 /*
@@ -4324,6 +4357,8 @@ html {
   --account-info-icon-bg: #fff;
   --account-background-color-light: #ccc;
   --stroke-tool-bar: #444;
+  --form-profile: #f6f6f6;
+  --background-button-text: #eeeeee;
 }
 
 .header__button {
@@ -4579,6 +4614,55 @@ html {
 }
 .header__user--theme {
   margin-top: 10px;
+}
+.header__search {
+  width: 400px;
+  min-height: 300px;
+  position: absolute;
+  top: 71px;
+  right: 150px;
+  background: var(--background--color-main-3);
+  z-index: 3;
+  border-radius: 20px;
+  box-shadow: 0 -4px 32px var(--box-shadow-main-2);
+}
+@media (max-width: 767.98px) {
+  .header__search {
+    inset: 0;
+    height: 100vh;
+  }
+}
+.header__search--img {
+  width: 100px;
+  height: 60px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.header__search--desc {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--main-color);
+  line-height: 100%;
+}
+.header__search--title {
+  font-weight: 400;
+  line-height: 148%;
+  color: var(--color-text);
+}
+.header__search--title strong {
+  font-weight: 600;
+}
+.header__search--title:hover {
+  text-decoration: underline;
+}
+.header__search--content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.header__search--list {
+  margin-top: 15px;
+  overflow-y: auto;
 }
 
 .layout {
@@ -5641,7 +5725,7 @@ html {
   gap: 10px;
 }
 .quote__title {
-  font-size: 1.4rem;
+  font-size: 1rem !important;
   font-weight: 600;
   color: var(--text-color-main-light);
   line-height: 140%;
@@ -6178,15 +6262,16 @@ html {
   }
 }
 .flashcard__button {
-  margin-top: 40px;
+  margin-top: 20px;
   width: 300px;
   font-size: 1.1rem;
   font-weight: 700;
   line-height: 123.81%;
   transition: all 0.2s ease;
+  text-decoration: underline;
 }
 .flashcard__button:hover {
-  color: inherit;
+  text-decoration: underline;
 }
 @media (max-width: 767.98px) {
   .flashcard__button {
@@ -6520,6 +6605,17 @@ html {
   font-size: 1.1rem;
   font-weight: 500;
   line-height: 146.667%; /**/
+  cursor: pointer;
+}
+.favorite-item__title:hover {
+  text-decoration: underline;
+  color: blue;
+}
+.favorite-item__desc {
+  max-width: 400px;
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: var(--color-text-2);
 }
 .favorite-item__content {
   margin-top: 10px;
@@ -6597,6 +6693,53 @@ html {
   display: flex;
   gap: 10px;
   flex-direction: column;
+}
+.form__profile {
+  background: var(--form-profile) !important;
+}
+.form__profile::placeholder {
+  max-width: 100%;
+  margin-top: 18px;
+  color: var(--color-text-2);
+  font-size: 1rem !important;
+  font-weight: 500;
+  line-height: 128% !important;
+}
+.form__btn {
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: background 0.2s ease;
+  background: var(--main-color);
+}
+.form__btn a {
+  padding: 10px;
+  color: var(--main-color-dark);
+}
+@media (max-width: 767.98px) {
+  .form__btn a {
+    color: var(--main-color-white);
+  }
+}
+.form__btn:hover {
+  background: var(--main-color-grey);
+}
+.form__cancel {
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: background 0.2s ease;
+  background: red;
+}
+.form__cancel a {
+  padding: 10px;
+  color: var(--main-color-dark);
+}
+@media (max-width: 767.98px) {
+  .form__cancel a {
+    color: var(--main-color-white);
+  }
+}
+.form__cancel:hover {
+  background: var(--main-color-grey);
 }
 .form__action {
   margin-top: 20px;

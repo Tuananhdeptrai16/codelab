@@ -165,7 +165,7 @@ export const Courses = () => {
       {userLoggedIn &&
         userInfo &&
         userInfo.CoursesInfo &&
-        userInfo.CoursesInfo.length === 3 && (
+        userInfo.CoursesInfo.length >= 3 && (
           <div className="courses">
             <div className="courses__top">
               <div className="courses__left">
@@ -222,7 +222,9 @@ export const Courses = () => {
                                     alt=""
                                     className="courses__file--icon icon"
                                   />
-                                  <p className="courses__file">128</p>
+                                  <p className="courses__file">
+                                    {course.lessonInfo.length}
+                                  </p>
                                 </div>
                                 <div className="courses__total-lesson">
                                   <img

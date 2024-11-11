@@ -58,6 +58,49 @@
     gap: 10px;
     flex-direction: column;
   }
+  &__profile {
+    background: var(--form-profile) !important;
+    &::placeholder {
+      max-width: 100%;
+      margin-top: 18px;
+      color: var(--color-text-2);
+      font-size: 1rem !important;
+      font-weight: 500;
+      line-height: 128% !important;
+    }
+  }
+  &__btn {
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: background 0.2s ease;
+    & a {
+      padding: 10px;
+      color: var(--main-color-dark);
+      @include abstracts.breakpoint(md) {
+        color: var(--main-color-white);
+      }
+    }
+    background: var(--main-color);
+    &:hover {
+      background: var(--main-color-grey);
+    }
+  }
+  &__cancel {
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: background 0.2s ease;
+    & a {
+      padding: 10px;
+      color: var(--main-color-dark);
+      @include abstracts.breakpoint(md) {
+        color: var(--main-color-white);
+      }
+    }
+    background: red;
+    &:hover {
+      background: var(--main-color-grey);
+    }
+  }
   &__action {
     margin-top: 20px;
     display: flex;

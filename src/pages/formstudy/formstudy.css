@@ -25,7 +25,6 @@ html.dark {
 /* Các đoạn văn bản trong blog */
 .study p {
   color: var(--color-text-study);
-  font-size: var(--font-size-base);
   line-height: 1.5;
 }
 
@@ -92,7 +91,6 @@ html.dark {
   list-style: disc;
   margin-top: 20px;
   margin-bottom: 10px; /* Đặt margin dưới cho mỗi mục danh sách */
-  font-size: var(--font-size-base);
   color: var(--color-text-study);
   line-height: 1.5;
 }
@@ -159,4 +157,104 @@ html.dark {
   .study p {
     font-size: 0.85rem; /* Giảm kích thước phông chữ cho đoạn văn bản */
   }
+}
+.font-controls {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  background: var(--background__breadcrumb);
+  padding: 15px;
+  border-radius: 10px;
+  width: 200px;
+  color: #cfd8dc;
+  font-family: Arial, sans-serif;
+}
+
+.font-controls__label {
+  font-size: 14px;
+  margin: 10px 0 5px;
+  color: var(--color-text);
+}
+
+.font-size-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+
+.font-size-btn {
+  background: var(--background-button-text);
+  border: none;
+  border-radius: 5px;
+  color: var(--color-text);
+  padding: 5px 8px;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.font-size-display {
+  font-size: 1rem;
+  color: var(--color-text);
+  font-weight: bold;
+}
+
+.font-size-btn:hover {
+  scale: 1.01;
+}
+
+.font-style-select {
+  width: 100%;
+  background: var(--background-button-text);
+  color: var(--color-text);
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.font-style-select:focus {
+  outline: none;
+}
+.form__icon {
+  user-select: none;
+  height: 16px;
+  width: 16px;
+}
+.form__icon-settings {
+  width: 20px;
+  height: 20px;
+}
+
+.form__button {
+  align-self: flex-end;
+  padding: 10px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--background__breadcrumb);
+  transition: all 0.2s ease;
+  &:hover {
+    scale: 1.1;
+  }
+}
+.form__lable {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--color-text);
+  font-size: 1rem;
+}
+.blog__action-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }

@@ -19,6 +19,17 @@
     font-size: 1.1rem;
     font-weight: 500;
     line-height: 146.667%; /**/
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+      color: blue;
+    }
+  }
+  &__desc {
+    max-width: 400px;
+    margin-top: 10px;
+    font-size: 0.8rem;
+    color: var(--color-text-2);
   }
   &__content {
     margin-top: 10px;

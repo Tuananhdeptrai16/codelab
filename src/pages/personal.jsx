@@ -1,12 +1,14 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { useState, useEffect, useContext } from "react";
 import axios from "axios";
+import StoreContext from "../db/context";
 import { useAuth } from "../context/authContext";
 export const Personal = () => {
   const [userInfo, setUserInfo] = useState([]);
   const { userLoggedIn, currentUser } = useAuth();
   const [path, setPath] = useState("courses");
+
   const formatDateToDayMonth = (dateString) => {
     const date = new Date(dateString);
     const day = date.getUTCDate();
@@ -50,7 +52,8 @@ export const Personal = () => {
       }
     }
   }, [currentUser?.uid, userLoggedIn]);
-  console.log("path", path);
+  const { setTargetBlog, setTargetCourses } = useContext(StoreContext);
+
   return (
     <div className="container">
       <div className="breadcrumb">
@@ -93,16 +96,18 @@ export const Personal = () => {
                     <h3 className="profile-menu__title">Quản lý tài khoản</h3>
                     <ul className="profile-menu__list">
                       <li>
-                        <button className="profile-menu__link">
-                          <span className="profile-menu__icon">
-                            <img
-                              src={`${process.env.PUBLIC_URL}/images/icon/profile.svg`}
-                              alt="profile"
-                              className="icon"
-                            />
-                          </span>
-                          Thông tin cá nhân
-                        </button>
+                        <Link to="/profile">
+                          <button className="profile-menu__link">
+                            <span className="profile-menu__icon">
+                              <img
+                                src={`${process.env.PUBLIC_URL}/images/icon/profile.svg`}
+                                alt="profile"
+                                className="icon"
+                              />
+                            </span>
+                            Thông tin cá nhân
+                          </button>
+                        </Link>
                       </li>
                     </ul>
                   </div>
@@ -288,10 +293,17 @@ export const Personal = () => {
                                       alt={blog.title}
                                       className="favorite-item__thumb"
                                     />
-                                    <div>
+                                    <Link
+                                      onClick={() => setTargetBlog(blog._id)}
+                                      to="/courses/form-blog"
+                                    >
                                       <h3 className="favorite-item__title">
                                         {blog.title}
                                       </h3>
+
+                                      <p className="favorite-item__desc line-clamp">
+                                        {blog.description}
+                                      </p>
                                       <div className="favorite-item__content">
                                         <span className="favorite-item__price">
                                           {/* {favorite.price.amount === 0
@@ -299,7 +311,7 @@ export const Personal = () => {
                                            : favorite.price.amount} */}
                                         </span>
                                       </div>
-                                    </div>
+                                    </Link>
                                   </article>
                                   <div className="separate profile__separate"></div>
                                 </div>
@@ -318,10 +330,19 @@ export const Personal = () => {
                                       alt={favorite.title}
                                       className="favorite-item__thumb"
                                     />
-                                    <div>
+
+                                    <Link
+                                      onClick={() =>
+                                        setTargetCourses(favorite._id)
+                                      }
+                                      to="/courses/form-study"
+                                    >
                                       <h3 className="favorite-item__title">
                                         {favorite.title}
                                       </h3>
+                                      <p className="favorite-item__desc line-clamp">
+                                        {favorite.description}
+                                      </p>
                                       <div className="favorite-item__content">
                                         <span className="favorite-item__price">
                                           {/* {favorite.price.amount === 0
@@ -329,7 +350,7 @@ export const Personal = () => {
                                             : favorite.price.amount} */}
                                         </span>
                                       </div>
-                                    </div>
+                                    </Link>
                                   </article>
                                   <div className="separate profile__separate"></div>
                                 </div>
@@ -348,18 +369,19 @@ export const Personal = () => {
                                       alt={favorite.title}
                                       className="favorite-item__thumb"
                                     />
-                                    <div>
+                                    <Link
+                                      onClick={() =>
+                                        setTargetCourses(favorite._id)
+                                      }
+                                      to="/courses/form-study"
+                                    >
                                       <h3 className="favorite-item__title">
                                         {favorite.title}
                                       </h3>
-                                      <div className="favorite-item__content">
-                                        <span className="favorite-item__price">
-                                          {favorite.price.amount === 0
-                                            ? "Miễn phí"
-                                            : favorite.price.amount}
-                                        </span>
-                                      </div>
-                                    </div>
+                                      <p className="favorite-item__desc line-clamp">
+                                        {favorite.description}
+                                      </p>
+                                    </Link>
                                   </article>
                                   <div className="separate profile__separate"></div>
                                 </div>

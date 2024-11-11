@@ -7,6 +7,7 @@ import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 import { Button, Layout, Menu } from "antd";
 import MyRoute from "../routes/router";
 import Logo from "../components/logo";
+import axios from "axios";
 import { LogoOnly } from "../components/logo_only";
 import { NavLink } from "react-router-dom";
 import { Search } from "../components/search";
@@ -16,6 +17,8 @@ import StoreContext from "../db/context";
 import { useAuth } from "../context/authContext";
 import { doSignOut } from "../firebase/auth";
 import LogoMedium from "../components/logo-md";
+import NProgress from "nprogress";
+import "nprogress/nprogress.css";
 const { Header, Sider, Content } = Layout;
 const MyLayOut = () => {
   const { userLoggedIn } = useAuth();
@@ -26,7 +29,11 @@ const MyLayOut = () => {
   const [showUser, setShowUser] = useState(false);
   const bellRef = useRef(null);
   const userRef = useRef(null);
+  const searchRef = useRef(null);
+  const { setTargetCourses } = useContext(StoreContext);
   const { currentUser } = useAuth();
+  const [listTutorials, setListTutorials] = useState([]);
+  const [toogleSearch, setToogleSearch] = useState(false);
   useEffect(() => {
     document.documentElement.className = theme; // Thay đổi class của thẻ `html`
     const handleClickOutSide = (e) => {
@@ -35,6 +42,9 @@ const MyLayOut = () => {
       }
       if (userRef.current && !userRef.current.contains(e.target)) {
         setShowUser(false);
+      }
+      if (searchRef.current && !searchRef.current.contains(e.target)) {
+        setToogleSearch(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutSide);
@@ -202,6 +212,49 @@ const MyLayOut = () => {
         ) : null,
     },
   ];
+  useEffect(() => {
+    NProgress.start();
+    const handlePageChange = async (page) => {
+      try {
+        const res = await axios.get(
+          `${process.env.REACT_APP_API_BACKEND_URL}/courses`
+        );
+        setListTutorials(res.data);
+      } catch (error) {
+        console.error("Error fetching data: ", error); // Bắt lỗi nếu xảy ra
+      }
+    };
+    handlePageChange();
+    NProgress.done();
+  }, []);
+  console.log("checklist ", listTutorials);
+  const [getInfoSearch, setGetInfoSearch] = useState("");
+  const [arrInfoSearch, setArrInfoSearch] = useState([]);
+  const [displayInfoArr, setDisplayInfoArr] = useState([]);
+  const handleGetSearchInfo = async () => {
+    let arr = await listTutorials.data;
+    const targetIds = arr
+      .filter((item) => {
+        return item.title
+          .toLocaleLowerCase()
+          .trim()
+          .includes(getInfoSearch.toLocaleLowerCase().trim());
+      })
+      .map((item) => item._id);
+    setToogleSearch(true);
+    setArrInfoSearch(targetIds);
+    let TargetCourse = arrInfoSearch.map((id) => {
+      let result = listTutorials.data.find((item1) => item1._id === id);
+      return result;
+    });
+    if (getInfoSearch.trim() === "") {
+      setArrInfoSearch([]);
+      setDisplayInfoArr([]);
+      return; // Thoát khỏi hàm
+    }
+    setDisplayInfoArr(TargetCourse);
+  };
+  console.log("checkdisplay info", displayInfoArr);
   return (
     <>
       <Layout className="layout">
@@ -266,7 +319,94 @@ const MyLayOut = () => {
               <div className="header__action">
                 {userLoggedIn ? (
                   <>
-                    <Search></Search>
+                    <div className="search d-md-none">
+                      <input
+                        className="search__input"
+                        type="text"
+                        value={getInfoSearch}
+                        onChange={(e) => {
+                          handleGetSearchInfo();
+                          setGetInfoSearch(e.target.value);
+                        }}
+                        placeholder="Tìm kiếm khóa học ..."
+                      />
+                      <button
+                        onClick={() => {
+                          handleGetSearchInfo();
+                        }}
+                        className="search__button"
+                      >
+                        <img
+                          src={`${process.env.PUBLIC_URL}/images/icon/search.svg`}
+                          className="search__icon icon"
+                          alt=""
+                        />
+                      </button>
+                    </div>
+                    {displayInfoArr &&
+                      notification === false &&
+                      toogleSearch === true && (
+                        <div className="header__search" ref={searchRef}>
+                          <div className="header__bell--wrap">
+                            <div className="header__bell--top">
+                              <h3 className="header__bell--title">
+                                Kết quả tìm kiếm
+                              </h3>
+                            </div>
+                            {displayInfoArr.map((item) => {
+                              return (
+                                <div key={item._id}>
+                                  <div className="header__search--list">
+                                    <div className="header__bell--item">
+                                      <Link
+                                        to={
+                                          userLoggedIn
+                                            ? "/courses/form-study"
+                                            : "/login"
+                                        }
+                                      >
+                                        <picture className="header__search--avatar">
+                                          <img
+                                            src={item.courseImage}
+                                            alt=""
+                                            className="header__search--img"
+                                          />
+                                        </picture>
+                                      </Link>
+                                      <div
+                                        onClick={() =>
+                                          setTargetCourses(item._id)
+                                        }
+                                        className="header__search--content"
+                                      >
+                                        <Link
+                                          to={
+                                            userLoggedIn
+                                              ? "/courses/form-study"
+                                              : "/login"
+                                          }
+                                        >
+                                          <p
+                                            onClick={() =>
+                                              setTargetCourses(item._id)
+                                            }
+                                            className="header__search--title"
+                                          >
+                                            {item.title}
+                                          </p>
+                                        </Link>
+                                        <p className="header__search--desc line-clamp">
+                                          {item.description}
+                                        </p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      )}
                     <div className="header__notification">
                       <button onClick={() => setNotification(!notification)}>
                         <img
