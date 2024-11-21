@@ -3760,6 +3760,7 @@ table {
 .study__form, .study__comment {
   gap: 10px;
   margin-top: 30px;
+  margin-bottom: 30px;
   padding: 20px;
   border-radius: 10px;
   border: 1px solid #ccc;
@@ -3773,6 +3774,7 @@ table {
   width: 50px;
   height: 50px;
   object-fit: contain;
+  border-radius: 50%;
 }
 .study__user--name {
   font-family: "Roboto" !important;
@@ -3819,8 +3821,8 @@ table {
   }
 }
 .study__icon {
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
 }
 @media (max-width: 1199.98px) {
   .study__icon {

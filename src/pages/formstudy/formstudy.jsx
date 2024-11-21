@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState, useContext, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import { Quote } from "../../components/quote";
 import "./formstudy.css";
@@ -20,6 +20,7 @@ export const FormStudy = () => {
   const [targetLessonId, setTargetLessonId] = useState(
     "671ba2e0d159f9b05f712f66"
   );
+
   useEffect(() => {
     const getCourseData = async () => {
       if (!targetCourses) {
@@ -241,11 +242,11 @@ export const FormStudy = () => {
                 <div className="study__user--comment">
                   <div className="study__user--info">
                     <img
-                      src={`${process.env.PUBLIC_URL}/images/layout/avatar.png`}
+                      src={`${process.env.PUBLIC_URL}/images/layout/1.jpg`}
                       alt=""
                       className="study__user--avatar"
                     />
-                    <p className="study__user--name">Truong Tuan Anh</p>
+                    <p className="study__user--name">Người dùng ẩn danh</p>
                     <p className="study__time--comment">5 tháng trước</p>
                   </div>
                   <div className="study__response">
@@ -263,7 +264,7 @@ export const FormStudy = () => {
                 <div className="study__user--comment">
                   <div className="study__user--info">
                     <img
-                      src={`${process.env.PUBLIC_URL}/images/layout/avatar.png`}
+                      src={`${process.env.PUBLIC_URL}/images/layout/1.jpg`}
                       alt=""
                       className="study__user--avatar"
                     />

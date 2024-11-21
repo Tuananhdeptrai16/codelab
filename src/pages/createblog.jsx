@@ -17,6 +17,7 @@ const CreateBlog = () => {
     description: "",
     duration: "",
     content: "",
+    accepted: false,
     studentsEnrolled: 0,
   });
 
@@ -29,6 +30,7 @@ const CreateBlog = () => {
       description: "",
       duration: "",
       content: "", // Sửa content thành chuỗi rỗng
+      accepted: false,
       studentsEnrolled: 0,
     });
   };

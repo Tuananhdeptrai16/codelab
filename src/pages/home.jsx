@@ -37,6 +37,9 @@ export const HomePage = () => {
         };
         getBlog();
       } catch (error) {
+        if (error.message === "Network Error") {
+          console.log("Không có mạng");
+        }
         console.error("Có lỗi xảy ra: ", error);
         window.location.href = "/no-connection";
       }
@@ -53,6 +56,9 @@ export const HomePage = () => {
         console.log(error);
       }
     } catch (error) {
+      if (error.message === "Network Error") {
+        console.log("Không có mạng");
+      }
       console.error(error);
     }
   }, [likedCourses, userLoggedIn]);
@@ -75,6 +81,9 @@ export const HomePage = () => {
         };
         getUsers();
       } catch (error) {
+        if (error.message === "Network Error") {
+          console.log("Không có mạng");
+        }
         console.error("Error fetching users:", error);
       }
     }

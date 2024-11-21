@@ -18,7 +18,7 @@ const AppContent = () => {
   const [targetBlog, setTargetBlog] = useState("");
   const [targetCourses, setTargetCourses] = useState("");
   const [ResetPassWordPage, setResetPassWordPage] = useState(true);
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState("light");
   const [showCatalog, setShowCatalog] = useState(true);
   const handleChangeTheme = () => {
     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));

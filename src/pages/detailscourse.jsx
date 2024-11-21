@@ -26,6 +26,9 @@ export const DetailsCourse = () => {
         };
         getUsers();
       } catch (error) {
+        if (error.message === "Network Error") {
+          console.log("Không có mạng");
+        }
         console.error("Error fetching users:", error);
       }
     }
@@ -41,6 +44,9 @@ export const DetailsCourse = () => {
         );
         setCourses(foundCourses);
       } catch (error) {
+        if (error.message === "Network Error") {
+          console.log("Không có mạng");
+        }
         console.error("Error fetching courses:", error);
       }
     };
