@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useContext } from "react";
 import { NavLink } from "react-router-dom";
-import { Quote } from "../../components/quote";
-import "./formblog.css";
-import StoreContext from "../../db/context";
+import { Quote } from "../../components/Quote";
+import "./form-blog.scss";
+import StoreContext from "../../db/Context";
 import axios from "axios";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";

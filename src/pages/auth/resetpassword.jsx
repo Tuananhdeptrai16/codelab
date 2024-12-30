@@ -3,8 +3,8 @@
 import React from "react";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import Logo from "../../components/logo";
-import { doPasswordReset } from "../../firebase/auth";
+import Logo from "../../components/LogoMain";
+import { doPasswordReset } from "../../firebase/Auth";
 import { validateEmail } from "../../services/ValidationEmail";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";

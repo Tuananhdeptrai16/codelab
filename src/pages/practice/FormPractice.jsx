@@ -1,10 +1,10 @@
 import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-import AudioPlayer from "../components/audio";
+import AudioPlayer from "../../components/AudioPlayer";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
-export const QuestionFlashCard = () => {
+export const Practice = () => {
   const location = useLocation();
 
   const [arrayQuestion, setArrayQuestion] = useState([]);
@@ -20,7 +20,7 @@ export const QuestionFlashCard = () => {
       try {
         const response = await fetch(`${process.env.PUBLIC_URL}/json/db.json`); // Thay URL của bạn
         const data = await response.json();
-        if (location.pathname === "/studyplant/frontEnd/flashcard_htmlcss") {
+        if (location.pathname === "/courses/form-practice") {
           setArrayQuestion(data.questions_html);
         } else if (
           location.pathname === "/studyplant/frontEnd/flashcard_javascript"
@@ -60,7 +60,7 @@ export const QuestionFlashCard = () => {
       setShowCongratulations(true);
     }
   };
-  const [playAudio, setplayAudio] = useState(false);
+  const [playAudio, setPlayAudio] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [Score, setScore] = useState(0);
   const [wrongSentence, setWrongSentence] = useState(0);
@@ -110,8 +110,8 @@ export const QuestionFlashCard = () => {
                     className="breadcrumb__icon-arrow"
                   />
                 </NavLink>
-                <NavLink to="/flashcard" className="breadcrumb__item">
-                  <p className="breadcrumb__name">FlashCard</p>
+                <NavLink to="/courses" className="breadcrumb__item">
+                  <p className="breadcrumb__name">Khóa học của tôi</p>
                   <img
                     src={`${process.env.PUBLIC_URL}/images/icon/iconbread.svg`}
                     alt=""
@@ -120,7 +120,7 @@ export const QuestionFlashCard = () => {
                 </NavLink>
                 <NavLink to={BreadCrumb.link} className="breadcrumb__item">
                   <p className="breadcrumb__name  breadcrumb__active ">
-                    {BreadCrumb.name}
+                    HTML, CSS
                   </p>
                 </NavLink>
               </div>
@@ -128,7 +128,7 @@ export const QuestionFlashCard = () => {
             <div className="row flashcard__wrap">
               <div className="col-12">
                 <div className="flashcard__title">
-                  <h1 className="flashcard__heading">FLASH CARD HTML CSS</h1>
+                  <h1 className="flashcard__heading">BÀI TẬP HTML CSS</h1>
                   <p className="flashcard__desc">
                     Học đi đôi với hành , hãy cùng luyện tập nhiều hơn với chế
                     độ FlashCard để ôn luyện lại kiến thức một cách chỉnh chu
@@ -145,10 +145,7 @@ export const QuestionFlashCard = () => {
                     ></progress>
                   </div>
                   <div className="flashcard__question">
-                    <h2
-                      className="flashcard__question--heading"
-                      data-id={arrayQuestion[currentQuestion].id}
-                    >
+                    <h2 className="flashcard__question--heading">
                       {arrayQuestion[currentQuestion].question}
                     </h2>
                     <p className="flashcard__question--desc">
@@ -256,10 +253,10 @@ export const QuestionFlashCard = () => {
                   />
                   <div className="welcome__content">
                     <h1 className="welcome__heading">
-                      Chào mừng tất cả các bạn với chế độ FlashCard
+                      Chào mừng tất cả các bạn với chế độ Luyện tập
                     </h1>
                     <p className="welcome__desc">
-                      Học trên máy tính sẽ đem lại trải nghiệm tốt nhất{" "}
+                      Học trên máy tính sẽ đem lại trải nghiệm tốt nhất
                     </p>
                     <div className="welcome__rules">
                       <h2 className="welcome__rules--heading">#Luật chơi</h2>
@@ -290,7 +287,7 @@ export const QuestionFlashCard = () => {
                 <button
                   onClick={() => {
                     setShowWelcome(!showWelcome);
-                    setplayAudio(true);
+                    setPlayAudio(true);
                   }}
                   className="btn welcome__button"
                 >
@@ -308,8 +305,7 @@ export const QuestionFlashCard = () => {
                   />
                   <div className="congratulation__content">
                     <h1 className="congratulation__heading">
-                      Chúc mừng bạn đã hoàn thành xong FlashCard của phần HTML
-                      CSS này 🎊🎊🎊
+                      Chúc mừng bạn đã hoàn thành bài tập này 🎊🎊🎊
                     </h1>
 
                     <div className="congratulation__rules">
@@ -318,7 +314,7 @@ export const QuestionFlashCard = () => {
                       </h2>
                       <ul className="congratulation__rules--list">
                         <li>
-                          Điểm số :{" "}
+                          Điểm số :
                           <span className="congratulation__score">
                             {Score}/{arrayQuestion.length}
                           </span>
@@ -330,7 +326,13 @@ export const QuestionFlashCard = () => {
                           </span>
                         </li>
                         <li>
-                          Số câu đúng :{" "}
+                          Số câu đúng :
+                          <span className="congratulation__correct">
+                            {Score}
+                          </span>
+                        </li>
+                        <li>
+                          Số sao nhận được :
                           <span className="congratulation__correct">
                             {Score}
                           </span>

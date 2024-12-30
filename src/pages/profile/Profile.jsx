@@ -2,7 +2,7 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useAuth } from "../context/authContext";
+import { useAuth } from "../../context/auth-context/Index";
 export const Profile = () => {
   const [userInfo, setUserInfo] = useState([]);
   const { userLoggedIn, currentUser } = useAuth();

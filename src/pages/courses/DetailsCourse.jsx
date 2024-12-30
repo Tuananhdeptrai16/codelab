@@ -1,9 +1,9 @@
 import React from "react";
 import { useState, useContext, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
-import StoreContext from "../db/context";
+import StoreContext from "../../db/Context";
 import axios from "axios";
-import { useAuth } from "../context/authContext";
+import { useAuth } from "../../context/auth-context/Index";
 export const DetailsCourse = () => {
   const { targetCourses } = useContext(StoreContext);
   const { userLoggedIn, currentUser } = useAuth();

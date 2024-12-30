@@ -2,8 +2,8 @@ import React from "react";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Help } from "../components/help";
-import { Gift } from "../components/gift";
+import { Help } from "../../components/Help";
+import { Gift } from "../../components/Gift";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 export const FrontEnd = () => {

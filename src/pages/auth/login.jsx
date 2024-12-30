@@ -4,13 +4,13 @@ import React from "react";
 import { useState } from "react";
 import { Navigate, NavLink } from "react-router-dom";
 import { Validation } from "../../services/Validation";
-import Logo from "../../components/logo";
+import Logo from "../../components/LogoMain";
 import {
   doSignInWithEmailAndPassword,
   doSignInWithGoogle,
-} from "../../firebase/auth";
-import { useAuth } from "../../context/authContext/index";
-import { Toast } from "../../components/toasterror";
+} from "../../firebase/Auth";
+import { useAuth } from "../../context/auth-context/Index";
+import { Toast } from "../../components/ToastError";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 export const Login = () => {

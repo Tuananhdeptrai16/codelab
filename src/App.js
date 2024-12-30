@@ -3,14 +3,14 @@
 
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, useLocation } from "react-router-dom";
-import MyLayOut from "./layouts/layout";
-import StoreContext from "./db/context";
+import MyLayOut from "./layouts/MyLayout";
+import StoreContext from "./db/Context";
 // import { ComingSoon } from "./pages/commingsoon";
-import { ResetPassword } from "./pages/auth/resetpassword";
-import { SignUp } from "./pages/auth/singup";
-import { Login } from "./pages/auth/login";
-import { AuthProvider } from "./context/authContext";
-import { PageNotFound } from "./pages/pagenotfound";
+import { ResetPassword } from "./pages/auth/ResetPassword";
+import { SignUp } from "./pages/auth/SingUp";
+import { Login } from "./pages/auth/Login";
+import { AuthProvider } from "./context/auth-context/Index";
+import { PageNotFound } from "./pages/page-error/PageNotFound";
 const AppContent = () => {
   const [page, setPage] = useState(false);
   const [login, setLogin] = useState(true);

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
-import { Gift } from "../components/gift";
+import { Gift } from "../../components/Gift";
 import { Pagination } from "antd";
 export const Product = () => {
   const [productData, setProductData] = useState([]);

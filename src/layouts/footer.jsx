@@ -2,7 +2,7 @@
 // Thanks for watching and sharing
 
 import React from "react";
-import Logo from "../components/logo";
+import Logo from "../components/LogoMain";
 import { Link } from "react-router-dom";
 export const Footer = () => {
   return (

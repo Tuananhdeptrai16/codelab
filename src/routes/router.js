@@ -1,26 +1,26 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { PageNotFound } from "../pages/pagenotfound";
-import { HomePage } from "../pages/home";
-import { ComingSoon } from "../pages/commingsoon";
-import { StudyPlant } from "../pages/studyplant";
-import { FrontEnd } from "../pages/studyfrontend";
-import { BackEnd } from "../pages/studyBackEnd";
-import { Blog } from "../pages/blog";
-import { Courses } from "../pages/courses";
-import { FlashCard } from "../pages/flashcard";
-import { QuestionFlashCard } from "../pages/formflashcard";
-import { Login } from "../pages/auth/login";
-import { SignUp } from "../pages/auth/singup";
-import { ResetPassword } from "../pages/auth/resetpassword";
-import { DetailsCourse } from "../pages/detailscourse";
-import { FormStudy } from "../pages/formstudy/formstudy";
-import { Practice } from "../pages/formpractice";
-import { Product } from "../pages/product";
-import { FormBlog } from "../pages/formblog/formblog";
-import { Personal } from "../pages/personal";
-import CreateBlog from "../pages/createblog";
-import { Profile } from "../pages/profile";
+import { PageNotFound } from "../pages/page-error/PageNotFound";
+import { HomePage } from "../pages/Home";
+import { ComingSoon } from "../pages/page-error/ComingSoon";
+import { StudyPlant } from "../pages//study-plan/StudyPlant";
+import { FrontEnd } from "../pages//study-plan/StudyFrontend";
+import { BackEnd } from "../pages/personal/StudyBackEnd";
+import { Blog } from "../pages/blog/Blog";
+import { Courses } from "../pages/courses/Courses";
+import { FlashCard } from "../pages/flash-card/FlashCard";
+import { QuestionFlashCard } from "../pages/flashcard/FormFlashCard";
+import { Login } from "../pages/auth/Login";
+import { SignUp } from "../pages/auth/SingUp";
+import { ResetPassword } from "../pages/auth/ResetPassword";
+import { DetailsCourse } from "../pages/courses/DetailsCourse";
+import { FormStudy } from "../pages/formstudy/FormStudy";
+import { Practice } from "../pages/practice/FormPractice";
+import { Product } from "../pages/product/Product";
+import { FormBlog } from "../pages/formblog/FormBlog";
+import { Personal } from "../pages/personal/Personal";
+import CreateBlog from "../pages/blog/CreateBlog";
+import { Profile } from "../pages/profile/Profile";
 
 const MyRoute = () => {
   return (

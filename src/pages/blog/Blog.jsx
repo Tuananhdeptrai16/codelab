@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useContext } from "react";
 import Slider from "react-slick";
 import { Link, NavLink } from "react-router-dom";
-import { Help } from "../components/help";
+import { Help } from "../../components/Help";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 import axios from "axios";
-import StoreContext from "../db/context";
-import { useAuth } from "../context/authContext";
+import StoreContext from "../../db/Context";
+import { useAuth } from "../../context/auth-context/Index";
 export const Blog = () => {
   const { setTargetBlog } = useContext(StoreContext);
   const [newPost, setNewPost] = useState([]);

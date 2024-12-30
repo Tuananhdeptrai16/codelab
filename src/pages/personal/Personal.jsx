@@ -2,8 +2,8 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 import axios from "axios";
-import StoreContext from "../db/context";
-import { useAuth } from "../context/authContext";
+import StoreContext from "../../db/Context";
+import { useAuth } from "../../context/auth-context/Index";
 export const Personal = () => {
   const [userInfo, setUserInfo] = useState([]);
   const { userLoggedIn, currentUser } = useAuth();

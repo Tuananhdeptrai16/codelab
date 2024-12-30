@@ -5,22 +5,22 @@ import { Link } from "react-router-dom";
 import React, { useRef, useState, useEffect, useContext } from "react";
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 import { Button, Layout, Menu } from "antd";
-import MyRoute from "../routes/router";
-import Logo from "../components/logo";
+import MyRoute from "../routes/Router";
+import Logo from "../components/LogoMain";
 import axios from "axios";
-import { LogoOnly } from "../components/logo_only";
+import { LogoOnly } from "../components/Logo-Only";
 import { NavLink } from "react-router-dom";
-import { Search } from "../components/search";
-import { Footer } from "./footer";
+import { Search } from "../components/Search";
+import { Footer } from "./Footer";
 import { useNavigate } from "react-router-dom";
-import StoreContext from "../db/context";
-import { useAuth } from "../context/authContext";
-import { doSignOut } from "../firebase/auth";
-import LogoMedium from "../components/logo-md";
+import StoreContext from "../db/Context";
+import { useAuth } from "../context/auth-context/Index";
+import { doSignOut } from "../firebase/Auth";
+import LogoMedium from "../components/Logo-Md";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 const { Header, Sider, Content } = Layout;
-const MyLayOut = () => {
+const MyLayout = () => {
   const { userLoggedIn } = useAuth();
   const navigate = useNavigate();
   const { theme, handleChangeTheme } = useContext(StoreContext);
@@ -632,4 +632,4 @@ const MyLayOut = () => {
   );
 };
 
-export default MyLayOut;
+export default MyLayout;

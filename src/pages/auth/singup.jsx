@@ -1,13 +1,13 @@
 // The code was written by programmer Truong Tuan Anh
 // Thanks for watching and sharing
 import React, { useState } from "react";
-import Logo from "../../components/logo";
+import Logo from "../../components/LogoMain";
 import { Navigate, Link, NavLink } from "react-router-dom";
 import { Validation } from "../../services/Validation";
-import { useAuth } from "../../context/authContext";
-import { doCreateUserWithEmailAndPassword } from "../../firebase/auth";
-import { doSignInWithGoogle } from "../../firebase/auth";
-import { Toast } from "../../components/toasterror";
+import { useAuth } from "../../context/auth-context/Index";
+import { doCreateUserWithEmailAndPassword } from "../../firebase/Auth";
+import { doSignInWithGoogle } from "../../firebase/Auth";
+import { Toast } from "../../components/ToastError";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 export const SignUp = () => {

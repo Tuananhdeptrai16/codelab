@@ -1,13 +1,13 @@
-import React, { useEffect, useState, useContext, useRef } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { NavLink } from "react-router-dom";
-import { Quote } from "../../components/quote";
-import "./formstudy.css";
-import StoreContext from "../../db/context";
+import { Quote } from "../../components/Quote";
+import "./form-study.scss";
+import StoreContext from "../../db/Context";
 import axios from "axios";
-import { useAuth } from "../../context/authContext/index";
+import { useAuth } from "../../context/auth-context/Index";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
-import { DetailsCourse } from "../detailscourse";
+import { DetailsCourse } from "../courses/DetailsCourse";
 export const FormStudy = () => {
   const { targetCourses } = useContext(StoreContext);
   const { userLoggedIn, currentUser } = useAuth();

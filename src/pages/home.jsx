@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
-import { Help } from "../components/help";
+import { Help } from "../components/Help";
 import axios from "axios";
 // import NProgress from "nprogress";
 import "nprogress/nprogress.css";
-import { useAuth } from "../context/authContext";
-import StoreContext from "../db/context";
+import { useAuth } from "../context/auth-context/Index";
+import StoreContext from "../db/Context.js";
 export const HomePage = () => {
   const { setTargetBlog, setTargetCourses, setShowCatalog, showCatalog } =
     useContext(StoreContext);
@@ -14,7 +14,6 @@ export const HomePage = () => {
   const [slides, setSlides] = useState([]);
   const [courses, setCourses] = useState([]);
   const [videos, setVideos] = useState([]);
-
   const [shares, setShares] = useState([]);
   const [users, setUsers] = useState(null);
   const [likedCourses, setLikedCourses] = useState([]);

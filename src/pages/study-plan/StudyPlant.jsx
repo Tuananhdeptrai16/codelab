@@ -1,24 +1,27 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Help } from "../components/help";
-import { Ai } from "../components/ai";
-import { Quote } from "../components/quote";
-export const FlashCard = () => {
-  const [routePlants, setroutePlants] = useState([]);
-  const [comunity, setComunity] = useState([]);
+import { Help } from "../../components/Help";
+import { Gift } from "../../components/Gift";
+import NProgress from "nprogress";
+import "nprogress/nprogress.css";
+export const StudyPlant = () => {
+  const [routePlants, setRoutePlants] = useState([]);
+  const [community, setCommunity] = useState([]);
   useEffect(() => {
+    NProgress.start();
     fetch(`${process.env.PUBLIC_URL}/json/db.json`)
       .then((response) => response.json())
       .then((data) => {
-        setroutePlants(data.flashcard || []);
-        setComunity(data.FacebookCommunity || []);
+        setRoutePlants(data.studyRoute || []);
+        setCommunity(data.FacebookCommunity || []);
       })
       .catch((error) => console.log(error));
+    NProgress.done();
   }, []);
   return (
     <div className="container">
-      <div className="flashcard">
+      <div className="studyPlant">
         <div className="breadcrumb">
           <div className="breadcrumb__wrap">
             <NavLink to="/home" className="breadcrumb__item">
@@ -29,47 +32,47 @@ export const FlashCard = () => {
                 className="breadcrumb__icon-arrow"
               />
             </NavLink>
-            <NavLink to="/flashcard" className="breadcrumb__item">
-              <p className="breadcrumb__name  breadcrumb__active ">FlashCard</p>
+            <NavLink to="/studyplant" className="breadcrumb__item">
+              <p className="breadcrumb__name breadcrumb__active">StudyPlant</p>
             </NavLink>
           </div>
         </div>
-        <div className="row flashcard__wrap">
-          <div className="col-8 col-xxl-8 col-xl-12">
-            <div className="flashcard__title">
-              <h1 className="flashcard__heading">FLASHCARD</h1>
-              <p className="flashcard__desc">
-                Học đi đôi với hành , hãy cùng luyện tập nhiều hơn với chế độ
-                FlashCard để ôn luyện lại kiến thức một cách chỉnh chu nhất
+        <div className="row studyPlant__wrap">
+          <div className="col-9 col-xxl-8 col-xl-12">
+            <div className="studyPlant__title">
+              <h1 className="studyPlant__heading">Lộ trình học </h1>
+              <p className="studyPlant__desc">
+                Lộ trình học lập trình web từ cơ bản đến nâng cao giúp bạn thành
+                thạo giao diện và tương tác người dùng hiệu quả
               </p>
             </div>
-            <div className="flashcard__list">
+            <div className="studyPlant__list">
               {routePlants.map((routePlant) => {
                 return (
-                  <div key={routePlant.id} className="flashcard__item">
+                  <div key={routePlant.id} className="studyPlant__item">
                     <div className="row">
                       <div className="col-4 col-xxl-5 col-md-12">
-                        <picture className="flashcard__image">
+                        <picture className="studyPlant__image">
                           <img
                             src={`${process.env.PUBLIC_URL}${routePlant.img}`}
                             alt=""
-                            className="flashcard__img"
+                            className="studyPlant__img"
                           />
                         </picture>
                       </div>
                       <div className="col-8 col-xxl-7 col-md-12 gy-md-2">
-                        <div className="flashcard__content">
-                          <h3 className="flashcard__content-title">
+                        <div className="studyPlant__content">
+                          <h3 className="studyPlant__content-title">
                             {routePlant.title}
                           </h3>
-                          <p className="flashcard__content--desc line-clamp-3">
+                          <p className="studyPlant__content--desc line-clamp-3">
                             {routePlant.description}
                           </p>
                           <NavLink
                             to={routePlant.link}
-                            className="btn flashcard__button"
+                            className="btn studyPlant__button"
                           >
-                            Luyện tập ngay
+                            Xem chi tiết
                           </NavLink>
                         </div>
                       </div>
@@ -78,37 +81,40 @@ export const FlashCard = () => {
                 );
               })}
             </div>
-            <div className="flashcard__connect">
-              <h1 className="flashcard__connect--heading">
+            <div className="studyPlant__connect">
+              <h1 className="studyPlant__connect--heading">
                 Tham gia công đồng trên Facebook
               </h1>
-              <div className="flashcard__connect--list">
-                {comunity.map((item) => {
+              <div className="studyPlant__connect--list">
+                {community.map((item) => {
                   return (
-                    <div key={item.id} className="flashcard__routePlants--item">
+                    <div
+                      key={item.id}
+                      className="studyPlant__routePlants--item"
+                    >
                       {" "}
                       <div className="row">
                         <div className="col-4 col-xxl-5 col-md-12">
-                          <picture className="flashcard__image">
+                          <picture className="studyPlant__image">
                             <img
                               src={`${process.env.PUBLIC_URL}${item.img}`}
                               alt=""
-                              className="flashcard__img"
+                              className="studyPlant__img"
                             />
                           </picture>
                         </div>
                         <div className="col-8 col-xxl-7 col-md-12 gy-md-2">
-                          <div className="flashcard__content">
-                            <h3 className="flashcard__content-title">
+                          <div className="studyPlant__content">
+                            <h3 className="studyPlant__content-title">
                               Cộng đồng Code
-                              <span className="flashcard__highlight">Lab</span>
+                              <span className="studyPlant__highlight">Lab</span>
                             </h3>
-                            <p className="flashcard__content--desc line-clamp-3">
+                            <p className="studyPlant__content--desc line-clamp-3">
                               {item.description}
                             </p>
                             <NavLink
                               to="https://www.facebook.com/groups/congdongitsupport?locale=vi_VN"
-                              className="btn flashcard__button"
+                              className="btn studyPlant__button"
                             >
                               Tham gia ngay
                             </NavLink>
@@ -121,9 +127,9 @@ export const FlashCard = () => {
               </div>
             </div>
           </div>
-          <div className="col-4 col-xxl-4 col-xl-12">
-            <Ai></Ai>
-            <Quote></Quote>
+          <div className="col-3 col-xxl-4 col-xl-12">
+            <Gift></Gift>
+            <Gift></Gift>
           </div>
         </div>
       </div>
